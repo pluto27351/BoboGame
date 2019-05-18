@@ -14,8 +14,6 @@
 		2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51554DA9A2FA70F46AF9E679 /* libcocos2d Mac.a */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -61,6 +59,17 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		F15F3EE3228FAE710036D916 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECC228FAE710036D916 /* HomeScene.cpp */; };
+		F15F3EE4228FAE710036D916 /* TeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECE228FAE710036D916 /* TeachScene.cpp */; };
+		F15F3EE5228FAE710036D916 /* BoardScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECF228FAE710036D916 /* BoardScene.cpp */; };
+		F15F3EE6228FAE710036D916 /* CSwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ED2228FAE710036D916 /* CSwitch.cpp */; };
+		F15F3EE7228FAE710036D916 /* CButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ED6228FAE710036D916 /* CButton.cpp */; };
+		F15F3EE8228FAE710036D916 /* CPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ED7228FAE710036D916 /* CPlayer.cpp */; };
+		F15F3EEA228FAE710036D916 /* CDrawPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */; };
+		F15F3EEB228FAE710036D916 /* CAnsCreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */; };
+		F15F3EEC228FAE710036D916 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDF228FAE710036D916 /* MenuScene.cpp */; };
+		F15F3EED228FAE710036D916 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EE2228FAE710036D916 /* GameScene.cpp */; };
+		F15F3EF1228FAF200036D916 /* CNumberPannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +81,6 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -121,6 +128,29 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F15F3ECB228FAE710036D916 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		F15F3ECC228FAE710036D916 /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HomeScene.cpp; sourceTree = "<group>"; };
+		F15F3ECD228FAE710036D916 /* TeachScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachScene.h; sourceTree = "<group>"; };
+		F15F3ECE228FAE710036D916 /* TeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TeachScene.cpp; sourceTree = "<group>"; };
+		F15F3ECF228FAE710036D916 /* BoardScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardScene.cpp; sourceTree = "<group>"; };
+		F15F3ED0228FAE710036D916 /* HomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScene.h; sourceTree = "<group>"; };
+		F15F3ED2228FAE710036D916 /* CSwitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSwitch.cpp; sourceTree = "<group>"; };
+		F15F3ED3228FAE710036D916 /* CButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
+		F15F3ED4228FAE710036D916 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		F15F3ED6228FAE710036D916 /* CButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CButton.cpp; sourceTree = "<group>"; };
+		F15F3ED7228FAE710036D916 /* CPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPlayer.cpp; sourceTree = "<group>"; };
+		F15F3ED8228FAE710036D916 /* CSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwitch.h; sourceTree = "<group>"; };
+		F15F3ED9228FAE710036D916 /* CDrawPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDrawPanel.h; sourceTree = "<group>"; };
+		F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDrawPanel.cpp; sourceTree = "<group>"; };
+		F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAnsCreater.cpp; sourceTree = "<group>"; };
+		F15F3EDD228FAE710036D916 /* CPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlayer.h; sourceTree = "<group>"; };
+		F15F3EDE228FAE710036D916 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
+		F15F3EDF228FAE710036D916 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
+		F15F3EE0228FAE710036D916 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		F15F3EE1228FAE710036D916 /* BoardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardScene.h; sourceTree = "<group>"; };
+		F15F3EE2228FAE710036D916 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
+		F15F3EF2228FAF370036D916 /* CNumberPannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNumberPannel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,10 +273,9 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F15F3ECA228FAE710036D916 /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -313,6 +342,44 @@
 				5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */,
 			);
 			name = "ios-libs";
+			sourceTree = "<group>";
+		};
+		F15F3ECA228FAE710036D916 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F15F3ED1228FAE710036D916 /* element */,
+				F15F3ECF228FAE710036D916 /* BoardScene.cpp */,
+				F15F3EE1228FAE710036D916 /* BoardScene.h */,
+				F15F3EE2228FAE710036D916 /* GameScene.cpp */,
+				F15F3ECB228FAE710036D916 /* GameScene.h */,
+				F15F3ECC228FAE710036D916 /* HomeScene.cpp */,
+				F15F3ED0228FAE710036D916 /* HomeScene.h */,
+				F15F3EDF228FAE710036D916 /* MenuScene.cpp */,
+				F15F3EE0228FAE710036D916 /* MenuScene.h */,
+				F15F3ECE228FAE710036D916 /* TeachScene.cpp */,
+				F15F3ECD228FAE710036D916 /* TeachScene.h */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		F15F3ED1228FAE710036D916 /* element */ = {
+			isa = PBXGroup;
+			children = (
+				F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */,
+				F15F3EDE228FAE710036D916 /* CAnsCreater.h */,
+				F15F3ED6228FAE710036D916 /* CButton.cpp */,
+				F15F3ED3228FAE710036D916 /* CButton.h */,
+				F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */,
+				F15F3ED9228FAE710036D916 /* CDrawPanel.h */,
+				F15F3ED7228FAE710036D916 /* CPlayer.cpp */,
+				F15F3EDD228FAE710036D916 /* CPlayer.h */,
+				F15F3ED2228FAE710036D916 /* CSwitch.cpp */,
+				F15F3ED8228FAE710036D916 /* CSwitch.h */,
+				F15F3ED4228FAE710036D916 /* Data.h */,
+				F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */,
+				F15F3EF2228FAF370036D916 /* CNumberPannel.h */,
+			);
+			path = element;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,11 +490,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15F3EE7228FAE710036D916 /* CButton.cpp in Sources */,
+				F15F3EE3228FAE710036D916 /* HomeScene.cpp in Sources */,
+				F15F3EE6228FAE710036D916 /* CSwitch.cpp in Sources */,
+				F15F3EEB228FAE710036D916 /* CAnsCreater.cpp in Sources */,
+				F15F3EEA228FAE710036D916 /* CDrawPanel.cpp in Sources */,
+				F15F3EE5228FAE710036D916 /* BoardScene.cpp in Sources */,
+				F15F3EE8228FAE710036D916 /* CPlayer.cpp in Sources */,
+				F15F3EF1228FAF200036D916 /* CNumberPannel.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				F15F3EE4228FAE710036D916 /* TeachScene.cpp in Sources */,
+				F15F3EED228FAE710036D916 /* GameScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				F15F3EEC228FAE710036D916 /* MenuScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +514,6 @@
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,10 +545,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -507,10 +580,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -546,10 +616,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -580,10 +647,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
