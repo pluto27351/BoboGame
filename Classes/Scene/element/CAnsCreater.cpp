@@ -1,4 +1,4 @@
-﻿#include "CAnsCreater.h"
+#include "CAnsCreater.h"
 
 void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目．數字
 	Node * answer;
@@ -16,7 +16,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	char Input[5];
 	char fn[3];
 	int inputData, data;
-	auto bg = (Node *)Q.getChildByName("Bg");
+	auto bg = (Node *)Q.getChildByName("bg");
 
 	//國字
 	inputData = bg->getTag();
@@ -46,8 +46,11 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 		Text *f = (Text *)Output_f->getChildByName("ntor");
 		sprintf(fn, "%d", f->getTag());
 		sprintf(Input, "%d", number);
-		Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
-		Output_f->removeChildByName("ntor");
+        if(f->getString().c_str()[0]=='d') //判斷固定分子還分母 有d是固定分母
+            Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
+        else
+            Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
+        Output_f->removeChildByName("ntor");
 	}
 
 }
@@ -62,10 +65,18 @@ void CAnsCreater::AnsCreater(Node &Q, int number) {
 	Text *f = (Text *)Output_f->getChildByName("ntor");
 	sprintf(fn, "%d", f->getTag());
 	sprintf(Input, "%d", number);
-
-	answer[0] = std::atoi(fn);
-	answer[1] = number;
-	answer[2] = std::atoi(Numerator(f->getString().c_str(), Input));
+    int k = Output_f->getTag();
+    
+    if(f->getTag() == -1){
+        answer[0] = number / k;
+        answer[2] = number % k;
+    }
+    else {
+        answer[0] = std::atoi(fn);
+        answer[2] = std::atoi(Numerator(f->getString().c_str(), Input));
+    }
+    if(k == 0)answer[1] = number;
+    else answer[1] = k;
 
 	CCLOG("answer = %d,%d,%d", answer[0], answer[1], answer[2]);
 	Output_f->removeChildByName("Answer");
@@ -82,7 +93,11 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 	bool count = false; //判斷是否要運算(+,-,*,/)
 	bool z = false;
 	if (number[1] != NULL)z = true;        //判斷幾位數 2位以上
-
+    if(c[0] == 'd'){  //如果是改變分子 把d移掉全完前
+        for(int i = 0; c[i] != NULL; i++)
+            ntor[i] = c[i+1];
+    }
+    
 	//型成字串的過程
 	for (int i = 0; c[i] != NULL; i++) {
 		if (c[i] == 'F') {               //F分母的數
@@ -128,6 +143,13 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 					b += (ntor[x] - '0')*pow(10, y);
 				sprintf(ntor, "%d", a*b);
 				break;
+            case '%': //a * b
+                for (int x = i - 1, y = 0; x > 0; x--, y++)
+                    a += (ntor[x] - '0')*pow(10, y);
+                for (int x = strlen(c) - 1, y = 0; x > i; x--, y++)
+                    b += (ntor[x] - '0')*pow(10, y);
+                sprintf(ntor, "%d", a%b);
+                break;
 			}
 	}
 	return(ntor);

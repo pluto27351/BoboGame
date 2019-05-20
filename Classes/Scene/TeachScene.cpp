@@ -33,13 +33,13 @@ void TeachScene::randomQuestion(int chap) {
 
 	_chap = chap;
 	int n;
-	do {
-		n = random(1, 2);
-	} while (n == _chapNo);
-	_chapNo = n;
+//    do {
+//        n = random(1, 2);
+//    } while (n == _chapNo);
+//    _chapNo = n;
 
 	do {
-		n = random(2, 3);
+		n = random(2, 12);
 	} while (n == _chapNum);
 	_chapNum = n;
 
@@ -56,7 +56,8 @@ void TeachScene::randomQuestion(int chap) {
 	_question = new CAnsCreater;
 	auto target = rootNode->getChildByName("Question");
 	//_question->queCreater(_chap, _chapNo, _chapNum);
-	_question->queCreater(_chap, 1, _chapNum);
+    _chapNo++;
+	_question->queCreater(_chap, _chapNo, _chapNum);
 	_question->setPosition(target->getPosition());
 	this->addChild(_question);
 }

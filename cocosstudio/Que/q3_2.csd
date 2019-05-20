@@ -1,12 +1,12 @@
 <GameFile>
-  <PropertyGroup Name="q3_1" Type="Node" ID="ee1bbb65-5f27-4ffd-8d46-7721a14e04a8" Version="3.10.0.0" />
+  <PropertyGroup Name="q3_2" Type="Node" ID="b0227468-0718-45cb-9128-e80935ba915d" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="1. &#xA;　請問    杯水和幾分之幾杯水一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="2. &#xA;　請問    根竹子和幾分之幾根竹子一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1141.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -40,10 +40,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Answer" ActionTag="-871077015" IconVisible="True" LeftMargin="638.6194" RightMargin="-638.6194" TopMargin="143.3836" BottomMargin="-143.3836" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Answer" ActionTag="-341116394" IconVisible="True" LeftMargin="638.6194" RightMargin="-638.6194" TopMargin="143.3836" BottomMargin="-143.3836" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="1416555065" IconVisible="False" LeftMargin="-20.5000" RightMargin="-20.5000" TopMargin="-10.0000" BottomMargin="-10.0000" FontSize="20" LabelText="=F+1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="ntor" ActionTag="370561571" IconVisible="False" LeftMargin="-20.5000" RightMargin="-20.5000" TopMargin="-10.0000" BottomMargin="-10.0000" FontSize="20" LabelText="=F+1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="41.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
