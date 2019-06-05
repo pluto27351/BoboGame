@@ -4,7 +4,6 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="Ani">
-          <Project Name="321ani.csd" Type="Node" />
           <Project Name="Grass.csd" Type="Node" />
           <Project Name="Player.csd" Type="Node" />
         </Folder>
@@ -27,9 +26,6 @@
           <PlistImageFile Name="跳_4.png" Key="跳_4.png" />
           <PlistImageFile Name="跳_5.png" Key="跳_5.png" />
         </PlistImageFolder>
-        <Folder Name="ground">
-          <Project Name="Up_floor.csd" Type="Node" />
-        </Folder>
         <Folder Name="Img">
           <PlistImageFolder Image="equalcontrol.png" PListFile="equalcontrol.plist" Name=".equalcontrol_PList.Dir">
             <PlistImageFile Name="bb_no01.png" Key="bb_no01.png" />
@@ -102,19 +98,6 @@
             <PlistImageFile Name="pen_off.png" Key="pen_off.png" />
             <PlistImageFile Name="pen_on.png" Key="pen_on.png" />
           </PlistImageFolder>
-          <Folder Name="Player">
-            <Image Name="attack_00.png" />
-            <Image Name="down_00.png" />
-            <Image Name="jump_ (1).png" />
-            <Image Name="jump_ (2).png" />
-            <Image Name="jump_ (3).png" />
-            <Image Name="ready_00.png" />
-            <Image Name="ready_01.png" />
-            <Image Name="run_00.png" />
-            <Image Name="run_01.png" />
-            <Image Name="run_02.png" />
-            <Image Name="run_03.png" />
-          </Folder>
           <PlistImageFolder Image="scene101.png" PListFile="scene101.plist" Name=".scene101_PList.Dir">
             <PlistImageFile Name="bean01.png" Key="bean01.png" />
             <PlistImageFile Name="bean02.png" Key="bean02.png" />
@@ -221,16 +204,7 @@
             <PlistImageFile Name="sr_line1.png" Key="sr_line1.png" />
             <PlistImageFile Name="sr_line2.png" Key="sr_line2.png" />
           </PlistImageFolder>
-          <Image Name="1.png" />
-          <Image Name="2.png" />
-          <Image Name="3.png" />
           <Image Name="bar.png" />
-          <Image Name="g_floor00.png" />
-          <Image Name="g_floor01.png" />
-          <Image Name="g_floor02.png" />
-          <Image Name="g_pin.png" />
-          <Image Name="g_rock.png" />
-          <Image Name="GO.png" />
           <Image Name="homeBG.jpg" />
           <Image Name="MenuBG.jpg" />
           <Image Name="topic1_back.png" />
@@ -274,7 +248,6 @@
           <Project Name="q3_9.csd" Type="Node" />
         </Folder>
         <Project Name="BoardScene.csd" Type="Scene" />
-        <Image Name="HelloWorld.png" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
