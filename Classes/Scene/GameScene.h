@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -23,7 +23,7 @@ private:
 	Node *rootNode;
 
 
-	//CPlayer *_Player;
+	CPlayer *_Player;
 	void doStep(float);
 public:
 	~GameScene();

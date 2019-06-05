@@ -1,4 +1,4 @@
-﻿#include "GameScene.h"
+#include "GameScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "SimpleAudioEngine.h"
@@ -47,9 +47,13 @@ bool GameScene::init()
 
 	// 預先載入音效檔	
 	//SimpleAudioEngine::getInstance()->preloadEffect("./Audio/jump.WAV");
+    
+    // 放入玩家
+    _Player = new CPlayer();
+    this->addChild(_Player,2);
+    _Player->RunAct();
 
-
-	//按鈕相關
+	// 按鈕相關
 	/*_btnGo = new C3Button(Vec2(1120,125), "b_playOn.png", "b_playDown.png", "b_playDown.png");
 	this->addChild(_btnGo, 11);*/
 	
@@ -86,7 +90,14 @@ void GameScene::ChangeScene()
 bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
 	Point touchLoc = pTouch->getLocation();
-
+    Rect rect = Director::getInstance()->getOpenGLView()->getVisibleRect();
+    if (touchLoc.x < rect.getMaxX()/2) {
+        _Player->JumpAct();
+    }
+    if (touchLoc.x > rect.getMaxX()/2) {
+        _Player->SlipAct();
+    }
+    
 	////跳躍與攻擊
 	//if (touchLoc.y < 360  &&  START) {  
 	//	if (touchLoc.x < 640 && _Player->BulletFlag == false) {
@@ -97,7 +108,6 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
 	//		_Player->JumpAct();
 	//		SimpleAudioEngine::getInstance()->playEffect("./Audio/jump.WAV", false);
 	//	}
-
 	//}
 
 

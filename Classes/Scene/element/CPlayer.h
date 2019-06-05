@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -18,12 +18,22 @@ private:
 	Point pt;
 	Node *_Player;
 	ActionTimeline *_PlayerAni;
+    JumpTo *jumpAction;
+    
+    bool ActFlag = true;
+    int JumpTime = 0;
 
 public:
 	CPlayer();
 	CPlayer(Color3B, Color3B);
 	~CPlayer();
 
+    void RunAct();
+    void JumpAct();
+    void SlipAct();
+    void AttackAct();
+    void TensionAct();
+    void ActionEnd();
 	// implement the "static create()" method manually
 	CREATE_FUNC(CPlayer);
 };
