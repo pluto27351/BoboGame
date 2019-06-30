@@ -1,6 +1,6 @@
 #include "CAnsCreater.h"
 
-void CAnsCreater::queCreater(int uni, int queNo, int number) { //å–®å…ƒï¼é¡Œç›®ï¼æ•¸å­—
+void CAnsCreater::queCreater(int uni, int queNo, int number) { //³æ¤¸¡DÃD¥Ø¡D¼Æ¦r
 	Node * answer;
 
 	char name[14];
@@ -18,7 +18,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	int inputData, data;
 	auto bg = (Node *)Q.getChildByName("bg");
 
-	//åœ‹å­—
+	//°ê¦r
 	inputData = bg->getTag();
 	data = inputData / 100;
 	for (int i = 0; i < data; i++) {
@@ -28,7 +28,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	}
 	inputData = inputData % 100;
 
-	//æ•¸å­—
+	//¼Æ¦r
 	data = inputData / 10;
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "N_%d", i + 1);
@@ -38,7 +38,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	}
 	inputData = inputData % 10;
 
-	//åˆ†æ•¸
+	//¤À¼Æ
 	data = inputData;
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "F_%d", i + 1);
@@ -46,10 +46,12 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 		Text *f = (Text *)Output_f->getChildByName("ntor");
 		sprintf(fn, "%d", f->getTag());
 		sprintf(Input, "%d", number);
-        if(f->getString().c_str()[0]=='d') //åˆ¤æ–·å›ºå®šåˆ†å­é‚„åˆ†æ¯ æœ‰dæ˜¯å›ºå®šåˆ†æ¯
-            Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
-        else
-            Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
+		if (f->getString().c_str()[0] == 'd') {
+			//§PÂ_©T©w¤À¤lÁÙ¤À¥À ¦³d¬O©T©w¤À¥À
+			Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
+		}
+		else
+			Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
         Output_f->removeChildByName("ntor");
 	}
 
@@ -90,21 +92,21 @@ bool CAnsCreater::CheckAnswer(Vec3 a) {
 
 char * CAnsCreater::Numerator(const char *c, const char *number) {
 	char *ntor = (char*)c;
-	bool count = false; //åˆ¤æ–·æ˜¯å¦è¦é‹ç®—(+,-,*,/)
+	bool count = false; //§PÂ_¬O§_­n¹Bºâ(+,-,*,/)
 	bool z = false;
-	if (number[1] != NULL)z = true;        //åˆ¤æ–·å¹¾ä½æ•¸ 2ä½ä»¥ä¸Š
-    if(c[0] == 'd'){  //å¦‚æœæ˜¯æ”¹è®Šåˆ†å­ æŠŠdç§»æ‰å…¨å®Œå‰
-        for(int i = 0; c[i] != NULL; i++)
-            ntor[i] = c[i+1];
-    }
+	if (number[1] != NULL)z = true;        //§PÂ_´X¦ì¼Æ 2¦ì¥H¤W
+	if (c[0] == 'd') {  //¦pªG¬O§ïÅÜ¤À¤l §âd²¾±¼¥ş§¹«e
+		for (int i = 0; c[i] != NULL; i++)
+			ntor[i] = c[i + 1];
+	}
     
-	//å‹æˆå­—ä¸²çš„éç¨‹
+	//«¬¦¨¦r¦êªº¹Lµ{
 	for (int i = 0; c[i] != NULL; i++) {
-		if (c[i] == 'F') {               //Fåˆ†æ¯çš„æ•¸
+		if (c[i] == 'F') {               //F¤À¥Àªº¼Æ
 			if (z == true) {
 				ntor = new char[strlen(c) + 1];
 				ntor = (char*)c;
-				for (int i = strlen(ntor) - 1; i >= 0; i--) //å°‡å­—ä¸²å¾€å¾Œæ¨
+				for (int i = strlen(ntor) - 1; i >= 0; i--) //±N¦r¦ê©¹«á±À
 					ntor[i + 1] = c[i];
 				ntor[i] = number[0]; ntor[i + 1] = number[1];
 			}
@@ -112,18 +114,18 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 				ntor[i] = number[0];
 			}
 		}
-		else if (c[i] == '=') { //å‡ºç¾'ï¼'é€²é‹ç®—
+		else if (c[i] == '=') { //¥X²{'¡×'¶i¹Bºâ
 			count = true;
 		}
 	}
 
-	//åŠ æ¸›ä¹˜é™¤é‹ç®—
+	//¥[´î­¼°£¹Bºâ
 	if (count == true) {
 		int a = 0, b = 0;
 		for (int i = 0; ntor[i] != NULL; i++)
 			switch (c[i]) {
 			case '+':
-				for (int x = i - 1, y = 0; x > 0; x--, y++)//xæ•¸å­— yå€‹ä½æ•¸æˆ–åä½æ•¸
+				for (int x = i - 1, y = 0; x > 0; x--, y++)//x¼Æ¦r y­Ó¦ì¼Æ©Î¤Q¦ì¼Æ
 					a += (ntor[x] - '0')*pow(10, y);
 				for (int x = strlen(c) - 1, y = 0; x > i; x--, y++)
 					b += (ntor[x] - '0')*pow(10, y);
@@ -158,10 +160,10 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominator, const char *front) {
 	float scale = 0.5f;
 	for (int i = 0; numerator[i] != NULL; scale += 0.5f, i++);
-	auto fn = (Node *)Node::create(); //æœ€å¾Œçš„å›å‚³-åˆ†æ•¸çš„å½¢ç‹€
+	auto fn = (Node *)Node::create(); //³Ì«áªº¦^¶Ç-¤À¼Æªº§Îª¬
 	Sprite *bar;
-	auto Ntor = cocos2d::ui::Text::create(); //åˆ†å­
-	auto Dtor = cocos2d::ui::Text::create(); //åˆ†æ¯
+	auto Ntor = cocos2d::ui::Text::create(); //¤À¤l
+	auto Dtor = cocos2d::ui::Text::create(); //¤À¥À
 
 	bar = (Sprite *)Sprite::create("Img/bar.png");
 	bar->setScale(6 * scale, 5);
@@ -195,12 +197,12 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
 	char c_n[5];
 	sprintf(c_n, "%d", n);
-	auto plus = new cocos2d::ui::Text*[n - 1]; //åŠ 
-	auto equal = cocos2d::ui::Text::create(); //ç­‰æ–¼
+	auto plus = new cocos2d::ui::Text*[n - 1]; //¥[
+	auto equal = cocos2d::ui::Text::create(); //µ¥©ó
 
-	auto fn = (Node *)Node::create(); //æœ€å¾Œçš„å›å‚³-é‹ç®—å¼çš„å½¢ç‹€
+	auto fn = (Node *)Node::create(); //³Ì«áªº¦^¶Ç-¹Bºâ¦¡ªº§Îª¬
 
-	//åˆ†æ•¸ç”Ÿæˆ
+	//¤À¼Æ¥Í¦¨
 	Node ** all_f = new Node*[n + 1];
 	for (int i = 0; i < n + 1; i++) {
 		if (i < n)
@@ -209,7 +211,7 @@ cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
 			all_f[i] = Set_CAnsCreater(c_n, c_n, "0");
 	}
 
-	//æ’ä½å­
+	//±Æ¦ì¤l
 	for (int i = 0; i < 2 * n + 1; i++) {
 		if (i % 2) {
 			if (i == 2 * n - 1) {
@@ -240,5 +242,3 @@ cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
 
 	return(fn);
 }
-
-

@@ -8,7 +8,8 @@
 #include "element/CPlayer.h"
 #include "element/CButton.h"
 
-
+#include "Box2D/Box2D.h"
+#include "element/GLES-Render.h"
 
 USING_NS_CC;
 
@@ -21,13 +22,23 @@ class GameScene : public cocos2d::Layer
 {
 private:
 	Node *rootNode;
-
-
 	CPlayer *_Player;
+
+	cocos2d::Point PntLoc;
+	b2Body *PlayerBody;
+	
+	// b2World
+	b2World* _b2World;
+	GLESDebugDraw* _DebugDraw;
+	virtual void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t flags);
+
 	void doStep(float);
 public:
 	~GameScene();
 	bool init();
+
+	void CreatePlayer();
+	void PlayerCollision();
 
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();

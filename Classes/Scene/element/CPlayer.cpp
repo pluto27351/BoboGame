@@ -20,10 +20,11 @@ CPlayer::CPlayer()
     pt = Vec2(190, 245);
     _Player = CSLoader::createNode("Ani/Player.csb");
     _Player->setPosition(pt);
-    _Player->setScale(0.8, 0.8);
+    _Player->setScale(0.8f);
     this->addChild(_Player);
     _PlayerAni = (ActionTimeline *)CSLoader::createTimeline("Ani/Player.csb");
     _Player->runAction(_PlayerAni);
+	_body = (cocos2d::Sprite *)_Player->getChildByName("bo");
 }
 CPlayer::CPlayer(Color3B color, Color3B color2)
 {
@@ -35,29 +36,14 @@ CPlayer::CPlayer(Color3B color, Color3B color2)
 
 //跑步動作
 void CPlayer::RunAct() {
-    _Player->setPosition(pt);
-    Sprite *_body = (cocos2d::Sprite *)_Player->getChildByName("Jump");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Slip");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Attack");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Tension");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Run");
-    _body->setVisible(true);
     _PlayerAni->gotoFrameAndPlay(0, 30, true);
 }
 void CPlayer::JumpAct(){
     if(JumpTime == 0 && ActFlag == true){
-        Sprite *_body = (cocos2d::Sprite *)_Player->getChildByName("Run");
-        _body->setVisible(false);
-        _body = (cocos2d::Sprite *)_Player->getChildByName("Jump");
-        _body->setVisible(true);
-        jumpAction = cocos2d::JumpTo::create(1.0f, pt, 300, 1);
+		jumpAction = cocos2d::JumpTo::create(1.0f, pt, 0, 1);
         Sequence *sequence;
         CallFunc *callback = CallFunc::create(this, callfunc_selector(CPlayer::ActionEnd));
-        _PlayerAni->gotoFrameAndPlay(0, 24, false);
+        _PlayerAni->gotoFrameAndPlay(31, 55, false);
         sequence = Sequence::create(jumpAction, callback, NULL);
         _Player->runAction(sequence);
         ActFlag = false;
@@ -66,11 +52,7 @@ void CPlayer::JumpAct(){
 }
 void CPlayer::SlipAct(){
     if(ActFlag == true){
-        Sprite *_body = (cocos2d::Sprite *)_Player->getChildByName("Run");
-        _body->setVisible(false);
-        _body = (cocos2d::Sprite *)_Player->getChildByName("Slip");
-        _body->setVisible(true);
-        _PlayerAni->gotoFrameAndPlay(0, 5, true);
+        _PlayerAni->gotoFrameAndPlay(56, 61, true);
         MoveBy *slipAction = cocos2d::MoveBy::create(0.5f, Vec2(0, 0));
         Sequence *sequence;
         CallFunc *callback = CallFunc::create(this, callfunc_selector(CPlayer::ActionEnd));
@@ -83,13 +65,7 @@ void CPlayer::SlipAct(){
 }
 void CPlayer::AttackAct(){
     _Player->stopActionByTag(jumpAction->getTag());
-    Sprite *_body = (cocos2d::Sprite *)_Player->getChildByName("Run");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Jump");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Attack");
-    _body->setVisible(true);
-    _PlayerAni->gotoFrameAndPlay(0, 5, false);
+    _PlayerAni->gotoFrameAndPlay(62, 72, true);
     MoveTo *AttackAction = cocos2d::MoveTo::create(0.3f, Vec2(pt));
     Sequence *sequence;
     CallFunc *callback = CallFunc::create(this, callfunc_selector(CPlayer::ActionEnd));
@@ -98,11 +74,7 @@ void CPlayer::AttackAct(){
     JumpTime = 2;
 }
 void CPlayer::TensionAct(){
-    Sprite *_body = (cocos2d::Sprite *)_Player->getChildByName("Run");
-    _body->setVisible(false);
-    _body = (cocos2d::Sprite *)_Player->getChildByName("Tension");
-    _body->setVisible(true);
-    _PlayerAni->gotoFrameAndPlay(0, 24, true);
+    _PlayerAni->gotoFrameAndPlay(73, 97, true);
 }
 
 //避免多重觸碰
@@ -112,6 +84,15 @@ void CPlayer::ActionEnd() {
     RunAct();
 }
 
+Point CPlayer::GetPos() {
+	return(_Player->getPosition());
+}
+Size CPlayer::GetSize() {
+	return(_body->getContentSize());
+}
+Vec2 CPlayer::GetScale() {
+	return(Vec2(_body->getScaleX(), _body->getScaleY()));
+}
 //
 //int CPlayer::jumpCollider(Point enemy) {
 //	Rect colliderArea;
@@ -137,6 +118,3 @@ void CPlayer::ActionEnd() {
 //		}
 //	}
 //}
-
-
-

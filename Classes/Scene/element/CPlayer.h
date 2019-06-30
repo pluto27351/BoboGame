@@ -21,20 +21,25 @@ private:
     JumpTo *jumpAction;
     
     bool ActFlag = true;
-    int JumpTime = 0;
+	int JumpTime = 0;
 
 public:
+	Sprite *_body;
 	CPlayer();
 	CPlayer(Color3B, Color3B);
 	~CPlayer();
 
+	//bool ChangleCollision = false;
     void RunAct();
     void JumpAct();
     void SlipAct();
     void AttackAct();
     void TensionAct();
     void ActionEnd();
+
+	Point GetPos();
+	Size GetSize();
+	Vec2 GetScale();
 	// implement the "static create()" method manually
 	CREATE_FUNC(CPlayer);
 };
-
