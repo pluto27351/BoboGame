@@ -1,38 +1,76 @@
 #include "CPlayer.h"
-//#include "cocostudio/CocoStudio.h"
-//#include "ui/CocosGUI.h"
-//#include "CBullet.h"
+#define PTM_RATIO 32.0f
 
 USING_NS_CC;
-
-//using namespace cocostudio::timeline;
-//using namespace ui;
-//using namespace CocosDenshion;
 
 // on "init" you need to initialize your instance
 CPlayer::~CPlayer()
 {
 	
 }
-CPlayer::CPlayer()
+CPlayer::CPlayer(b2World* _b2W)
 {
     //圖片
-    pt = Vec2(190, 245);
+    pt = Vec2(190, 450);
     _Player = CSLoader::createNode("Ani/Player.csb");
     _Player->setPosition(pt);
-    _Player->setScale(0.8f);
     this->addChild(_Player);
     _PlayerAni = (ActionTimeline *)CSLoader::createTimeline("Ani/Player.csb");
     _Player->runAction(_PlayerAni);
 	_body = (cocos2d::Sprite *)_Player->getChildByName("bo");
+    
+    //box2d
+    _b2World = _b2W;
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_dynamicBody;
+    bodyDef.userData = _body;
+    PlayerBody = _b2World->CreateBody(&bodyDef);
+    CreateCollision();
 }
-CPlayer::CPlayer(Color3B color, Color3B color2)
-{
+void CPlayer::dostep(){
+    CreateCollision();
 }
-
-//void CPlayer::start() {
-//	_PlayerAni->gotoFrameAndPlay(0, 24, true);
-//}
+void CPlayer::CreateCollision(){
+    if(PlayerBody->GetFixtureList()!=NULL)
+        PlayerBody->DestroyFixture(PlayerBody->GetFixtureList());
+    Point loc = _Player->getPosition();
+    Size ts = _body->getContentSize();
+    b2PolygonShape rectShape;
+    float scaleX = _body->getScaleX();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
+    float scaleY = _body->getScaleY();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
+    
+    Point lep[4], wep[4];
+    lep[0].x = (ts.width) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
+    lep[1].x = -(ts.width) / 2.0f; lep[1].y = (ts.height) / 2.0f;
+    lep[2].x = -(ts.width) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
+    lep[3].x = (ts.width) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
+    
+    cocos2d::Mat4 modelMatrix, rotMatrix;
+    modelMatrix.m[0] = scaleX;  // •˝≥]©w X ∂b™∫¡Y©Ò
+    modelMatrix.m[5] = scaleY;  // •˝≥]©w Y ∂b™∫¡Y©Ò
+    cocos2d::Mat4::createRotationZ(0 * M_PI / 180.0f, &rotMatrix);
+    modelMatrix.multiply(rotMatrix);
+    modelMatrix.m[3] = /*PntLoc.x + */loc.x; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
+    modelMatrix.m[7] = /*PntLoc.y + */loc.y; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
+    for (size_t j = 0; j < 4; j++)
+    {
+        wep[j].x = lep[j].x * modelMatrix.m[0] + lep[j].y * modelMatrix.m[1] + modelMatrix.m[3];
+        wep[j].y = lep[j].x * modelMatrix.m[4] + lep[j].y * modelMatrix.m[5] + modelMatrix.m[7];
+    }
+    b2Vec2 vecs[] = {
+        b2Vec2(wep[0].x / PTM_RATIO, wep[0].y / PTM_RATIO),
+        b2Vec2(wep[1].x / PTM_RATIO, wep[1].y / PTM_RATIO),
+        b2Vec2(wep[2].x / PTM_RATIO, wep[2].y / PTM_RATIO),
+        b2Vec2(wep[3].x / PTM_RATIO, wep[3].y / PTM_RATIO) };
+    
+    rectShape.Set(vecs, 4);
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &rectShape;
+    fixtureDef.restitution = 0.5f;
+    fixtureDef.density = 0.1f;
+    fixtureDef.friction = 0.15f;
+    PlayerBody->CreateFixture(&fixtureDef);
+}
 
 //跑步動作
 void CPlayer::RunAct() {
@@ -83,24 +121,6 @@ void CPlayer::ActionEnd() {
     JumpTime = 0;
     RunAct();
 }
-
-Point CPlayer::GetPos() {
-	return(_Player->getPosition());
-}
-Size CPlayer::GetSize() {
-	return(_body->getContentSize());
-}
-Vec2 CPlayer::GetScale() {
-	return(Vec2(_body->getScaleX(), _body->getScaleY()));
-}
-//
-//int CPlayer::jumpCollider(Point enemy) {
-//	Rect colliderArea;
-//	colliderArea = Rect(_Player->getPositionX() - 65, _Player->getPositionY() - 20,180, 120);
-//	if (colliderArea.containsPoint(enemy)) return 2;  //失敗
-//	else if (enemy.x < 140) return 1;  //成功
-//	else return 0;									   //還有機會
-//}
 
 ////停止動畫
 //void CPlayer::actionControl(bool run) {

@@ -331,15 +331,15 @@
       <ObjectData Name="Node" Tag="50" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-120.0007" RightMargin="-107.9993" TopMargin="-95.4992" BottomMargin="-113.5008" ctype="SpriteObjectData">
-            <Size X="228.0000" Y="209.0000" />
+          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-103.0000" RightMargin="-121.0000" TopMargin="-109.0000" BottomMargin="-117.0000" ctype="SpriteObjectData">
+            <Size X="189.0000" Y="235.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-6.0007" Y="-9.0008" />
+            <Position X="9.0000" Y="-4.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo.plist" />
+            <FileData Type="PlistSubImage" Path="run_3.png" Plist="Img/bo.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

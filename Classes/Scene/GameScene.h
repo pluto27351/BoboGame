@@ -5,8 +5,9 @@
 #include "ui/UIWidget.h"
 #include "SimpleAudioEngine.h"
 #include "cocostudio/CocoStudio.h"
-#include "element/CPlayer.h"
 #include "element/CButton.h"
+#include "element/CPlayer.h"
+#include "element/CObstacle.h"
 
 #include "Box2D/Box2D.h"
 #include "element/GLES-Render.h"
@@ -23,9 +24,7 @@ class GameScene : public cocos2d::Layer
 private:
 	Node *rootNode;
 	CPlayer *_Player;
-
-	cocos2d::Point PntLoc;
-	b2Body *PlayerBody;
+    CObstacle *_Obstacle;
 	
 	// b2World
 	b2World* _b2World;
@@ -38,7 +37,7 @@ public:
 	bool init();
 
 	void CreatePlayer();
-	void PlayerCollision();
+    void CreateObstacle();
 
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();

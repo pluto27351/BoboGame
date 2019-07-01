@@ -237,6 +237,7 @@
         <Project Name="PlayScene.csd" Type="Scene" />
         <File Name="scene101bg.tps" />
         <Project Name="TeachScene.csd" Type="Scene" />
+        <Project Name="Obstacle.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

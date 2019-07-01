@@ -46,23 +46,16 @@ bool GameScene::init()
 
 	rootNode = CSLoader::createNode("PlayScene.csb");
 	addChild(rootNode);
-	PntLoc = rootNode->getPosition();
-
-	// 箇更郎	
-	//SimpleAudioEngine::getInstance()->preloadEffect("./Audio/jump.WAV");
-
-	// 秙闽
-	/*_btnGo = new C3Button(Vec2(1120,125), "b_playOn.png", "b_playDown.png", "b_playDown.png");
-	this->addChild(_btnGo, 11);*/
 	
 	//B2World
 	_b2World = nullptr;
-	b2Vec2 Gravity = b2Vec2(0.0f, 0.0f);	//よ
+	b2Vec2 Gravity = b2Vec2(0.0f, -9.8f);	//よ
 	bool AllowSleep = true;					//す砛何帝
 	_b2World = new b2World(Gravity);		//承
 	_b2World->SetAllowSleeping(AllowSleep);	//砞﹚ンす砛何帝
 
 	CreatePlayer();// 產
+    CreateObstacle();
 
 	if (BOX2D_DEBUG) {
 		//DebugDrawInit
@@ -101,110 +94,26 @@ void GameScene::doStep(float dt)
 	int velocityIterations = 8; // 硉Ω计
 	int positionIterations = 1; // 竚Ω计Ω计砞﹚8~10 禫蔼禫痷龟瞯禫畉
 	_b2World->Step(dt, velocityIterations, positionIterations);
-	PlayerCollision();
-	for (b2Body* body = _b2World->GetBodyList(); body; body = body->GetNext()){
-		if (body->GetUserData() != NULL) {
-			Sprite *ballData = (Sprite*)body->GetUserData();
-			ballData->setPosition(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
-			ballData->setRotation(-1 *CC_RADIANS_TO_DEGREES(body->GetAngle()));
-		}
-	}
+    _Player->dostep();
+    for (b2Body* body = _b2World->GetBodyList(); body; body = body->GetNext()){
+        if (body->GetUserData() != NULL) {
+            Sprite *ballData = (Sprite*)body->GetUserData();
+            ballData->setPosition(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
+            ballData->setRotation(-1 *CC_RADIANS_TO_DEGREES(body->GetAngle()));
+        }
+    }
 }
 
 void GameScene::CreatePlayer() {
 	// 產
-	_Player = new CPlayer();
+	_Player = new CPlayer(_b2World);
 	this->addChild(_Player, 2);
 	_Player->RunAct();
-
-	// box2D
-	Point loc = _Player->GetPos();
-	Size ts = _Player->GetSize();
-	b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-	bodyDef.userData = _Player->_body;
-	//bodyDef.position.Set(PntLoc.x + loc.x / PTM_RATIO, PntLoc.y + loc.y / PTM_RATIO);
-	PlayerBody = _b2World->CreateBody(&bodyDef);
-
-	b2PolygonShape rectShape;
-	float scaleX = _Player->GetScale().x;	// キ絬琿瓜ボ安砞常Τ癸 X 禸
-	float scaleY = _Player->GetScale().y;	// キ絬琿瓜ボ安砞常Τ癸 X 禸
-
-	Point lep[4], wep[4];
-	lep[0].x = (ts.width - 25) / 2.0f;  lep[0].y = (ts.height - 40) / 2.0f;
-	lep[1].x = -(ts.width - 25) / 2.0f; lep[1].y = (ts.height - 40) / 2.0f;
-	lep[2].x = -(ts.width - 25) / 2.0f; lep[2].y = -(ts.height - 40) / 2.0f;
-	lep[3].x = (ts.width - 25) / 2.0f;  lep[3].y = -(ts.height - 40) / 2.0f;
-
-	cocos2d::Mat4 modelMatrix, rotMatrix;
-	modelMatrix.m[0] = scaleX;  // 砞﹚ X 禸罽
-	modelMatrix.m[5] = scaleY;  // 砞﹚ Y 禸罽
-	cocos2d::Mat4::createRotationZ(0 * M_PI / 180.0f, &rotMatrix);
-	modelMatrix.multiply(rotMatrix);
-	modelMatrix.m[3] = PntLoc.x + loc.x; //砞﹚ Translation克
-	modelMatrix.m[7] = PntLoc.y + loc.y; //砞﹚ Translation克
-	for (size_t j = 0; j < 4; j++)
-	{
-		wep[j].x = lep[j].x * modelMatrix.m[0] + lep[j].y * modelMatrix.m[1] + modelMatrix.m[3];
-		wep[j].y = lep[j].x * modelMatrix.m[4] + lep[j].y * modelMatrix.m[5] + modelMatrix.m[7];
-	}
-	b2Vec2 vecs[] = {
-		b2Vec2(wep[0].x / PTM_RATIO, wep[0].y / PTM_RATIO),
-		b2Vec2(wep[1].x / PTM_RATIO, wep[1].y / PTM_RATIO),
-		b2Vec2(wep[2].x / PTM_RATIO, wep[2].y / PTM_RATIO),
-		b2Vec2(wep[3].x / PTM_RATIO, wep[3].y / PTM_RATIO) };
-
-	rectShape.Set(vecs, 4);
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &rectShape;
-	fixtureDef.restitution = 0.5f;
-	fixtureDef.density = 0.1f;
-	fixtureDef.friction = 0.15f;
-	PlayerBody->CreateFixture(&fixtureDef);
 }
-void GameScene::PlayerCollision()
-{
-	PlayerBody->DestroyFixture(PlayerBody->GetFixtureList());
-	Point loc = _Player->GetPos();
-	Size ts = _Player->GetSize();
-	b2PolygonShape rectShape;
-	float scaleX = _Player->GetScale().x;	// キ絬琿瓜ボ安砞常Τ癸 X 禸
-	float scaleY = _Player->GetScale().y;	// キ絬琿瓜ボ安砞常Τ癸 X 禸
-	
-
-	Point lep[4], wep[4];
-	lep[0].x = (ts.width - 25) / 2.0f;  lep[0].y = (ts.height - 40) / 2.0f;
-	lep[1].x = -(ts.width - 25) / 2.0f; lep[1].y = (ts.height - 40) / 2.0f;
-	lep[2].x = -(ts.width - 25) / 2.0f; lep[2].y = -(ts.height - 40) / 2.0f;
-	lep[3].x = (ts.width - 25) / 2.0f;  lep[3].y = -(ts.height - 40) / 2.0f;
-
-	cocos2d::Mat4 modelMatrix, rotMatrix;
-	modelMatrix.m[0] = scaleX;  // 砞﹚ X 禸罽
-	modelMatrix.m[5] = scaleY;  // 砞﹚ Y 禸罽
-	cocos2d::Mat4::createRotationZ(0 * M_PI / 180.0f, &rotMatrix);
-	modelMatrix.multiply(rotMatrix);
-	modelMatrix.m[3] = PntLoc.x + loc.x; //砞﹚ Translation克
-	modelMatrix.m[7] = PntLoc.y + loc.y; //砞﹚ Translation克
-	for (size_t j = 0; j < 4; j++)
-	{
-		wep[j].x = lep[j].x * modelMatrix.m[0] + lep[j].y * modelMatrix.m[1] + modelMatrix.m[3];
-		wep[j].y = lep[j].x * modelMatrix.m[4] + lep[j].y * modelMatrix.m[5] + modelMatrix.m[7];
-	}
-	b2Vec2 vecs[] = {
-		b2Vec2(wep[0].x / PTM_RATIO, wep[0].y / PTM_RATIO),
-		b2Vec2(wep[1].x / PTM_RATIO, wep[1].y / PTM_RATIO),
-		b2Vec2(wep[2].x / PTM_RATIO, wep[2].y / PTM_RATIO),
-		b2Vec2(wep[3].x / PTM_RATIO, wep[3].y / PTM_RATIO) };
-
-	rectShape.Set(vecs, 4);
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &rectShape;
-	fixtureDef.restitution = 0.5f;
-	fixtureDef.density = 0.1f;
-	fixtureDef.friction = 0.15f;
-	PlayerBody->CreateFixture(&fixtureDef);
+void GameScene::CreateObstacle(){
+    _Obstacle = new CObstacle(_b2World,1);
+    this->addChild(_Obstacle,2);
 }
-
 void GameScene::ChangeScene()
 {
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101.plist");
