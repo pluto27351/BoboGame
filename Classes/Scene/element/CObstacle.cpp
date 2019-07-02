@@ -4,36 +4,33 @@
 USING_NS_CC;
 
 // on "init" you need to initialize your instance
-CObstacle::~CObstacle()
-{
-}
-CObstacle::CObstacle(b2World* _b2W, int L)
+CObstacle::~CObstacle(){}
+CObstacle::CObstacle(b2World* _b2W, int L, Point pt)
 {
     //圖片
-    Point Pt;
-    Pt = Vec2(250, 0);
-    //_Obstacle = CSLoader::createNode("Obstacle.csb");
+    _b2World = _b2W;
     char level[9];
     char name[4];
     sprintf(level, "Level_%d", L);
     int num = rand()%2;
     sprintf(name, "%d", num);
-    _Obstacle = CSLoader::createNode("Obstacle.csb")->getChildByName(level)->getChildByName(name);
-    _Obstacle->setPosition(Pt);
+    _Obstacle = CSLoader::createNode("Obstacle.csb")->getChildByName("Level_0")->getChildByName("0");
+    _Obstacle->setPosition(pt);
     this->addChild(_Obstacle);
-    _body = (cocos2d::Sprite *)_Obstacle;
-    
-    //box2d
-    _b2World = _b2W;
-    b2BodyDef bodyDef;
-    bodyDef.type = b2_staticBody;
-    bodyDef.userData = NULL;
-    Obstacleody = _b2World->CreateBody(&bodyDef);
-    CreateCollision();
+    _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    for(int i=0;_body!=NULL;i++){
+        CreateCollision();
+        sprintf(level, "Sprite_%d", i);
+        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
+    }
 }
 void CObstacle::CreateCollision(){
-    if(Obstacleody->GetFixtureList()!=NULL)
-        Obstacleody->DestroyFixture(Obstacleody->GetFixtureList());
+    //box2d
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_kinematicBody;
+    bodyDef.userData = _body;
+    bodyDef.position.Set(_body->getPosition().x / PTM_RATIO, _body->getPosition().y / PTM_RATIO);;
+    ObstacleBody = _b2World->CreateBody(&bodyDef);
     Point loc = _Obstacle->getPosition();
     Size ts = _body->getContentSize();
     b2PolygonShape rectShape;
@@ -51,8 +48,8 @@ void CObstacle::CreateCollision(){
     modelMatrix.m[5] = scaleY;  // •˝≥]©w Y ∂b™∫¡Y©Ò
     cocos2d::Mat4::createRotationZ(0 * M_PI / 180.0f, &rotMatrix);
     modelMatrix.multiply(rotMatrix);
-    modelMatrix.m[3] = loc.x; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
-    modelMatrix.m[7] = loc.y; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
+    modelMatrix.m[3] = /*PntLoc.x + */loc.x; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
+    modelMatrix.m[7] = /*PntLoc.y + */loc.y; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
     for (size_t j = 0; j < 4; j++)
     {
         wep[j].x = lep[j].x * modelMatrix.m[0] + lep[j].y * modelMatrix.m[1] + modelMatrix.m[3];
@@ -69,6 +66,6 @@ void CObstacle::CreateCollision(){
     fixtureDef.shape = &rectShape;
     fixtureDef.restitution = 0.5f;
     fixtureDef.density = 0.1f;
-    fixtureDef.friction = 0.15f;
-    Obstacleody->CreateFixture(&fixtureDef);
+    fixtureDef.friction = 0.0f;
+    ObstacleBody->CreateFixture(&fixtureDef);
 }

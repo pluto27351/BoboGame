@@ -4,21 +4,17 @@
 USING_NS_CC;
 
 // on "init" you need to initialize your instance
-CPlayer::~CPlayer()
-{
-	
-}
+CPlayer::~CPlayer(){}
 CPlayer::CPlayer(b2World* _b2W)
 {
     //圖片
-    pt = Vec2(190, 450);
+    pt = Vec2(250, 450);
     _Player = CSLoader::createNode("Ani/Player.csb");
     _Player->setPosition(pt);
     this->addChild(_Player);
     _PlayerAni = (ActionTimeline *)CSLoader::createTimeline("Ani/Player.csb");
     _Player->runAction(_PlayerAni);
 	_body = (cocos2d::Sprite *)_Player->getChildByName("bo");
-    
     //box2d
     _b2World = _b2W;
     b2BodyDef bodyDef;
@@ -68,8 +64,9 @@ void CPlayer::CreateCollision(){
     fixtureDef.shape = &rectShape;
     fixtureDef.restitution = 0.5f;
     fixtureDef.density = 0.1f;
-    fixtureDef.friction = 0.15f;
+    fixtureDef.friction = 0.0f;
     PlayerBody->CreateFixture(&fixtureDef);
+    PlayerBody->SetFixedRotation(1);
 }
 
 //跑步動作

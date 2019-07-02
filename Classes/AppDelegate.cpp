@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "Scene/HomeScene.h"
+#include "Scene/GameScene.h"
 
 USING_NS_CC;
 
@@ -42,7 +43,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
-    auto scene = HomeScene::createScene();
+    //auto scene = HomeScene::createScene();
+    auto scene = GameScene::createScene();
 
     // run
     director->runWithScene(scene);

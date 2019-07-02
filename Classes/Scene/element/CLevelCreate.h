@@ -5,7 +5,7 @@
 #include "ui/UIWidget.h"
 #include "SimpleAudioEngine.h"
 #include "cocostudio/CocoStudio.h"
-#include "Box2D/Box2D.h"
+#include "CObstacle.h"
 
 USING_NS_CC;
 
@@ -13,22 +13,16 @@ using namespace cocostudio::timeline;
 using namespace ui;
 using namespace CocosDenshion;
 
-class CObstacle : public cocos2d::Node
+class CLevelCreate : public cocos2d::Node
 {
 private:
-    Node* _Obstacle;
-    Sprite * _body;
-    
-    //b2world
+    float time = 0;
     b2World* _b2World;
-    b2Body* ObstacleBody;
 public:
-    CObstacle();
-    CObstacle(b2World* _b2W, int level, Point pt);
-    ~CObstacle();
-    
-    void CreateCollision();
+    CLevelCreate();
+    CLevelCreate(b2World* _b2W, int level);
+    ~CLevelCreate();
     
     // implement the "static create()" method manually
-    CREATE_FUNC(CObstacle);
+    CREATE_FUNC(CLevelCreate);
 };

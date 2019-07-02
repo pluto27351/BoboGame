@@ -59,6 +59,7 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */; };
 		F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */; };
 		F15F3EE3228FAE710036D916 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECC228FAE710036D916 /* HomeScene.cpp */; };
 		F15F3EE4228FAE710036D916 /* TeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECE228FAE710036D916 /* TeachScene.cpp */; };
@@ -131,6 +132,8 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CLevelCreate.cpp; sourceTree = "<group>"; };
+		F11FD32122CB7E9000E33BAC /* CLevelCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLevelCreate.h; sourceTree = "<group>"; };
 		F14F5D0722C9ED6000D8CEC1 /* CObstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CObstacle.h; sourceTree = "<group>"; };
 		F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CObstacle.cpp; sourceTree = "<group>"; };
 		F15F3ECB228FAE710036D916 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 				F15F3ED3228FAE710036D916 /* CButton.h */,
 				F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */,
 				F15F3ED9228FAE710036D916 /* CDrawPanel.h */,
+				F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */,
+				F11FD32122CB7E9000E33BAC /* CLevelCreate.h */,
 				F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */,
 				F15F3EF2228FAF370036D916 /* CNumberPannel.h */,
 				F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */,
@@ -516,6 +521,7 @@
 				F15F3EE6228FAE710036D916 /* CSwitch.cpp in Sources */,
 				F15F3EEB228FAE710036D916 /* CAnsCreater.cpp in Sources */,
 				F15F3EEA228FAE710036D916 /* CDrawPanel.cpp in Sources */,
+				F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */,
 				F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */,
 				F15F3EE5228FAE710036D916 /* BoardScene.cpp in Sources */,
 				F15F3EE8228FAE710036D916 /* CPlayer.cpp in Sources */,

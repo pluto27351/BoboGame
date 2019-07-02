@@ -87,8 +87,6 @@ bool GameScene::init()
 	return true;
 
 }
-
-
 void GameScene::doStep(float dt)
 {
 	int velocityIterations = 8; // 速度迭代次數
@@ -111,7 +109,8 @@ void GameScene::CreatePlayer() {
 	_Player->RunAct();
 }
 void GameScene::CreateObstacle(){
-    _Obstacle = new CObstacle(_b2World,1);
+    Point pt =Vec2(221, 0);
+    _Obstacle = new CObstacle(_b2World,1,pt);
     this->addChild(_Obstacle,2);
 }
 void GameScene::ChangeScene()

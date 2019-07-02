@@ -22,6 +22,7 @@ private:
 	ActionTimeline* _PlayerAni;
     JumpTo * jumpAction;
     Sprite * _body;
+    float time = 0;
     
     //b2world
     b2Body *PlayerBody;
