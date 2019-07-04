@@ -186,9 +186,15 @@
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
+          <Image Name="d_ground.png" />
+          <Image Name="d_ground_bigpit.png" />
+          <Image Name="d_ground_rockpit.png" />
+          <Image Name="d_ground_smallpit.png" />
+          <Image Name="gamescene.jpg" />
           <Image Name="homeBG.jpg" />
           <Image Name="MenuBG.jpg" />
-          <Image Name="mg.png" />
+          <Image Name="mg_1.png" />
+          <Image Name="mg_2.png" />
           <Image Name="topic1_back.png" />
         </Folder>
         <Folder Name="Que">
@@ -230,14 +236,13 @@
           <Project Name="q3_9.csd" Type="Node" />
         </Folder>
         <Project Name="BoardScene.csd" Type="Scene" />
-        <Image Name="body.png" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
+        <Project Name="Obstacle.csd" Type="Node" />
         <Project Name="PlayScene.csd" Type="Scene" />
         <File Name="scene101bg.tps" />
         <Project Name="TeachScene.csd" Type="Scene" />
-        <Project Name="Obstacle.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

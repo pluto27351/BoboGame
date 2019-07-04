@@ -16,12 +16,14 @@ using namespace CocosDenshion;
 class CLevelCreate : public cocos2d::Node
 {
 private:
+    Node *_DownGround[5];
     float time = 0;
     b2World* _b2World;
 public:
     CLevelCreate();
     CLevelCreate(b2World* _b2W, int level);
     ~CLevelCreate();
+    void dostep();
     
     // implement the "static create()" method manually
     CREATE_FUNC(CLevelCreate);

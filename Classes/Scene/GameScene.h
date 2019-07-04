@@ -7,7 +7,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "element/CButton.h"
 #include "element/CPlayer.h"
-#include "element/CObstacle.h"
+#include "element/CLevelCreate.h"
 
 #include "Box2D/Box2D.h"
 #include "element/GLES-Render.h"
@@ -23,8 +23,9 @@ class GameScene : public cocos2d::Layer
 {
 private:
 	Node *rootNode;
+    Sprite *midground[2];
 	CPlayer *_Player;
-    CObstacle *_Obstacle;
+    CLevelCreate *_Level;
 	
 	// b2World
 	b2World* _b2World;
@@ -37,7 +38,7 @@ public:
 	bool init();
 
 	void CreatePlayer();
-    void CreateObstacle();
+    void CreateLevel();
 
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();

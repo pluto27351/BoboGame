@@ -54,8 +54,11 @@ bool GameScene::init()
 	_b2World = new b2World(Gravity);		//創建世界
 	_b2World->SetAllowSleeping(AllowSleep);	//設定物件允許睡著
 
+    midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
+    midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
+    
 	CreatePlayer();// 放入玩家
-    CreateObstacle();
+    CreateLevel();
 
 	if (BOX2D_DEBUG) {
 		//DebugDrawInit
@@ -100,6 +103,13 @@ void GameScene::doStep(float dt)
             ballData->setRotation(-1 *CC_RADIANS_TO_DEGREES(body->GetAngle()));
         }
     }
+    if(midground[0]->getPosition().x < (-1575.52f))
+        midground[0]->setPosition(midground[1]->getPosition().x+2599.52f, 768);
+    midground[0]->setPosition(midground[0]->getPosition().x -10,768);
+    if(midground[1]->getPosition().x < (-1575.52f))
+        midground[1]->setPosition(midground[0]->getPosition().x+2599.52f, 768);
+    midground[1]->setPosition(midground[1]->getPosition().x -10,768);
+    _Level->dostep();
 }
 
 void GameScene::CreatePlayer() {
@@ -108,10 +118,9 @@ void GameScene::CreatePlayer() {
 	this->addChild(_Player, 2);
 	_Player->RunAct();
 }
-void GameScene::CreateObstacle(){
-    Point pt =Vec2(221, 0);
-    _Obstacle = new CObstacle(_b2World,1,pt);
-    this->addChild(_Obstacle,2);
+void GameScene::CreateLevel(){
+    _Level = new CLevelCreate(_b2World,1);
+    this->addChild(_Level,2);
 }
 void GameScene::ChangeScene()
 {
