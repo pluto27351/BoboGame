@@ -16,7 +16,7 @@ using namespace CocosDenshion;
 class CLevelCreate : public cocos2d::Node
 {
 private:
-    Node *_DownGround[5];
+    Node *_DownGround[6];
     float time = 0;
     b2World* _b2World;
 public:
