@@ -5,24 +5,18 @@ USING_NS_CC;
 
 // on "init" you need to initialize your instance
 CObstacle::~CObstacle(){}
-CObstacle::CObstacle(b2World* _b2W, int L, Point pt)
-{
-    //圖片
-    _b2World = _b2W;
-    char level[9];
-    char name[4];
-    sprintf(level, "Level_%d", L);
-    int num = rand()%2;
-    sprintf(name, "%d", num);
-    _Obstacle = CSLoader::createNode("Obstacle.csb")->getChildByName("Level_0")->getChildByName("0");
-    _Obstacle->setPosition(pt);
-    this->addChild(_Obstacle);
-    _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
-    for(int i=0;_body!=NULL;i++){
-        CreateCollision();
-        sprintf(level, "Sprite_%d", i);
-        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
-    }
+CObstacle::CObstacle(b2World* _b2W, Node* _ob, Point pt) {
+	_b2World = _b2W;
+	char level[9];
+	_Obstacle = _ob;
+	_Obstacle->setPosition(pt);
+	this->addChild(_Obstacle);
+	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+	for (int i = 1; _body != NULL; i++) {
+		CreateCollision();
+		sprintf(level, "Sprite_%d", i);
+		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
+	}
 }
 void CObstacle::CreateCollision(){
     //box2d
@@ -38,10 +32,10 @@ void CObstacle::CreateCollision(){
     float scaleY = _body->getScaleY();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
     
     Point lep[4], wep[4];
-    lep[0].x = (ts.width) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
-    lep[1].x = -(ts.width) / 2.0f; lep[1].y = (ts.height) / 2.0f;
-    lep[2].x = -(ts.width) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
-    lep[3].x = (ts.width) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
+    lep[0].x = (ts.width) / 2.0f;  lep[0].y = (ts.height-80) / 2.0f;
+    lep[1].x = -(ts.width) / 2.0f; lep[1].y = (ts.height-80) / 2.0f;
+    lep[2].x = -(ts.width) / 2.0f; lep[2].y = -(ts.height-80) / 2.0f;
+    lep[3].x = (ts.width) / 2.0f;  lep[3].y = -(ts.height-80) / 2.0f;
     
     cocos2d::Mat4 modelMatrix, rotMatrix;
     modelMatrix.m[0] = scaleX;  // •˝≥]©w X ∂b™∫¡Y©Ò
@@ -68,4 +62,20 @@ void CObstacle::CreateCollision(){
     fixtureDef.density = 0.1f;
     fixtureDef.friction = 0.0f;
     ObstacleBody->CreateFixture(&fixtureDef);
+}
+void CObstacle::Setpos(float x, float y) {
+    for (ObstacleBody = _b2World->GetBodyList(); ObstacleBody; ObstacleBody = ObstacleBody->GetNext()){
+        if(ObstacleBody->GetUserData()!=NULL)
+            ObstacleBody->SetTransform(b2Vec2(x / PTM_RATIO, ObstacleBody->GetPosition().y), 0);
+    }
+}
+Point CObstacle::Getpos() {
+	Point pos;
+    for (ObstacleBody = _b2World->GetBodyList(); ObstacleBody; ObstacleBody = ObstacleBody->GetNext()){
+        if(ObstacleBody->GetUserData()!=NULL){
+            pos.x = ObstacleBody->GetPosition().x * PTM_RATIO;
+            pos.y = ObstacleBody->GetPosition().y * PTM_RATIO;
+        }
+    }
+	return (pos);
 }
