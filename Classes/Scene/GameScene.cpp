@@ -21,8 +21,7 @@ GameScene::~GameScene() {
 
 	
 	// 釋放音效檔
-	//SimpleAudioEngine::getInstance()->unloadEffect("./Audio/jump.WAV"); 
-
+	//SimpleAudioEngine::getInstance()->unloadEffect("./Audio/jump.WAV");
 }
 
 Scene* GameScene::createScene()
@@ -59,7 +58,8 @@ bool GameScene::init()
     
 	CreatePlayer();// 放入玩家
     CreateLevel();
-
+    
+    _b2World->SetContactListener(&_contactListener);
 	if (BOX2D_DEBUG) {
 		//DebugDrawInit
 		_DebugDraw = nullptr;
@@ -92,6 +92,7 @@ bool GameScene::init()
 }
 void GameScene::doStep(float dt)
 {
+    _fSlipTime+=dt;
 	int velocityIterations = 8; // 速度迭代次數
 	int positionIterations = 1; // 位置迭代次數，迭代次數一般設定為8~10 越高越真實但效率越差
 	_b2World->Step(dt, velocityIterations, positionIterations);
@@ -105,18 +106,21 @@ void GameScene::doStep(float dt)
     }
     if(midground[0]->getPosition().x < (-1575.52f))
         midground[0]->setPosition(midground[1]->getPosition().x+2599.52f, 768);
-    midground[0]->setPosition(midground[0]->getPosition().x -10,768);
+    midground[0]->setPosition(midground[0]->getPosition().x -3,768);
     if(midground[1]->getPosition().x < (-1575.52f))
         midground[1]->setPosition(midground[0]->getPosition().x+2599.52f, 768);
-    midground[1]->setPosition(midground[1]->getPosition().x -10,768);
+    midground[1]->setPosition(midground[1]->getPosition().x -3,768);
     _Level->dostep();
+    if(_contactListener.RunFlag == true && _fSlipTime > 1.0f)
+        _Player->RunAct();
 }
 
 void GameScene::CreatePlayer() {
 	// 放入玩家
 	_Player = new CPlayer(_b2World);
 	this->addChild(_Player, 2);
-	_Player->RunAct();
+    _contactListener.setCollisionTargetPlayer(*(_Player->_body));
+    _Player->RunAct();
 }
 void GameScene::CreateLevel(){
     _Level = new CLevelCreate(_b2World,1);
@@ -136,13 +140,19 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸
 {
 	Point touchLoc = pTouch->getLocation();
     Rect rect = Director::getInstance()->getOpenGLView()->getVisibleRect();
-    if (touchLoc.x < rect.getMaxX()/2) {
+    if (touchLoc.x < rect.getMaxX()/2 && _fSlipTime > 1.0f) {
+        if(_contactListener.JumpFlag == false){
+            _fSlipTime = 0;
+            _Player->SlipAct();
+        }
+        else
+            _Player->AttackAct();
+    }
+    if (touchLoc.x > rect.getMaxX()/2 && _contactListener.JumpFlag == false) {
         _Player->JumpAct();
+        _contactListener.JumpFlag = true;
+        _contactListener.RunFlag = false;
     }
-    if (touchLoc.x > rect.getMaxX()/2) {
-        _Player->SlipAct();
-    }
-
 	return true;
 }
 
@@ -156,14 +166,44 @@ void  GameScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
 {
 	Point touchLoc = pTouch->getLocation();
-
-
 }
+
+CContactListener::CContactListener(){}
+void CContactListener::setCollisionTargetPlayer(cocos2d::Sprite &targetSprite){
+    _Playersprite = &targetSprite;
+}
+void CContactListener::BeginContact(b2Contact* contact){
+    b2Body* BodyA = contact->GetFixtureA()->GetBody();
+    b2Body* BodyB = contact->GetFixtureB()->GetBody();
+//    if(BodyA->GetFixtureList()->GetDensity() == -10000.0f){
+//        if(BodyB->GetUserData() == _Playersprite)
+//            CCLog("GameOver\n");
+//    }
+//    if(BodyB->GetFixtureList()->GetDensity() == -10000.0f){
+//        if(BodyA->GetUserData() == _Playersprite)
+//            CCLog("GameOver\n");
+//    }
+    if(BodyA->GetUserData() == _Playersprite){
+        if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
+            JumpFlag = false;
+            RunFlag = true;
+        }
+    }
+    if(BodyB->GetUserData() == _Playersprite){
+        if(BodyA->GetFixtureList()->GetDensity() == 0.0f){
+            JumpFlag = false;
+            RunFlag =true;
+        }
+    }
+}
+void CContactListener::EndContact(b2Contact* contact){
+    b2Body* BodyA = contact->GetFixtureA()->GetBody();
+    b2Body* BodyB = contact->GetFixtureB()->GetBody();
+    }
 
 void GameScene::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
 {
 	Director* director = Director::getInstance();
-
 	GL::enableVertexAttribs(cocos2d::GL::VERTEX_ATTRIB_FLAG_POSITION);
 	director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
 	_b2World->DrawDebugData();

@@ -19,6 +19,20 @@ using namespace cocostudio;
 using namespace ui;
 using namespace CocosDenshion;
 
+class CContactListener : public b2ContactListener
+{
+public:
+    bool JumpFlag = false;
+    bool RunFlag = true;
+    cocos2d::Sprite * _Playersprite;
+    CContactListener();
+    //¸I¼²¶}©l
+    virtual void BeginContact(b2Contact* contact);
+    //¸I¼²µ²§ô
+    virtual void EndContact(b2Contact* contact);
+    void setCollisionTargetPlayer(cocos2d::Sprite &targetSprite);
+};
+
 class GameScene : public cocos2d::Layer
 {
 private:
@@ -26,7 +40,11 @@ private:
     Sprite *midground[2];
 	CPlayer *_Player;
     CLevelCreate *_Level;
-	
+    float _fSlipTime = 1;
+    
+    //bool JumpFlag = false;
+    
+    CContactListener _contactListener;
 	// b2World
 	b2World* _b2World;
 	GLESDebugDraw* _DebugDraw;

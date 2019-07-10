@@ -28,10 +28,10 @@
           <PointFrame FrameIndex="19" X="-0.0004" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="20" X="-6.0004" Y="-4.0001">
+          <PointFrame FrameIndex="20" X="-6.0004" Y="-4.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="24" X="-6.0004" Y="-4.0001">
+          <PointFrame FrameIndex="24" X="-6.0004" Y="-4.0000">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="25" X="0.9979" Y="-4.0000">
@@ -61,19 +61,19 @@
           <PointFrame FrameIndex="47" X="10.9997" Y="-20.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="48" X="0.9994" Y="18.0000">
+          <PointFrame FrameIndex="48" X="0.9994" Y="-28.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="54" X="0.9994" Y="18.0000">
+          <PointFrame FrameIndex="55" X="0.9994" Y="-28.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="55" X="0.9994" Y="18.0000">
+          <PointFrame FrameIndex="56" X="-1.0000" Y="-67.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="56" X="-1.0005" Y="-62.0006">
+          <PointFrame FrameIndex="60" X="-1.0004" Y="-67.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="61" X="-1.0005" Y="-62.0006">
+          <PointFrame FrameIndex="61" X="-1.0005" Y="-67.0000">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="62" X="-6.0007" Y="50.9991">
@@ -129,9 +129,6 @@
           <ScaleFrame FrameIndex="47" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="54" X="1.0000" Y="1.0000">
-            <EasingData Type="0" />
-          </ScaleFrame>
           <ScaleFrame FrameIndex="55" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
@@ -174,9 +171,6 @@
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="47" X="0.0000" Y="0.0000">
-            <EasingData Type="0" />
-          </ScaleFrame>
-          <ScaleFrame FrameIndex="54" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="55" X="0.0000" Y="0.0000">
@@ -256,9 +250,6 @@
           <TextureFrame FrameIndex="48" Tween="False">
             <TextureFile Type="PlistSubImage" Path="jump_4.png" Plist="Img/bo.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="54" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_4.png" Plist="Img/bo.plist" />
-          </TextureFrame>
           <TextureFrame FrameIndex="55" Tween="False">
             <TextureFile Type="PlistSubImage" Path="jump_5.png" Plist="Img/bo.plist" />
           </TextureFrame>
@@ -314,7 +305,6 @@
           <BlendFuncFrame FrameIndex="41" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="47" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="48" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="54" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="55" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="56" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="61" Tween="False" Src="1" Dst="771" />
@@ -331,15 +321,15 @@
       <ObjectData Name="Node" Tag="50" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-103.0000" RightMargin="-121.0000" TopMargin="-109.0000" BottomMargin="-117.0000" ctype="SpriteObjectData">
-            <Size X="189.0000" Y="235.0000" />
+          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-112.0000" RightMargin="-112.0000" TopMargin="-113.0000" BottomMargin="-113.0000" ctype="SpriteObjectData">
+            <Size X="224.0000" Y="226.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="9.0000" Y="-4.0000" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="run_3.png" Plist="Img/bo.plist" />
+            <FileData Type="PlistSubImage" Path="run_1.png" Plist="Img/bo.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

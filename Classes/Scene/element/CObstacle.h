@@ -18,16 +18,19 @@ class CObstacle : public cocos2d::Node
 private:
     Node* _Obstacle;
     Sprite * _body;
+    int num = 0;
     
     //b2world
     b2World* _b2World;
-    b2Body* ObstacleBody;
+    b2Body** ObstacleBody;
 public:
     CObstacle();
-	CObstacle(b2World* _b2W, Node* _ob, Point pt);
+	CObstacle(b2World* _b2W, Node* _ob);
     ~CObstacle();
     
-    void CreateCollision();
+    float _fWidth = 0;
+    
+    void CreateCollision(int n);
 	void Setpos(float x, float y);
 	Point Getpos();
     

@@ -20,8 +20,6 @@ private:
     Point pt;
 	Node* _Player;
 	ActionTimeline* _PlayerAni;
-    JumpTo * jumpAction;
-    Sprite * _body;
     float time = 0;
     
     //b2world
@@ -29,13 +27,13 @@ private:
     b2World* _b2World;
     
     bool ActFlag = true;
-	int JumpTime = 0;
-
 public:
     CPlayer();
 	CPlayer(b2World* _b2W);
 	~CPlayer();
 
+    Sprite * _body;
+    
     void CreateCollision();
     void dostep();
     void RunAct();
@@ -43,7 +41,8 @@ public:
     void SlipAct();
     void AttackAct();
     void TensionAct();
-    void ActionEnd();
+    
+    //void ActionEnd();
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(CPlayer);

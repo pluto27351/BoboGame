@@ -60,6 +60,7 @@
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */; };
+		F14ED66222D5E1CE00A15B39 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14ED66122D5E1CE00A15B39 /* GameScene.cpp */; };
 		F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */; };
 		F15F3EE3228FAE710036D916 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECC228FAE710036D916 /* HomeScene.cpp */; };
 		F15F3EE4228FAE710036D916 /* TeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECE228FAE710036D916 /* TeachScene.cpp */; };
@@ -71,7 +72,6 @@
 		F15F3EEB228FAE710036D916 /* CAnsCreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */; };
 		F15F3EEC228FAE710036D916 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDF228FAE710036D916 /* MenuScene.cpp */; };
 		F15F3EF1228FAF200036D916 /* CNumberPannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */; };
-		F16D00DA22CE16AD00B0AB3E /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F16D00D922CE16AD00B0AB3E /* GameScene.cpp */; };
 		F1CFD06822C8A4690054151F /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD06422C8A4680054151F /* GLES-Render.cpp */; };
 		F1CFD06922C8A4690054151F /* GB2ShapeCache-x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */; };
 /* End PBXBuildFile section */
@@ -134,6 +134,7 @@
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CLevelCreate.cpp; sourceTree = "<group>"; };
 		F11FD32122CB7E9000E33BAC /* CLevelCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLevelCreate.h; sourceTree = "<group>"; };
+		F14ED66122D5E1CE00A15B39 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		F14F5D0722C9ED6000D8CEC1 /* CObstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CObstacle.h; sourceTree = "<group>"; };
 		F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CObstacle.cpp; sourceTree = "<group>"; };
 		F15F3ECB228FAE710036D916 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -158,7 +159,6 @@
 		F15F3EE1228FAE710036D916 /* BoardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardScene.h; sourceTree = "<group>"; };
 		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
 		F15F3EF2228FAF370036D916 /* CNumberPannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNumberPannel.h; sourceTree = "<group>"; };
-		F16D00D922CE16AD00B0AB3E /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		F1CFD06422C8A4680054151F /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		F1CFD06522C8A4680054151F /* GB2ShapeCache-x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GB2ShapeCache-x.h"; sourceTree = "<group>"; };
 		F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GB2ShapeCache-x.cpp"; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 				F15F3ED1228FAE710036D916 /* element */,
 				F15F3ECF228FAE710036D916 /* BoardScene.cpp */,
 				F15F3EE1228FAE710036D916 /* BoardScene.h */,
-				F16D00D922CE16AD00B0AB3E /* GameScene.cpp */,
+				F14ED66122D5E1CE00A15B39 /* GameScene.cpp */,
 				F15F3ECB228FAE710036D916 /* GameScene.h */,
 				F15F3ECC228FAE710036D916 /* HomeScene.cpp */,
 				F15F3ED0228FAE710036D916 /* HomeScene.h */,
@@ -521,7 +521,7 @@
 				F15F3EE6228FAE710036D916 /* CSwitch.cpp in Sources */,
 				F15F3EEB228FAE710036D916 /* CAnsCreater.cpp in Sources */,
 				F15F3EEA228FAE710036D916 /* CDrawPanel.cpp in Sources */,
-				F16D00DA22CE16AD00B0AB3E /* GameScene.cpp in Sources */,
+				F14ED66222D5E1CE00A15B39 /* GameScene.cpp in Sources */,
 				F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */,
 				F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */,
 				F15F3EE5228FAE710036D916 /* BoardScene.cpp in Sources */,

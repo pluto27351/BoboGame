@@ -8,7 +8,7 @@ CPlayer::~CPlayer(){}
 CPlayer::CPlayer(b2World* _b2W)
 {
     //圖片
-    pt = Vec2(250, 450);
+    pt = Vec2(250, 600);
     _Player = CSLoader::createNode("Ani/Player.csb");
     _Player->setPosition(pt);
     this->addChild(_Player);
@@ -22,6 +22,7 @@ CPlayer::CPlayer(b2World* _b2W)
     bodyDef.userData = _body;
     PlayerBody = _b2World->CreateBody(&bodyDef);
     CreateCollision();
+    _PlayerAni->gotoFrameAndPlay(0, 30, true);
 }
 void CPlayer::dostep(){
     CreateCollision();
@@ -62,7 +63,7 @@ void CPlayer::CreateCollision(){
     rectShape.Set(vecs, 4);
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &rectShape;
-    fixtureDef.restitution = 0.5f;
+    fixtureDef.restitution = 0.0f;
     fixtureDef.density = 0.1f;
     fixtureDef.friction = 0.0f;
     PlayerBody->CreateFixture(&fixtureDef);
@@ -71,53 +72,32 @@ void CPlayer::CreateCollision(){
 
 //跑步動作
 void CPlayer::RunAct() {
-    _PlayerAni->gotoFrameAndPlay(0, 30, true);
+    if(_PlayerAni->getCurrentFrame()>30)
+        _PlayerAni->gotoFrameAndPlay(0, 30, true);
 }
 void CPlayer::JumpAct(){
-    if(JumpTime == 0 && ActFlag == true){
-		jumpAction = cocos2d::JumpTo::create(1.0f, pt, 0, 1);
-        Sequence *sequence;
-        CallFunc *callback = CallFunc::create(this, callfunc_selector(CPlayer::ActionEnd));
-        _PlayerAni->gotoFrameAndPlay(31, 55, false);
-        sequence = Sequence::create(jumpAction, callback, NULL);
-        _Player->runAction(sequence);
-        ActFlag = false;
-        JumpTime = 1;
-    }
+    _PlayerAni->gotoFrameAndPlay(31, 55, false);
+    PlayerBody->SetTransform(b2Vec2(PlayerBody->GetPosition().x,PlayerBody->GetPosition().y + 15 / PTM_RATIO), 0);
+    PlayerBody->ApplyForceToCenter(b2Vec2(0,3000), 0);
 }
 void CPlayer::SlipAct(){
-    if(ActFlag == true){
-        _PlayerAni->gotoFrameAndPlay(56, 61, true);
-        MoveBy *slipAction = cocos2d::MoveBy::create(0.5f, Vec2(0, 0));
-        Sequence *sequence;
-        CallFunc *callback = CallFunc::create(this, callfunc_selector(CPlayer::ActionEnd));
-        sequence = Sequence::create(slipAction, callback, NULL);
-        _Player->runAction(sequence);
-        ActFlag = false;
-    }
-    else if(JumpTime == 1)
-        AttackAct();
+    _PlayerAni->gotoFrameAndPlay(56, 61, true);
+    ActFlag = false;
 }
 void CPlayer::AttackAct(){
-    _Player->stopActionByTag(jumpAction->getTag());
     _PlayerAni->gotoFrameAndPlay(62, 72, true);
-    MoveTo *AttackAction = cocos2d::MoveTo::create(0.3f, Vec2(pt));
-    Sequence *sequence;
-    CallFunc *callback = CallFunc::create(this, callfunc_selector(CPlayer::ActionEnd));
-    sequence = Sequence::create(AttackAction, callback, NULL);
-    _Player->runAction(sequence);
-    JumpTime = 2;
+    PlayerBody->ApplyForceToCenter(b2Vec2(0,-5000), 0);
 }
 void CPlayer::TensionAct(){
     _PlayerAni->gotoFrameAndPlay(73, 97, true);
 }
 
 //避免多重觸碰
-void CPlayer::ActionEnd() {
-	ActFlag = true;
-    JumpTime = 0;
-    RunAct();
-}
+//void CPlayer::ActionEnd() {
+//    ActFlag = true;
+//    JumpTime = 0;
+//    RunAct();
+//}
 
 ////停止動畫
 //void CPlayer::actionControl(bool run) {

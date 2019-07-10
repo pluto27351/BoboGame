@@ -190,6 +190,8 @@
           <Image Name="d_ground_bigpit.png" />
           <Image Name="d_ground_rockpit.png" />
           <Image Name="d_ground_smallpit.png" />
+          <Image Name="d_img_bigpit.png" />
+          <Image Name="d_img_smallpit.png" />
           <Image Name="gamescene.jpg" />
           <Image Name="homeBG.jpg" />
           <Image Name="MenuBG.jpg" />

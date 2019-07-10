@@ -1,30 +1,38 @@
 #include "CObstacle.h"
 #define PTM_RATIO 32.0f
+#define DG_WIDTH 425.0f
 
 USING_NS_CC;
 
 // on "init" you need to initialize your instance
 CObstacle::~CObstacle(){}
-CObstacle::CObstacle(b2World* _b2W, Node* _ob, Point pt) {
+CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 	_b2World = _b2W;
 	char level[9];
 	_Obstacle = _ob;
-	_Obstacle->setPosition(pt);
+	_Obstacle->setPosition(0,235);
 	this->addChild(_Obstacle);
+    _fWidth = DG_WIDTH * _Obstacle->getTag();
 	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
 	for (int i = 1; _body != NULL; i++) {
-		CreateCollision();
 		sprintf(level, "Sprite_%d", i);
 		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
+        num++;
 	}
+    ObstacleBody = new b2Body*[num];
+    for (int i = 0; i<num; i++){
+        sprintf(level, "Sprite_%d", i);
+        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
+        CreateCollision(i);
+    }
 }
-void CObstacle::CreateCollision(){
+void CObstacle::CreateCollision(int n){
     //box2d
     b2BodyDef bodyDef;
     bodyDef.type = b2_kinematicBody;
     bodyDef.userData = _body;
     bodyDef.position.Set(_body->getPosition().x / PTM_RATIO, _body->getPosition().y / PTM_RATIO);;
-    ObstacleBody = _b2World->CreateBody(&bodyDef);
+    ObstacleBody[n] = _b2World->CreateBody(&bodyDef);
     Point loc = _Obstacle->getPosition();
     Size ts = _body->getContentSize();
     b2PolygonShape rectShape;
@@ -58,24 +66,22 @@ void CObstacle::CreateCollision(){
     rectShape.Set(vecs, 4);
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &rectShape;
-    fixtureDef.restitution = 0.5f;
-    fixtureDef.density = 0.1f;
+    fixtureDef.restitution = 0.0f;
     fixtureDef.friction = 0.0f;
-    ObstacleBody->CreateFixture(&fixtureDef);
+    if(_body->getTag() == 1)
+        fixtureDef.density = -10000.0f;
+    else
+        fixtureDef.density = 0.0f;        
+    ObstacleBody[n]->CreateFixture(&fixtureDef);
 }
 void CObstacle::Setpos(float x, float y) {
-    for (ObstacleBody = _b2World->GetBodyList(); ObstacleBody; ObstacleBody = ObstacleBody->GetNext()){
-        if(ObstacleBody->GetUserData()!=NULL)
-            ObstacleBody->SetTransform(b2Vec2(x / PTM_RATIO, ObstacleBody->GetPosition().y), 0);
+    for (int i = 0; i<num; i++){
+        ObstacleBody[i]->SetTransform(b2Vec2(x / PTM_RATIO, ObstacleBody[i]->GetPosition().y), 0);
     }
 }
 Point CObstacle::Getpos() {
 	Point pos;
-    for (ObstacleBody = _b2World->GetBodyList(); ObstacleBody; ObstacleBody = ObstacleBody->GetNext()){
-        if(ObstacleBody->GetUserData()!=NULL){
-            pos.x = ObstacleBody->GetPosition().x * PTM_RATIO;
-            pos.y = ObstacleBody->GetPosition().y * PTM_RATIO;
-        }
-    }
+    pos.x = ObstacleBody[0]->GetPosition().x * PTM_RATIO;
+    pos.y = ObstacleBody[0]->GetPosition().y * PTM_RATIO;
 	return (pos);
 }
