@@ -30,6 +30,7 @@ public:
     
     float _fWidth = 0;
     
+    void ChangeObstacle(Node* _ob);
     void CreateCollision(int n);
 	void Setpos(float x, float y);
     void MoveBy(float x, float y);

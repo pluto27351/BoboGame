@@ -110,7 +110,7 @@ void GameScene::doStep(float dt)
     if(midground[1]->getPosition().x < (-1575.52f))
         midground[1]->setPosition(midground[0]->getPosition().x+2599.52f, 768);
     midground[1]->setPosition(midground[1]->getPosition().x -3,768);
-    _Level->dostep();
+    _Level->dostep(dt);
     if(_contactListener.RunFlag == true && _fSlipTime > 1.0f)
         _Player->RunAct();
 }

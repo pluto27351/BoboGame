@@ -8,25 +8,48 @@ USING_NS_CC;
 CObstacle::~CObstacle(){}
 CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 	_b2World = _b2W;
-	char level[9];
+	char sprite[9];
 	_Obstacle = _ob;
 	_Obstacle->setPosition(0,235);
 	this->addChild(_Obstacle);
     _fWidth = DG_WIDTH * _Obstacle->getTag();
 	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
 	for (int i = 1; _body != NULL; i++) {
-		sprintf(level, "Sprite_%d", i);
-		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
+		sprintf(sprite, "Sprite_%d", i);
+		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
         num++;
 	}
     ObstacleBody = new b2Body*[num];
     for (int i = 0; i<num; i++){
-        sprintf(level, "Sprite_%d", i);
-        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(level);
+        sprintf(sprite, "Sprite_%d", i);
+        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
+        CreateCollision(i);
+    }
+}
+void CObstacle::ChangeObstacle(Node* _ob){
+    //for(int i = 0; i < num; i++)
+        //delete ObstacleBody[i];
+    num = 0;
+    char sprite[9];
+    _Obstacle = _ob;
+    _Obstacle->setPosition(0,235);
+    _fWidth = DG_WIDTH * _Obstacle->getTag();
+    _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    for (int i = 1; _body != NULL; i++) {
+        sprintf(sprite, "Sprite_%d", i);
+        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
+        num++;
+    }
+    //ObstacleBody = new b2Body*[num];
+    for (int i = 0; i<num; i++){
+        sprintf(sprite, "Sprite_%d", i);
+        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
         CreateCollision(i);
     }
 }
 void CObstacle::CreateCollision(int n){
+    //if(ObstacleBody[n]->GetFixtureList()!=NULL)
+        //ObstacleBody[n]->DestroyFixture(ObstacleBody[n]->GetFixtureList());
     //box2d
     b2BodyDef bodyDef;
     bodyDef.type = b2_kinematicBody;

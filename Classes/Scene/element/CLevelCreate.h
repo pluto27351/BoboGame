@@ -23,7 +23,7 @@ public:
 	CLevelCreate();
 	CLevelCreate(b2World* _b2W, int level);
 	~CLevelCreate();
-	void dostep();
+	void dostep(float dt);
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(CLevelCreate);
