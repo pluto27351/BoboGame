@@ -151,6 +151,7 @@
             <PlistImageFile Name="menu_number_9.png" Key="menu_number_9.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
+            <PlistImageFile Name="btn_test.png" Key="btn_test.png" />
             <PlistImageFile Name="startpage_bg.png" Key="startpage_bg.png" />
             <PlistImageFile Name="startpage_front.png" Key="startpage_front.png" />
             <PlistImageFile Name="startpage_grass01.png" Key="startpage_grass01.png" />
@@ -158,9 +159,10 @@
             <PlistImageFile Name="startpage_grass03.png" Key="startpage_grass03.png" />
             <PlistImageFile Name="startpage_star.png" Key="startpage_star.png" />
             <PlistImageFile Name="startpage_tree.png" Key="startpage_tree.png" />
-            <PlistImageFile Name="btn_test.png" Key="btn_test.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_teach.png" PListFile="game_teach.plist" Name=".game_teach_PList.Dir">
+            <PlistImageFile Name="brush.png" Key="brush.png" />
+            <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
             <PlistImageFile Name="teacc_effect_right.png" Key="teacc_effect_right.png" />
             <PlistImageFile Name="teacc_effect_wrong.png" Key="teacc_effect_wrong.png" />
             <PlistImageFile Name="teach_bg.png" Key="teach_bg.png" />
@@ -188,8 +190,6 @@
             <PlistImageFile Name="teach_number_9.png" Key="teach_number_9.png" />
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
-            <PlistImageFile Name="brush.png" Key="brush.png" />
-            <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
@@ -204,77 +204,10 @@
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
         </Folder>
-        <Folder Name="que">
-          <Project Name="q1_1.csd" Type="Node" />
-          <Project Name="q1_10.csd" Type="Node" />
-          <Project Name="q1_11.csd" Type="Node" />
-          <Project Name="q1_12.csd" Type="Node" />
-          <Project Name="q1_2.csd" Type="Node" />
-          <Project Name="q1_3.csd" Type="Node" />
-          <Project Name="q1_4.csd" Type="Node" />
-          <Project Name="q1_5.csd" Type="Node" />
-          <Project Name="q1_6.csd" Type="Node" />
-          <Project Name="q1_7.csd" Type="Node" />
-          <Project Name="q1_8.csd" Type="Node" />
-          <Project Name="q1_9.csd" Type="Node" />
-          <Project Name="q2_1.csd" Type="Node" />
-          <Project Name="q2_10.csd" Type="Node" />
-          <Project Name="q2_11.csd" Type="Node" />
-          <Project Name="q2_12.csd" Type="Node" />
-          <Project Name="q2_2.csd" Type="Node" />
-          <Project Name="q2_3.csd" Type="Node" />
-          <Project Name="q2_4.csd" Type="Node" />
-          <Project Name="q2_5.csd" Type="Node" />
-          <Project Name="q2_6.csd" Type="Node" />
-          <Project Name="q2_7.csd" Type="Node" />
-          <Project Name="q2_8.csd" Type="Node" />
-          <Project Name="q2_9.csd" Type="Node" />
-          <Project Name="q3_1.csd" Type="Node" />
-          <Project Name="q3_10.csd" Type="Node" />
-          <Project Name="q3_11.csd" Type="Node" />
-          <Project Name="q3_12.csd" Type="Node" />
-          <Project Name="q3_2.csd" Type="Node" />
-          <Project Name="q3_3.csd" Type="Node" />
-          <Project Name="q3_4.csd" Type="Node" />
-          <Project Name="q3_5.csd" Type="Node" />
-          <Project Name="q3_6.csd" Type="Node" />
-          <Project Name="q3_7.csd" Type="Node" />
-          <Project Name="q3_8.csd" Type="Node" />
-          <Project Name="q3_9.csd" Type="Node" />
-          <Project Name="q4_1.csd" Type="Node" />
-          <Project Name="q4_10.csd" Type="Node" />
-          <Project Name="q4_11.csd" Type="Node" />
-          <Project Name="q4_12.csd" Type="Node" />
-          <Project Name="q4_2.csd" Type="Node" />
-          <Project Name="q4_3.csd" Type="Node" />
-          <Project Name="q4_4.csd" Type="Node" />
-          <Project Name="q4_5.csd" Type="Node" />
-          <Project Name="q4_6.csd" Type="Node" />
-          <Project Name="q4_7.csd" Type="Node" />
-          <Project Name="q4_8.csd" Type="Node" />
-          <Project Name="q4_9.csd" Type="Node" />
-          <Project Name="q5_1.csd" Type="Node" />
-          <Project Name="q5_10.csd" Type="Node" />
-          <Project Name="q5_11.csd" Type="Node" />
-          <Project Name="q5_12.csd" Type="Node" />
-          <Project Name="q5_2.csd" Type="Node" />
-          <Project Name="q5_3.csd" Type="Node" />
-          <Project Name="q5_4.csd" Type="Node" />
-          <Project Name="q5_5.csd" Type="Node" />
-          <Project Name="q5_6.csd" Type="Node" />
-          <Project Name="q5_7.csd" Type="Node" />
-          <Project Name="q5_8.csd" Type="Node" />
-          <Project Name="q5_9.csd" Type="Node" />
-        </Folder>
         <TTF Name="HanyiSentyTang.ttf" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="Obstacle.csd" Type="Node" />
         <Project Name="PlayScene.csd" Type="Scene" />
-        <File Name="scene101bg.tps" />
-        <Project Name="boardscene.csd" Type="Scene" />
-        <Project Name="mainscene.csd" Type="Scene" />
-        <Project Name="menuscene.csd" Type="Scene" />
-        <Project Name="teachscene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>
