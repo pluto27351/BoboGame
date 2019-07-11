@@ -37,15 +37,15 @@ void CNumberPannel::setAnswerInfo(Node *root){
         Vec2 rootPos = root->getPosition();
         Vec2 pos = btn->getPosition();
         
-        float sx =btn->getScaleX();
-        float sy =btn->getScaleY();
+        _ansAreaSize.x =btn->getScaleX();
+        _ansAreaSize.y =btn->getScaleY();
         _answerArea[i] = (Sprite *)Sprite::createWithSpriteFrameName("btn_test.png");
         _answerArea[i]->setPosition(rootPos + pos);
-        _answerArea[i]->setScaleX(sx);
-        _answerArea[i]->setScaleY(sy);
+        _answerArea[i]->setScaleX(_ansAreaSize.x);
+        _answerArea[i]->setScaleY(_ansAreaSize.y);
         auto size =_answerArea[i]->getContentSize();
-        size.width *= sx;
-        size.height *= sy;
+        size.width *= _ansAreaSize.x;
+        size.height *= _ansAreaSize.y;
         _answerAreaRect[i].size = size;
         _answerAreaRect[i].origin.x = rootPos.x + pos.x - size.width * 0.5f;
         _answerAreaRect[i].origin.y = rootPos.y + pos.y - size.height * 0.5f;
@@ -69,6 +69,7 @@ void CNumberPannel::setTouchedPic(int nowNumber,Point pos){
     sprintf(name, "teach_number_%d.png",_nowNumber);
     _touchedPic = (Sprite *)Sprite::createWithSpriteFrameName(name);
     _touchedPic->setPosition(pos);
+    _touchedPic->setScale(2);
     addChild(_touchedPic,1);
     _bMoveNumber = true;
 }
@@ -91,6 +92,8 @@ bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
             if(_answerNumber[i] != 0 && !_bMoveNumber){
                 setTouchedPic(_answerNumber[i],inPos);
                 _answerArea[i]->setDisplayFrame(_answerBg);
+                _answerArea[i]->setScaleX(_ansAreaSize.x);
+                _answerArea[i]->setScaleY(_ansAreaSize.y);
                 _answerNumber[i] = 0;
                 return true;
             }
@@ -121,6 +124,7 @@ bool CNumberPannel::touchesEnded(cocos2d::Point inPos){
             if(_answerAreaRect[i].containsPoint(inPos)){
                 _answerNumber[i] = _nowNumber;
                 _answerArea[i]->setDisplayFrame(_touchedPic->getDisplayFrame());
+                _answerArea[i]->setScale(2);
             }
         }
         _bMoveNumber =false;

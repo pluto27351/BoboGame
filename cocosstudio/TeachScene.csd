@@ -171,15 +171,14 @@
             <FileData Type="PlistSubImage" Path="teacc_effect_wrong.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="question" ActionTag="1356394672" Tag="18" IconVisible="True" LeftMargin="1047.8154" RightMargin="1000.1846" TopMargin="353.0323" BottomMargin="1182.9677" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="question" ActionTag="-873421350" Tag="29" IconVisible="True" LeftMargin="1047.8199" RightMargin="1000.1801" TopMargin="353.0300" BottomMargin="1182.9700" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="1047.8154" Y="1182.9677" />
+            <Position X="1047.8199" Y="1182.9700" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5116" Y="0.7702" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="Que/q1_1.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

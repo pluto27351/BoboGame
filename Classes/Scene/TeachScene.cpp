@@ -29,7 +29,7 @@ Scene* TeachScene::createScene(int unit)
 }
 
 void TeachScene::randomQuestion(int chap) {
-	rootNode = CSLoader::createNode("teachscene.csb");
+	rootNode = CSLoader::createNode("TeachScene.csb");
 
 	_chap = chap;
 
@@ -65,6 +65,7 @@ void TeachScene::randomQuestion(int chap) {
     }
 	_question->setPosition(target->getPosition());
 	this->addChild(_question);
+    
 }
 
 bool TeachScene::init()

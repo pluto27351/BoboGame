@@ -16,6 +16,7 @@ private:
     Sprite *_touchedPic,*_answerArea[3],*_numberbg;
     SpriteFrame *_answerBg;
     Rect _answerAreaRect[3];
+    Vec2 _ansAreaSize;
     bool _bShowNumber;
     bool _bMoveNumber;
     int _nowNumber;

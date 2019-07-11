@@ -4,7 +4,7 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) {
 	Node * answer;
 
 	char name[14];
-	sprintf(name, "que/q%d_%d.csb", uni, queNo);
+	sprintf(name, "Que/q%d_%d.csb", uni, queNo);
 	auto queNode = CSLoader::createNode(name);
 	Input_que(*queNode, number);
     addChild(queNode);
@@ -18,7 +18,7 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) {
 void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) {
 
     char name[14];
-    sprintf(name, "que/q%d_%d.csb", uni, queNo);
+    sprintf(name, "Que/q%d_%d.csb", uni, queNo);
     auto queNode = CSLoader::createNode(name);
     Input_que(*queNode, number,c,b);
     addChild(queNode);
