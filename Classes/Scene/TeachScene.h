@@ -21,6 +21,7 @@ class TeachScene : public cocos2d::Layer
 {
 private:
 	int _chap, _chapNo,_chapNum;
+    int _c,_b;
 	Node *rootNode;
 	Node *_right, *_wrong;
 	CButton _homeBtn,_answerBtn,_giveupBtn;

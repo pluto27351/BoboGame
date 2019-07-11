@@ -1,4 +1,4 @@
-﻿#include "CDrawPanel.h"
+#include "CDrawPanel.h"
 #include "Data.h"
 
 #define BRUSH_SIZE 0.35f
@@ -36,27 +36,27 @@ CDrawPanel *CDrawPanel::getInstance()
 
 void  CDrawPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	// 設定初始內容
 {
-	Sprite *pBtn = (Sprite *)rootNode.getChildByName("Pen");
+	Sprite *pBtn = (Sprite *)rootNode.getChildByName("pen");
 	Point pt = pBtn->getPosition();
 	auto s = pBtn->getScale();
-	_toolBtn[blackpen].setButtonInfo("pen_on.png", "pen_off.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[blackpen].setButtonInfo("teach_btn_pen.png", "teach_btn_pen.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[blackpen].setScale(s);
-	rootNode.removeChildByName("Pen");
+	rootNode.removeChildByName("pen");
 
-	pBtn = (Sprite *)rootNode.getChildByName("Eraser");
+	pBtn = (Sprite *)rootNode.getChildByName("eraser");
 	pt = pBtn->getPosition();
 	s = pBtn->getScale();
-	_toolBtn[eraser].setButtonInfo("eraser_on.png", "eraser_off.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[eraser].setButtonInfo("teach_btn_eraser.png", "teach_btn_eraser.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[eraser].setScale(s);
-	rootNode.removeChildByName("Eraser");
+	rootNode.removeChildByName("E=eraser");
 
 	// 設定清楚螢幕所有手繪圖型的按鈕
-	pBtn = (Sprite *)rootNode.getChildByName("Clear");
+	pBtn = (Sprite *)rootNode.getChildByName("clear");
 	pt = pBtn->getPosition();
 	s = pBtn->getScale();
-	_clearAllBtn.setButtonInfo("clearall_nl.png", "clearall_off.png", parent, pt, INTERFACE_LEVEL);
+	_clearAllBtn.setButtonInfo("teach_btn_clear.png", "teach_btn_clear.png", parent, pt, INTERFACE_LEVEL);
 	_clearAllBtn.setScale(s);
-	rootNode.removeChildByName("Clear");
+	rootNode.removeChildByName("clear");
 
 	_lineColor = Color3B(0, 0, 0);
 

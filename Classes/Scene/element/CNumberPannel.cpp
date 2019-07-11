@@ -8,17 +8,21 @@ Vec3 CNumberPannel::getBoxAns(){
 
 void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
     char name[20] = "";
-    _triggerBtn.setButtonInfo("s_menuOn.png", "s_menuDown.png", *this, locPt - Vec2(140,0), level);
-    _triggerBtn.setScale(1.705);
-    for(int i = 0; i < 3; i++){
-        sprintf(name, "bb_no%02d.png", i + 1);
-        _number[i].setButtonInfo(name, name, *this, locPt + Vec2(140 * i, 0), level);
+    char nn[5] = "";
+    _triggerBtn.setButtonInfo("teach_btn_number.png", "teach_btn_number.png", *this, locPt, level);
+    Node *numbox = CSLoader::createNode("Ani/t_number.csb");
+    for(int i = 0; i < 12; i++){
+        sprintf(name, "teach_number_%d.png", i + 1);
+        sprintf(nn, "%d", i + 1);
+        auto pos = numbox->getChildByName(nn)->getPosition();
+        _number[i].setButtonInfo(name, name, *this, locPt + pos, level);
     }
     _bShowNumber = false;
     _bMoveNumber = false;
     _answerNumber[0] = _answerNumber[1] = _answerNumber[2] = 0;
     setNumberVisual(_bShowNumber);
 }
+
 
 void CNumberPannel::setAnswerInfo(Node *root){
     char name[20] = "";
@@ -31,7 +35,7 @@ void CNumberPannel::setAnswerInfo(Node *root){
         
         float sx =btn->getScaleX();
         float sy =btn->getScaleY();
-        _answerArea[i] = (Sprite *)Sprite::createWithSpriteFrameName("w_bg.png");
+        _answerArea[i] = (Sprite *)Sprite::createWithSpriteFrameName("btn_test.png");
         _answerArea[i]->setPosition(rootPos + pos);
         _answerArea[i]->setScaleX(sx);
         _answerArea[i]->setScaleY(sy);
@@ -50,14 +54,14 @@ void CNumberPannel::setAnswerInfo(Node *root){
 }
 
 void CNumberPannel::setNumberVisual(bool s){
-    for(int i = 0; i < 3 ; i++) _number[i].setVisible(s);
+    for(int i = 0; i < 12; i++) _number[i].setVisible(s);
 }
 
 void CNumberPannel::setTouchedPic(int nowNumber,Point pos){
     _nowNumber = nowNumber;
     
     char name[20] = "";
-    sprintf(name, "bb_no%02d.png",_nowNumber);
+    sprintf(name, "teach_number_%d.png",_nowNumber);
     _touchedPic = (Sprite *)Sprite::createWithSpriteFrameName(name);
     _touchedPic->setPosition(pos);
     addChild(_touchedPic,1);
@@ -68,7 +72,7 @@ bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
     if(_triggerBtn.touchesBegin(inPos))return true;
     
     if(_bShowNumber){
-        for(int i=0;i<3;i++){
+        for(int i=0;i<12;i++){
             if(_number[i].touchesBegin(inPos)){
                 if(!_bMoveNumber) setTouchedPic(i+1,inPos);
                 return true;
@@ -99,7 +103,7 @@ bool CNumberPannel::touchesMoved(cocos2d::Point inPos){
     }
     
     if(_triggerBtn.touchesMoved(inPos))return true;
-    for(int i=0;i<3;i++){
+    for(int i=0;i<12;i++){
         if(_number[i].touchesMoved(inPos))return true;
     }
     
@@ -124,7 +128,7 @@ bool CNumberPannel::touchesEnded(cocos2d::Point inPos){
         return true;
     }
     
-    for(int i=0;i<3;i++){
+    for(int i=0;i<12;i++){
         if(_number[i].touchesEnded(inPos))return true;
     }
     

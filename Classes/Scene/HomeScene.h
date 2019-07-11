@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -20,8 +20,8 @@ class HomeScene : public cocos2d::Layer
 private:
 	int _iTitleTouchTime = 0;
 	CButton _bTitle;
-	Node *_grass[2];
-	ActionTimeline *_grassAction[2];
+	Node *_grass;
+	ActionTimeline *_grassAction;
 
 public:
 	~HomeScene();

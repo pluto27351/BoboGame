@@ -29,35 +29,38 @@ Scene* TeachScene::createScene(int unit)
 }
 
 void TeachScene::randomQuestion(int chap) {
-	rootNode = CSLoader::createNode("TeachScene.csb");
+	rootNode = CSLoader::createNode("teachscene.csb");
 
 	_chap = chap;
-	int n;
-//    do {
-//        n = random(1, 2);
-//    } while (n == _chapNo);
-//    _chapNo = n;
-
-	do {
-		n = random(2, 12);
-	} while (n == _chapNum);
-	_chapNum = n;
-
-	int *k;
-	k = new int;
-	delete k;
 
 	//設定題目
-	CCLOG("new!");
 	if (_question) {
 		this->removeChild(_question);  delete _question;
 	}
 
 	_question = new CAnsCreater;
-	auto target = rootNode->getChildByName("Question");
-	//_question->queCreater(_chap, _chapNo, _chapNum);
+	auto target = rootNode->getChildByName("question");
     _chapNo++;
-	_question->queCreater(_chap, _chapNo, _chapNum);
+    
+    srand(time(NULL));
+    auto objNum = UNIT_OBJ[_chap-1][_chapNo-1];
+    int num = (rand() % PIECE[objNum][0]) + 1;
+    _chapNum = PIECE[objNum][num];
+    
+    if(_chap == 5 && (_chapNo == 3||_chapNo == 4)){
+        int k = 0;
+        do {
+            _c = rand()%6;
+            _b= rand()%5;
+            k = UNIT5[_chapNum-2][_c][_b];  //數字都從2開始 a.c.b
+            _c+=2;_b+=2;
+        }while (k == 0);
+        
+        _question->queCreater(_chap, _chapNo, _chapNum,_c,_b);
+    }
+    else{
+        _question->queCreater(_chap, _chapNo, _chapNum);
+    }
 	_question->setPosition(target->getPosition());
 	this->addChild(_question);
 }
@@ -70,41 +73,39 @@ bool TeachScene::init()
 		return false;
 	}
 
-	rootNode = CSLoader::createNode("TeachScene.csb");
+	rootNode = CSLoader::createNode("teachscene.csb");
 
 	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101bg.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/handdrawing.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/equalcontrol.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_teach.plist");
 	char name[20] = "";
 
 	//返回按鈕
-	auto target = rootNode->getChildByName("HomeBtn");
-	_homeBtn.setButtonInfo("s_homeOn.png", "s_homeDown.png", *this, target->getPosition(), INTERFACE_LEVEL);
+	auto target = rootNode->getChildByName("home");
+	_homeBtn.setButtonInfo("teach_btn_home.png", "teach_btn_home.png", *this, target->getPosition(), INTERFACE_LEVEL);
 	_homeBtn.setScale(target->getScaleX(), target->getScaleY());
 	_homeBtn.setRotate(target->getRotation());
 	rootNode->removeChild(target);
 
 	//回答按鈕
-	target = rootNode->getChildByName("AnswerBtn");
-	_answerBtn.setButtonInfo("b_playOn.png", "b_playDown.png", *this, target->getPosition(), INTERFACE_LEVEL);
+	target = rootNode->getChildByName("answer");
+	_answerBtn.setButtonInfo("teach_btn_answer.png", "teach_btn_answer.png", *this, target->getPosition(), INTERFACE_LEVEL);
 	_answerBtn.setScale(target->getScaleX(), target->getScaleY());
 	_answerBtn.setRotate(target->getRotation());
 	rootNode->removeChild(target);
 
 	//放棄按鈕
-	target = rootNode->getChildByName("GiveupBtn");
-	_giveupBtn.setButtonInfo("s_closeOn.png", "s_closeDown.png", *this, target->getPosition(), INTERFACE_LEVEL);
+	target = rootNode->getChildByName("giveup");
+	_giveupBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png", *this, target->getPosition(), INTERFACE_LEVEL);
 	_giveupBtn.setScale(target->getScaleX(), target->getScaleY());
 	_giveupBtn.setRotate(target->getRotation());
 	rootNode->removeChild(target);
 
 	//數字區
 	_numberArea = new CNumberPannel;
-	target = rootNode->getChildByName("Number");
+	target = rootNode->getChildByName("number");
 	_numberArea->setNumberInfo(target->getPosition(), INTERFACE_LEVEL);
-	target = rootNode->getChildByName("Answer");
+	target = rootNode->getChildByName("answer_area");
 	_numberArea->setAnswerInfo(target);
 	this->addChild(_numberArea, INTERFACE_LEVEL);
 
@@ -113,8 +114,8 @@ bool TeachScene::init()
 	_handDrawing->initDrawingPanel(*rootNode, *this);
 	_handDrawing->retain();
 
-	_right = rootNode->getChildByName("Right");
-	_wrong = rootNode->getChildByName("Wrong");
+	_right = rootNode->getChildByName("right");
+	_wrong = rootNode->getChildByName("wrong");
 	_right->setVisible(false);
 	_wrong->setVisible(false);
 
@@ -142,10 +143,8 @@ void TeachScene::doStep(float dt)
 
 void TeachScene::ChangeScene()
 {
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101bg.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/handdrawing.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/equalcontrol.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_start.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_teach.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
 	auto scene = MenuScene::createScene();

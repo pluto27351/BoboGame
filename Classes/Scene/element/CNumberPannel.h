@@ -1,14 +1,18 @@
-#ifndef CNumberPannel_h
-#define CNumberPannel_h
+#pragma once
 
 #include "cocos2d.h"
 #include "CButton.h"
+#include "cocostudio/CocoStudio.h"
 
 USING_NS_CC;
+
+using namespace cocostudio::timeline;
+using namespace ui;
+
 class CNumberPannel:public Layer
 {
 private:
-    CButton _triggerBtn,_number[9];
+    CButton _triggerBtn,_number[12];
     Sprite *_touchedPic,*_answerArea[3];
     SpriteFrame *_answerBg;
     Rect _answerAreaRect[3];
@@ -30,4 +34,4 @@ public:
     CREATE_FUNC(CNumberPannel);
 };
 
-#endif /* CNumberPannel_h */
+/* CNumberPannel_h */

@@ -1,4 +1,4 @@
-﻿#include "MenuScene.h"
+#include "MenuScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "TeachScene.h"
@@ -41,33 +41,33 @@ bool MenuScene::init()
 		return false;
 	}
 
-	rootNode = CSLoader::createNode("MenuScene.csb");
+	rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101bg.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_menu.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");
 
 	char name[20] = "";
 
 	//章節按鈕
 	for (int i = 0; i < 5; i++) {
-		sprintf(name, "Chap_%02d", i + 1);
+		sprintf(name, "btn_%d", i + 1);
 		auto btn = rootNode->getChildByName(name);
-		_chapBtn[i].setButtonInfo("w_bg.png", "w_bg.png",*this, btn->getPosition(),1);
+		_chapBtn[i].setButtonInfo("btn_test.png", "btn_test.png",*this, btn->getPosition(),1);
 		_chapBtn[i].setScale(btn->getScaleX(), btn->getScaleY());
 		_chapBtn[i].setRotate(btn->getRotation());
 		rootNode->removeChild(btn);
 	}
 
 	//遊戲按鈕
-	auto btn = rootNode->getChildByName("Game");
-	_gameBtn.setButtonInfo("w_bg.png", "w_bg.png", *this, btn->getPosition(), 1);
+	auto btn = rootNode->getChildByName("btn_g");
+	_gameBtn.setButtonInfo("btn_test.png", "btn_test.png", *this, btn->getPosition(), 1);
 	_gameBtn.setScale(btn->getScaleX(), btn->getScaleY());
 	_gameBtn.setRotate(btn->getRotation());
 	rootNode->removeChild(btn);
 
 	//排行按鈕
-	btn = rootNode->getChildByName("Board");
-	_boardBtn.setButtonInfo("w_bg.png", "w_bg.png", *this, btn->getPosition(), 1);
+	btn = rootNode->getChildByName("btn_b");
+	_boardBtn.setButtonInfo("btn_test.png", "btn_test.png", *this, btn->getPosition(), 1);
 	_boardBtn.setScale(btn->getScaleX(), btn->getScaleY());
 	_boardBtn.setRotate(btn->getRotation());
 	rootNode->removeChild(btn);
@@ -94,8 +94,8 @@ void MenuScene::doStep(float dt)
 
 void MenuScene::ChangeScene(int changescene,int chap)
 {
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101bg.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_menu.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_start.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
 	Scene *scene;
@@ -124,19 +124,6 @@ bool MenuScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
 	}
 	_gameBtn.touchesBegin(touchLoc);
 	_boardBtn.touchesBegin(touchLoc);
-	////跳躍與攻擊
-	//if (touchLoc.y < 360  &&  START) {  
-	//	if (touchLoc.x < 640 && _Player->BulletFlag == false) {
-	//		_Player->RenderBullet();
-	//		SimpleAudioEngine::getInstance()->playEffect("./Audio/bullet.WAV", false);
-	//	}
-	//	else if (touchLoc.x >= 640 && _Player->JumpFlag == false && _Player->JumpTime < 2) {
-	//		_Player->JumpAct();
-	//		SimpleAudioEngine::getInstance()->playEffect("./Audio/jump.WAV", false);
-	//	}
-
-	//}
-
 
 	return true;
 }

@@ -4,12 +4,27 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) { //³æ¤¸¡DÃD¥Ø¡D¼Æ¦
 	Node * answer;
 
 	char name[14];
-	sprintf(name, "Que/q%d_%d.csb", uni, queNo);
+	sprintf(name, "que/q%d_%d.csb", uni, queNo);
 	auto queNode = CSLoader::createNode(name);
 	Input_que(*queNode, number);
-	AnsCreater(*queNode, number);
-	addChild(queNode);
+    addChild(queNode);
+    
+    sprintf(name,"ans/u%d_%d.csb",uni, queNo);
+    answer = CSLoader::createNode(name);
+    Input_ans(*answer, number);
 
+}
+
+void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) {
+
+    char name[14];
+    sprintf(name, "que/q%d_%d.csb", uni, queNo);
+    auto queNode = CSLoader::createNode(name);
+    Input_que(*queNode, number,c,b);
+    addChild(queNode);
+    
+    Input_ans(number,c,b);
+    
 }
 
 void CAnsCreater::Input_que(Node &Q, int number) {
@@ -57,18 +72,39 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 
 }
 
-void CAnsCreater::AnsCreater(Node &Q, int number) {
-	char Input[5];
-	char fn[3];
-	int inputData, data;
-	auto bg = (Node *)Q.getChildByName("Bg");
 
-	Node *Output_f = (Node *)Q.getChildByName("Answer");
-	Text *f = (Text *)Output_f->getChildByName("ntor");
-	sprintf(fn, "%d", f->getTag());
-	sprintf(Input, "%d", number);
-    int k = Output_f->getTag();
+void CAnsCreater::Input_que(Node &Q, int number,int c,int b) {
+    char Input[5];
+    char fn[3];
     
+    Text *Output_n = (Text *)Q.getChildByName("N_1");
+    sprintf(Input, "%d", c);
+    Output_n->setString(Input);
+   // Output_n->setTextColor(_textColor4B);
+    
+    Node *Output_f = (Node *)Q.getChildByName("F_1");
+    Text *ntor = (Text *)Output_f->getChildByName("ntor");
+    char bb[5],aa[5];
+    sprintf(bb,"%d",b);
+    sprintf(aa,"%d",number);
+    Output_f->addChild(Set_CAnsCreater(bb,aa,""));
+    Output_f->removeChildByName("ntor");
+
+}
+
+
+void CAnsCreater::Input_ans(Node &Q, int number) {
+    char Input[5];
+    char fn[3];
+    int inputData, data;
+    auto bg = (Node *)Q.getChildByName("bg");
+
+    Node *Output_f = (Node *)Q.getChildByName("F_1");
+    Text *f = (Text *)Output_f->getChildByName("ntor");
+    sprintf(fn, "%d", f->getTag());
+    sprintf(Input, "%d", number);
+    int k = Output_f->getTag();
+
     if(f->getTag() == -1){
         answer[0] = number / k;
         answer[2] = number % k;
@@ -80,9 +116,17 @@ void CAnsCreater::AnsCreater(Node &Q, int number) {
     if(k == 0)answer[1] = number;
     else answer[1] = k;
 
-	CCLOG("answer = %d,%d,%d", answer[0], answer[1], answer[2]);
-	Output_f->removeChildByName("Answer");
-	Output_f->removeChildByName("ntor");
+    CCLOG("answer = %d,%d,%d", answer[0], answer[1], answer[2]);
+
+}
+
+void CAnsCreater::Input_ans(int number,int c,int b) {
+    answer[0] = 0;
+    answer[1] = number;
+    answer[2] = b*c;
+    
+    CCLOG("answer = %d,%d,%d", answer[0], answer[1], answer[2]);
+    
 }
 
 bool CAnsCreater::CheckAnswer(Vec3 a) {

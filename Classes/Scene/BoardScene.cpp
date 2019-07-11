@@ -1,4 +1,4 @@
-﻿#include "BoardScene.h"
+#include "BoardScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "MenuScene.h"
@@ -35,7 +35,7 @@ bool BoardScene::init()
 		return false;
 	}
 
-	rootNode = CSLoader::createNode("BoardScene.csb");
+	rootNode = CSLoader::createNode("boardscene.csb");
 
 	addChild(rootNode);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101.plist");
