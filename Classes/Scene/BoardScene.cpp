@@ -38,14 +38,13 @@ bool BoardScene::init()
 	rootNode = CSLoader::createNode("boardscene.csb");
 
 	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/scene101bg.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_board.plist");
 
 	char name[20] = "";
 
 	//排行按鈕
 	auto btn = rootNode->getChildByName("HomeBtn");
-	_homeBtn.setButtonInfo("s_homeOn.png","s_homeDown.png",*this, btn->getPosition(), 1);
+	_homeBtn.setButtonInfo("board_backbtn.png","board_backbtn.png",*this, btn->getPosition(), 1);
 	_homeBtn.setScale(btn->getScaleX(), btn->getScaleY());
 	rootNode->removeChild(btn);
 
@@ -72,8 +71,7 @@ void BoardScene::doStep(float dt)
 
 void BoardScene::ChangeScene()
 {
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101bg.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_board.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
 	auto scene = MenuScene::createScene();
@@ -86,18 +84,7 @@ bool BoardScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
 	Point touchLoc = pTouch->getLocation();
 
 	_homeBtn.touchesBegin(touchLoc);
-	////跳躍與攻擊
-	//if (touchLoc.y < 360  &&  START) {  
-	//	if (touchLoc.x < 640 && _Player->BulletFlag == false) {
-	//		_Player->RenderBullet();
-	//		SimpleAudioEngine::getInstance()->playEffect("./Audio/bullet.WAV", false);
-	//	}
-	//	else if (touchLoc.x >= 640 && _Player->JumpFlag == false && _Player->JumpTime < 2) {
-	//		_Player->JumpAct();
-	//		SimpleAudioEngine::getInstance()->playEffect("./Audio/jump.WAV", false);
-	//	}
 
-	//}
 
 
 	return true;

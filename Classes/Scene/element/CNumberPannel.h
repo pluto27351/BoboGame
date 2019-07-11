@@ -13,7 +13,7 @@ class CNumberPannel:public Layer
 {
 private:
     CButton _triggerBtn,_number[12];
-    Sprite *_touchedPic,*_answerArea[3];
+    Sprite *_touchedPic,*_answerArea[3],*_numberbg;
     SpriteFrame *_answerBg;
     Rect _answerAreaRect[3];
     bool _bShowNumber;

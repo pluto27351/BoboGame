@@ -15,8 +15,12 @@ void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
         sprintf(name, "teach_number_%d.png", i + 1);
         sprintf(nn, "%d", i + 1);
         auto pos = numbox->getChildByName(nn)->getPosition();
-        _number[i].setButtonInfo(name, name, *this, locPt + pos, level);
+        _number[i].setButtonInfo(name, name, *this, locPt + pos+ Vec2(220,50), level);
     }
+    _numberbg = (Sprite *)Sprite::createWithSpriteFrameName("teach_number_bg.png");
+    _numberbg->setPosition(locPt + Vec2(220,50));
+    addChild(_numberbg,0);
+    
     _bShowNumber = false;
     _bMoveNumber = false;
     _answerNumber[0] = _answerNumber[1] = _answerNumber[2] = 0;
@@ -55,6 +59,7 @@ void CNumberPannel::setAnswerInfo(Node *root){
 
 void CNumberPannel::setNumberVisual(bool s){
     for(int i = 0; i < 12; i++) _number[i].setVisible(s);
+    _numberbg->setVisible(s);
 }
 
 void CNumberPannel::setTouchedPic(int nowNumber,Point pos){

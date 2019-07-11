@@ -42,6 +42,8 @@ void TeachScene::randomQuestion(int chap) {
 	auto target = rootNode->getChildByName("question");
     _chapNo++;
     
+    if(_chapNo == 13) return;
+    
     srand(time(NULL));
     auto objNum = UNIT_OBJ[_chap-1][_chapNo-1];
     int num = (rand() % PIECE[objNum][0]) + 1;

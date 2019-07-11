@@ -1,6 +1,6 @@
 #include "CAnsCreater.h"
 
-void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目．數字
+void CAnsCreater::queCreater(int uni, int queNo, int number) {
 	Node * answer;
 
 	char name[14];
@@ -33,7 +33,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	int inputData, data;
 	auto bg = (Node *)Q.getChildByName("bg");
 
-	//國字
+
 	inputData = bg->getTag();
 	data = inputData / 100;
 	for (int i = 0; i < data; i++) {
@@ -43,7 +43,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	}
 	inputData = inputData % 100;
 
-	//數字
+
 	data = inputData / 10;
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "N_%d", i + 1);
@@ -53,20 +53,31 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	}
 	inputData = inputData % 10;
 
-	//分數
+
 	data = inputData;
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "F_%d", i + 1);
 		Node *Output_f = (Node *)Q.getChildByName(Input);
-		Text *f = (Text *)Output_f->getChildByName("ntor");
-		sprintf(fn, "%d", f->getTag());
-		sprintf(Input, "%d", number);
-		if (f->getString().c_str()[0] == 'd') {
-			//判斷固定分子還分母 有d是固定分母
-			Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
-		}
-		else
-			Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
+		Text *ntor = (Text *)Output_f->getChildByName("ntor");
+        
+        int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};
+        if(outNumber[1] == 0)outNumber[1] = number;
+        
+        if(outNumber[0] != -1){
+            sprintf(Input, "%d", number);
+            outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
+        }
+        else {
+            outNumber[0] = number / outNumber[1];
+            outNumber[2] = number % outNumber[1];
+        }
+        char n[4],d[4],f[4];
+        sprintf(n, "%d", outNumber[2]);
+        sprintf(d, "%d", outNumber[1]);
+        sprintf(f, "%d", outNumber[0]);
+        
+        Output_f->addChild(Set_CAnsCreater(n,d,f));
+        
         Output_f->removeChildByName("ntor");
 	}
 
