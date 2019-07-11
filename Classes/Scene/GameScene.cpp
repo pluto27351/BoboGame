@@ -48,7 +48,7 @@ bool GameScene::init()
 	
 	//B2World
 	_b2World = nullptr;
-	b2Vec2 Gravity = b2Vec2(0.0f, -9.8f);	//重力方向
+	b2Vec2 Gravity = b2Vec2(0.0f, -98);	//重力方向
 	bool AllowSleep = true;					//允許睡著
 	_b2World = new b2World(Gravity);		//創建世界
 	_b2World->SetAllowSleeping(AllowSleep);	//設定物件允許睡著
@@ -185,13 +185,15 @@ void CContactListener::BeginContact(b2Contact* contact){
 //    }
     if(BodyA->GetUserData() == _Playersprite){
         if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
-            JumpFlag = false;
+            if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y<0)
+                JumpFlag = false;
             RunFlag = true;
         }
     }
     if(BodyB->GetUserData() == _Playersprite){
         if(BodyA->GetFixtureList()->GetDensity() == 0.0f){
-            JumpFlag = false;
+            if(BodyB->GetLinearVelocityFromWorldPoint(BodyA->GetPosition()).y<0)
+                JumpFlag = false;
             RunFlag =true;
         }
     }

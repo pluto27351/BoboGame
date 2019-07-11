@@ -76,7 +76,12 @@ void CObstacle::CreateCollision(int n){
 }
 void CObstacle::Setpos(float x, float y) {
     for (int i = 0; i<num; i++){
-        ObstacleBody[i]->SetTransform(b2Vec2(x / PTM_RATIO, ObstacleBody[i]->GetPosition().y), 0);
+        ObstacleBody[i]->SetTransform(b2Vec2(x / PTM_RATIO, y / PTM_RATIO), 0);
+    }
+}
+void CObstacle::MoveBy(float x, float y) {
+    for (int i = 0; i<num; i++){
+        ObstacleBody[i]->SetTransform(b2Vec2(ObstacleBody[i]->GetPosition().x + x / PTM_RATIO, ObstacleBody[i]->GetPosition().y + y / PTM_RATIO), 0);
     }
 }
 Point CObstacle::Getpos() {

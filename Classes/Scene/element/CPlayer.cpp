@@ -76,9 +76,10 @@ void CPlayer::RunAct() {
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
 }
 void CPlayer::JumpAct(){
-    _PlayerAni->gotoFrameAndPlay(31, 55, false);
-    PlayerBody->SetTransform(b2Vec2(PlayerBody->GetPosition().x,PlayerBody->GetPosition().y + 15 / PTM_RATIO), 0);
-    PlayerBody->ApplyForceToCenter(b2Vec2(0,3000), 0);
+    if(_PlayerAni->getCurrentFrame()<30){
+        _PlayerAni->gotoFrameAndPlay(31, 55, false);
+        PlayerBody->ApplyForceToCenter(b2Vec2(0,13000), 0);
+    }
 }
 void CPlayer::SlipAct(){
     _PlayerAni->gotoFrameAndPlay(56, 61, true);

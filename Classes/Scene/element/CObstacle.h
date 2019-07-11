@@ -32,6 +32,7 @@ public:
     
     void CreateCollision(int n);
 	void Setpos(float x, float y);
+    void MoveBy(float x, float y);
 	Point Getpos();
     
     // implement the "static create()" method manually
