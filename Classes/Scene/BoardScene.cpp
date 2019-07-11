@@ -35,7 +35,7 @@ bool BoardScene::init()
 		return false;
 	}
 
-	rootNode = CSLoader::createNode("boardscene.csb");
+	rootNode = CSLoader::createNode("BoardScene.csb");
 
 	addChild(rootNode);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_board.plist");

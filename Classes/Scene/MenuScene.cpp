@@ -41,7 +41,7 @@ bool MenuScene::init()
 		return false;
 	}
 
-	rootNode = CSLoader::createNode("menuscene.csb");
+	rootNode = CSLoader::createNode("MenuScene.csb");
 	addChild(rootNode);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_menu.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");

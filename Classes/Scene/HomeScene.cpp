@@ -39,10 +39,10 @@ bool HomeScene::init()
 		return false;
 	}
 
-	auto rootNode = CSLoader::createNode("mainscene.csb");
+	auto rootNode = CSLoader::createNode("MainScene.csb");
 	
 	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game_start.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");
 
 	//標題按鈕
 	auto title = rootNode->getChildByName("title");

@@ -204,10 +204,76 @@
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
         </Folder>
+        <Folder Name="Que">
+          <Project Name="q1_1.csd" Type="Node" />
+          <Project Name="q1_10.csd" Type="Node" />
+          <Project Name="q1_11.csd" Type="Node" />
+          <Project Name="q1_12.csd" Type="Node" />
+          <Project Name="q1_2.csd" Type="Node" />
+          <Project Name="q1_3.csd" Type="Node" />
+          <Project Name="q1_4.csd" Type="Node" />
+          <Project Name="q1_5.csd" Type="Node" />
+          <Project Name="q1_6.csd" Type="Node" />
+          <Project Name="q1_7.csd" Type="Node" />
+          <Project Name="q1_8.csd" Type="Node" />
+          <Project Name="q1_9.csd" Type="Node" />
+          <Project Name="q2_1.csd" Type="Node" />
+          <Project Name="q2_10.csd" Type="Node" />
+          <Project Name="q2_11.csd" Type="Node" />
+          <Project Name="q2_12.csd" Type="Node" />
+          <Project Name="q2_2.csd" Type="Node" />
+          <Project Name="q2_3.csd" Type="Node" />
+          <Project Name="q2_4.csd" Type="Node" />
+          <Project Name="q2_5.csd" Type="Node" />
+          <Project Name="q2_6.csd" Type="Node" />
+          <Project Name="q2_7.csd" Type="Node" />
+          <Project Name="q2_8.csd" Type="Node" />
+          <Project Name="q2_9.csd" Type="Node" />
+          <Project Name="q3_1.csd" Type="Node" />
+          <Project Name="q3_10.csd" Type="Node" />
+          <Project Name="q3_11.csd" Type="Node" />
+          <Project Name="q3_12.csd" Type="Node" />
+          <Project Name="q3_2.csd" Type="Node" />
+          <Project Name="q3_3.csd" Type="Node" />
+          <Project Name="q3_4.csd" Type="Node" />
+          <Project Name="q3_5.csd" Type="Node" />
+          <Project Name="q3_6.csd" Type="Node" />
+          <Project Name="q3_7.csd" Type="Node" />
+          <Project Name="q3_8.csd" Type="Node" />
+          <Project Name="q3_9.csd" Type="Node" />
+          <Project Name="q4_1.csd" Type="Node" />
+          <Project Name="q4_10.csd" Type="Node" />
+          <Project Name="q4_11.csd" Type="Node" />
+          <Project Name="q4_12.csd" Type="Node" />
+          <Project Name="q4_2.csd" Type="Node" />
+          <Project Name="q4_3.csd" Type="Node" />
+          <Project Name="q4_4.csd" Type="Node" />
+          <Project Name="q4_5.csd" Type="Node" />
+          <Project Name="q4_6.csd" Type="Node" />
+          <Project Name="q4_7.csd" Type="Node" />
+          <Project Name="q4_8.csd" Type="Node" />
+          <Project Name="q4_9.csd" Type="Node" />
+          <Project Name="q5_1.csd" Type="Node" />
+          <Project Name="q5_10.csd" Type="Node" />
+          <Project Name="q5_11.csd" Type="Node" />
+          <Project Name="q5_12.csd" Type="Node" />
+          <Project Name="q5_2.csd" Type="Node" />
+          <Project Name="q5_3.csd" Type="Node" />
+          <Project Name="q5_4.csd" Type="Node" />
+          <Project Name="q5_5.csd" Type="Node" />
+          <Project Name="q5_6.csd" Type="Node" />
+          <Project Name="q5_7.csd" Type="Node" />
+          <Project Name="q5_8.csd" Type="Node" />
+          <Project Name="q5_9.csd" Type="Node" />
+        </Folder>
+        <Project Name="BoardScene.csd" Type="Scene" />
         <TTF Name="HanyiSentyTang.ttf" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="Obstacle.csd" Type="Node" />
         <Project Name="PlayScene.csd" Type="Scene" />
+        <Project Name="TeachScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

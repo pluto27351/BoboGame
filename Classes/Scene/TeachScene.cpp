@@ -75,7 +75,7 @@ bool TeachScene::init()
 		return false;
 	}
 
-	rootNode = CSLoader::createNode("teachscene.csb");
+	rootNode = CSLoader::createNode("TeachScene.csb");
 
 	addChild(rootNode);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");
