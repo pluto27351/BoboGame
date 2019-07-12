@@ -22,6 +22,7 @@ using namespace CocosDenshion;
 class CContactListener : public b2ContactListener
 {
 public:
+	bool gameover = false;
     bool JumpFlag = false;
     bool RunFlag = true;
     cocos2d::Sprite * _Playersprite;
@@ -41,6 +42,7 @@ private:
 	CPlayer *_Player;
     CLevelCreate *_Level;
     float _fSlipTime = 1;
+	float _fGmaeTime = 0;
     
     //bool JumpFlag = false;
     

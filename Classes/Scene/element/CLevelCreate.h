@@ -19,6 +19,9 @@ private:
 	CObstacle *_DownGroundCollision[7];
 	float time = 0;
 	b2World* _b2World;
+
+	char level[9];
+	char name[4];
 public:
 	CLevelCreate();
 	CLevelCreate(b2World* _b2W, int level);

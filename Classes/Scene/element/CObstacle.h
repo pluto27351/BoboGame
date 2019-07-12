@@ -22,7 +22,7 @@ private:
     
     //b2world
     b2World* _b2World;
-    b2Body** ObstacleBody;
+    std::vector<b2Body*> ObstacleBody;
 public:
     CObstacle();
 	CObstacle(b2World* _b2W, Node* _ob);
@@ -31,7 +31,7 @@ public:
     float _fWidth = 0;
     
     void ChangeObstacle(Node* _ob);
-    void CreateCollision(int n);
+    void CreateCollision();
 	void Setpos(float x, float y);
     void MoveBy(float x, float y);
 	Point Getpos();

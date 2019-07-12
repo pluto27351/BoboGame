@@ -10,8 +10,9 @@ CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 	_b2World = _b2W;
 	char sprite[9];
 	_Obstacle = _ob;
-	_Obstacle->setPosition(0,235);
-	this->addChild(_Obstacle);
+	_Obstacle->setPosition(-300,235);
+	_Obstacle->setVisible(true);
+	this->addChild(_Obstacle, 1);
     _fWidth = DG_WIDTH * _Obstacle->getTag();
 	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
 	for (int i = 1; _body != NULL; i++) {
@@ -19,20 +20,24 @@ CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
         num++;
 	}
-    ObstacleBody = new b2Body*[num];
     for (int i = 0; i<num; i++){
         sprintf(sprite, "Sprite_%d", i);
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
-        CreateCollision(i);
+        CreateCollision();
     }
 }
 void CObstacle::ChangeObstacle(Node* _ob){
-    //for(int i = 0; i < num; i++)
-        //delete ObstacleBody[i];
+	for (int i = 0; i < num; i++) {
+		removeChild(_Obstacle);
+		_b2World->DestroyBody(ObstacleBody[i]);
+	}
+	std::vector <b2Body*>().swap(ObstacleBody);
     num = 0;
     char sprite[9];
     _Obstacle = _ob;
-    _Obstacle->setPosition(0,235);
+    _Obstacle->setPosition(-300,235);
+	_Obstacle->setVisible(true);
+	this->addChild(_Obstacle, 1);
     _fWidth = DG_WIDTH * _Obstacle->getTag();
     _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
     for (int i = 1; _body != NULL; i++) {
@@ -40,22 +45,19 @@ void CObstacle::ChangeObstacle(Node* _ob){
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
         num++;
     }
-    //ObstacleBody = new b2Body*[num];
     for (int i = 0; i<num; i++){
         sprintf(sprite, "Sprite_%d", i);
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
-        CreateCollision(i);
+        CreateCollision();
     }
 }
-void CObstacle::CreateCollision(int n){
-    //if(ObstacleBody[n]->GetFixtureList()!=NULL)
-        //ObstacleBody[n]->DestroyFixture(ObstacleBody[n]->GetFixtureList());
-    //box2d
+void CObstacle::CreateCollision(){
+	b2Body * _Cbody;
     b2BodyDef bodyDef;
     bodyDef.type = b2_kinematicBody;
     bodyDef.userData = _body;
     bodyDef.position.Set(_body->getPosition().x / PTM_RATIO, _body->getPosition().y / PTM_RATIO);;
-    ObstacleBody[n] = _b2World->CreateBody(&bodyDef);
+	_Cbody = _b2World->CreateBody(&bodyDef);
     Point loc = _Obstacle->getPosition();
     Size ts = _body->getContentSize();
     b2PolygonShape rectShape;
@@ -91,11 +93,10 @@ void CObstacle::CreateCollision(int n){
     fixtureDef.shape = &rectShape;
     fixtureDef.restitution = 0.0f;
     fixtureDef.friction = 0.0f;
-    if(_body->getTag() == 1)
-        fixtureDef.density = -10000.0f;
-    else
-        fixtureDef.density = 0.0f;        
-    ObstacleBody[n]->CreateFixture(&fixtureDef);
+	if (_body->getTag() == 1)
+		fixtureDef.isSensor = true;
+	_Cbody->CreateFixture(&fixtureDef);
+	ObstacleBody.push_back(_Cbody);
 }
 void CObstacle::Setpos(float x, float y) {
     for (int i = 0; i<num; i++){

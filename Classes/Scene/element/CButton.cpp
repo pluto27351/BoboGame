@@ -1,4 +1,4 @@
-ï»¿#include "CButton.h"
+#include "CButton.h"
 
 USING_NS_CC;
 
@@ -14,9 +14,9 @@ void CButton::setButtonInfo(const char *normalImg, const char *touchedImg, Layer
 	parent.addChild(_normalPic, level);
 	parent.addChild(_touchedPic, level);
 
-	// å–å¾—å¤§å°
+	// ¨ú±o¤j¤p
 	_BtnSize = _normalPic->getContentSize();
-	// è¨­å®šåˆ¤æ–·å€åŸŸ
+	// ³]©w§PÂ_°Ï°ì
 	_BtnRect.size = _BtnSize;
 	_BtnRect.origin.x = _BtnLoc.x - _BtnSize.width*0.5f;
 	_BtnRect.origin.y = _BtnLoc.y - _BtnSize.height*0.5f;
@@ -32,15 +32,15 @@ bool CButton::touchesBegin(cocos2d::Point inPos)
 		_bTouched = true;
 		_normalPic->setVisible(false);
 		_touchedPic->setVisible(true);
-		return(true); // æœ‰æŒ‰åœ¨ä¸Šé¢
+		return(true); // ¦³«ö¦b¤W­±
 	}
 	return(false);
 }
 
 bool CButton::touchesMoved(cocos2d::Point inPos)
 {
-	if (_bTouched) { // åªæœ‰è¢«æŒ‰ä½çš„æ™‚å€™æ‰è™•ç†
-		if (!_BtnRect.containsPoint(inPos)) { // æ‰‹æŒ‡é ­ä½ç½®é›¢é–‹æŒ‰éˆ•
+	if (_bTouched) { // ¥u¦³³Q«ö¦íªº®É­Ô¤~³B²z
+		if (!_BtnRect.containsPoint(inPos)) { // ¤â«üÀY¦ì¸mÂ÷¶}«ö¶s
 			_bTouched = false;
 			_normalPic->setVisible(true);
 			_touchedPic->setVisible(false);
@@ -48,7 +48,7 @@ bool CButton::touchesMoved(cocos2d::Point inPos)
 		}
 		else return(true);
 	}
-	return(false); // äº‹å¾Œå†ç§»åˆ°æŒ‰éˆ•ä¸Šå°‡è¢«å¿½ç•¥
+	return(false); // ¨Æ«á¦A²¾¨ì«ö¶s¤W±N³Q©¿²¤
 }
 
 bool CButton::touchesEnded(cocos2d::Point inPos)
@@ -58,7 +58,7 @@ bool CButton::touchesEnded(cocos2d::Point inPos)
 		_bTouched = false;
 		_normalPic->setVisible(true);
 		_touchedPic->setVisible(false);
-		if (_BtnRect.containsPoint(inPos)) return(true);  // æ‰‹æŒ‡é ­ä½ç½®æŒ‰éˆ•æ™‚ï¼Œé‚„åœ¨è©²æŒ‰éˆ•ä¸Š
+		if (_BtnRect.containsPoint(inPos)) return(true);  // ¤â«üÀY¦ì¸m«ö¶s®É¡AÁÙ¦b¸Ó«ö¶s¤W
 	}
 	return false;
 }

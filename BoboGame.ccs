@@ -199,10 +199,13 @@
           <Image Name="d_ground_smallpit.png" />
           <Image Name="d_img_bigpit.png" />
           <Image Name="d_img_smallpit.png" />
+          <Image Name="gameover_1.png" />
+          <Image Name="gameover_2.png" />
           <Image Name="gamescene.jpg" />
           <Image Name="MenuBG.jpg" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
+          <Image Name="timesup.png" />
         </Folder>
         <Folder Name="Que">
           <Project Name="q1_1.csd" Type="Node" />

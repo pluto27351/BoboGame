@@ -39,6 +39,39 @@
             <FileData Type="Normal" Path="Img/mg_2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="gameover_2" ActionTag="-298328664" VisibleForFrame="False" Tag="35" IconVisible="False" LeftMargin="-341.5000" RightMargin="-341.5000" ctype="SpriteObjectData">
+            <Size X="2731.0000" Y="1536.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1024.0000" Y="768.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.3335" Y="1.0000" />
+            <FileData Type="Normal" Path="Img/gameover_2.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="gameover_1" ActionTag="-652477609" VisibleForFrame="False" Tag="34" IconVisible="False" LeftMargin="211.0000" RightMargin="211.0000" TopMargin="184.0000" BottomMargin="648.0000" ctype="SpriteObjectData">
+            <Size X="1626.0000" Y="704.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1024.0000" Y="1000.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.6510" />
+            <PreSize X="0.7939" Y="0.4583" />
+            <FileData Type="Normal" Path="Img/gameover_1.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="timesup_3" ActionTag="-332552447" VisibleForFrame="False" Tag="36" IconVisible="False" LeftMargin="390.5000" RightMargin="390.5000" TopMargin="223.5000" BottomMargin="687.5000" ctype="SpriteObjectData">
+            <Size X="1267.0000" Y="625.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1024.0000" Y="1000.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.6510" />
+            <PreSize X="0.6187" Y="0.4069" />
+            <FileData Type="Normal" Path="Img/timesup.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

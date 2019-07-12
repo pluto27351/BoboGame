@@ -11,7 +11,7 @@ CPlayer::CPlayer(b2World* _b2W)
     pt = Vec2(250, 600);
     _Player = CSLoader::createNode("Ani/Player.csb");
     _Player->setPosition(pt);
-    this->addChild(_Player);
+	this->addChild(_Player, 1);
     _PlayerAni = (ActionTimeline *)CSLoader::createTimeline("Ani/Player.csb");
     _Player->runAction(_PlayerAni);
 	_body = (cocos2d::Sprite *)_Player->getChildByName("bo");

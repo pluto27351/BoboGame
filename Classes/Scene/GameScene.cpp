@@ -92,16 +92,29 @@ bool GameScene::init()
 }
 void GameScene::doStep(float dt)
 {
-    _fSlipTime+=dt;
+	_fSlipTime += dt;
+	_fGmaeTime += dt;
+	if (_contactListener.gameover == true) {
+        rootNode->getChildByName("gameover_1")->setVisible(true);
+        rootNode->getChildByName("gameover_2")->setVisible(true);
+		this->pause();
+        ChangeScene();
+	}
+	if(_fGmaeTime>30) {
+        rootNode->getChildByName("timesup_3")->setVisible(true);
+        rootNode->getChildByName("gameover_2")->setVisible(true);
+		this->pause();
+        ChangeScene();
+	}
 	int velocityIterations = 8; // 速度迭代次數
 	int positionIterations = 1; // 位置迭代次數，迭代次數一般設定為8~10 越高越真實但效率越差
 	_b2World->Step(dt, velocityIterations, positionIterations);
     _Player->dostep();
-    for (b2Body* body = _b2World->GetBodyList(); body; body = body->GetNext()){
+    for (b2Body* body = _b2World->GetBodyList(); body != NULL; body = body->GetNext()){
         if (body->GetUserData() != NULL) {
-            Sprite *ballData = (Sprite*)body->GetUserData();
-            ballData->setPosition(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
-            ballData->setRotation(-1 *CC_RADIANS_TO_DEGREES(body->GetAngle()));
+            Sprite *bodyData = (Sprite*)body->GetUserData();
+            bodyData->setPosition(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
+            bodyData->setRotation(-1 *CC_RADIANS_TO_DEGREES(body->GetAngle()));
         }
     }
     if(midground[0]->getPosition().x < (-1575.52f))
@@ -175,20 +188,15 @@ void CContactListener::setCollisionTargetPlayer(cocos2d::Sprite &targetSprite){
 void CContactListener::BeginContact(b2Contact* contact){
     b2Body* BodyA = contact->GetFixtureA()->GetBody();
     b2Body* BodyB = contact->GetFixtureB()->GetBody();
-//    if(BodyA->GetFixtureList()->GetDensity() == -10000.0f){
-//        if(BodyB->GetUserData() == _Playersprite)
-//            CCLog("GameOver\n");
-//    }
-//    if(BodyB->GetFixtureList()->GetDensity() == -10000.0f){
-//        if(BodyA->GetUserData() == _Playersprite)
-//            CCLog("GameOver\n");
-//    }
     if(BodyA->GetUserData() == _Playersprite){
         if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
             if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y<0)
                 JumpFlag = false;
             RunFlag = true;
         }
+		if (BodyB->GetFixtureList()->IsSensor() == true) {
+			gameover = true;
+		}
     }
     if(BodyB->GetUserData() == _Playersprite){
         if(BodyA->GetFixtureList()->GetDensity() == 0.0f){
@@ -196,6 +204,9 @@ void CContactListener::BeginContact(b2Contact* contact){
                 JumpFlag = false;
             RunFlag =true;
         }
+		if (BodyB->GetFixtureList()->IsSensor() == true) {
+			gameover = true;
+		}
     }
 }
 void CContactListener::EndContact(b2Contact* contact){

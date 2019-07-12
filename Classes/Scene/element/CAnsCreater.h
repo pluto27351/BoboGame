@@ -11,8 +11,8 @@ using namespace ui;
 class CAnsCreater : public cocos2d::Node
 {
 private:
-	char chiness[11][8] = {{"äºŒ"},{"ä¸‰"},{"å››"},{"äº”"},{"å…­"},{"ä¸ƒ"},{"å…«"},{"ä¹"},{"å"},{"åä¸€"},{"åäºŒ"}};
-	int answer[3] = {0,0,0}; //å¸¶ï¼æ¯ï¼å­
+	char chiness[11][8] = {{"¤G"},{"¤T"},{"¥|"},{"¤­"},{"¤»"},{"¤C"},{"¤K"},{"¤E"},{"¤Q"},{"¤Q¤@"},{"¤Q¤G"}};
+	int answer[3] = {0,0,0}; //±a¡D¥À¡D¤l
 public:
 	void queCreater(int uni, int queNo, int number);
 	void Input_que(cocos2d::Node &Q, int number);
@@ -26,7 +26,7 @@ public:
 
 	bool CheckAnswer(Vec3);
 
-	cocos2d::Node * Set_CAnsCreater(const char *numerator, const char *denominator, const char *front); //ç”Ÿæˆåˆ†æ•¸
+	cocos2d::Node * Set_CAnsCreater(const char *numerator, const char *denominator, const char *front); //¥Í¦¨¤À¼Æ
 	cocos2d::Node * CAnsCreaterOperation(int n);
 
 };
