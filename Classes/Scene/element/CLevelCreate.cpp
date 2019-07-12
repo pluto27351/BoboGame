@@ -9,7 +9,7 @@ CLevelCreate::CLevelCreate(b2World* _b2W, int L) {
 	char name[4];
 	for (int i = 0; i<7; i++) {
         int num = rand() % 3;
-        //if(num!=1)num=0;
+        if(num!=1)num=0;
         sprintf(level, "Level_%d", num);
         num = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(level)->getTag();
         sprintf(name, "%d", num);
