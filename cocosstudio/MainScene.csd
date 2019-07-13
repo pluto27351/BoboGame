@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="mainscene" Type="Scene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="3.10.0.0" />
+  <PropertyGroup Name="MainScene" Type="Scene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -24,7 +24,7 @@
             <Scale ScaleX="1.4149" ScaleY="1.1879" />
             <CColor A="255" R="191" G="191" B="191" />
             <PrePosition X="0.2785" Y="0.7359" />
-            <PreSize X="0.0225" Y="0.0299" />
+            <PreSize X="0.2441" Y="0.1953" />
             <FileData Type="PlistSubImage" Path="btn_test.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -70,6 +70,17 @@
             <PreSize X="0.0405" Y="0.0514" />
             <FileData Type="PlistSubImage" Path="startpage_star.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="name_1" ActionTag="-1273784870" Tag="55" IconVisible="False" LeftMargin="197.7288" RightMargin="1079.2712" TopMargin="206.8226" BottomMargin="1005.1774" ctype="SpriteObjectData">
+            <Size X="771.0000" Y="324.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="583.2288" Y="1167.1774" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.2848" Y="0.7599" />
+            <PreSize X="0.3765" Y="0.2109" />
+            <FileData Type="Normal" Path="Img/name.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -153,12 +153,12 @@
 		F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDrawPanel.cpp; sourceTree = "<group>"; };
 		F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAnsCreater.cpp; sourceTree = "<group>"; };
 		F15F3EDD228FAE710036D916 /* CPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlayer.h; sourceTree = "<group>"; };
-		F15F3EDE228FAE710036D916 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F15F3EDF228FAE710036D916 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
 		F15F3EE0228FAE710036D916 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		F15F3EE1228FAE710036D916 /* BoardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardScene.h; sourceTree = "<group>"; };
 		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
 		F15F3EF2228FAF370036D916 /* CNumberPannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNumberPannel.h; sourceTree = "<group>"; };
+		F17B36F622DA07AF00ADA574 /* CAnsCreater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F1CFD06422C8A4680054151F /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		F1CFD06522C8A4680054151F /* GB2ShapeCache-x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GB2ShapeCache-x.h"; sourceTree = "<group>"; };
 		F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GB2ShapeCache-x.cpp"; sourceTree = "<group>"; };
@@ -378,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */,
-				F15F3EDE228FAE710036D916 /* CAnsCreater.h */,
+				F17B36F622DA07AF00ADA574 /* CAnsCreater.h */,
 				F15F3ED6228FAE710036D916 /* CButton.cpp */,
 				F15F3ED3228FAE710036D916 /* CButton.h */,
 				F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */,

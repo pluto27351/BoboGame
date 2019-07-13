@@ -11,22 +11,23 @@ using namespace ui;
 class CAnsCreater : public cocos2d::Node
 {
 private:
-	char chiness[11][8] = {{"§G"},{"§T"},{"•|"},{"§≠"},{"§ª"},{"§C"},{"§K"},{"§E"},{"§Q"},{"§Q§@"},{"§Q§G"}};
-	int answer[3] = {0,0,0}; //±a°D•¿°D§l
+    char chiness[11][8] = {{"‰∫å"},{"‰∏â"},{"Âõõ"},{"‰∫î"},{"ÂÖ≠"},{"‰∏É"},{"ÂÖ´"},{"‰πù"},{"ÂçÅ"},{"ÂçÅ‰∏Ä"},{"ÂçÅ‰∫å"}};
+    int answer[3] = {0,0,0};
+    Color3B _textColor3B = Color3B(0,0,0);
+    Color4B _textColor4B = Color4B(0,0,0,255);
 public:
-	void queCreater(int uni, int queNo, int number);
-	void Input_que(cocos2d::Node &Q, int number);
-	void Input_ans(cocos2d::Node &Q, int number);
-
+    void queCreater(int uni, int queNo, int number);
+    void Input_que(cocos2d::Node &Q, int number);
+    void Input_ans(cocos2d::Node &Q, int number);
+    
     void queCreater(int uni, int queNo, int number,int c,int b);
     void Input_que(cocos2d::Node &Q, int number,int c,int b);
     void Input_ans(int number,int c,int b);
     
-	char *Numerator(const char *c, const char *number);
-
-	bool CheckAnswer(Vec3);
-
-	cocos2d::Node * Set_CAnsCreater(const char *numerator, const char *denominator, const char *front); //•Õ¶®§¿º∆
-	cocos2d::Node * CAnsCreaterOperation(int n);
-
+    char *Numerator(const char *c, const char *number);
+    
+    bool CheckAnswer(Vec3);
+    
+    cocos2d::Node * Set_CAnsCreater(const char *numerator, const char *denominator, const char *front);
+    cocos2d::Node * CAnsCreaterOperation(int n);
 };

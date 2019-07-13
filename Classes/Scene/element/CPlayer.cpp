@@ -37,10 +37,10 @@ void CPlayer::CreateCollision(){
     float scaleY = _body->getScaleY();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
     
     Point lep[4], wep[4];
-    lep[0].x = (ts.width) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
-    lep[1].x = -(ts.width) / 2.0f; lep[1].y = (ts.height) / 2.0f;
-    lep[2].x = -(ts.width) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
-    lep[3].x = (ts.width) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
+    lep[0].x = (ts.width-80) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
+    lep[1].x = -(ts.width-80) / 2.0f; lep[1].y = (ts.height) / 2.0f;
+    lep[2].x = -(ts.width-80) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
+    lep[3].x = (ts.width-80) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
     
     cocos2d::Mat4 modelMatrix, rotMatrix;
     modelMatrix.m[0] = scaleX;  // •˝≥]©w X ∂b™∫¡Y©Ò
@@ -79,7 +79,7 @@ void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<30){
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
         PlayerBody->SetTransform( b2Vec2(PlayerBody->GetPosition().x,PlayerBody->GetPosition().y+50/ PTM_RATIO), 0);
-        PlayerBody->ApplyForceToCenter(b2Vec2(0,13000), 0);
+        PlayerBody->ApplyForceToCenter(b2Vec2(0,10000), 0);
     }
 }
 void CPlayer::SlipAct(){
