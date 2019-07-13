@@ -79,7 +79,7 @@ void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<30){
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
         PlayerBody->SetTransform( b2Vec2(PlayerBody->GetPosition().x,PlayerBody->GetPosition().y+50/ PTM_RATIO), 0);
-        PlayerBody->ApplyForceToCenter(b2Vec2(0,10000), 0);
+        PlayerBody->ApplyForceToCenter(b2Vec2(0,8000), 0);
     }
 }
 void CPlayer::SlipAct(){

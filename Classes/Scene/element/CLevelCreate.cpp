@@ -1,4 +1,5 @@
 #include "CLevelCreate.h"
+#include<stdlib.h>
 
 USING_NS_CC;
 
