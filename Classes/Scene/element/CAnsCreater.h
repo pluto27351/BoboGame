@@ -19,6 +19,7 @@ public:
     void queCreater(int uni, int queNo, int number);
     void Input_que(cocos2d::Node &Q, int number);
     void Input_ans(cocos2d::Node &Q, int number);
+    void Input_ans2(cocos2d::Node &Q, int number); //暫時給第二章用
     
     void queCreater(int uni, int queNo, int number,int c,int b);
     void Input_que(cocos2d::Node &Q, int number,int c,int b);

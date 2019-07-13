@@ -1,11 +1,22 @@
 <GameFile>
-  <PropertyGroup Name="boardscene" Type="Scene" ID="cf45579f-5a9c-475b-8567-a954232c5db6" Version="3.10.0.0" />
+  <PropertyGroup Name="BoardScene" Type="Scene" ID="cf45579f-5a9c-475b-8567-a954232c5db6" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Scene" Tag="136" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
+          <AbstractNodeData Name="board_bg_1" ActionTag="893747266" Tag="138" IconVisible="False" LeftMargin="-341.5000" RightMargin="-341.5000" TopMargin="-117.5000" BottomMargin="-117.5000" ctype="SpriteObjectData">
+            <Size X="2731.0000" Y="1771.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1024.0000" Y="768.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.3335" Y="1.1530" />
+            <FileData Type="PlistSubImage" Path="board_bg.png" Plist="Img/game_board.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
           <AbstractNodeData Name="HomeBtn" ActionTag="1720204700" Tag="150" IconVisible="False" LeftMargin="-6.9218" RightMargin="1784.9219" TopMargin="12.2656" BottomMargin="1293.7344" ctype="SpriteObjectData">
             <Size X="270.0000" Y="230.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

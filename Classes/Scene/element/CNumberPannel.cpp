@@ -27,6 +27,22 @@ void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
     setNumberVisual(_bShowNumber);
 }
 
+void CNumberPannel::clear(){
+    _bShowNumber = false;
+    setNumberVisual(_bShowNumber);
+    _triggerBtn.setEnabled(true);
+    
+    for(int i=0; i<3; i++){
+        _answerArea[i]->setDisplayFrame(_answerBg);
+        _answerArea[i]->setScaleX(_ansAreaSize.x);
+        _answerArea[i]->setScaleY(_ansAreaSize.y);
+        _answerNumber[i] = 0;
+    }
+    
+    _bShowNumber = false;
+    _bMoveNumber = false;
+}
+
 
 void CNumberPannel::setAnswerInfo(Node *root){
     char name[20] = "";

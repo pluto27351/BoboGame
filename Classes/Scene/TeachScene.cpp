@@ -42,7 +42,7 @@ void TeachScene::randomQuestion(int chap) {
 	auto target = rootNode->getChildByName("question");
     _chapNo++;
     
-    if(_chapNo == 13) return;
+    if(_chapNo >= 13) return;
     
     srand(time(NULL));
     auto objNum = UNIT_OBJ[_chap-1][_chapNo-1];
@@ -160,6 +160,7 @@ void TeachScene::NextQuestion(float a) {
 
 	randomQuestion(_chap);
 	_handDrawing->clearWhiteBoard();
+    _numberArea->clear();
 }
 
 bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
@@ -194,7 +195,7 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 	if (_answerBtn.touchesEnded(touchLoc)) {
 		if (_question->CheckAnswer(_numberArea->getBoxAns())) {
 			_right->setVisible(true);
-			scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion),1.5f);
+			scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion),1.5f); //等待1.5秒再執行
 		}
 		else {
 			_wrong->setVisible(true);

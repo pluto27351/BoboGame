@@ -11,7 +11,8 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) {
     
     sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     answer = CSLoader::createNode(name);
-    Input_ans(*answer, number);
+    if(uni == 2) Input_ans2(*answer, number);
+    else Input_ans(*answer, number);
     
 }
 
@@ -127,7 +128,41 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
         answer[2] = std::atoi(Numerator(f->getString().c_str(), Input));
     }
     if(k == 0)answer[1] = number;
+    else if(answer[2] == 0){
+        answer[1] = 0;
+    }
     else answer[1] = k;
+    
+    CCLOG("answer = %d,%d,%d", answer[0], answer[1], answer[2]);
+    
+}
+
+void CAnsCreater::Input_ans2(Node &Q, int number) {
+    char Input[5];
+    char fn[3];
+    int inputData, data;
+    auto bg = (Node *)Q.getChildByName("bg");
+    
+    Node *Output_f = (Node *)Q.getChildByName("F_1");
+    Text *f = (Text *)Output_f->getChildByName("ntor");
+    sprintf(fn, "%d", f->getTag());
+    sprintf(Input, "%d", number);
+    int k = Output_f->getTag();
+    
+    if(f->getTag() == -1){
+        answer[0] = number / k +1;
+        answer[2] = number % k;
+    }
+    else {
+        answer[0] = std::atoi(fn);
+        answer[2] = std::atoi(Numerator(f->getString().c_str(), Input));
+    }
+    if(k == 0)answer[1] = number;
+    else if(answer[2] == 0){
+        answer[1] = 0;
+    }
+    else answer[1] = k;
+    
     
     CCLOG("answer = %d,%d,%d", answer[0], answer[1], answer[2]);
     

@@ -27,6 +27,7 @@ public:
     void setAnswerInfo(Node *);
     void setNumberVisual(bool);
     Vec3 getBoxAns();
+    void clear();
     void setTouchedPic(int,Point);
     bool touchesBegin(cocos2d::Point);
     bool touchesMoved(cocos2d::Point);
