@@ -99,23 +99,40 @@
             <PlistImageFile Name="1.png" Key="1.png" />
             <PlistImageFile Name="2.png" Key="2.png" />
             <PlistImageFile Name="3.png" Key="3.png" />
-            <PlistImageFile Name="big_pit.png" Key="big_pit.png" />
-            <PlistImageFile Name="flower.png" Key="flower.png" />
             <PlistImageFile Name="GO.png" Key="GO.png" />
-            <PlistImageFile Name="grass.png" Key="grass.png" />
-            <PlistImageFile Name="ground.png" Key="ground.png" />
-            <PlistImageFile Name="insect.png" Key="insect.png" />
-            <PlistImageFile Name="leaf.png" Key="leaf.png" />
-            <PlistImageFile Name="left_ground.png" Key="left_ground.png" />
-            <PlistImageFile Name="mid_ground.png" Key="mid_ground.png" />
-            <PlistImageFile Name="nail.png" Key="nail.png" />
-            <PlistImageFile Name="nail_ground.png" Key="nail_ground.png" />
-            <PlistImageFile Name="right_ground.png" Key="right_ground.png" />
-            <PlistImageFile Name="rock.png" Key="rock.png" />
-            <PlistImageFile Name="rock_ground.png" Key="rock_ground.png" />
-            <PlistImageFile Name="rock_pit.png" Key="rock_pit.png" />
-            <PlistImageFile Name="small_pit.png" Key="small_pit.png" />
-            <PlistImageFile Name="smallbo.png" Key="smallbo.png" />
+            <PlistImageFile Name="d_ground.png" Key="d_ground.png" />
+            <PlistImageFile Name="d_ground_bigpit.png" Key="d_ground_bigpit.png" />
+            <PlistImageFile Name="d_ground_rockpit.png" Key="d_ground_rockpit.png" />
+            <PlistImageFile Name="d_ground_smallpit.png" Key="d_ground_smallpit.png" />
+            <PlistImageFile Name="d_img.png" Key="d_img.png" />
+            <PlistImageFile Name="d_img_bigpit.png" Key="d_img_bigpit.png" />
+            <PlistImageFile Name="d_img_rockpit.png" Key="d_img_rockpit.png" />
+            <PlistImageFile Name="d_img_smallpit.png" Key="d_img_smallpit.png" />
+            <PlistImageFile Name="decoration_flower.png" Key="decoration_flower.png" />
+            <PlistImageFile Name="decoration_grass.png" Key="decoration_grass.png" />
+            <PlistImageFile Name="decoration_leaf.png" Key="decoration_leaf.png" />
+            <PlistImageFile Name="obstacle_bo.png" Key="obstacle_bo.png" />
+            <PlistImageFile Name="obstacle_button_01.png" Key="obstacle_button_01.png" />
+            <PlistImageFile Name="obstacle_button_02.png" Key="obstacle_button_02.png" />
+            <PlistImageFile Name="obstacle_cap_01.png" Key="obstacle_cap_01.png" />
+            <PlistImageFile Name="obstacle_cap_02.png" Key="obstacle_cap_02.png" />
+            <PlistImageFile Name="obstacle_cap_03.png" Key="obstacle_cap_03.png" />
+            <PlistImageFile Name="obstacle_fruit_01.png" Key="obstacle_fruit_01.png" />
+            <PlistImageFile Name="obstacle_fruit_02.png" Key="obstacle_fruit_02.png" />
+            <PlistImageFile Name="obstacle_fruit_03.png" Key="obstacle_fruit_03.png" />
+            <PlistImageFile Name="obstacle_insect.png" Key="obstacle_insect.png" />
+            <PlistImageFile Name="obstacle_marble_01.png" Key="obstacle_marble_01.png" />
+            <PlistImageFile Name="obstacle_marble_02.png" Key="obstacle_marble_02.png" />
+            <PlistImageFile Name="obstacle_nail.png" Key="obstacle_nail.png" />
+            <PlistImageFile Name="obstacle_pinecone.png" Key="obstacle_pinecone.png" />
+            <PlistImageFile Name="obstacle_rock.png" Key="obstacle_rock.png" />
+            <PlistImageFile Name="up_leftground.png" Key="up_leftground.png" />
+            <PlistImageFile Name="up_leftlight.png" Key="up_leftlight.png" />
+            <PlistImageFile Name="up_midground.png" Key="up_midground.png" />
+            <PlistImageFile Name="up_midlight.png" Key="up_midlight.png" />
+            <PlistImageFile Name="up_rightground.png" Key="up_rightground.png" />
+            <PlistImageFile Name="up_rightlight.png" Key="up_rightlight.png" />
+            <PlistImageFile Name="up_rockground.png" Key="up_rockground.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_menu.png" PListFile="game_menu.plist" Name=".game_menu_PList.Dir">
             <PlistImageFile Name="menu_btn_board.png" Key="menu_btn_board.png" />
@@ -194,20 +211,11 @@
           <Image Name="bar.png" />
           <Image Name="bg.png" />
           <Image Name="bg_menu.png" />
-          <Image Name="d_ground.png" />
-          <Image Name="d_ground_bigpit.png" />
-          <Image Name="d_ground_rockpit.png" />
-          <Image Name="d_ground_smallpit.png" />
-          <Image Name="d_img_bigpit.png" />
-          <Image Name="d_img_smallpit.png" />
-          <Image Name="gameover_1.png" />
-          <Image Name="gameover_2.png" />
           <Image Name="gamescene.jpg" />
           <Image Name="MenuBG.jpg" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
           <Image Name="name.png" />
-          <Image Name="timesup.png" />
         </Folder>
         <Folder Name="Que">
           <Project Name="q1_1.csd" Type="Node" />

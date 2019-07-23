@@ -20,7 +20,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_ground.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -53,7 +53,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_ground_smallpit.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_1" ActionTag="1328879705" Tag="1" IconVisible="False" LeftMargin="-155.0000" RightMargin="-155.0000" TopMargin="-245.5000" BottomMargin="-243.5000" ctype="SpriteObjectData">
@@ -64,7 +64,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_img_smallpit.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -86,7 +86,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_ground_rockpit.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_1" ActionTag="656009379" Tag="1" IconVisible="False" LeftMargin="-155.0000" RightMargin="-155.0000" TopMargin="-245.5000" BottomMargin="-243.5000" ctype="SpriteObjectData">
@@ -97,7 +97,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_img_smallpit.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -130,7 +130,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_ground_bigpit.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_1" ActionTag="-377965350" Tag="1" IconVisible="False" LeftMargin="-272.0000" RightMargin="-272.0000" TopMargin="-245.5000" BottomMargin="-243.5000" ctype="SpriteObjectData">
@@ -141,7 +141,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_img_bigpit.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_2" ActionTag="-672352438" Tag="25" IconVisible="False" LeftMargin="-307.8214" RightMargin="119.8214" TopMargin="-733.4604" BottomMargin="634.4604" ctype="SpriteObjectData">
@@ -152,7 +152,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="left_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_3" ActionTag="-1962988539" Tag="26" IconVisible="False" LeftMargin="-159.5376" RightMargin="8.5376" TopMargin="-736.5796" BottomMargin="634.5796" ctype="SpriteObjectData">
@@ -163,7 +163,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="mid_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_4" ActionTag="208678977" Tag="27" IconVisible="False" LeftMargin="-48.9532" RightMargin="-102.0468" TopMargin="-736.3136" BottomMargin="634.3136" ctype="SpriteObjectData">
@@ -174,7 +174,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="mid_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_5" ActionTag="-1764914083" Tag="28" IconVisible="False" LeftMargin="60.0092" RightMargin="-211.0092" TopMargin="-732.8036" BottomMargin="630.8036" ctype="SpriteObjectData">
@@ -185,7 +185,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="mid_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_6" ActionTag="2077570065" Tag="29" IconVisible="False" LeftMargin="170.5406" RightMargin="-326.5406" TopMargin="-738.3364" BottomMargin="626.3364" ctype="SpriteObjectData">
@@ -196,7 +196,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="right_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -218,7 +218,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/d_ground.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_1" ActionTag="160748195" Tag="1" IconVisible="False" LeftMargin="-187.0010" RightMargin="-186.9990" TopMargin="-501.6199" BottomMargin="190.6199" ctype="SpriteObjectData">
@@ -229,7 +229,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="rock.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_2" ActionTag="915851368" IconVisible="False" LeftMargin="-317.8214" RightMargin="129.8214" TopMargin="-743.4604" BottomMargin="644.4604" ctype="SpriteObjectData">
@@ -240,7 +240,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="left_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_3" ActionTag="-560053346" IconVisible="False" LeftMargin="-169.5375" RightMargin="18.5375" TopMargin="-746.5796" BottomMargin="644.5796" ctype="SpriteObjectData">
@@ -251,7 +251,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="mid_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_4" ActionTag="1359137016" IconVisible="False" LeftMargin="-58.9532" RightMargin="-92.0468" TopMargin="-746.3136" BottomMargin="644.3136" ctype="SpriteObjectData">
@@ -262,7 +262,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="mid_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_5" ActionTag="-876824533" IconVisible="False" LeftMargin="50.0093" RightMargin="-201.0093" TopMargin="-742.8035" BottomMargin="640.8035" ctype="SpriteObjectData">
@@ -273,7 +273,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="mid_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_6" ActionTag="-1410296547" IconVisible="False" LeftMargin="160.5406" RightMargin="-316.5406" TopMargin="-748.3364" BottomMargin="636.3364" ctype="SpriteObjectData">
@@ -284,7 +284,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="PlistSubImage" Path="right_ground.png" Plist="Img/game_element.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
