@@ -20,7 +20,7 @@ GameScene::~GameScene() {
 	}*/
 
 	
-	// ÄÀ©ñ­µ®ÄÀÉ
+	// é‡‹æ”¾éŸ³æ•ˆæª”
 	//SimpleAudioEngine::getInstance()->unloadEffect("./Audio/jump.WAV");
 }
 
@@ -48,15 +48,16 @@ bool GameScene::init()
 	
 	//B2World
 	_b2World = nullptr;
-	b2Vec2 Gravity = b2Vec2(0.0f, -98);	//­«¤O¤è¦V
-	bool AllowSleep = true;					//¤¹³\ºÎµÛ
-	_b2World = new b2World(Gravity);		//³Ğ«Ø¥@¬É
-	_b2World->SetAllowSleeping(AllowSleep);	//³]©wª«¥ó¤¹³\ºÎµÛ
+	b2Vec2 Gravity = b2Vec2(0.0f, -98);	//é‡åŠ›æ–¹å‘
+	bool AllowSleep = true;					//å…è¨±ç¡è‘—
+	_b2World = new b2World(Gravity);		//å‰µå»ºä¸–ç•Œ
+	_b2World->SetAllowSleeping(AllowSleep);	//è¨­å®šç‰©ä»¶å…è¨±ç¡è‘—
 
     midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
     midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
     
-	CreatePlayer();// ©ñ¤Jª±®a
+	CreatePlayer();// æ”¾å…¥ç©å®¶
+	CreateGround();
     CreateLevel();
     
     _b2World->SetContactListener(&_contactListener);
@@ -64,28 +65,28 @@ bool GameScene::init()
 		//DebugDrawInit
 		_DebugDraw = nullptr;
 		_DebugDraw = new GLESDebugDraw(PTM_RATIO);
-		//³]©wDebugDraw
+		//è¨­å®šDebugDraw
 		_b2World->SetDebugDraw(_DebugDraw);
-		//¿ï¾ÜÃ¸»s«¬§O
+		//é¸æ“‡ç¹ªè£½å‹åˆ¥
 		uint32 flags = 0;
-		flags += GLESDebugDraw::e_shapeBit;						//Ã¸»s§Îª¬
+		flags += GLESDebugDraw::e_shapeBit;						//ç¹ªè£½å½¢ç‹€
 		flags += GLESDebugDraw::e_pairBit;
 		flags += GLESDebugDraw::e_jointBit;
 		flags += GLESDebugDraw::e_centerOfMassBit;
 		flags += GLESDebugDraw::e_aabbBit;
-		//³]©wÃ¸»sÃş«¬
+		//è¨­å®šç¹ªè£½é¡å‹
 		_DebugDraw->SetFlags(flags);
 	}
 
-	//Ä²±±
-	_listener1 = EventListenerTouchOneByOne::create();	//³Ğ«Ø¤@­Ó¤@¹ï¤@ªº¨Æ¥ó²âÅ¥¾¹
-	_listener1->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);		//¥[¤JÄ²¸I¶}©l¨Æ¥ó
-	_listener1->onTouchMoved = CC_CALLBACK_2(GameScene::onTouchMoved, this);		//¥[¤JÄ²¸I²¾°Ê¨Æ¥ó
-	_listener1->onTouchEnded = CC_CALLBACK_2(GameScene::onTouchEnded, this);		//¥[¤JÄ²¸IÂ÷¶}¨Æ¥ó
+	//è§¸æ§
+	_listener1 = EventListenerTouchOneByOne::create();	//å‰µå»ºä¸€å€‹ä¸€å°ä¸€çš„äº‹ä»¶è†è½å™¨
+	_listener1->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);		//åŠ å…¥è§¸ç¢°é–‹å§‹äº‹ä»¶
+	_listener1->onTouchMoved = CC_CALLBACK_2(GameScene::onTouchMoved, this);		//åŠ å…¥è§¸ç¢°ç§»å‹•äº‹ä»¶
+	_listener1->onTouchEnded = CC_CALLBACK_2(GameScene::onTouchEnded, this);		//åŠ å…¥è§¸ç¢°é›¢é–‹äº‹ä»¶
 
-	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//¥[¤J­è³Ğ«Øªº¨Æ¥ó²âÅ¥¾¹
+	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//åŠ å…¥å‰›å‰µå»ºçš„äº‹ä»¶è†è½å™¨
 
-	// ±N doStep ¨ç¦¡±¾¤J schedule list ¤¤¡A¨C¤@­Ó frame ´N³£·|³Q©I¥s¨ì
+	// å°‡ doStep å‡½å¼æ›å…¥ schedule list ä¸­ï¼Œæ¯ä¸€å€‹ frame å°±éƒ½æœƒè¢«å‘¼å«åˆ°
 	this->schedule(CC_SCHEDULE_SELECTOR(GameScene::doStep));
 	return true;
 
@@ -95,19 +96,10 @@ void GameScene::doStep(float dt)
 	_fSlipTime += dt;
 	_fGmaeTime += dt;
 	if (_contactListener.gameover == true) {
-        rootNode->getChildByName("gameover_1")->setVisible(true);
-        rootNode->getChildByName("gameover_2")->setVisible(true);
-		this->pause();
-        ChangeScene();
+        //ChangeScene();
 	}
-	if(_fGmaeTime>30) {
-        rootNode->getChildByName("timesup_3")->setVisible(true);
-        rootNode->getChildByName("gameover_2")->setVisible(true);
-		this->pause();
-        ChangeScene();
-	}
-	int velocityIterations = 8; // ³t«×­¡¥N¦¸¼Æ
-	int positionIterations = 1; // ¦ì¸m­¡¥N¦¸¼Æ¡A­¡¥N¦¸¼Æ¤@¯ë³]©w¬°8~10 ¶V°ª¶V¯u¹ê¦ı®Ä²v¶V®t
+	int velocityIterations = 8; // é€Ÿåº¦è¿­ä»£æ¬¡æ•¸
+	int positionIterations = 1; // ä½ç½®è¿­ä»£æ¬¡æ•¸ï¼Œè¿­ä»£æ¬¡æ•¸ä¸€èˆ¬è¨­å®šç‚º8~10 è¶Šé«˜è¶ŠçœŸå¯¦ä½†æ•ˆç‡è¶Šå·®
 	_b2World->Step(dt, velocityIterations, positionIterations);
     _Player->dostep();
     for (b2Body* body = _b2World->GetBodyList(); body != NULL; body = body->GetNext()){
@@ -129,11 +121,56 @@ void GameScene::doStep(float dt)
 }
 
 void GameScene::CreatePlayer() {
-	// ©ñ¤Jª±®a
-	_Player = new CPlayer(_b2World);
+	// æ”¾å…¥ç©å®¶
+	_Player = new CPlayer(_b2World, Vec2(450,600));
 	this->addChild(_Player, 2);
     _contactListener.setCollisionTargetPlayer(*(_Player->_body));
     _Player->RunAct();
+}
+void GameScene::CreateGround() {
+	Sprite * _body = (cocos2d::Sprite *)rootNode->getChildByName("ground");
+	b2BodyDef bodyDef;
+	bodyDef.type = b2_staticBody;
+	bodyDef.userData = _body;
+	b2Body *Body;
+	Body = _b2World->CreateBody(&bodyDef);
+	Point loc = _body->getPosition();
+	Size ts = _body->getContentSize();
+	b2PolygonShape rectShape;
+	float scaleX = _body->getScaleX();    // Â§Ã™â€¢â‰ â„¢âˆ«Î©uÂ¨qÏ€Å“â€¢â€¹âˆâ‰¤â‰¥]â‰¥Â£â€¢uÂ¶â‰¥Ï€Ã” X âˆ‚bÂ©Ã’Â§j
+	float scaleY = _body->getScaleY();    // Â§Ã™â€¢â‰ â„¢âˆ«Î©uÂ¨qÏ€Å“â€¢â€¹âˆâ‰¤â‰¥]â‰¥Â£â€¢uÂ¶â‰¥Ï€Ã” X âˆ‚bÂ©Ã’Â§j
+
+	Point lep[4], wep[4];
+	lep[0].x = (ts.width - 80) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
+	lep[1].x = -(ts.width - 80) / 2.0f; lep[1].y = (ts.height) / 2.0f;
+	lep[2].x = -(ts.width - 80) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
+	lep[3].x = (ts.width - 80) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
+
+	cocos2d::Mat4 modelMatrix, rotMatrix;
+	modelMatrix.m[0] = scaleX;  // â€¢Ëâ‰¥]Â©w X âˆ‚bâ„¢âˆ«Â¡YÂ©Ã’
+	modelMatrix.m[5] = scaleY;  // â€¢Ëâ‰¥]Â©w Y âˆ‚bâ„¢âˆ«Â¡YÂ©Ã’
+	cocos2d::Mat4::createRotationZ(0 * M_PI / 180.0f, &rotMatrix);
+	modelMatrix.multiply(rotMatrix);
+	modelMatrix.m[3] = /*PntLoc.x + */loc.x; //â‰¥]Â©w TranslationÂ°AÂ¶â‚¬Â§vâ„¢âˆ«â€¢[Â§WÂ§ËœÃ¸Ã€â„¢âˆ«
+	modelMatrix.m[7] = /*PntLoc.y + */loc.y; //â‰¥]Â©w TranslationÂ°AÂ¶â‚¬Â§vâ„¢âˆ«â€¢[Â§WÂ§ËœÃ¸Ã€â„¢âˆ«
+	for (size_t j = 0; j < 4; j++)
+	{
+		wep[j].x = lep[j].x * modelMatrix.m[0] + lep[j].y * modelMatrix.m[1] + modelMatrix.m[3];
+		wep[j].y = lep[j].x * modelMatrix.m[4] + lep[j].y * modelMatrix.m[5] + modelMatrix.m[7];
+	}
+	b2Vec2 vecs[] = {
+		b2Vec2(wep[0].x / PTM_RATIO, wep[0].y / PTM_RATIO),
+		b2Vec2(wep[1].x / PTM_RATIO, wep[1].y / PTM_RATIO),
+		b2Vec2(wep[2].x / PTM_RATIO, wep[2].y / PTM_RATIO),
+		b2Vec2(wep[3].x / PTM_RATIO, wep[3].y / PTM_RATIO) };
+
+	rectShape.Set(vecs, 4);
+	b2FixtureDef fixtureDef;
+	fixtureDef.shape = &rectShape;
+	fixtureDef.restitution = 0.0f;
+	fixtureDef.density = 0.0f;
+	fixtureDef.friction = 0.0f;
+	Body->CreateFixture(&fixtureDef);
 }
 void GameScene::CreateLevel(){
     _Level = new CLevelCreate(_b2World,1);
@@ -149,7 +186,7 @@ void GameScene::ChangeScene()
 	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
 }
 
-bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//Ä²¸I¶}©l¨Æ¥ó
+bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//è§¸ç¢°é–‹å§‹äº‹ä»¶
 {
 	Point touchLoc = pTouch->getLocation();
     Rect rect = Director::getInstance()->getOpenGLView()->getVisibleRect();
@@ -169,14 +206,14 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//Ä²
 	return true;
 }
 
-void  GameScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //Ä²¸I²¾°Ê¨Æ¥ó
+void  GameScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //è§¸ç¢°ç§»å‹•äº‹ä»¶
 {
 	Point touchLoc = pTouch->getLocation();
 
 
 }
 
-void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //Ä²¸Iµ²§ô¨Æ¥ó 
+void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //è§¸ç¢°çµæŸäº‹ä»¶ 
 {
 	Point touchLoc = pTouch->getLocation();
 }

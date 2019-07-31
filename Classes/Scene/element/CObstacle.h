@@ -18,6 +18,7 @@ class CObstacle : public cocos2d::Node
 private:
     Node* _Obstacle;
     Sprite * _body;
+    bool UpFlag = false;
     int num = 0;
     
     //b2world
@@ -32,8 +33,8 @@ public:
     
     void ChangeObstacle(Node* _ob);
     void CreateCollision();
-	void Setpos(float x, float y);
-    void MoveBy(float x, float y);
+    void SetPos(float x, float y);
+    void Move(float x, float y);
 	Point Getpos();
     
     // implement the "static create()" method manually

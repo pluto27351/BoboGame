@@ -5,10 +5,10 @@ USING_NS_CC;
 
 // on "init" you need to initialize your instance
 CPlayer::~CPlayer(){}
-CPlayer::CPlayer(b2World* _b2W)
+CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
 {
     //圖片
-    pt = Vec2(250, 600);
+    pt = pos;
     _Player = CSLoader::createNode("Ani/Player.csb");
     _Player->setPosition(pt);
 	this->addChild(_Player, 1);
@@ -30,7 +30,7 @@ void CPlayer::dostep(){
 void CPlayer::CreateCollision(){
     if(PlayerBody->GetFixtureList()!=NULL)
         PlayerBody->DestroyFixture(PlayerBody->GetFixtureList());
-    Point loc = _Player->getPosition();
+    Point loc = pt;
     Size ts = _body->getContentSize();
     b2PolygonShape rectShape;
     float scaleX = _body->getScaleX();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
@@ -76,7 +76,7 @@ void CPlayer::RunAct() {
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
 }
 void CPlayer::JumpAct(){
-    if(_PlayerAni->getCurrentFrame()<30){
+    if(_PlayerAni->getCurrentFrame()<=30){
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
         PlayerBody->SetTransform( b2Vec2(PlayerBody->GetPosition().x,PlayerBody->GetPosition().y+50/ PTM_RATIO), 0);
         PlayerBody->ApplyForceToCenter(b2Vec2(0,8000), 0);

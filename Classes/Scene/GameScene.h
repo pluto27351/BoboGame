@@ -58,6 +58,7 @@ public:
 	bool init();
 
 	void CreatePlayer();
+	void CreateGround();
     void CreateLevel();
 
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer

@@ -29,7 +29,7 @@ private:
     bool ActFlag = true;
 public:
     CPlayer();
-	CPlayer(b2World* _b2W);
+	CPlayer(b2World* _b2W, Vec2 pos);
 	~CPlayer();
 
     Sprite * _body;

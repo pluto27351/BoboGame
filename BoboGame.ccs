@@ -99,7 +99,6 @@
             <PlistImageFile Name="1.png" Key="1.png" />
             <PlistImageFile Name="2.png" Key="2.png" />
             <PlistImageFile Name="3.png" Key="3.png" />
-            <PlistImageFile Name="GO.png" Key="GO.png" />
             <PlistImageFile Name="d_ground.png" Key="d_ground.png" />
             <PlistImageFile Name="d_ground_bigpit.png" Key="d_ground_bigpit.png" />
             <PlistImageFile Name="d_ground_rockpit.png" Key="d_ground_rockpit.png" />
@@ -111,6 +110,7 @@
             <PlistImageFile Name="decoration_flower.png" Key="decoration_flower.png" />
             <PlistImageFile Name="decoration_grass.png" Key="decoration_grass.png" />
             <PlistImageFile Name="decoration_leaf.png" Key="decoration_leaf.png" />
+            <PlistImageFile Name="GO.png" Key="GO.png" />
             <PlistImageFile Name="obstacle_bo.png" Key="obstacle_bo.png" />
             <PlistImageFile Name="obstacle_button_01.png" Key="obstacle_button_01.png" />
             <PlistImageFile Name="obstacle_button_02.png" Key="obstacle_button_02.png" />

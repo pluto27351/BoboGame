@@ -7,6 +7,8 @@
 #include "cocostudio/CocoStudio.h"
 #include "CObstacle.h"
 
+#define OB_NUM 7
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -16,8 +18,8 @@ using namespace CocosDenshion;
 class CLevelCreate : public cocos2d::Node
 {
 private:
-	CObstacle *_DownGroundCollision[7];
-	float time = 0;
+	CObstacle *_DownGroundCollision[OB_NUM];
+	float Leveltime = 0;
 	b2World* _b2World;
 
 	char level[9];
