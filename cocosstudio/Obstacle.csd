@@ -9,10 +9,10 @@
           <AbstractNodeData Name="down" ActionTag="-1217254019" Tag="182" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="Level_0" ActionTag="1284188202" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Level_0" Visible="False" ActionTag="1284188202" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="0" Visible="False" ActionTag="1695440205" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="0" Visible="False" ActionTag="1695440205" VisibleForFrame="False" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Sprite_0" ActionTag="-1131432728" IconVisible="False" LeftMargin="-258.0000" RightMargin="-258.0000" TopMargin="-244.5000" BottomMargin="-244.5000" ctype="SpriteObjectData">
@@ -111,11 +111,24 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="2" Visible="False" ActionTag="1217071500" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="2" ActionTag="1217071500" VisibleForFrame="False" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Sprite_0" ActionTag="820267553" IconVisible="False" LeftMargin="-258.0000" RightMargin="-258.0000" TopMargin="-244.5000" BottomMargin="-244.5000" ctype="SpriteObjectData">
                         <Size X="516.0000" Y="489.0000" />
+                        <Children>
+                          <AbstractNodeData Name="run_2_1" ActionTag="274522434" Tag="178" IconVisible="False" LeftMargin="146.5000" RightMargin="154.5000" TopMargin="166.5000" BottomMargin="87.5000" ctype="SpriteObjectData">
+                            <Size X="215.0000" Y="235.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="254.0000" Y="205.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.4922" Y="0.4192" />
+                            <PreSize X="0.4167" Y="0.4806" />
+                            <FileData Type="PlistSubImage" Path="run_2.png" Plist="Img/bo.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                        </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -474,7 +487,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="13" ActionTag="311405338" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="13" Visible="False" ActionTag="311405338" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Sprite_0" ActionTag="-139946890" IconVisible="False" LeftMargin="-258.0000" RightMargin="-258.0000" TopMargin="-244.5000" BottomMargin="-244.5000" ctype="SpriteObjectData">
@@ -559,7 +572,7 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Level_2" ActionTag="-1002924882" Tag="3" IconVisible="True" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Level_2" Visible="False" ActionTag="-1002924882" Tag="3" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="0" Visible="False" ActionTag="1726182234" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
@@ -864,7 +877,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="up" ActionTag="197722100" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="up" Visible="False" ActionTag="197722100" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Level_0" Visible="False" ActionTag="1414348419" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">

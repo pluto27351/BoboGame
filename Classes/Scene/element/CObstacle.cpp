@@ -24,12 +24,13 @@ CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
 	}
 	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    _body->setVisible(false);
 }
 void CObstacle::ChangeObstacle(Node* _ob){
 	for (int i = 0; i < num; i++) {
-		removeChild(_Obstacle);
 		_b2World->DestroyBody(ObstacleBody[i]);
-	}
+    }
+    removeAllChildren();
 	std::vector <b2Body*>().swap(ObstacleBody);
     num = 0;
     char sprite[10];
@@ -48,6 +49,7 @@ void CObstacle::ChangeObstacle(Node* _ob){
 		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
 	}
 	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    _body->setVisible(false);
 }
 void CObstacle::CreateCollision(){
 	b2Body * _Cbody;
@@ -99,28 +101,22 @@ void CObstacle::CreateCollision(){
 	ObstacleBody.push_back(_Cbody);
 }
 void CObstacle::Move(float x, float y) {
-    _Obstacle->setPosition(_Obstacle->getPosition().x + x,_Obstacle->getPosition().y + y);
+    _body->setPosition(_body->getPosition().x + x,_body->getPosition().y + y);
     for (int i = 0; i<num; i++){
-        //ObstacleBody[i]->SetTransform(b2Vec2(ObstacleBody[i]->GetPosition().x + x / PTM_RATIO, ObstacleBody[i]->GetPosition().y + y / PTM_RATIO), 0);
+        ObstacleBody[i]->SetTransform(b2Vec2(ObstacleBody[i]->GetPosition().x + x / PTM_RATIO, ObstacleBody[i]->GetPosition().y + y / PTM_RATIO), 0);
     }
 }
 void CObstacle::SetPos(float x, float y) {
-    _Obstacle->setPosition(x,y);
-    _body->setVisible(false);
+    _body->setPosition(x, y);
     for (int i = 0; i<num; i++){
-        Sprite *Data = (Sprite*)ObstacleBody[i]->GetUserData();
-        float fx = ObstacleBody[i]->GetPosition().x * PTM_RATIO -_body->getPosition().x + x;
-        float fy = ObstacleBody[i]->GetPosition().y * PTM_RATIO -_body->getPosition().y + y;
+        float fx = ObstacleBody[i]->GetPosition().x * PTM_RATIO + x;
+        float fy = ObstacleBody[i]->GetPosition().y * PTM_RATIO + y;
         ObstacleBody[i]->SetTransform(b2Vec2(fx /PTM_RATIO, fy / PTM_RATIO), 0);
-        CCLOG("%s\n",Data);
-         //((Sprite*)ObstacleBody[i]->GetUserData())->setPosition(fx,fy);
-        
     }
-    //_body->setPosition(x, y);
 }
 Point CObstacle::Getpos() {
 	Point pos;
-	pos.x = _Obstacle->getPosition().x;
-	pos.y = _Obstacle->getPosition().y;
+	pos.x = _body->getPosition().x;
+	pos.y = _body->getPosition().y;
 	return (pos);
 }
