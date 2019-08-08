@@ -474,7 +474,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="13" Visible="False" ActionTag="311405338" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="13" ActionTag="311405338" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Sprite_0" ActionTag="-139946890" IconVisible="False" LeftMargin="-258.0000" RightMargin="-258.0000" TopMargin="-244.5000" BottomMargin="-244.5000" ctype="SpriteObjectData">
@@ -488,51 +488,108 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-514783470" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="958820483" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-700.0000" BottomMargin="654.0000" ctype="SpriteObjectData">
+                        <Size X="46.0000" Y="46.0000" />
+                        <Children>
+                          <AbstractNodeData Name="up_light_1" ActionTag="-1803010501" IconVisible="False" LeftMargin="-342.0800" RightMargin="34.0800" TopMargin="-131.0000" BottomMargin="-177.0000" ctype="SpriteObjectData">
+                            <Size X="354.0000" Y="354.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-165.0800" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="-3.5887" />
+                            <PreSize X="7.6957" Y="7.6957" />
+                            <FileData Type="PlistSubImage" Path="up_leftlight.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="up_light_2" ActionTag="-1720940075" IconVisible="False" LeftMargin="-219.2900" RightMargin="-88.7100" TopMargin="-131.0000" BottomMargin="-177.0000" ctype="SpriteObjectData">
+                            <Size X="354.0000" Y="354.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-42.2900" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="-0.9193" />
+                            <PreSize X="7.6957" Y="7.6957" />
+                            <FileData Type="PlistSubImage" Path="up_midlight.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="up_light_3" ActionTag="-2036903157" IconVisible="False" LeftMargin="-109.0000" RightMargin="-199.0000" TopMargin="-131.0000" BottomMargin="-177.0000" ctype="SpriteObjectData">
+                            <Size X="354.0000" Y="354.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="68.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="1.4783" />
+                            <PreSize X="7.6957" Y="7.6957" />
+                            <FileData Type="PlistSubImage" Path="up_midlight.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="up_light_4" ActionTag="-2060441408" IconVisible="False" LeftMargin="8.2200" RightMargin="-316.2200" TopMargin="-131.0000" BottomMargin="-177.0000" ctype="SpriteObjectData">
+                            <Size X="354.0000" Y="354.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="185.2200" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="4.0265" />
+                            <PreSize X="7.6957" Y="7.6957" />
+                            <FileData Type="PlistSubImage" Path="up_rightlight.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="Sprite_1" ActionTag="-514783470" IconVisible="False" LeftMargin="-307.0800" RightMargin="69.0800" TopMargin="-46.5000" BottomMargin="-92.5000" ctype="SpriteObjectData">
+                            <Size X="284.0000" Y="185.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-165.0800" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="-3.5887" />
+                            <PreSize X="6.1739" Y="4.0217" />
+                            <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="Sprite_2" ActionTag="1219417146" IconVisible="False" LeftMargin="-184.2919" RightMargin="-53.7081" TopMargin="-46.5000" BottomMargin="-92.5000" ctype="SpriteObjectData">
+                            <Size X="284.0000" Y="185.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-42.2919" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="-0.9194" />
+                            <PreSize X="6.1739" Y="4.0217" />
+                            <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="Sprite_3" ActionTag="1877623389" IconVisible="False" LeftMargin="-74.0046" RightMargin="-163.9954" TopMargin="-46.5000" BottomMargin="-92.5000" ctype="SpriteObjectData">
+                            <Size X="284.0000" Y="185.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="67.9954" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="1.4782" />
+                            <PreSize X="6.1739" Y="4.0217" />
+                            <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="Sprite_4" ActionTag="2099627031" IconVisible="False" LeftMargin="43.2189" RightMargin="-281.2189" TopMargin="-46.5000" BottomMargin="-92.5000" ctype="SpriteObjectData">
+                            <Size X="284.0000" Y="185.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="185.2189" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="4.0265" />
+                            <PreSize X="6.1739" Y="4.0217" />
+                            <FileData Type="PlistSubImage" Path="up_rightground.png" Plist="Img/game_element.plist" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                        </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-165.0762" Y="665.0000" />
+                        <Position Y="677.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition />
                         <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
+                        <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="1219417146" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-42.2919" Y="665.0000" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="1877623389" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="67.9954" Y="665.0000" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="2099627031" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="185.2189" Y="665.0000" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="PlistSubImage" Path="up_rightground.png" Plist="Img/game_element.plist" />
-                        <BlendFunc Src="1" Dst="771" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_5" ActionTag="-1454825855" Tag="4" IconVisible="False" LeftMargin="-41.5000" RightMargin="-41.5000" TopMargin="-582.5000" BottomMargin="487.5000" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1454825855" Tag="4" IconVisible="False" LeftMargin="-41.5000" RightMargin="-41.5000" TopMargin="-582.5000" BottomMargin="487.5000" ctype="SpriteObjectData">
                         <Size X="83.0000" Y="95.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position Y="535.0000" />
@@ -541,6 +598,17 @@
                         <PrePosition />
                         <PreSize X="0.0000" Y="0.0000" />
                         <FileData Type="PlistSubImage" Path="obstacle_nail.png" Plist="Img/game_element.plist" />
+                        <BlendFunc Src="1" Dst="771" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Sprite_3" ActionTag="627671803" Tag="1" IconVisible="False" LeftMargin="-41.1713" RightMargin="-4.8287" TopMargin="-672.5190" BottomMargin="626.5190" ctype="SpriteObjectData">
+                        <Size X="46.0000" Y="46.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-18.1713" Y="649.5190" />
+                        <Scale ScaleX="9.3124" ScaleY="0.3780" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
                     </Children>
@@ -587,8 +655,8 @@
                         <FileData Type="PlistSubImage" Path="obstacle_rock.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-687984946" Tag="1" IconVisible="False" LeftMargin="-268.0771" RightMargin="80.0771" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-687984946" Tag="1" IconVisible="False" LeftMargin="-316.0771" RightMargin="32.0771" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-174.0771" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -598,8 +666,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="1426215313" Tag="1" IconVisible="False" LeftMargin="-126.7922" RightMargin="-24.2078" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="1426215313" Tag="1" IconVisible="False" LeftMargin="-193.2922" RightMargin="-90.7078" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-51.2922" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -609,8 +677,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-1969794002" Tag="1" IconVisible="False" LeftMargin="-16.5048" RightMargin="-134.4952" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-1969794002" Tag="1" IconVisible="False" LeftMargin="-83.0048" RightMargin="-200.9952" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="58.9952" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -620,8 +688,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_5" ActionTag="312002892" Tag="1" IconVisible="False" LeftMargin="97.2183" RightMargin="-255.2183" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_5" ActionTag="312002892" Tag="1" IconVisible="False" LeftMargin="34.2183" RightMargin="-318.2183" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="176.2183" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -664,8 +732,8 @@
                         <FileData Type="PlistSubImage" Path="d_img_bigpit.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-672352438" Tag="1" IconVisible="False" LeftMargin="-487.1387" RightMargin="299.1387" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-672352438" Tag="1" IconVisible="False" LeftMargin="-535.1387" RightMargin="251.1387" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-393.1387" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -675,8 +743,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-1962988539" Tag="1" IconVisible="False" LeftMargin="-342.7911" RightMargin="191.7911" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-1962988539" Tag="1" IconVisible="False" LeftMargin="-409.2911" RightMargin="125.2911" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-267.2911" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -686,8 +754,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="208678977" Tag="1" IconVisible="False" LeftMargin="-232.2005" RightMargin="81.2005" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="208678977" Tag="1" IconVisible="False" LeftMargin="-298.7005" RightMargin="14.7005" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-156.7005" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -697,8 +765,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_5" ActionTag="-1764914083" Tag="1" IconVisible="False" LeftMargin="-123.2335" RightMargin="-27.7665" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_5" ActionTag="-1764914083" Tag="1" IconVisible="False" LeftMargin="-189.7335" RightMargin="-94.2665" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-47.7335" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -708,8 +776,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_6" ActionTag="2077570065" Tag="1" IconVisible="False" LeftMargin="-11.4960" RightMargin="-139.5040" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_6" ActionTag="2077570065" Tag="1" IconVisible="False" LeftMargin="-77.9960" RightMargin="-206.0040" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="64.0040" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -719,8 +787,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_7" ActionTag="-340984064" Tag="1" IconVisible="False" LeftMargin="102.5576" RightMargin="-253.5576" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_7" ActionTag="-340984064" Tag="1" IconVisible="False" LeftMargin="36.0576" RightMargin="-320.0576" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="178.0576" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -730,8 +798,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_8" ActionTag="1504709359" Tag="1" IconVisible="False" LeftMargin="214.0130" RightMargin="-365.0130" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_8" ActionTag="1504709359" Tag="1" IconVisible="False" LeftMargin="147.5130" RightMargin="-431.5130" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="289.5130" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -741,8 +809,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_9" ActionTag="-1319443818" Tag="1" IconVisible="False" LeftMargin="327.5800" RightMargin="-485.5800" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_9" ActionTag="-1319443818" Tag="1" IconVisible="False" LeftMargin="264.5800" RightMargin="-548.5800" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="406.5800" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -774,8 +842,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="534573198" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="534573198" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -785,8 +853,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-2020488157" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-2020488157" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -796,8 +864,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-1251086956" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-1251086956" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -807,8 +875,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-728620561" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-728620561" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -864,7 +932,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="up" ActionTag="197722100" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="up" Visible="False" ActionTag="197722100" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Level_0" ActionTag="1414348419" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
@@ -884,8 +952,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-900525206" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-900525206" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -895,8 +963,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-1475127941" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1475127941" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -906,8 +974,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="132824455" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="132824455" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -917,8 +985,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="284275988" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="284275988" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -961,8 +1029,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="214338258" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="214338258" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -972,8 +1040,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="112475129" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="112475129" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -983,8 +1051,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="1037335647" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="1037335647" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -994,8 +1062,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="1556972020" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="1556972020" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1038,8 +1106,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-1929475048" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-1929475048" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1049,8 +1117,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="1847406726" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="1847406726" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1060,8 +1128,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="2055253774" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="2055253774" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1071,8 +1139,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-1375928263" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-1375928263" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1115,8 +1183,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-915955080" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-915955080" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1126,8 +1194,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-969394796" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-969394796" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1137,8 +1205,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="164492215" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="164492215" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1148,8 +1216,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-630368309" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-630368309" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1192,8 +1260,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-2006621160" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-2006621160" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1203,8 +1271,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-1347372785" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1347372785" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1214,8 +1282,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="707009129" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="707009129" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1225,8 +1293,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-1165352396" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-1165352396" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1269,8 +1337,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="1064913565" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="1064913565" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1280,8 +1348,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-1840174296" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1840174296" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1291,8 +1359,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-516579622" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-516579622" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1302,8 +1370,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="1133426915" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="1133426915" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1346,8 +1414,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="106423866" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="106423866" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1357,8 +1425,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-471921204" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-471921204" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1368,8 +1436,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-266136366" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-266136366" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1379,8 +1447,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-1746179599" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-1746179599" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1423,8 +1491,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-780341801" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-780341801" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1434,8 +1502,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-948622470" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-948622470" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1445,8 +1513,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-1561466423" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-1561466423" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1456,8 +1524,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-921716142" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-921716142" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1500,8 +1568,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-168990362" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-168990362" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1511,8 +1579,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-1543723767" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1543723767" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1522,8 +1590,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-2135649422" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-2135649422" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1533,8 +1601,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="1176636769" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="1176636769" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1577,8 +1645,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-422491723" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-422491723" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1588,8 +1656,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-1973948264" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1973948264" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1599,8 +1667,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="1424593555" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="1424593555" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1610,8 +1678,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-273551981" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-273551981" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1654,8 +1722,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-302918860" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-302918860" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1665,8 +1733,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="727061421" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="727061421" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1676,8 +1744,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="1385525347" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="1385525347" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1687,8 +1755,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="368034649" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="368034649" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1731,8 +1799,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="490257223" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="490257223" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1742,8 +1810,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="2051520117" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="2051520117" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1753,8 +1821,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="1385456319" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="1385456319" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1764,8 +1832,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="1855856253" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="1855856253" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1819,8 +1887,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_1" ActionTag="-1147118483" Tag="1" IconVisible="False" LeftMargin="-259.0762" RightMargin="71.0762" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="188.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_1" ActionTag="-1147118483" Tag="1" IconVisible="False" LeftMargin="-307.0762" RightMargin="23.0762" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-165.0762" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1830,8 +1898,8 @@
                         <FileData Type="PlistSubImage" Path="up_leftground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="186385464" Tag="1" IconVisible="False" LeftMargin="-117.7919" RightMargin="-33.2081" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="186385464" Tag="1" IconVisible="False" LeftMargin="-184.2919" RightMargin="-99.7081" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-42.2919" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1841,8 +1909,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="-1507865901" Tag="1" IconVisible="False" LeftMargin="-7.5046" RightMargin="-143.4954" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="-1507865901" Tag="1" IconVisible="False" LeftMargin="-74.0046" RightMargin="-209.9954" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.9954" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1852,8 +1920,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="852547267" Tag="1" IconVisible="False" LeftMargin="106.2189" RightMargin="-264.2189" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="852547267" Tag="1" IconVisible="False" LeftMargin="43.2189" RightMargin="-327.2189" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="185.2189" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1907,8 +1975,8 @@
                         <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_2" ActionTag="-1192384821" Tag="2" IconVisible="False" LeftMargin="-427.4247" RightMargin="45.4247" TopMargin="-721.0019" BottomMargin="609.0019" ctype="SpriteObjectData">
-                        <Size X="382.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_2" ActionTag="-1192384821" Tag="2" IconVisible="False" LeftMargin="-478.9247" RightMargin="-6.0753" TopMargin="-757.5019" BottomMargin="572.5019" ctype="SpriteObjectData">
+                        <Size X="485.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="-236.4247" Y="665.0019" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1918,8 +1986,8 @@
                         <FileData Type="PlistSubImage" Path="up_rockground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_3" ActionTag="558432114" Tag="1" IconVisible="False" LeftMargin="-67.0884" RightMargin="-83.9116" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_3" ActionTag="558432114" Tag="1" IconVisible="False" LeftMargin="-133.5884" RightMargin="-150.4116" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="8.4116" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1929,8 +1997,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_4" ActionTag="-647354531" Tag="1" IconVisible="False" LeftMargin="46.2881" RightMargin="-197.2881" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_4" ActionTag="-647354531" Tag="1" IconVisible="False" LeftMargin="-20.2119" RightMargin="-263.7881" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="121.7881" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1940,8 +2008,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_5" ActionTag="-2045025795" Tag="1" IconVisible="False" LeftMargin="161.5737" RightMargin="-312.5737" TopMargin="-720.9998" BottomMargin="608.9998" ctype="SpriteObjectData">
-                        <Size X="151.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_5" ActionTag="-2045025795" Tag="1" IconVisible="False" LeftMargin="95.0737" RightMargin="-379.0737" TopMargin="-757.4998" BottomMargin="572.4998" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="237.0737" Y="664.9998" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -1951,8 +2019,8 @@
                         <FileData Type="PlistSubImage" Path="up_midground.png" Plist="Img/game_element.plist" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Sprite_6" ActionTag="-1200843640" Tag="1" IconVisible="False" LeftMargin="276.1572" RightMargin="-434.1572" TopMargin="-721.0000" BottomMargin="609.0000" ctype="SpriteObjectData">
-                        <Size X="158.0000" Y="112.0000" />
+                      <AbstractNodeData Name="Sprite_6" ActionTag="-1200843640" Tag="1" IconVisible="False" LeftMargin="213.1572" RightMargin="-497.1572" TopMargin="-757.5000" BottomMargin="572.5000" ctype="SpriteObjectData">
+                        <Size X="284.0000" Y="185.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="355.1572" Y="665.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />

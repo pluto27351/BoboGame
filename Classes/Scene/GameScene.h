@@ -23,7 +23,6 @@ class CContactListener : public b2ContactListener
 {
 public:
 	bool gameover = false;
-    bool JumpFlag = false;
     bool RunFlag = true;
     bool AttackFlag = true;
     cocos2d::Sprite * _Playersprite;

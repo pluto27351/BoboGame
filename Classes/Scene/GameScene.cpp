@@ -4,6 +4,8 @@
 
 #define PTM_RATIO 32.0f
 #define BOX2D_DEBUG 1
+#define SLIP_TIME 0.8f
+#define MG_SPEED 2
 
 USING_NS_CC;
 
@@ -155,10 +157,10 @@ void GameScene::Play(float dt) {
         //è‰å¢ç§»å‹•
         if (midground[0]->getPosition().x < (-1575.52f))
             midground[0]->setPosition(midground[1]->getPosition().x + 2599.52f, 768);
-        midground[0]->setPosition(midground[0]->getPosition().x - 3, 768);
+        midground[0]->setPosition(midground[0]->getPosition().x - MG_SPEED, 768);
         if (midground[1]->getPosition().x < (-1575.52f))
             midground[1]->setPosition(midground[0]->getPosition().x + 2599.52f, 768);
-        midground[1]->setPosition(midground[1]->getPosition().x - 3, 768);
+        midground[1]->setPosition(midground[1]->getPosition().x - MG_SPEED, 768);
         //è§’è‰²
         _fSlipTime += dt;
         _Player->dostep();
@@ -166,7 +168,7 @@ void GameScene::Play(float dt) {
             _contactListener.Breaksprite->setVisible(false);
             _contactListener.BreakBody->GetFixtureList()->SetSensor(true);
         }
-        if (_contactListener.RunFlag == true && _fSlipTime > 1.0f){
+        if (_contactListener.RunFlag == true && _fSlipTime > SLIP_TIME){
             _Player->RunAct();
             AttackFlag = false;
             _contactListener.AttackFlag = false;
@@ -247,12 +249,11 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//è§
 	if (PlayFlag == true) {
         switch(_Level->TeachFlag){
             case 0:
-                if (touchLoc.x > rect.getMaxX() / 2 && _contactListener.JumpFlag == false) {
+                if (touchLoc.x > rect.getMaxX() / 2 && _contactListener.RunFlag == true) {
                     _Teach->setVisible(false);
                     _Level->TeachFlag = 3;
                     _Player->AniResume();
                     _Player->JumpAct();
-                    _contactListener.JumpFlag = true;
                     _contactListener.RunFlag = false;
                 }
                 break;
@@ -260,7 +261,7 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//è§
                 if(touchLoc.x < rect.getMaxX() / 2 ){
                     _Teach->setVisible(false);
                     _Player->AniResume();
-                    if (_contactListener.JumpFlag == false && _fSlipTime > 1.0f) {
+                    if (_contactListener.RunFlag == true && _fSlipTime > SLIP_TIME) {
                         _Level->TeachFlag = 3;
                         _fSlipTime = 0;
                         _Player->SlipAct();
@@ -273,8 +274,8 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//è§
                 }
                 break;
             case 2:
-                if (touchLoc.x < rect.getMaxX() / 2 && _fSlipTime > 1.0f) {
-                    if (_contactListener.JumpFlag == false) {
+                if (touchLoc.x < rect.getMaxX() / 2 && _fSlipTime > SLIP_TIME) {
+                    if (_contactListener.RunFlag == true) {
                         _fSlipTime = 0;
                         _Player->SlipAct();
                     }
@@ -283,9 +284,8 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//è§
                         AttackFlag = true;
                     }
                 }
-                else if (touchLoc.x > rect.getMaxX() / 2 && _contactListener.JumpFlag == false) {
+                else if (touchLoc.x > rect.getMaxX() / 2 && _contactListener.RunFlag == true) {
                     _Player->JumpAct();
-                    _contactListener.JumpFlag = true;
                     _contactListener.RunFlag = false;
                 }
                 break;
@@ -314,10 +314,8 @@ void CContactListener::BeginContact(b2Contact* contact){
             gameover = true;
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
-            if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y <= 0){
-                JumpFlag = false;
+            if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y <= 0)
                 RunFlag = true;
-            }
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
             AttackFlag = true;

@@ -73,8 +73,10 @@ void CPlayer::CreateCollision(){
 }
 //動作
 void CPlayer::RunAct() {
-    if(_PlayerAni->getCurrentFrame()>30)
+    if(_PlayerAni->getCurrentFrame()>30){
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
+        PlayerBody->SetLinearVelocity(b2Vec2(0,0));
+    }
 }
 void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<=30){
