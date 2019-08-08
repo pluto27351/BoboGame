@@ -2,7 +2,7 @@
   <PropertyGroup Name="Player" Type="Node" ID="92ef1069-ed24-4873-86cb-46dc4a774990" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="97" Speed="1.0000">
+      <Animation Duration="100" Speed="1.0000">
         <Timeline ActionTag="195884333" Property="Position">
           <PointFrame FrameIndex="0" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
@@ -73,31 +73,31 @@
           <PointFrame FrameIndex="60" X="-1.0004" Y="-67.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="61" X="-1.0005" Y="-67.0000">
+          <PointFrame FrameIndex="64" X="-1.0005" Y="-67.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="62" X="-6.0007" Y="50.9991">
+          <PointFrame FrameIndex="65" X="-6.0007" Y="50.9991">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="67" X="-6.0007" Y="51.0000">
+          <PointFrame FrameIndex="70" X="-6.0007" Y="51.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="72" X="-6.0007" Y="50.9991">
+          <PointFrame FrameIndex="75" X="-6.0007" Y="50.9991">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="73" X="-6.0007" Y="-9.0008">
+          <PointFrame FrameIndex="76" X="-6.0007" Y="-9.0008">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="84" X="-6.0007" Y="-9.0008">
+          <PointFrame FrameIndex="87" X="-6.0007" Y="-9.0008">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="85" X="-3.9996" Y="-13.0004">
+          <PointFrame FrameIndex="88" X="-3.9996" Y="-13.0004">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="96" X="-3.9996" Y="-13.0004">
+          <PointFrame FrameIndex="99" X="-3.9996" Y="-13.0004">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="97" X="-6.0007" Y="-9.0008">
+          <PointFrame FrameIndex="100" X="-6.0007" Y="-9.0008">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
@@ -132,16 +132,16 @@
           <ScaleFrame FrameIndex="55" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="61" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="64" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="84" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="87" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="96" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="99" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="97" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="100" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -176,112 +176,127 @@
           <ScaleFrame FrameIndex="55" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="61" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="64" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="84" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="65" X="-15.0000" Y="-15.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="96" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="70" X="-15.0000" Y="-15.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="97" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="75" X="-15.0000" Y="-15.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="76" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="87" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="99" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="100" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="195884333" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_1.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="4" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_1.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="5" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_2.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="9" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_2.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="10" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_3.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_3.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="14" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_3.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_3.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="15" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_4.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_4.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="19" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_4.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_4.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="20" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_5.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_5.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="24" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_5.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_5.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="25" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_6.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_6.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="29" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_6.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_6.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="30" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="run_1.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="run_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="31" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_1.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="35" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_1.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="36" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_2.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="40" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_2.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="41" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_3.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_3.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="47" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_3.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_3.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="48" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_4.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_4.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="55" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="jump_5.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="jump_5.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="56" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="slip_1.png" Plist="Img/bo.plist" />
+            <TextureFile Type="PlistSubImage" Path="slip_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="61" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="slip_2.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="60" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="slip_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="62" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="attack_1.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="64" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="slip_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="67" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="attack_2.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="65" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="attack_01.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="72" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="attack_1.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="70" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="attack_02.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="73" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="75" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="attack_01.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="84" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="76" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="85" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="tension_2.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="87" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="96" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="tension_2.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="88" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="tension_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
-          <TextureFrame FrameIndex="97" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo.plist" />
+          <TextureFrame FrameIndex="99" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="tension_2.png" Plist="Img/bo_ani.plist" />
+          </TextureFrame>
+          <TextureFrame FrameIndex="100" Tween="False">
+            <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
         </Timeline>
         <Timeline ActionTag="195884333" Property="BlendFunc">
@@ -307,29 +322,30 @@
           <BlendFuncFrame FrameIndex="48" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="55" Tween="False" Src="1" Dst="771" />
           <BlendFuncFrame FrameIndex="56" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="61" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="62" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="67" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="72" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="73" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="84" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="85" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="96" Tween="False" Src="1" Dst="771" />
-          <BlendFuncFrame FrameIndex="97" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="60" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="64" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="65" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="70" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="75" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="76" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="87" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="88" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="99" Tween="False" Src="1" Dst="771" />
+          <BlendFuncFrame FrameIndex="100" Tween="False" Src="1" Dst="771" />
         </Timeline>
       </Animation>
       <ObjectData Name="Node" Tag="50" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-112.0000" RightMargin="-112.0000" TopMargin="-113.0000" BottomMargin="-113.0000" ctype="SpriteObjectData">
-            <Size X="224.0000" Y="226.0000" />
+          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" RotationSkewX="-15.0000" RotationSkewY="-15.0000" IconVisible="False" LeftMargin="-97.5007" RightMargin="-85.4993" TopMargin="-264.4991" BottomMargin="-162.5009" ctype="SpriteObjectData">
+            <Size X="183.0000" Y="427.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="-6.0007" Y="50.9991" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="run_1.png" Plist="Img/bo.plist" />
+            <FileData Type="PlistSubImage" Path="attack_01.png" Plist="Img/bo_ani.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

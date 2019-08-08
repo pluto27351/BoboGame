@@ -26,13 +26,15 @@ CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
 }
 void CPlayer::dostep(){
     CreateCollision();
+    _Player->setPosition(pt.x + PlayerBody->GetPosition().x*PTM_RATIO, pt.y + PlayerBody->GetPosition().y*PTM_RATIO);
 }
 void CPlayer::CreateCollision(){
     if(PlayerBody->GetFixtureList()!=NULL)
         PlayerBody->DestroyFixture(PlayerBody->GetFixtureList());
-    Point loc = pt;
+    Point loc = pt + _body->getPosition();
     Size ts = _body->getContentSize();
     b2PolygonShape rectShape;
+    float angle = _body->getRotation();
     float scaleX = _body->getScaleX();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
     float scaleY = _body->getScaleY();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
     
@@ -45,7 +47,7 @@ void CPlayer::CreateCollision(){
     cocos2d::Mat4 modelMatrix, rotMatrix;
     modelMatrix.m[0] = scaleX;  // •˝≥]©w X ∂b™∫¡Y©Ò
     modelMatrix.m[5] = scaleY;  // •˝≥]©w Y ∂b™∫¡Y©Ò
-    cocos2d::Mat4::createRotationZ(0 * M_PI / 180.0f, &rotMatrix);
+    cocos2d::Mat4::createRotationZ(angle * M_PI / 180.0f, &rotMatrix);
     modelMatrix.multiply(rotMatrix);
     modelMatrix.m[3] = /*PntLoc.x + */loc.x; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
     modelMatrix.m[7] = /*PntLoc.y + */loc.y; //≥]©w Translation°A¶€§v™∫•[§W§˜øÀ™∫
@@ -69,8 +71,7 @@ void CPlayer::CreateCollision(){
     PlayerBody->CreateFixture(&fixtureDef);
     PlayerBody->SetFixedRotation(1);
 }
-
-//跑步動作
+//動作
 void CPlayer::RunAct() {
     if(_PlayerAni->getCurrentFrame()>30)
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
@@ -78,42 +79,22 @@ void CPlayer::RunAct() {
 void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<=30){
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
-        PlayerBody->SetTransform( b2Vec2(PlayerBody->GetPosition().x,PlayerBody->GetPosition().y+50/ PTM_RATIO), 0);
-        PlayerBody->ApplyForceToCenter(b2Vec2(0,8000), 0);
+        PlayerBody->SetLinearVelocity(b2Vec2(0,65));
     }
 }
 void CPlayer::SlipAct(){
-    _PlayerAni->gotoFrameAndPlay(56, 61, true);
-    ActFlag = false;
+    _PlayerAni->gotoFrameAndPlay(56, 64, true);
 }
 void CPlayer::AttackAct(){
-    _PlayerAni->gotoFrameAndPlay(62, 72, true);
-    PlayerBody->ApplyForceToCenter(b2Vec2(0,-5000), 0);
+    _PlayerAni->gotoFrameAndPlay(65, 75, true);
+    PlayerBody->SetLinearVelocity(b2Vec2(0,-35));
 }
 void CPlayer::TensionAct(){
-    _PlayerAni->gotoFrameAndPlay(73, 97, true);
+    _PlayerAni->gotoFrameAndPlay(76, 100, true);
 }
-
-//避免多重觸碰
-//void CPlayer::ActionEnd() {
-//    ActFlag = true;
-//    JumpTime = 0;
-//    RunAct();
-//}
-
-////停止動畫
-//void CPlayer::actionControl(bool run) {
-//	if (run) {
-//		_Player->onEnter();
-//	}
-//	else {
-//		_Player->onExit();
-//	}
-//	if (hasBullet) {
-//		CBullet *b = _HeadBullet;
-//		while (b != NULL) {
-//			b->actionControl(run);
-//			b = b->next;
-//		}
-//	}
-//}
+void CPlayer::AniPause(){
+    _PlayerAni->pause();
+}
+void CPlayer::AniResume(){
+    _PlayerAni->resume();
+}

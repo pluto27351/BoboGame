@@ -1,7 +1,5 @@
 #include "GameScene.h"
-#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "SimpleAudioEngine.h"
 #include "MenuScene.h"
 
 #define PTM_RATIO 32.0f
@@ -53,12 +51,27 @@ bool GameScene::init()
 	_b2World = new b2World(Gravity);		//創建世界
 	_b2World->SetAllowSleeping(AllowSleep);	//設定物件允許睡著
 
+	//中景
     midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
     midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
+	//倒數時間
+    StartTime = CSLoader::createNode("Ani/StartAni.csb");
+    StartTime->setPosition(1024,800);
+    this->addChild(StartTime, 1);
+    StartAni = (ActionTimeline *)CSLoader::createTimeline("Ani/StartAni.csb");
+    StartTime->runAction(StartAni);
+    StartTime->setLocalZOrder(10);
+    //教學提示
+    _Teach = CSLoader::createNode("Ani/TeachAni.csb");
+    this->addChild(_Teach, 1);
+    TeachAni = (ActionTimeline *)CSLoader::createTimeline("Ani/TeachAni.csb");
+    _Teach->runAction(TeachAni);
+    TeachAni->setTimeSpeed(0.1f);
+    _Teach->setVisible(false);
     
 	CreatePlayer();// 放入玩家
-	CreateGround();
-    CreateLevel();
+	CreateGround();// 地板碰撞
+    CreateLevel();// 關卡生成
     
     _b2World->SetContactListener(&_contactListener);
 	if (BOX2D_DEBUG) {
@@ -89,37 +102,79 @@ bool GameScene::init()
 	// 將 doStep 函式掛入 schedule list 中，每一個 frame 就都會被呼叫到
 	this->schedule(CC_SCHEDULE_SELECTOR(GameScene::doStep));
 	return true;
-
 }
 void GameScene::doStep(float dt)
 {
-	_fSlipTime += dt;
 	_fGmaeTime += dt;
-	if (_contactListener.gameover == true) {
-        //ChangeScene();
-	}
-	int velocityIterations = 8; // 速度迭代次數
-	int positionIterations = 1; // 位置迭代次數，迭代次數一般設定為8~10 越高越真實但效率越差
-	_b2World->Step(dt, velocityIterations, positionIterations);
-    _Player->dostep();
-    for (b2Body* body = _b2World->GetBodyList(); body != NULL; body = body->GetNext()){
-        if (body->GetUserData() != NULL) {
-            Sprite *bodyData = (Sprite*)body->GetUserData();
-            bodyData->setPosition(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
-            bodyData->setRotation(-1 *CC_RADIANS_TO_DEGREES(body->GetAngle()));
+    if(PlayFlag == false){
+        if (_fGmaeTime >= 4.5){
+            PlayFlag = true;
+            StartTime->removeFromParent();
+            this->removeChild(StartTime);
         }
+        else if (_fGmaeTime >= 4)StartAni->gotoFrameAndPlay(4);
+        else if (_fGmaeTime >= 3)StartAni->gotoFrameAndPlay(3);
+        else if (_fGmaeTime >= 2)StartAni->gotoFrameAndPlay(2);
+        else if (_fGmaeTime >= 1)StartAni->gotoFrameAndPlay(1);
     }
-    if(midground[0]->getPosition().x < (-1575.52f))
-        midground[0]->setPosition(midground[1]->getPosition().x+2599.52f, 768);
-    midground[0]->setPosition(midground[0]->getPosition().x -3,768);
-    if(midground[1]->getPosition().x < (-1575.52f))
-        midground[1]->setPosition(midground[0]->getPosition().x+2599.52f, 768);
-    midground[1]->setPosition(midground[1]->getPosition().x -3,768);
-    _Level->dostep(dt);
-    if(_contactListener.RunFlag == true && _fSlipTime > 1.0f)
-        _Player->RunAct();
+	Play(dt);
 }
+void GameScene::Play(float dt) {
 
+    //教學
+    if(_Level->TeachFlag < 2){
+        if(_Level->TeachFlag == 0){
+            if(TeachAni->getCurrentFrame() > 3)
+                TeachAni->gotoFrameAndPlay(0,3,true);
+            _Teach->setPosition(1536,768);
+        }
+        else{
+            if(TeachAni->getCurrentFrame() <= 3)
+                TeachAni->gotoFrameAndPlay(4,7,true);
+            _Teach->setPosition(512,768);
+        }
+        _Teach->setVisible(true);
+        _Teach->setLocalZOrder(20);
+        _Player->AniPause();
+    }
+    else{
+        //Box2D
+        int velocityIterations = 8; // 速度迭代次數
+        int positionIterations = 1; // 位置迭代次數，迭代次數一般設定為8~10 越高越真實但效率越差
+        _b2World->Step(dt, velocityIterations, positionIterations);
+        //        for (b2Body* body = _b2World->GetBodyList(); body != NULL; body = body->GetNext()) {
+        //            if (body->GetUserData() != NULL && body->GetType() == b2_dynamicBody) {
+        //                Sprite *bodyData = (Sprite*)body->GetUserData();
+        //                bodyData->setPosition(body->GetPosition().x*PTM_RATIO, body->GetPosition().y*PTM_RATIO);
+        //                bodyData->setRotation(-1 * CC_RADIANS_TO_DEGREES(body->GetAngle()));
+        //            }
+        //        }
+        if (_contactListener.gameover == true) {
+            //ChangeScene();
+        }
+        //草叢移動
+        if (midground[0]->getPosition().x < (-1575.52f))
+            midground[0]->setPosition(midground[1]->getPosition().x + 2599.52f, 768);
+        midground[0]->setPosition(midground[0]->getPosition().x - 3, 768);
+        if (midground[1]->getPosition().x < (-1575.52f))
+            midground[1]->setPosition(midground[0]->getPosition().x + 2599.52f, 768);
+        midground[1]->setPosition(midground[1]->getPosition().x - 3, 768);
+        //角色
+        _fSlipTime += dt;
+        _Player->dostep();
+        if (_contactListener.AttackFlag == true && AttackFlag == true){
+            _contactListener.Breaksprite->setVisible(false);
+            _contactListener.BreakBody->GetFixtureList()->SetSensor(true);
+        }
+        if (_contactListener.RunFlag == true && _fSlipTime > 1.0f){
+            _Player->RunAct();
+            AttackFlag = false;
+            _contactListener.AttackFlag = false;
+        }
+        //關卡
+        _Level->dostep(dt);
+    }
+}
 void GameScene::CreatePlayer() {
 	// 放入玩家
 	_Player = new CPlayer(_b2World, Vec2(450,600));
@@ -185,34 +240,63 @@ void GameScene::ChangeScene()
 	auto scene = MenuScene::createScene();
 	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
 }
-
 bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
 	Point touchLoc = pTouch->getLocation();
     Rect rect = Director::getInstance()->getOpenGLView()->getVisibleRect();
-    if (touchLoc.x < rect.getMaxX()/2 && _fSlipTime > 1.0f) {
-        if(_contactListener.JumpFlag == false){
-            _fSlipTime = 0;
-            _Player->SlipAct();
+	if (PlayFlag == true) {
+        switch(_Level->TeachFlag){
+            case 0:
+                if (touchLoc.x > rect.getMaxX() / 2 && _contactListener.JumpFlag == false) {
+                    _Teach->setVisible(false);
+                    _Level->TeachFlag = 3;
+                    _Player->AniResume();
+                    _Player->JumpAct();
+                    _contactListener.JumpFlag = true;
+                    _contactListener.RunFlag = false;
+                }
+                break;
+            case 1:
+                if(touchLoc.x < rect.getMaxX() / 2 ){
+                    _Teach->setVisible(false);
+                    _Player->AniResume();
+                    if (_contactListener.JumpFlag == false && _fSlipTime > 1.0f) {
+                        _Level->TeachFlag = 3;
+                        _fSlipTime = 0;
+                        _Player->SlipAct();
+                    }
+                    else{
+                        _Player->AttackAct();
+                        _Level->TeachFlag = 2;
+                        AttackFlag = true;
+                    }
+                }
+                break;
+            case 2:
+                if (touchLoc.x < rect.getMaxX() / 2 && _fSlipTime > 1.0f) {
+                    if (_contactListener.JumpFlag == false) {
+                        _fSlipTime = 0;
+                        _Player->SlipAct();
+                    }
+                    else{                                                  
+                        _Player->AttackAct();
+                        AttackFlag = true;
+                    }
+                }
+                else if (touchLoc.x > rect.getMaxX() / 2 && _contactListener.JumpFlag == false) {
+                    _Player->JumpAct();
+                    _contactListener.JumpFlag = true;
+                    _contactListener.RunFlag = false;
+                }
+                break;
         }
-        else
-            _Player->AttackAct();
-    }
-    if (touchLoc.x > rect.getMaxX()/2 && _contactListener.JumpFlag == false) {
-        _Player->JumpAct();
-        _contactListener.JumpFlag = true;
-        _contactListener.RunFlag = false;
-    }
+	}
 	return true;
 }
-
 void  GameScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰移動事件
 {
 	Point touchLoc = pTouch->getLocation();
-
-
 }
-
 void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
 {
 	Point touchLoc = pTouch->getLocation();
@@ -226,24 +310,20 @@ void CContactListener::BeginContact(b2Contact* contact){
     b2Body* BodyA = contact->GetFixtureA()->GetBody();
     b2Body* BodyB = contact->GetFixtureB()->GetBody();
     if(BodyA->GetUserData() == _Playersprite){
-        if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
-            if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y<0)
-                JumpFlag = false;
-            RunFlag = true;
+        if (BodyB->GetFixtureList()->IsSensor() == true) {
+            gameover = true;
         }
-		if (BodyB->GetFixtureList()->IsSensor() == true) {
-			gameover = true;
-		}
-    }
-    if(BodyB->GetUserData() == _Playersprite){
-        if(BodyA->GetFixtureList()->GetDensity() == 0.0f){
-            if(BodyB->GetLinearVelocityFromWorldPoint(BodyA->GetPosition()).y<0)
+        else if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
+            if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y <= 0){
                 JumpFlag = false;
-            RunFlag =true;
+                RunFlag = true;
+            }
         }
-		if (BodyB->GetFixtureList()->IsSensor() == true) {
-			gameover = true;
-		}
+        else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
+            AttackFlag = true;
+            Breaksprite = (Sprite*)BodyB->GetUserData();
+            BreakBody = BodyB;
+        }
     }
 }
 void CContactListener::EndContact(b2Contact* contact){

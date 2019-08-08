@@ -18,7 +18,6 @@ class CObstacle : public cocos2d::Node
 private:
     Node* _Obstacle;
     Sprite * _body;
-    bool UpFlag = false;
     int num = 0;
     
     //b2world
@@ -30,8 +29,12 @@ public:
     ~CObstacle();
     
     float _fWidth = 0;
+	bool teach = false;
+    bool UpFlag = false;
+    bool DieFlag = false;
     
     void ChangeObstacle(Node* _ob);
+    void CreateObstacle();
     void CreateCollision();
     void SetPos(float x, float y);
     void Move(float x, float y);

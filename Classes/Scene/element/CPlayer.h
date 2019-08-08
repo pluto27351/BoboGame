@@ -25,8 +25,6 @@ private:
     //b2world
     b2Body *PlayerBody;
     b2World* _b2World;
-    
-    bool ActFlag = true;
 public:
     CPlayer();
 	CPlayer(b2World* _b2W, Vec2 pos);
@@ -41,6 +39,8 @@ public:
     void SlipAct();
     void AttackAct();
     void TensionAct();
+    void AniPause();
+    void AniResume();
     
     //void ActionEnd();
 

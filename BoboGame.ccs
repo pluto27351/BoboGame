@@ -7,6 +7,8 @@
           <Project Name="Player.csd" Type="Node" />
           <Project Name="s_grass.csd" Type="Node" />
           <Project Name="t_number.csd" Type="Node" />
+          <Project Name="StartAni.csd" Type="Node" />
+          <Project Name="TeachAni.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -71,9 +73,9 @@
           <Project Name="u5_9.csd" Type="Node" />
         </Folder>
         <Folder Name="Img">
-          <PlistImageFolder Image="bo.png" PListFile="bo.plist" Name=".bo_PList.Dir">
-            <PlistImageFile Name="attack_1.png" Key="attack_1.png" />
-            <PlistImageFile Name="attack_2.png" Key="attack_2.png" />
+          <PlistImageFolder Image="bo_ani.png" PListFile="bo_ani.plist" Name=".bo_ani_PList.Dir">
+            <PlistImageFile Name="attack_01.png" Key="attack_01.png" />
+            <PlistImageFile Name="attack_02.png" Key="attack_02.png" />
             <PlistImageFile Name="jump_1.png" Key="jump_1.png" />
             <PlistImageFile Name="jump_2.png" Key="jump_2.png" />
             <PlistImageFile Name="jump_3.png" Key="jump_3.png" />
@@ -216,6 +218,14 @@
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
           <Image Name="name.png" />
+          <Image Name="prompt1_l.png" />
+          <Image Name="prompt1_r.png" />
+          <Image Name="prompt2_l.png" />
+          <Image Name="prompt2_r.png" />
+          <Image Name="prompt3_l.png" />
+          <Image Name="prompt3_r.png" />
+          <Image Name="prompt4_l.png" />
+          <Image Name="prompt4_r.png" />
         </Folder>
         <Folder Name="Que">
           <Project Name="q1_1.csd" Type="Node" />

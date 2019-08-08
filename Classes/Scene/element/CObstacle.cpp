@@ -8,57 +8,77 @@ USING_NS_CC;
 CObstacle::~CObstacle(){}
 CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 	_b2World = _b2W;
-	char sprite[10];
-	_Obstacle = _ob;
-	_Obstacle->setPosition(0,0);
-	_Obstacle->setVisible(true);
-	this->addChild(_Obstacle, 1);
-	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
-    _fWidth = DG_WIDTH * _Obstacle->getTag();
-	for (int i = 1; _body != NULL; i++) {
-		if (_body->getTag() != 0) {
-			num++;
-			CreateCollision();
-		}
-		sprintf(sprite, "Sprite_%d", i);
-		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
-	}
-	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
-    _body->setVisible(false);
+    _Obstacle = _ob;
+    CreateObstacle();
 }
 void CObstacle::ChangeObstacle(Node* _ob){
+    //初始
 	for (int i = 0; i < num; i++) {
-		_b2World->DestroyBody(ObstacleBody[i]);
+        _b2World->DestroyBody(ObstacleBody[i]);
     }
-    removeAllChildren();
+	removeChild(_Obstacle);
 	std::vector <b2Body*>().swap(ObstacleBody);
     num = 0;
-    char sprite[10];
+    UpFlag = false;
+    DieFlag = false;
     _Obstacle = _ob;
+    CreateObstacle();
+}
+void CObstacle::CreateObstacle(){
+    char sprite[10];
     _Obstacle->setPosition(0,0);
     _Obstacle->setVisible(true);
-	this->addChild(_Obstacle, 1);
-	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    this->addChild(_Obstacle, 1);
+    _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
     _fWidth = DG_WIDTH * _Obstacle->getTag();
-	for (int i = 1; _body != NULL; i++) {
-		if (_body->getTag() != 0) {
-			num++;
+    for (int i = 1; _body != NULL; i++) {
+        if (_body->getTag() != 0) {
+            num++;
             CreateCollision();
-		}
-		sprintf(sprite, "Sprite_%d", i);
-		_body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
-	}
-	_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
-    _body->setVisible(false);
+            _body->setLocalZOrder(3);
+        }
+        sprintf(sprite, "Sprite_%d", i);
+        _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
+    }
+    _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    if(rand()%5 == 0){
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/img/game_element.plist");
+        Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
+        this->_Obstacle->addChild(img,2);
+    }
+    if(rand()%8 == 0){
+        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/img/game_element.plist");
+        Sprite *img;
+        int n = rand()%2;
+        switch(n){
+            case 0:
+                img = Sprite::createWithSpriteFrameName("decoration_flower.png");
+                break;
+            case 1:
+                img = Sprite::createWithSpriteFrameName("decoration_leaf.png");
+                break;
+        }
+        if(UpFlag == true){
+            switch(n%2){
+                case 0:
+                    img->setPosition((rand() % 375) - 187,220);
+                    break;
+                case 1:
+                    img->setPosition((rand() % 375) - 187,700);
+                    break;
+            }
+        }
+        else  img->setPosition((rand() % 375) - 187,220);
+        this->_Obstacle->addChild(img,2);
+    }
 }
 void CObstacle::CreateCollision(){
 	b2Body * _Cbody;
     b2BodyDef bodyDef;
     bodyDef.type = b2_kinematicBody;
     bodyDef.userData = _body;
-    bodyDef.position.Set((_body->getPosition().x + _Obstacle->getPosition().x) / PTM_RATIO, (_body->getPosition().y + _Obstacle->getPosition().y) / PTM_RATIO);
-	_Cbody = _b2World->CreateBody(&bodyDef);
-    Point loc = _Obstacle->getPosition();
+   _Cbody = _b2World->CreateBody(&bodyDef);
+    Point loc = _body->getPosition() + _Obstacle->getPosition();
     Size ts = _body->getContentSize();
     b2PolygonShape rectShape;
     float scaleX = _body->getScaleX();    // §Ù•≠™∫Ωu¨qπœ•‹∞≤≥]≥£•u¶≥πÔ X ∂b©Ò§j
@@ -93,30 +113,38 @@ void CObstacle::CreateCollision(){
     fixtureDef.shape = &rectShape;
     fixtureDef.restitution = 0.0f;
     fixtureDef.friction = 0.0f;
-	if (_body->getTag() == 4)
-		fixtureDef.isSensor = true;
-    else if(_body->getTag() == 1)
+    if (_body->getTag() == 4){ //die
+        fixtureDef.isSensor = true;
+        DieFlag = true;
+    }
+    else if(_body->getTag() == 1) //normal up
         UpFlag = true;
+    else if(_body->getTag() == 2) //attack
+        fixtureDef.density = 10000.0f;
 	_Cbody->CreateFixture(&fixtureDef);
 	ObstacleBody.push_back(_Cbody);
 }
 void CObstacle::Move(float x, float y) {
-    _body->setPosition(_body->getPosition().x + x,_body->getPosition().y + y);
-    for (int i = 0; i<num; i++){
-        ObstacleBody[i]->SetTransform(b2Vec2(ObstacleBody[i]->GetPosition().x + x / PTM_RATIO, ObstacleBody[i]->GetPosition().y + y / PTM_RATIO), 0);
-    }
+	_Obstacle->setPosition(_Obstacle->getPosition().x + x, _Obstacle->getPosition().y + y);
+	for (int i = 0; i < num; i++) {
+        Sprite *Data = (Sprite*)ObstacleBody[i]->GetUserData();
+        float fx = _Obstacle->getPosition().x;
+        float fy = _Obstacle->getPosition().y;
+        ObstacleBody[i]->SetTransform(b2Vec2(fx / PTM_RATIO, fy / PTM_RATIO), 0);
+	}
 }
 void CObstacle::SetPos(float x, float y) {
-    _body->setPosition(x, y);
-    for (int i = 0; i<num; i++){
-        float fx = ObstacleBody[i]->GetPosition().x * PTM_RATIO + x;
-        float fy = ObstacleBody[i]->GetPosition().y * PTM_RATIO + y;
-        ObstacleBody[i]->SetTransform(b2Vec2(fx /PTM_RATIO, fy / PTM_RATIO), 0);
-    }
+	_Obstacle->setPosition(x, y);
+	for (int i = 0; i<num; i++) {
+		Sprite *Data = (Sprite*)ObstacleBody[i]->GetUserData();
+		float fx = _Obstacle->getPosition().x;
+		float fy = _Obstacle->getPosition().y;
+		ObstacleBody[i]->SetTransform(b2Vec2(fx / PTM_RATIO, fy / PTM_RATIO), 0);
+	}
 }
 Point CObstacle::Getpos() {
 	Point pos;
-	pos.x = _body->getPosition().x;
-	pos.y = _body->getPosition().y;
+	pos.x = _Obstacle->getPosition().x;
+	pos.y = _Obstacle->getPosition().y;
 	return (pos);
 }

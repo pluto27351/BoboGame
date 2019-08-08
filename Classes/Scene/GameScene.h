@@ -25,7 +25,10 @@ public:
 	bool gameover = false;
     bool JumpFlag = false;
     bool RunFlag = true;
+    bool AttackFlag = true;
     cocos2d::Sprite * _Playersprite;
+    cocos2d::Sprite * Breaksprite;
+    b2Body *BreakBody;
     CContactListener();
     //¸I¼²¶}©l
     virtual void BeginContact(b2Contact* contact);
@@ -39,12 +42,16 @@ class GameScene : public cocos2d::Layer
 private:
 	Node *rootNode;
     Sprite *midground[2];
+	Node *StartTime;
+    Node *_Teach;
+	ActionTimeline* StartAni;
+    ActionTimeline* TeachAni;
 	CPlayer *_Player;
     CLevelCreate *_Level;
     float _fSlipTime = 1;
 	float _fGmaeTime = 0;
-    
-    //bool JumpFlag = false;
+    bool AttackFlag = false;
+    bool PlayFlag = false;
     
     CContactListener _contactListener;
 	// b2World
@@ -53,6 +60,7 @@ private:
 	virtual void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t flags);
 
 	void doStep(float);
+	void Play(float); //遊戲開始
 public:
 	~GameScene();
 	bool init();
