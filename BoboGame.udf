@@ -10,7 +10,7 @@
         <AndroidVersion Value="android-24" />
         <iOS_Target Value="BoboGame-mobile" />
         <iOS_BundleID Value="iPhone Developer: ntuedtdtea@gmail.com (M25A83ZBL8)" />
-        <Platform Value="None" />
+        <Platform Value="iOS" />
         <RunPlatform Value="None" />
         <FrameworkVersion Value="cocos2d-x-3.10" />
         <IsDebugKeystore Value="True" />

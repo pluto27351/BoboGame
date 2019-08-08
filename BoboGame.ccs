@@ -6,8 +6,8 @@
         <Folder Name="Ani">
           <Project Name="Player.csd" Type="Node" />
           <Project Name="s_grass.csd" Type="Node" />
-          <Project Name="t_number.csd" Type="Node" />
           <Project Name="StartAni.csd" Type="Node" />
+          <Project Name="t_number.csd" Type="Node" />
           <Project Name="TeachAni.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
