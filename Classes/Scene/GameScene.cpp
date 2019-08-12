@@ -4,7 +4,7 @@
 
 #define PTM_RATIO 32.0f
 #define BOX2D_DEBUG 1
-#define SLIP_TIME 0.8f
+#define SLIP_TIME 0.7f
 #define MG_SPEED 2
 
 USING_NS_CC;

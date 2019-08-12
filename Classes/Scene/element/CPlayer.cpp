@@ -81,7 +81,7 @@ void CPlayer::RunAct() {
 void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<=30){
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
-        PlayerBody->SetLinearVelocity(b2Vec2(0,55));
+        PlayerBody->SetLinearVelocity(b2Vec2(0,58));
     }
 }
 void CPlayer::SlipAct(){
