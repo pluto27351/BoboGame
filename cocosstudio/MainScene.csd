@@ -6,15 +6,15 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="bg_1" CanEdit="False" ActionTag="-498911902" Tag="20" IconVisible="False" LeftMargin="-341.5000" RightMargin="-341.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg_1" ActionTag="-498911902" Tag="20" IconVisible="False" LeftMargin="1001.0000" RightMargin="1001.0000" TopMargin="745.0000" BottomMargin="745.0000" ctype="SpriteObjectData">
             <Size X="2731.0000" Y="1536.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1024.0000" Y="768.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.3335" Y="1.0000" />
-            <FileData Type="PlistSubImage" Path="startpage_bg.png" Plist="Img/game_start.plist" />
+            <PreSize X="0.0225" Y="0.0299" />
+            <FileData Type="PlistSubImage" Path="bg_start.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="-1502497757" Tag="122" RotationSkewX="-6.9081" RotationSkewY="-6.9074" IconVisible="False" LeftMargin="320.4126" RightMargin="1227.5874" TopMargin="255.6829" BottomMargin="980.3171" ctype="SpriteObjectData">

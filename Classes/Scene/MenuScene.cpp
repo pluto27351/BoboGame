@@ -50,24 +50,25 @@ bool MenuScene::init()
 
 	//章節按鈕
 	for (int i = 0; i < 5; i++) {
-		sprintf(name, "btn_%d", i + 1);
+		sprintf(name, "title_%d", i + 1);
 		auto btn = rootNode->getChildByName(name);
-		_chapBtn[i].setButtonInfo("btn_test.png", "btn_test.png",*this, btn->getPosition(),1);
+        sprintf(name, "menu_btn_ch%d.png", i + 1);
+		_chapBtn[i].setButtonInfo(name,name,*this, btn->getPosition(),1);
 		_chapBtn[i].setScale(btn->getScaleX(), btn->getScaleY());
 		_chapBtn[i].setRotate(btn->getRotation());
 		rootNode->removeChild(btn);
 	}
 
 	//遊戲按鈕
-	auto btn = rootNode->getChildByName("btn_g");
-	_gameBtn.setButtonInfo("btn_test.png", "btn_test.png", *this, btn->getPosition(), 1);
+	auto btn = rootNode->getChildByName("title_g");
+	_gameBtn.setButtonInfo("menu_btn_g.png", "menu_btn_g.png", *this, btn->getPosition(), 1);
 	_gameBtn.setScale(btn->getScaleX(), btn->getScaleY());
 	_gameBtn.setRotate(btn->getRotation());
 	rootNode->removeChild(btn);
 
 	//排行按鈕
-	btn = rootNode->getChildByName("btn_b");
-	_boardBtn.setButtonInfo("btn_test.png", "btn_test.png", *this, btn->getPosition(), 1);
+	btn = rootNode->getChildByName("title_b");
+	_boardBtn.setButtonInfo("menu_btn_b.png","menu_btn_b.png", *this, btn->getPosition(), 1);
 	_boardBtn.setScale(btn->getScaleX(), btn->getScaleY());
 	_boardBtn.setRotate(btn->getRotation());
 	rootNode->removeChild(btn);

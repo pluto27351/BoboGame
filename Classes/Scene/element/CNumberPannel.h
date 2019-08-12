@@ -13,19 +13,22 @@ class CNumberPannel:public Layer
 {
 private:
     CButton _triggerBtn,_number[12];
-    Sprite *_touchedPic,*_answerArea[3],*_numberbg;
+    Sprite *_touchedPic,*_answerArea[5],*_numberbg;
     SpriteFrame *_answerBg;
     Rect _answerAreaRect[3];
     Vec2 _ansAreaSize;
+    float _ansX[3];
     bool _bShowNumber;
     bool _bMoveNumber;
     int _nowNumber;
-    int _answerNumber[3];
+    int _answerNumber[5];
 public:
     CNumberPannel(){};
     void setNumberInfo(const cocos2d::Point,int);
     void setAnswerInfo(Node *);
     void setNumberVisual(bool);
+    int ansAreaHover(Point inPos);
+    void resortAns();
     Vec3 getBoxAns();
     void clear();
     void setTouchedPic(int,Point);

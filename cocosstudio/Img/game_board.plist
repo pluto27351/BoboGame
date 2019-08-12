@@ -57,7 +57,7 @@
             <key>size</key>
             <string>{4096,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:56bb8f1e4bcea98cd420cebe0e3ddc52:a2b3f0f8b26195e3676742c4b4c037a5:37d2b7dde079c20c3409f5165db8b7c5$</string>
+            <string>$TexturePacker:SmartUpdate:668057e1c15192730b1fd2327fa6db0a:a2b3f0f8b26195e3676742c4b4c037a5:37d2b7dde079c20c3409f5165db8b7c5$</string>
             <key>textureFileName</key>
             <string>game_board.png</string>
         </dict>

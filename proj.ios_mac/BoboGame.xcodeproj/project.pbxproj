@@ -134,6 +134,7 @@
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CLevelCreate.cpp; sourceTree = "<group>"; };
 		F11FD32122CB7E9000E33BAC /* CLevelCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLevelCreate.h; sourceTree = "<group>"; };
+		F12767112301516700ABFCB1 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F14ED66122D5E1CE00A15B39 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		F14F5D0722C9ED6000D8CEC1 /* CObstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CObstacle.h; sourceTree = "<group>"; };
 		F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CObstacle.cpp; sourceTree = "<group>"; };
@@ -158,7 +159,6 @@
 		F15F3EE1228FAE710036D916 /* BoardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardScene.h; sourceTree = "<group>"; };
 		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
 		F15F3EF2228FAF370036D916 /* CNumberPannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNumberPannel.h; sourceTree = "<group>"; };
-		F17B36F622DA07AF00ADA574 /* CAnsCreater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F1CFD06422C8A4680054151F /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		F1CFD06522C8A4680054151F /* GB2ShapeCache-x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GB2ShapeCache-x.h"; sourceTree = "<group>"; };
 		F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GB2ShapeCache-x.cpp"; sourceTree = "<group>"; };
@@ -377,8 +377,8 @@
 		F15F3ED1228FAE710036D916 /* element */ = {
 			isa = PBXGroup;
 			children = (
+				F12767112301516700ABFCB1 /* CAnsCreater.h */,
 				F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */,
-				F17B36F622DA07AF00ADA574 /* CAnsCreater.h */,
 				F15F3ED6228FAE710036D916 /* CButton.cpp */,
 				F15F3ED3228FAE710036D916 /* CButton.h */,
 				F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */,
@@ -448,7 +448,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 8M8F5HA25Q;
+						DevelopmentTeam = 7553JMUBAP;
 					};
 				};
 			};
@@ -555,7 +555,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 8M8F5HA25Q;
+				DEVELOPMENT_TEAM = 7553JMUBAP;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -580,6 +580,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.BoboGame2;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -593,7 +594,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 8M8F5HA25Q;
+				DEVELOPMENT_TEAM = 7553JMUBAP;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -616,6 +617,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.BoboGame2;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
