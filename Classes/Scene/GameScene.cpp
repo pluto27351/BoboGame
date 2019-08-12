@@ -317,6 +317,7 @@ void CContactListener::BeginContact(b2Contact* contact){
             if(BodyA->GetLinearVelocityFromWorldPoint(BodyA->GetPosition()).y <= 0)
                 RunFlag = true;
         }
+        
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
             AttackFlag = true;
             Breaksprite = (Sprite*)BodyB->GetUserData();

@@ -14,7 +14,7 @@ CLevelCreate::CLevelCreate(b2World* _b2W, int L) {
             _DownGroundCollision[i]->SetPos(0, 200);
         else
             _DownGroundCollision[i]->SetPos(_DownGroundCollision[i-1]->Getpos().x + _DownGroundCollision[i-1]->_fWidth/2 + _DownGroundCollision[i]->_fWidth/2, 200);
-		this->addChild(_DownGroundCollision[i], 1);
+		this->addChild(_DownGroundCollision[i], 0);
 	}
 }
 void CLevelCreate::dostep(float dt) {

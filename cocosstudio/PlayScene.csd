@@ -39,13 +39,13 @@
             <FileData Type="Normal" Path="Img/mg_2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ground" ActionTag="-679265581" VisibleForFrame="False" Tag="181" IconVisible="False" LeftMargin="766.0005" RightMargin="765.9995" TopMargin="1131.5000" BottomMargin="-84.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="ground" ActionTag="-679265581" VisibleForFrame="False" Tag="181" IconVisible="False" LeftMargin="766.0005" RightMargin="765.9995" TopMargin="1141.5000" BottomMargin="-94.5000" ctype="SpriteObjectData">
             <Size X="516.0000" Y="489.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0005" Y="160.0000" />
+            <Position X="1024.0005" Y="150.0000" />
             <Scale ScaleX="4.8000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.1042" />
+            <PrePosition X="0.5000" Y="0.0977" />
             <PreSize X="0.2520" Y="0.3184" />
             <FileData Type="PlistSubImage" Path="d_ground.png" Plist="Img/game_element.plist" />
             <BlendFunc Src="1" Dst="771" />
