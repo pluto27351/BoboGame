@@ -6,7 +6,7 @@
 #include "element/Data.h"
 
 USING_NS_CC;
-
+#define QUE_POS Vec2(1050,1180)
 using namespace cocostudio::timeline;
 using namespace ui;
 using namespace CocosDenshion;
@@ -21,51 +21,22 @@ Scene* TeachScene::createScene(int unit)
 	auto scene = Scene::create();
 
 	auto layer = TeachScene::create();
-	layer->randomQuestion(unit);
+	layer->initQue(unit);
 
 	scene->addChild(layer);
 
 	return scene;
 }
 
-void TeachScene::randomQuestion(int chap) {
+void TeachScene::initQue(int chap) {
 	rootNode = CSLoader::createNode("TeachScene.csb");
 
-	_chap = chap;
-
-	//設定題目
-	if (_question) {
-		this->removeChild(_question);  delete _question;
-	}
-
-	_question = new CAnsCreater;
-	auto target = rootNode->getChildByName("question");
-    _chapNo++;
+	_curUnit = chap;
+    _curQue = 1;
+    _curNum = -1;
+    _question = NULL;
     
-    if(_chapNo >= 13) return;
-    
-    srand(time(NULL));
-    auto objNum = UNIT_OBJ[_chap-1][_chapNo-1];
-    int num = (rand() % PIECE[objNum][0]) + 1;
-    _chapNum = PIECE[objNum][num];
-    
-    if(_chap == 5 && (_chapNo == 3||_chapNo == 4)){
-        int k = 0;
-        do {
-            _c = rand()%6;
-            _b= rand()%5;
-            k = UNIT5[_chapNum-2][_c][_b];  //數字都從2開始 a.c.b
-            _c+=2;_b+=2;
-        }while (k == 0);
-        
-        _question->queCreater(_chap, _chapNo, _chapNum,_c,_b);
-    }
-    else{
-        _question->queCreater(_chap, _chapNo, _chapNum);
-    }
-	_question->setPosition(target->getPosition());
-	this->addChild(_question);
-    
+    resetQue();
 }
 
 bool TeachScene::init()
@@ -122,8 +93,6 @@ bool TeachScene::init()
 	_right->setVisible(false);
 	_wrong->setVisible(false);
 
-	_chapNo = 0;
-	_chapNum = 0;
 	//觸控
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
 	_listener1->onTouchBegan = CC_CALLBACK_2(TeachScene::onTouchBegan, this);		//加入觸碰開始事件
@@ -157,8 +126,9 @@ void TeachScene::ChangeScene()
 void TeachScene::NextQuestion(float a) {
 	_right->setVisible(false);
 	_wrong->setVisible(false);
-
-	randomQuestion(_chap);
+    
+    _curQue++;
+	resetQue();
 	_handDrawing->clearWhiteBoard();
     _numberArea->clear();
 }
@@ -215,3 +185,193 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 	_handDrawing->touchesEnded(touchLoc);
 }
 
+void TeachScene::resetQue()
+{
+    if(_curQue >= 13) return;
+    
+    //重設題目
+    if(_question != NULL) {this->removeChild(_question);  delete _question;}
+    
+    _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
+    
+    int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
+    int cate = queCate%100;
+    int cate_data = queCate/100-1;
+    switch (cate) {
+        case 1:                                 //一般題
+            switchdata = PIECE[_objNum];
+            setQue(cate);
+            break;
+        case 2:                                 //變量題 chap4-7~12
+            switchdata = PIECE_U4[_curQue-7];
+            setQue_quantity();
+            break;
+        case 3:                                 //比例題 chap5-3.4.6
+            switchdata = PIECE_U5[_curQue-1];
+            setQue_picline();
+            break;
+        case 4:                                 //倍數題 chap5-其他題
+            switchdata = PIECE_U5[_curQue-1];
+            setQue_multiple();
+            break;
+        case 5:                                 //線段題 chap3-6
+            switchdata = PIECE[0];
+            setQue_line();
+            break;
+        case 11:                                //分子題1 chap2-3.5.8.11
+            switchdata = PIECE_U2[cate_data];
+            setQue(cate);
+            break;
+        case 12:                                //分子題2 chap3-7~12
+            switchdata = PIECE_U3[cate_data];
+            setQue(cate);
+            break;
+    }
+    
+    
+}
+
+void TeachScene::setQue(int k) {
+    // 獲取題目分母資訊  隨幾取分母
+   // if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+    //}
+    
+    //設定題目
+    _question = new CAnsCreater(_curUnit, _curQue, _curNum);
+
+    _question->queCreater(_curUnit, _curQue, _curNum);
+    _question->setPosition(QUE_POS);
+    this->addChild(_question);
+    
+}
+
+
+void TeachScene::setQue_picline() {  //chap5-3.4.6
+   // if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+   // }
+    
+    int k = 0;
+    int _c = 0,_b = 0;
+    do {
+        _c = rand() % 6;
+        _b = rand() % 5;
+        k = UNIT5[_curNum - 2][_c][_b];  //_curNum = 2~6 , _c = 0~5  , _b = 0~4
+        _c += 2; _b += 1;
+    } while (k == 0);
+    
+    //設定題目
+    _question = new CAnsCreater(_curUnit, _curQue, _curNum, _c, _b);
+    _question->queCreater(_curUnit, _curQue, _curNum, _c, _b);
+    _question->setPosition(QUE_POS);
+    this->addChild(_question);
+    
+    
+    
+}
+
+void TeachScene::setQue_multiple() {  //chap5其餘題
+  //  if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+   // }
+    int que_b = switchdata[11];
+    int c = 0,ans_b = 0;
+    int k = (2 * _curNum) / que_b;  //取上限 ２倍分母/分子 ＝ 倍數上限
+    bool b;
+    do {
+        c = (rand() % k)+1; //隨機取倍數 <上限
+        if(k == 2) {c = k; _c =-1;}
+    } while ((c == 1 || c == _c));    //分母太小會沒有數字c出
+    
+    _c =c;
+    ans_b = _c * que_b;
+    
+    
+    //設定題目
+    _question = new CAnsCreater(_curUnit, _curQue, _curNum, _c, que_b);
+    _question->queCreater(_curUnit, _curQue, _curNum, _c, que_b);
+    _question->setPosition(QUE_POS);
+    this->addChild(_question);
+    
+}
+
+
+void TeachScene::setQue_line(){
+    // 獲取題目分母資訊  隨幾取分母
+   // if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+   // }
+    
+//    int q[3]={-1};
+//    do{
+//        int qq[3];
+//        qq[0] = rand() %  (2*_curNum);
+//        qq[1] = rand() %  (2*_curNum);
+//        qq[2] = rand() %  (2*_curNum);
+//        q[0] = qq[0];
+//        if(qq[1] < q[0]){
+//            q[1]=q[0];q[0]=qq[1];
+//        }
+//        else {
+//            q[1] = qq[1];
+//        }
+//
+//        if(qq[2] < q[1]){
+//            q[2]=q[1];
+//            if(qq[2] < q[0]){
+//                q[1]=q[0]; q[0]=qq[2];
+//            }
+//            else{
+//                q[1]=qq[2];
+//            }
+//        }else{
+//            q[2] = qq[2];
+//        }
+//    }while(q[0] == q[1] || q[0] == q[2] ||q[1] == q[2]);
+//
+//    CCLOG("a=%d , b=%d , c=%d",q[0],q[1],q[2]);
+    
+    int q = rand() %  (2*_curNum);
+    //設定題目
+    _question = new CAnsCreater(_curNum,q);
+    _question->queCreater(_curUnit, _curQue, _curNum);
+    _question->queLineCreater(_curNum,q);
+    _question->setPosition(QUE_POS);
+    this->addChild(_question);
+    
+    
+    
+}
+
+void TeachScene::setQue_quantity() {  //chap4-7~12
+   // if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+   // }
+    
+    int c,r =UNIT4[_curQue-7][0];
+    do{
+        int k = (rand() % r) +1;
+        c = UNIT4[_curQue-7][k];
+    }while( c % _curNum != 0 || (_curNum <5  && c == _c) || (_curNum == 6 && (_curQue ==9 ||_curQue ==10|| _curQue == 12) && c == _c)) ;
+    _c = c;
+    
+    
+    //設定題目
+    _question = new CAnsCreater(_curUnit, _curQue, _curNum);
+    _question->queCreater(_curUnit, _curQue, _curNum, _c);
+    _question->setPosition(QUE_POS);
+    this->addChild(_question);
+    
+    
+}

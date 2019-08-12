@@ -15,9 +15,9 @@ Vec3 CNumberPannel::getBoxAns(){
     if(_answerNumber[4] != -1 )n = _answerNumber[3]*10 + _answerNumber[4];
     else n = _answerNumber[3];
     
-    for(int i=0;i<5;i++)CCLOG("%d = %d",i,_answerNumber[i]);
-    
-    CCLOG("%d,%d,%d",f,d,n);
+//    for(int i=0;i<5;i++)CCLOG("%d = %d",i,_answerNumber[i]);
+//
+//    CCLOG("%d,%d,%d",f,d,n);
     return(Vec3(f,d,n));
 }
 
@@ -54,7 +54,7 @@ void CNumberPannel::clear(){
         _answerArea[i]->setScaleY(_ansAreaSize.y);
         _answerNumber[i] = -1;
         _answerArea[i]->setOpacity(0);
-        CCLOG("init %d = %d", i,_answerNumber[i] );
+      //  CCLOG("init %d = %d", i,_answerNumber[i] );
     }
     
     _bShowNumber = false;

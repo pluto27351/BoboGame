@@ -7,7 +7,7 @@
             <key>ans_area.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2172,0},{84,140}}</string>
+                <string>{{3937,0},{84,140}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>eraser_body.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1147,0},{100,100}}</string>
+                <string>{{2912,0},{100,100}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -43,10 +43,88 @@
                 <key>sourceSize</key>
                 <string>{100,100}</string>
             </dict>
+            <key>length_0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{35,0},{1734,50}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1734,50}}</string>
+                <key>sourceSize</key>
+                <string>{1734,50}</string>
+            </dict>
+            <key>length_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1769,0},{31,59}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{31,59}}</string>
+                <key>sourceSize</key>
+                <string>{31,59}</string>
+            </dict>
+            <key>length_b0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{289,140},{56,187}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{56,187}}</string>
+                <key>sourceSize</key>
+                <string>{56,187}</string>
+            </dict>
+            <key>length_b1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{345,140},{56,187}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{56,187}}</string>
+                <key>sourceSize</key>
+                <string>{56,187}</string>
+            </dict>
+            <key>length_b2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{401,140},{56,187}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{56,187}}</string>
+                <key>sourceSize</key>
+                <string>{56,187}</string>
+            </dict>
+            <key>line_box.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,140},{116,142}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{116,142}}</string>
+                <key>sourceSize</key>
+                <string>{116,142}</string>
+            </dict>
             <key>teacc_effect_right.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,585},{729,744}}</string>
+                <string>{{1965,140},{729,744}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +137,7 @@
             <key>teacc_effect_wrong.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{729,585},{729,744}}</string>
+                <string>{{2694,140},{729,744}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +150,7 @@
             <key>teach_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1329},{2775,1572}}</string>
+                <string>{{0,884},{2775,1572}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +163,7 @@
             <key>teach_box.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2706,0},{863,524}}</string>
+                <string>{{734,140},{863,524}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +176,7 @@
             <key>teach_btn_answer.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{799,0},{126,91}}</string>
+                <string>{{2674,0},{126,91}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +189,7 @@
             <key>teach_btn_clear.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{705,0},{94,90}}</string>
+                <string>{{2470,0},{94,90}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +202,7 @@
             <key>teach_btn_eraser.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1247,0},{121,107}}</string>
+                <string>{{3012,0},{121,107}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +215,7 @@
             <key>teach_btn_giveup.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2256,0},{173,157}}</string>
+                <string>{{116,140},{173,157}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +228,7 @@
             <key>teach_btn_home.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{925,0},{110,91}}</string>
+                <string>{{2564,0},{110,91}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +241,7 @@
             <key>teach_btn_no.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1854,0},{318,127}}</string>
+                <string>{{3619,0},{318,127}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,7 +254,7 @@
             <key>teach_btn_number.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1035,0},{112,97}}</string>
+                <string>{{2800,0},{112,97}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +267,7 @@
             <key>teach_btn_pen.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1678,0},{176,122}}</string>
+                <string>{{3443,0},{176,122}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +280,7 @@
             <key>teach_btn_yes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1368,0},{310,108}}</string>
+                <string>{{3133,0},{310,108}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +293,7 @@
             <key>teach_number_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{169,0},{67,85}}</string>
+                <string>{{2269,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +306,7 @@
             <key>teach_number_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{303,0},{67,85}}</string>
+                <string>{{2001,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +319,7 @@
             <key>teach_number_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{236,0},{67,85}}</string>
+                <string>{{1934,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +332,7 @@
             <key>teach_number_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{571,0},{67,85}}</string>
+                <string>{{2202,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -267,7 +345,7 @@
             <key>teach_number_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{35,0},{67,85}}</string>
+                <string>{{1867,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -280,7 +358,7 @@
             <key>teach_number_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{370,0},{67,85}}</string>
+                <string>{{1800,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -293,7 +371,7 @@
             <key>teach_number_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{102,0},{67,85}}</string>
+                <string>{{2068,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -306,7 +384,7 @@
             <key>teach_number_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{638,0},{67,85}}</string>
+                <string>{{2135,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +397,7 @@
             <key>teach_number_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{504,0},{67,85}}</string>
+                <string>{{2403,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +410,7 @@
             <key>teach_number_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{437,0},{67,85}}</string>
+                <string>{{2336,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +423,7 @@
             <key>teach_number_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3569,0},{368,585}}</string>
+                <string>{{1597,140},{368,585}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +436,7 @@
             <key>teach_star.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2429,0},{277,345}}</string>
+                <string>{{457,140},{277,345}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -382,7 +460,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:774e0e5ad2f643fa73b8e7bd260ab59f:b23c58f319dc99dc8caf314edab4c2ec:d6752752da0893da8d789f35f2add9a5$</string>
+            <string>$TexturePacker:SmartUpdate:4b6380f93f106b4860ad65ba193a848d:f2f160bee5d4e8f41e3060aa893cee1a:d6752752da0893da8d789f35f2add9a5$</string>
             <key>textureFileName</key>
             <string>game_teach.png</string>
         </dict>

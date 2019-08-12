@@ -20,7 +20,7 @@ using namespace CocosDenshion;
 class TeachScene : public cocos2d::Layer
 {
 private:
-	int _chap, _chapNo,_chapNum;
+	int _curUnit, _curQue,_curNum,_objNum;
     int _c,_b;
 	Node *rootNode;
 	Node *_right, *_wrong;
@@ -28,13 +28,22 @@ private:
 	CDrawPanel *_handDrawing;
 	CNumberPannel *_numberArea;
 	CAnsCreater *_question;
+    const int *switchdata;
 	void doStep(float);
 public:
 	~TeachScene();
 	bool init();
 	void ChangeScene();
-	void randomQuestion(int chap);
+	void initQue(int chap);
 	void NextQuestion(float);
+    
+    void setQue(int k);
+    void setQue_picline();
+    void setQue_multiple();
+    void setQue_line();
+    void setQue_quantity();
+    void resetQue();
+    
 	static cocos2d::Scene* createScene(int unit);
 
 	cocos2d::EventListenerTouchOneByOne *_listener1;
