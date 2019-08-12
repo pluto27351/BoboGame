@@ -53,9 +53,14 @@ bool GameScene::init()
 	_b2World = new b2World(Gravity);		//創建世界
 	_b2World->SetAllowSleeping(AllowSleep);	//設定物件允許睡著
 
+    Sprite *bg = (cocos2d::Sprite *)rootNode->getChildByName("bg");
+    bg->setGlobalZOrder(-2);
+    
 	//中景
     midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
     midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
+    midground[0]->setGlobalZOrder(-2);
+    midground[1]->setGlobalZOrder(-2);
 	//倒數時間
     StartTime = CSLoader::createNode("Ani/StartAni.csb");
     StartTime->setPosition(1024,800);
@@ -172,6 +177,8 @@ void GameScene::Play(float dt) {
             _Player->RunAct();
             AttackFlag = false;
             _contactListener.AttackFlag = false;
+        }if (_Player->PlayerBody->GetLinearVelocity().y < -8){
+            _contactListener.RunFlag = false;
         }
         //關卡
         _Level->dostep(dt);
@@ -314,10 +321,9 @@ void CContactListener::BeginContact(b2Contact* contact){
             gameover = true;
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
-            if(BodyA->GetLinearVelocityFromWorldPoint(BodyA->GetPosition()).y <= 0)
+            if(BodyA->GetLinearVelocity().y <= 0)
                 RunFlag = true;
         }
-        
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
             AttackFlag = true;
             Breaksprite = (Sprite*)BodyB->GetUserData();
