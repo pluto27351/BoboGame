@@ -138,11 +138,13 @@
             <PlistImageFile Name="up_rocklight.png" Key="up_rocklight.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_menu.png" PListFile="game_menu.plist" Name=".game_menu_PList.Dir">
+            <PlistImageFile Name="menu_btn_b.png" Key="menu_btn_b.png" />
             <PlistImageFile Name="menu_btn_ch1.png" Key="menu_btn_ch1.png" />
             <PlistImageFile Name="menu_btn_ch2.png" Key="menu_btn_ch2.png" />
             <PlistImageFile Name="menu_btn_ch3.png" Key="menu_btn_ch3.png" />
             <PlistImageFile Name="menu_btn_ch4.png" Key="menu_btn_ch4.png" />
             <PlistImageFile Name="menu_btn_ch5.png" Key="menu_btn_ch5.png" />
+            <PlistImageFile Name="menu_btn_g.png" Key="menu_btn_g.png" />
             <PlistImageFile Name="menu_ch1_0.png" Key="menu_ch1_0.png" />
             <PlistImageFile Name="menu_ch1_1.png" Key="menu_ch1_1.png" />
             <PlistImageFile Name="menu_ch2_0.png" Key="menu_ch2_0.png" />
@@ -167,10 +169,9 @@
             <PlistImageFile Name="menu_number_7.png" Key="menu_number_7.png" />
             <PlistImageFile Name="menu_number_8.png" Key="menu_number_8.png" />
             <PlistImageFile Name="menu_number_9.png" Key="menu_number_9.png" />
-            <PlistImageFile Name="menu_btn_b.png" Key="menu_btn_b.png" />
-            <PlistImageFile Name="menu_btn_g.png" Key="menu_btn_g.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
+            <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
             <PlistImageFile Name="btn_test.png" Key="btn_test.png" />
             <PlistImageFile Name="startpage_front.png" Key="startpage_front.png" />
             <PlistImageFile Name="startpage_grass01.png" Key="startpage_grass01.png" />
@@ -178,9 +179,9 @@
             <PlistImageFile Name="startpage_grass03.png" Key="startpage_grass03.png" />
             <PlistImageFile Name="startpage_star.png" Key="startpage_star.png" />
             <PlistImageFile Name="startpage_tree.png" Key="startpage_tree.png" />
-            <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_teach.png" PListFile="game_teach.plist" Name=".game_teach_PList.Dir">
+            <PlistImageFile Name="ans_area.png" Key="ans_area.png" />
             <PlistImageFile Name="brush.png" Key="brush.png" />
             <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
             <PlistImageFile Name="teacc_effect_right.png" Key="teacc_effect_right.png" />
@@ -196,6 +197,7 @@
             <PlistImageFile Name="teach_btn_number.png" Key="teach_btn_number.png" />
             <PlistImageFile Name="teach_btn_pen.png" Key="teach_btn_pen.png" />
             <PlistImageFile Name="teach_btn_yes.png" Key="teach_btn_yes.png" />
+            <PlistImageFile Name="teach_number_0.png" Key="teach_number_0.png" />
             <PlistImageFile Name="teach_number_1.png" Key="teach_number_1.png" />
             <PlistImageFile Name="teach_number_2.png" Key="teach_number_2.png" />
             <PlistImageFile Name="teach_number_3.png" Key="teach_number_3.png" />
@@ -207,8 +209,6 @@
             <PlistImageFile Name="teach_number_9.png" Key="teach_number_9.png" />
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
-            <PlistImageFile Name="ans_area.png" Key="ans_area.png" />
-            <PlistImageFile Name="teach_number_0.png" Key="teach_number_0.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />

@@ -177,7 +177,8 @@ void GameScene::Play(float dt) {
             _Player->RunAct();
             AttackFlag = false;
             _contactListener.AttackFlag = false;
-        }if (_Player->PlayerBody->GetLinearVelocity().y < -8){
+        }
+        if (_Player->PlayerBody->GetLinearVelocity().y < -8){
             _contactListener.RunFlag = false;
         }
         //關卡
@@ -326,7 +327,8 @@ void CContactListener::BeginContact(b2Contact* contact){
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
             AttackFlag = true;
-            Breaksprite = (Sprite*)BodyB->GetUserData();
+            if(BodyB->GetFixtureList()->IsSensor() == true)
+                Breaksprite = (Sprite*)BodyB->GetUserData();
             BreakBody = BodyB;
         }
     }

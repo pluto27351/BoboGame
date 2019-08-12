@@ -3273,7 +3273,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="2" Visible="False" ActionTag="-1344523697" Tag="354" IconVisible="True" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="2" ActionTag="-1344523697" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Sprite_0" ActionTag="1104215397" Tag="355" IconVisible="False" LeftMargin="-258.0000" RightMargin="-258.0000" TopMargin="-244.5000" BottomMargin="-244.5000" ctype="SpriteObjectData">
