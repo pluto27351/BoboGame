@@ -40,10 +40,14 @@ void CObstacle::CreateObstacle(){
             num++;
             CreateCollision();
         }
+        if(i == 2){
+            if(_body->getChildByTag(1)!=NULL)
+                _body->getChildByTag(1)->setGlobalZOrder(0);
+        }
         sprintf(sprite, "Sprite_%d", i);
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
     }
-    _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+    //_body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
 
 	//裝飾
     if(rand()%5 == 0){
