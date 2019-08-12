@@ -59,17 +59,18 @@ bool GameScene::init()
 	//倒數時間
     StartTime = CSLoader::createNode("Ani/StartAni.csb");
     StartTime->setPosition(1024,800);
-    this->addChild(StartTime, 1);
+    this->addChild(StartTime, 2);
     StartAni = (ActionTimeline *)CSLoader::createTimeline("Ani/StartAni.csb");
     StartTime->runAction(StartAni);
-    StartTime->setLocalZOrder(10);
+	StartTime->getChildByName("time")->setGlobalZOrder(6);
     //教學提示
     _Teach = CSLoader::createNode("Ani/TeachAni.csb");
-    this->addChild(_Teach, 1);
+    this->addChild(_Teach, 2);
     TeachAni = (ActionTimeline *)CSLoader::createTimeline("Ani/TeachAni.csb");
     _Teach->runAction(TeachAni);
     TeachAni->setTimeSpeed(0.1f);
     _Teach->setVisible(false);
+	_Teach->getChildByName("prompt")->setGlobalZOrder(6);
     
 	CreatePlayer();// 放入玩家
 	CreateGround();// 地板碰撞
@@ -136,7 +137,6 @@ void GameScene::Play(float dt) {
             _Teach->setPosition(512,768);
         }
         _Teach->setVisible(true);
-        _Teach->setLocalZOrder(20);
         _Player->AniPause();
     }
     else{
@@ -310,7 +310,7 @@ void CContactListener::BeginContact(b2Contact* contact){
     b2Body* BodyA = contact->GetFixtureA()->GetBody();
     b2Body* BodyB = contact->GetFixtureB()->GetBody();
     if(BodyA->GetUserData() == _Playersprite){
-        if (BodyB->GetFixtureList()->IsSensor() == true) {
+        if (BodyB->GetFixtureList()->GetDensity() == 5000.0f) {
             gameover = true;
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
@@ -327,8 +327,7 @@ void CContactListener::BeginContact(b2Contact* contact){
 void CContactListener::EndContact(b2Contact* contact){
     b2Body* BodyA = contact->GetFixtureA()->GetBody();
     b2Body* BodyB = contact->GetFixtureB()->GetBody();
-    }
-
+}
 void GameScene::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
 {
 	Director* director = Director::getInstance();

@@ -1,6 +1,8 @@
  #include "CObstacle.h"
 #define PTM_RATIO 32.0f
 #define DG_WIDTH 425.0f
+#define INSECT_SPEED 5.0f;
+#define BO_SPEED 2.0f;
 
 USING_NS_CC;
 
@@ -29,22 +31,26 @@ void CObstacle::CreateObstacle(){
     _Obstacle->setPosition(0,0);
     _Obstacle->setVisible(true);
     this->addChild(_Obstacle, 1);
+
     _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
     _fWidth = DG_WIDTH * _Obstacle->getTag();
     for (int i = 1; _body != NULL; i++) {
+		_body->setGlobalZOrder(1);
         if (_body->getTag() != 0) {
             num++;
             CreateCollision();
-            _body->setLocalZOrder(3);
         }
         sprintf(sprite, "Sprite_%d", i);
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
     }
     _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
+
+	//裝飾
     if(rand()%5 == 0){
         SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/img/game_element.plist");
         Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
         this->_Obstacle->addChild(img,2);
+		img->setGlobalZOrder(2);
     }
     if(rand()%8 == 0){
         SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/img/game_element.plist");
@@ -64,12 +70,13 @@ void CObstacle::CreateObstacle(){
                     img->setPosition((rand() % 375) - 187,220);
                     break;
                 case 1:
-                    img->setPosition((rand() % 375) - 187,700);
+                    img->setPosition((rand() % 375) - 187,610);
                     break;
             }
         }
         else  img->setPosition((rand() % 375) - 187,220);
         this->_Obstacle->addChild(img,2);
+		img->setGlobalZOrder(2);
     }
 }
 void CObstacle::CreateCollision(){
@@ -113,14 +120,27 @@ void CObstacle::CreateCollision(){
     fixtureDef.shape = &rectShape;
     fixtureDef.restitution = 0.0f;
     fixtureDef.friction = 0.0f;
-    if (_body->getTag() == 4){ //die
-        fixtureDef.isSensor = true;
-        DieFlag = true;
-    }
-    else if(_body->getTag() == 1) //normal up
+    if(_body->getTag() == 1) //normal up
         UpFlag = true;
     else if(_body->getTag() == 2) //attack
         fixtureDef.density = 10000.0f;
+	else if (_body->getTag() == 4 || _body->getTag() == 7) { //die
+        fixtureDef.density = 5000.0f;
+		_body->setGlobalZOrder(4);
+		fixtureDef.isSensor = true;
+		DieFlag = true;
+	}
+	else if (_body->getTag() == 5) { //rock
+		_body->setGlobalZOrder(0);
+		fixtureDef.isSensor = true;
+		fixtureDef.density = 10000.0f;
+	}
+	else if (_body->getTag() == 6) { //bo
+		_body->setGlobalZOrder(0);
+        fixtureDef.density = 5000.0f;
+		fixtureDef.isSensor = true;
+		DieFlag = true;
+	}
 	_Cbody->CreateFixture(&fixtureDef);
 	ObstacleBody.push_back(_Cbody);
 }
@@ -131,6 +151,28 @@ void CObstacle::Move(float x, float y) {
         float fx = _Obstacle->getPosition().x;
         float fy = _Obstacle->getPosition().y;
         ObstacleBody[i]->SetTransform(b2Vec2(fx / PTM_RATIO, fy / PTM_RATIO), 0);
+		if (Data->getTag() == 6) {
+			fy = Data->getPosition().y;
+			if (BoSpeed) {
+				if (Data->getPosition().y <= 310) {
+					fy += BO_SPEED;
+				}
+				else { BoSpeed = !BoSpeed; }
+			}
+			else {
+				if (Data->getPosition().y >= 0) {
+					fy -= BO_SPEED;
+				}
+				else { BoSpeed = !BoSpeed; }
+			}
+			Data->setPosition(Data->getPosition().x, fy);
+			ObstacleBody[i]->SetTransform(b2Vec2(fx / PTM_RATIO, ObstacleBody[i]->GetPosition().y + fy / PTM_RATIO), 0);
+		}
+		else if (Data->getTag() == 7) {
+			fx = Data->getPosition().x - INSECT_SPEED;
+			Data->setPosition(fx, Data->getPosition().y);
+			ObstacleBody[i]->SetTransform(b2Vec2(ObstacleBody[i]->GetPosition().x + fx / PTM_RATIO, fy / PTM_RATIO), 0);
+		}
 	}
 }
 void CObstacle::SetPos(float x, float y) {

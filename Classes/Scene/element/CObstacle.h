@@ -19,7 +19,8 @@ private:
     Node* _Obstacle;
     Sprite * _body;
     int num = 0;
-    
+	bool BoSpeed = true;
+
     //b2world
     b2World* _b2World;
     std::vector<b2Body*> ObstacleBody;

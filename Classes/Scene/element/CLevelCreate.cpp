@@ -22,7 +22,7 @@ void CLevelCreate::dostep(float dt) {
 	for (int i = 0; i < OB_NUM; i++) {
         if(_DownGroundCollision[i]->teach == true){
             if(TeachCreateFlag[1] == true){
-               if(_DownGroundCollision[i]->Getpos().x <= 800 ){
+               if(_DownGroundCollision[i]->Getpos().x <= 700 ){
                    TeachFlag = 1;
                    _DownGroundCollision[i]->teach = false;
                    TeachCreateFlag[1] = false;
@@ -42,7 +42,7 @@ void CLevelCreate::dostep(float dt) {
                 }
             }
             else{
-                if(_DownGroundCollision[i]->Getpos().x <= 950){
+                if(_DownGroundCollision[i]->Getpos().x <= 920){
                     TeachFlag = 1;
                     _DownGroundCollision[i]->teach = false;
                 }
@@ -59,7 +59,7 @@ void CLevelCreate::dostep(float dt) {
 	}
 }
 void CLevelCreate::SetObstacle(int i) {
-    //æ•™å­¸
+    //±Ð¾Ç
     if(num < 12){
         if(num == 3){
             sprintf(level, "Level_%d", 1);
@@ -91,8 +91,8 @@ void CLevelCreate::SetObstacle(int i) {
             sprintf(name, "%d", 0);
         }
     }
-    else{ //éžæ•™å­¸
-        //ä¸‰åˆ†ä¹‹ä¸€çš„æ©ŸçŽ‡
+    else{ //«D±Ð¾Ç
+        //¤T¤À¤§¤@ªº¾÷²v
         int n;
         if(UpFlag){
             n = rand() % 2;
@@ -104,7 +104,7 @@ void CLevelCreate::SetObstacle(int i) {
         if(DieFlag)
             sprintf(level, "Level_%d", 0);
         else{
-            n = rand() % 3;
+            n = rand() % 4;
             //if (n != 1)n = 0;
             sprintf(level, "Level_%d", n);
         }

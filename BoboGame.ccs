@@ -214,8 +214,6 @@
           <Image Name="bar.png" />
           <Image Name="bg.png" />
           <Image Name="bg_menu.png" />
-          <Image Name="gamescene.jpg" />
-          <Image Name="MenuBG.jpg" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
           <Image Name="name.png" />
@@ -290,7 +288,6 @@
           <Project Name="q5_8.csd" Type="Node" />
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
-        <Image Name="123.png" />
         <Project Name="BoardScene.csd" Type="Scene" />
         <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="MainScene.csd" Type="Scene" />
