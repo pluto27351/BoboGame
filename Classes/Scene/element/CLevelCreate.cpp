@@ -114,5 +114,6 @@ void CLevelCreate::SetObstacle(int i) {
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
     UpFlag = _DownGroundCollision[i]->UpFlag;
     DieFlag = _DownGroundCollision[i]->DieFlag;
+    CCLOG("%d",num%OB_NUM);
     num++;
 }

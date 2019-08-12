@@ -314,7 +314,7 @@ void CContactListener::BeginContact(b2Contact* contact){
             gameover = true;
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
-            if(BodyA->GetLinearVelocityFromWorldPoint(BodyB->GetPosition()).y <= 0)
+            if(BodyA->GetLinearVelocityFromWorldPoint(BodyA->GetPosition()).y <= 0)
                 RunFlag = true;
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){

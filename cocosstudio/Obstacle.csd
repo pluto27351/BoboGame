@@ -619,7 +619,7 @@
               <AbstractNodeData Name="Level_2" ActionTag="-1002924882" Tag="3" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="0" Visible="False" ActionTag="1726182234" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="0" ActionTag="1726182234" Tag="1" IconVisible="True" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Sprite_0" ActionTag="1925575366" IconVisible="False" LeftMargin="-258.0000" RightMargin="-258.0000" TopMargin="-244.5000" BottomMargin="-244.5000" ctype="SpriteObjectData">

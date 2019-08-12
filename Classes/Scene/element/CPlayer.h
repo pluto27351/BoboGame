@@ -23,7 +23,6 @@ private:
     float time = 0;
     
     //b2world
-    b2Body *PlayerBody;
     b2World* _b2World;
 public:
     CPlayer();
@@ -31,6 +30,7 @@ public:
 	~CPlayer();
 
     Sprite * _body;
+    b2Body *PlayerBody;
     
     void CreateCollision();
     void dostep();
