@@ -93,23 +93,27 @@ void CLevelCreate::SetObstacle(int i) {
     }
     else{ //非教學
         //三分之一的機率
-        int n;
-        if(UpFlag){
-            n = rand() % 2;
-            if (n)
-                sprintf(kind, "down");
-            else
-                sprintf(kind, "up");
-        }
-        if(DieFlag)
-            sprintf(level, "Level_%d", 0);
-        else{
-            n = rand() % 4;
-            //if (n != 1)n = 0;
-            sprintf(level, "Level_%d", n);
-        }
-        n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
-        sprintf(name, "%d", n);
+//        int n;
+//        if(UpFlag){
+//            n = rand() % 2;
+//            if (n)
+//                sprintf(kind, "down");
+//            else
+//                sprintf(kind, "up");
+//        }
+//        if(DieFlag)
+//            sprintf(level, "Level_%d", 0);
+//        else{
+//            n = rand() % 4;
+//            //if (n != 1)n = 0;
+//            sprintf(level, "Level_%d", n);
+//        }
+//        n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
+//        sprintf(name, "%d", n);
+        
+        sprintf(kind, "up");
+        sprintf(level, "Level_%d", 3);
+        sprintf(name, "%d", 0);
     }
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
     UpFlag = _DownGroundCollision[i]->UpFlag;

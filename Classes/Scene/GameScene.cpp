@@ -169,7 +169,7 @@ void GameScene::Play(float dt) {
         //角色
         _fSlipTime += dt;
         _Player->dostep();
-        if (_contactListener.AttackFlag == true && AttackFlag == true){
+        if (_contactListener.AttackFlag == true && AttackFlag == true && _Player->_Player->getPosition().y >= 770){
             _contactListener.Breaksprite->setVisible(false);
             _contactListener.BreakBody->GetFixtureList()->SetSensor(true);
         }

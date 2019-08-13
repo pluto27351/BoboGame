@@ -18,7 +18,6 @@ class CPlayer : public cocos2d::Node
 {
 private:
     Point pt;
-	Node* _Player;
 	ActionTimeline* _PlayerAni;
     float time = 0;
     
@@ -31,6 +30,7 @@ public:
 
     Sprite * _body;
     b2Body *PlayerBody;
+    Node* _Player;
     
     void CreateCollision();
     void dostep();
