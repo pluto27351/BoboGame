@@ -19,21 +19,24 @@ class CLevelCreate : public cocos2d::Node
 {
 private:
 	CObstacle *_DownGroundCollision[OB_NUM];
-	float Leveltime = 0;
 	b2World* _b2World;
-    int num = 0;
+    Sprite* board;
+    int num = -14; //±Ð¾Ç¥Î
+	int _iLevel = 0;
+	int _iLevelFrequency = 5;
+    int Distance = 0;
     bool UpFlag = false;
     bool DieFlag = false;
+	bool TeachCreateFlag[3] = { false }; //0:slip 1:jump 2:attack
 
     char kind[5] = "down"; //down or up
 	char level[9];
 	char name[4];
 public:
 	CLevelCreate();
-	CLevelCreate(b2World* _b2W, int level);
+	CLevelCreate(b2World* _b2W);
 	~CLevelCreate();
 
-    bool TeachCreateFlag[3] = {false}; //0:jump 1:slip 2:attack
     int TeachFlag = 3; //0:right 1:left 2:normal 3:no
 
 	void SetObstacle(int i);

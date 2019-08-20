@@ -10,17 +10,15 @@
 USING_NS_CC;
 
 //using namespace cocostudio::timeline;
-//using namespace ui;
+using namespace ui;
 //using namespace CocosDenshion;
 
 class CObstacle : public cocos2d::Node
 {
 private:
-    Node* _Obstacle;
     Sprite * _body;
     int num = 0;
 	bool BoSpeed = true;
-
     //b2world
     b2World* _b2World;
     std::vector<b2Body*> ObstacleBody;
@@ -29,6 +27,7 @@ public:
 	CObstacle(b2World* _b2W, Node* _ob);
     ~CObstacle();
     
+    Node* _Obstacle;
     float _fWidth = 0;
 	bool teach = false;
     bool UpFlag = false;

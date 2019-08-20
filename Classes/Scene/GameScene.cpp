@@ -128,7 +128,6 @@ void GameScene::doStep(float dt)
 	Play(dt);
 }
 void GameScene::Play(float dt) {
-
     //教學
     if(_Level->TeachFlag < 2){
         if(_Level->TeachFlag == 0){
@@ -238,7 +237,7 @@ void GameScene::CreateGround() {
 	Body->CreateFixture(&fixtureDef);
 }
 void GameScene::CreateLevel(){
-    _Level = new CLevelCreate(_b2World,1);
+    _Level = new CLevelCreate(_b2World);
     this->addChild(_Level,2);
 }
 void GameScene::ChangeScene()

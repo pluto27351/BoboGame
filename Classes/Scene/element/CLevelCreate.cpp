@@ -1,10 +1,12 @@
 #include "CLevelCreate.h"
 #include<stdlib.h>
+#define DG_WIDTH 426.0f
+#define LEVELTIME 30 //跑過幾個地升一次level
 
 USING_NS_CC;
 
 CLevelCreate::~CLevelCreate() {}
-CLevelCreate::CLevelCreate(b2World* _b2W, int L) {
+CLevelCreate::CLevelCreate(b2World* _b2W) {
 	srand(time(NULL));
 	sprintf(level, "Level_%d", 0);
 	sprintf(name, "%d", 0);
@@ -18,21 +20,20 @@ CLevelCreate::CLevelCreate(b2World* _b2W, int L) {
 	}
 }
 void CLevelCreate::dostep(float dt) {
-    Leveltime+=dt;
 	for (int i = 0; i < OB_NUM; i++) {
         if(_DownGroundCollision[i]->teach == true){
-            if(TeachCreateFlag[1] == true){
-               if(_DownGroundCollision[i]->Getpos().x <= 700 ){
-                   TeachFlag = 1;
-                   _DownGroundCollision[i]->teach = false;
-                   TeachCreateFlag[1] = false;
-               }
+            if(TeachCreateFlag[0] == true){
+				if (_DownGroundCollision[i]->Getpos().x <= 700) {
+					TeachFlag = 1;
+					_DownGroundCollision[i]->teach = false;
+					TeachCreateFlag[0] = false;
+				}
             }
-            else if(TeachCreateFlag[0] == true){
+            else if(TeachCreateFlag[1] == true){
                 if(_DownGroundCollision[i]->Getpos().x <= 1000){
                     TeachFlag = 0;
                     _DownGroundCollision[i]->teach = false;
-                    TeachCreateFlag[0] = false;
+                    TeachCreateFlag[1] = false;
                 }
             }
             else if(TeachCreateFlag[2] == true){
@@ -50,37 +51,34 @@ void CLevelCreate::dostep(float dt) {
         }
 		if (_DownGroundCollision[i]->Getpos().x < -(_DownGroundCollision[i]->_fWidth / 2)) {
 			SetObstacle(i);
-			if (i == 0)
-				_DownGroundCollision[i]->SetPos(_DownGroundCollision[OB_NUM - 1]->Getpos().x + _DownGroundCollision[OB_NUM - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
-			else
-				_DownGroundCollision[i]->SetPos(_DownGroundCollision[i - 1]->Getpos().x + _DownGroundCollision[i - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
 		}
 		_DownGroundCollision[i]->Move(-10, 0);
 	}
 }
 void CLevelCreate::SetObstacle(int i) {
+    num++;
     //教學
-    if(num < 12){
-        if(num == 3){
+    if(num < 0){
+        if(num == -11){
             sprintf(level, "Level_%d", 1);
             sprintf(name, "%d", 13);
-            TeachCreateFlag[1] = true;
-            _DownGroundCollision[i]->teach = true;
-        }
-        else if(num == 7){
-            sprintf(level, "Level_%d", 2);
-            sprintf(name, "%d", 0);
             TeachCreateFlag[0] = true;
             _DownGroundCollision[i]->teach = true;
         }
-        else if(num == 11){
+        else if(num == -7){
+            sprintf(level, "Level_%d", 2);
+            sprintf(name, "%d", 0);
+            TeachCreateFlag[1] = true;
+            _DownGroundCollision[i]->teach = true;
+        }
+        else if(num == -3){
             sprintf(kind, "up");
             sprintf(level, "Level_%d", 3);
             sprintf(name, "%d", 0);
             TeachCreateFlag[2] = true;
             _DownGroundCollision[i]->teach = true;
         }
-        else if(num > 7 && num < 11){
+        else if(num > -7 && num < -3){
             sprintf(kind, "up");
             sprintf(level, "Level_%d", 0);
             sprintf(name, "%d", 0);
@@ -91,33 +89,51 @@ void CLevelCreate::SetObstacle(int i) {
             sprintf(name, "%d", 0);
         }
     }
-    else{ //非教學
-        //三分之一的機率
-//        int n;
-//        if(UpFlag){
-//            n = rand() % 2;
-//            if (n)
-//                sprintf(kind, "down");
-//            else
-//                sprintf(kind, "up");
-//        }
-//        if(DieFlag)
-//            sprintf(level, "Level_%d", 0);
-//        else{
-//            n = rand() % 4;
-//            //if (n != 1)n = 0;
-//            sprintf(level, "Level_%d", n);
-//        }
-//        n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
-//        sprintf(name, "%d", n);
-        
-        sprintf(kind, "up");
-        sprintf(level, "Level_%d", 3);
-        sprintf(name, "%d", 0);
-    }
+	else { //非教學
+        Distance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
+        CCLOG("%d",Distance);
+		if (num % LEVELTIME == 0 && _iLevel < 3) { //提升level
+			_iLevel++;
+			_iLevelFrequency == 5;
+        }
+		int n;
+		if (DieFlag) //有會死掉的物件
+			sprintf(level, "Level_%d", 0);
+		else {
+			n = rand() % _iLevelFrequency; //如果n=1
+			if (num % 5 == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
+			if (n == 1)n = (rand() % _iLevel) + 1;
+			else n = 0;
+			sprintf(level, "Level_%d", n);
+		}
+		if (UpFlag) { //可以接上面地形
+			n = rand() % 3;
+			if (n)
+				sprintf(kind, "up");
+			else {
+				sprintf(kind, "down");
+				sprintf(level, "Level_%d", 0);
+			}
+		}
+		n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
+		sprintf(name, "%d", n);
+	}
+
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
+    if (Distance % 10 == 0 && num > 0) {
+        Node *board = (cocos2d::Node*)CSLoader::createNode("Obstacle.csb")->getChildByName("board");
+        this->_DownGroundCollision[i]->_Obstacle->addChild(board);
+        Text * t = (cocos2d::ui::Text *)board->getChildByName("text");
+        //board->getChildByName("Sprite")->setGlobalZOrder(2);
+        t->setGlobalZOrder(3);
+        char d[6];
+        sprintf(d, "%d", Distance/10);
+        t->setString(d);
+    }
     UpFlag = _DownGroundCollision[i]->UpFlag;
     DieFlag = _DownGroundCollision[i]->DieFlag;
-    CCLOG("%d",num%OB_NUM);
-    num++;
+    if (i == 0)
+        _DownGroundCollision[i]->SetPos(_DownGroundCollision[OB_NUM - 1]->Getpos().x + _DownGroundCollision[OB_NUM - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
+    else
+        _DownGroundCollision[i]->SetPos(_DownGroundCollision[i - 1]->Getpos().x + _DownGroundCollision[i - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
 }

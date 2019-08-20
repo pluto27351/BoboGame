@@ -1,6 +1,6 @@
  #include "CObstacle.h"
 #define PTM_RATIO 32.0f
-#define DG_WIDTH 420.0f
+#define DG_WIDTH 426.0f
 #define INSECT_SPEED 5.0f;
 #define BO_SPEED 2.0f;
 
