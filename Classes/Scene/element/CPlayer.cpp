@@ -15,6 +15,7 @@ CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
     _PlayerAni = (ActionTimeline *)CSLoader::createTimeline("Ani/Player.csb");
     _Player->runAction(_PlayerAni);
 	_body = (cocos2d::Sprite *)_Player->getChildByName("bo");
+    _body -> setGlobalZOrder(2);
     //box2d
     _b2World = _b2W;
     b2BodyDef bodyDef;

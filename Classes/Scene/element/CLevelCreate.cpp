@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #define DG_WIDTH 426.0f
 #define LEVELTIME 30 //跑過幾個地升一次level
+#define DISTANCE 10 //跑過幾個地升一次level
 
 USING_NS_CC;
 
@@ -115,17 +116,30 @@ void CLevelCreate::SetObstacle(int i) {
 				sprintf(level, "Level_%d", 0);
 			}
 		}
+        if(_DownGroundCollision[i]->_fWidth / DG_WIDTH == 2){
+            if (Distance % (DISTANCE+1) == 0) {
+                sprintf(level, "Level_%d", 0);
+                BoardFlag = true;
+            }
+        }
+        else{
+            if (Distance % DISTANCE == 0) {
+                sprintf(level, "Level_%d", 0);
+                BoardFlag = true;
+            }
+        }
 		n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
 		sprintf(name, "%d", n);
 	}
 
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
-    if (Distance % 10 == 0 && num > 0) {
+    if(BoardFlag == true){
+        BoardFlag = false;
         Node *board = (cocos2d::Node*)CSLoader::createNode("Obstacle.csb")->getChildByName("board");
         this->_DownGroundCollision[i]->_Obstacle->addChild(board);
         Text * t = (cocos2d::ui::Text *)board->getChildByName("text");
         //board->getChildByName("Sprite")->setGlobalZOrder(2);
-        t->setGlobalZOrder(3);
+        t->setGlobalZOrder(1);
         char d[6];
         sprintf(d, "%d", Distance/10);
         t->setString(d);

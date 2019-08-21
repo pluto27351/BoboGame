@@ -28,6 +28,7 @@ private:
     bool UpFlag = false;
     bool DieFlag = false;
 	bool TeachCreateFlag[3] = { false }; //0:slip 1:jump 2:attack
+    bool BoardFlag = false;
 
     char kind[5] = "down"; //down or up
 	char level[9];
