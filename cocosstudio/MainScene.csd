@@ -6,35 +6,35 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="bg_1" ActionTag="-498911902" Tag="20" IconVisible="False" LeftMargin="1001.0000" RightMargin="1001.0000" TopMargin="745.0000" BottomMargin="745.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg_1" CanEdit="False" ActionTag="-498911902" Tag="20" IconVisible="False" LeftMargin="-341.5000" RightMargin="-341.5000" ctype="SpriteObjectData">
             <Size X="2731.0000" Y="1536.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1024.0000" Y="768.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.0225" Y="0.0299" />
+            <PreSize X="1.3335" Y="1.0000" />
             <FileData Type="PlistSubImage" Path="bg_start.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="-1502497757" Tag="122" RotationSkewX="-6.9081" RotationSkewY="-6.9074" IconVisible="False" LeftMargin="320.4126" RightMargin="1227.5874" TopMargin="255.6829" BottomMargin="980.3171" ctype="SpriteObjectData">
-            <Size X="500.0000" Y="300.0000" />
+          <AbstractNodeData Name="title" ActionTag="-1502497757" Tag="122" IconVisible="False" LeftMargin="226.3722" RightMargin="1057.6278" TopMargin="-1.6097" BottomMargin="1016.6097" ctype="SpriteObjectData">
+            <Size X="764.0000" Y="521.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="570.4126" Y="1130.3171" />
-            <Scale ScaleX="1.4149" ScaleY="1.1879" />
+            <Position X="608.3722" Y="1277.1097" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="191" G="191" B="191" />
-            <PrePosition X="0.2785" Y="0.7359" />
+            <PrePosition X="0.2971" Y="0.8315" />
             <PreSize X="0.2441" Y="0.1953" />
-            <FileData Type="PlistSubImage" Path="btn_test.png" Plist="Img/game_start.plist" />
+            <FileData Type="PlistSubImage" Path="s_title.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="grass" ActionTag="-2087321473" Tag="167" IconVisible="True" LeftMargin="584.4954" RightMargin="1463.5046" TopMargin="853.6266" BottomMargin="682.3734" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="grass" ActionTag="-2087321473" Tag="167" IconVisible="True" LeftMargin="589.5527" RightMargin="1458.4473" TopMargin="843.5043" BottomMargin="692.4957" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="584.4954" Y="682.3734" />
+            <Position X="589.5527" Y="692.4957" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2854" Y="0.4443" />
+            <PrePosition X="0.2879" Y="0.4508" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="Ani/s_grass.csd" Plist="" />
           </AbstractNodeData>
@@ -70,17 +70,6 @@
             <PreSize X="0.0405" Y="0.0514" />
             <FileData Type="PlistSubImage" Path="startpage_star.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="name_1" ActionTag="-1273784870" Tag="55" IconVisible="False" LeftMargin="197.7288" RightMargin="1079.2712" TopMargin="206.8226" BottomMargin="1005.1774" ctype="SpriteObjectData">
-            <Size X="771.0000" Y="324.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="583.2288" Y="1167.1774" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2848" Y="0.7599" />
-            <PreSize X="0.3765" Y="0.2109" />
-            <FileData Type="Normal" Path="Img/name.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

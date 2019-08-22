@@ -38,7 +38,7 @@ bool BoardScene::init()
 	rootNode = CSLoader::createNode("BoardScene.csb");
 
 	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_board.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_menu.plist");
 
 	char name[20] = "";
 
@@ -71,7 +71,7 @@ void BoardScene::doStep(float dt)
 
 void BoardScene::ChangeScene()
 {
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_board.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_menu.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
 	auto scene = MenuScene::createScene();

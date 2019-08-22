@@ -117,7 +117,7 @@ void CNumberPannel::setTouchedPic(int nowNumber,Point pos){
     sprintf(name, "teach_number_%d.png",_nowNumber);
     _touchedPic = (Sprite *)Sprite::createWithSpriteFrameName(name);
     _touchedPic->setPosition(pos);
-    _touchedPic->setScale(1.5f);
+    _touchedPic->setScale(1.3f);
     addChild(_touchedPic,1);
     _bMoveNumber = true;
 }
@@ -186,7 +186,7 @@ bool CNumberPannel::touchesEnded(cocos2d::Point inPos){
              _answerNumber[k] = _nowNumber;
             _answerArea[k]->setDisplayFrame(_touchedPic->getDisplayFrame());
             _answerArea[k]->setOpacity(255);
-            _answerArea[k]->setScale(1.5f);
+            _answerArea[k]->setScale(1.3f);
         }
     
         _bMoveNumber =false;
@@ -215,7 +215,7 @@ int CNumberPannel::ansAreaHover(Point inPos){
         }
         else {
             _answerArea[i]->setOpacity(255);
-            _answerArea[i]->setScale(1.5f);
+            _answerArea[i]->setScale(1.3f);
         }
     }
     
@@ -236,7 +236,7 @@ int CNumberPannel::ansAreaHover(Point inPos){
                         _answerNumber[n-1] = _answerNumber[n];
                         _answerArea[n-1]->setDisplayFrame(_answerArea[n]->getDisplayFrame());
                         _answerArea[n-1]->setOpacity(255);
-                        _answerArea[n-1]->setScale(1.5f);
+                        _answerArea[n-1]->setScale(1.3f);
                         _answerNumber[n] = -1;
                         _answerArea[n]->setDisplayFrame(_answerBg);
                         _answerArea[n]->setScale(1);
@@ -262,7 +262,7 @@ void CNumberPannel::resortAns(){
             _answerNumber[k] = _answerNumber[k-1];
             _answerArea[k]->setDisplayFrame(_answerArea[k-1]->getDisplayFrame());
             _answerArea[k]->setOpacity(255);
-            _answerArea[k]->setScale(1.5f);
+            _answerArea[k]->setScale(1.3f);
             _answerNumber[k-1] = -1;
             _answerArea[k-1]->setDisplayFrame(_answerBg);
             _answerArea[k-1]->setScale(1);

@@ -17,18 +17,18 @@
                 <key>sourceSize</key>
                 <string>{2731,1536}</string>
             </dict>
-            <key>btn_test.png</key>
+            <key>s_title.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{539,0},{500,300}}</string>
+                <string>{{539,0},{547,357}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{500,300}}</string>
+                <string>{{0,0},{547,357}}</string>
                 <key>sourceSize</key>
-                <string>{500,300}</string>
+                <string>{547,357}</string>
             </dict>
             <key>startpage_front.png</key>
             <dict>
@@ -46,7 +46,7 @@
             <key>startpage_grass01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1612,0},{702,760}}</string>
+                <string>{{1659,0},{702,760}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>startpage_grass02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1039,0},{573,747}}</string>
+                <string>{{1086,0},{573,747}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>startpage_tree.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2314,0},{896,588}}</string>
+                <string>{{2361,0},{896,588}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -122,7 +122,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ae47987295be3b5fad135a8efcd61984:c5265cc7b02707da85c41e857440cca9:3832278e6670d3d6a343cc72bf9c200b$</string>
+            <string>$TexturePacker:SmartUpdate:32685b75a9f49047a122c787bf787ec9:712662351e4794b0f7abd03bd97b86da:3832278e6670d3d6a343cc72bf9c200b$</string>
             <key>textureFileName</key>
             <string>game_start.png</string>
         </dict>

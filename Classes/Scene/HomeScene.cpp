@@ -46,7 +46,7 @@ bool HomeScene::init()
 
 	//標題按鈕
 	auto title = rootNode->getChildByName("title");
-	_bTitle.setButtonInfo( "btn_test.png", "btn_test.png",*this,title->getPosition() ,1);
+	_bTitle.setButtonInfo( "s_title.png", "s_title.png",*this,title->getPosition() ,1);
 	_bTitle.setScale(title->getScaleX(), title->getScaleY());
 	_bTitle.setRotate(title->getRotation());
 	rootNode->removeChild(title);
