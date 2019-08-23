@@ -17,14 +17,14 @@
             <FileData Type="PlistSubImage" Path="bg_start.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="-1502497757" Tag="122" IconVisible="False" LeftMargin="226.3722" RightMargin="1057.6278" TopMargin="-1.6097" BottomMargin="1016.6097" ctype="SpriteObjectData">
-            <Size X="764.0000" Y="521.0000" />
+          <AbstractNodeData Name="title" ActionTag="-1502497757" Tag="122" IconVisible="False" LeftMargin="334.8722" RightMargin="1166.1278" TopMargin="80.3903" BottomMargin="1098.6097" ctype="SpriteObjectData">
+            <Size X="547.0000" Y="357.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="608.3722" Y="1277.1097" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="191" G="191" B="191" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2971" Y="0.8315" />
-            <PreSize X="0.2441" Y="0.1953" />
+            <PreSize X="0.2671" Y="0.2324" />
             <FileData Type="PlistSubImage" Path="s_title.png" Plist="Img/game_start.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -54,7 +54,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1735.4233" Y="1240.4451" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="191" G="191" B="191" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8474" Y="0.8076" />
             <PreSize X="0.4375" Y="0.3828" />
             <FileData Type="PlistSubImage" Path="startpage_tree.png" Plist="Img/game_start.plist" />

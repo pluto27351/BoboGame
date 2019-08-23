@@ -131,7 +131,7 @@
             <PlistImageFile Name="up_rightground.png" Key="up_rightground.png" />
             <PlistImageFile Name="up_rightlight.png" Key="up_rightlight.png" />
             <PlistImageFile Name="up_rockground.png" Key="up_rockground.png" />
-            <PlistImageFile Name="up_rocklight.png" Key="up_rocklight.png" />
+            <PlistImageFile Name="board.png" Key="board.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_menu.png" PListFile="game_menu.plist" Name=".game_menu_PList.Dir">
             <PlistImageFile Name="bg_menu.png" Key="bg_menu.png" />
@@ -182,6 +182,7 @@
           </PlistImageFolder>
           <PlistImageFolder Image="game_teach.png" PListFile="game_teach.plist" Name=".game_teach_PList.Dir">
             <PlistImageFile Name="ans_area.png" Key="ans_area.png" />
+            <PlistImageFile Name="ans_word.png" Key="ans_word.png" />
             <PlistImageFile Name="ansbar.png" Key="ansbar.png" />
             <PlistImageFile Name="brush.png" Key="brush.png" />
             <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
@@ -216,11 +217,9 @@
             <PlistImageFile Name="teach_number_9.png" Key="teach_number_9.png" />
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
-            <PlistImageFile Name="ans_word.png" Key="ans_word.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
-          <Image Name="board.png" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
           <Image Name="prompt1_l.png" />
@@ -294,7 +293,6 @@
           <Project Name="q5_8.csd" Type="Node" />
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
-        <Project Name="board.csd" Type="Node" />
         <Project Name="BoardScene.csd" Type="Scene" />
         <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="MainScene.csd" Type="Scene" />
