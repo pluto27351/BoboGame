@@ -38,11 +38,11 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     sprintf(f, "%d", _answer[0]);
     CCLOG("ans = %d,%d,%d",_answer[0],_answer[1],_answer[2]);
     
-//    auto ans =Set_CAnsCreater(n,d,f);
-//    ans->setPosition(Vec2(40,0));
-//    Output_f->addChild(ans);
-//
-//    Output_f->removeChildByName("ntor");
+    //    auto ans =Set_CAnsCreater(n,d,f);
+    //    ans->setPosition(Vec2(40,0));
+    //    Output_f->addChild(ans);
+    //
+    //    Output_f->removeChildByName("ntor");
     
 }
 
@@ -52,7 +52,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) {
     char name[14];
     sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     answer = CSLoader::createNode(name);
-
+    
     Node *Output_f = (Node *)answer->getChildByName("F_1");
     Text *ntor = (Text *)Output_f->getChildByName("ntor");
     char bc[5],aa[5];
@@ -62,8 +62,8 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) {
     _answer[1] = number;
     _answer[2] = b*c;
     CCLOG("ans = %d,%d,%d",_answer[0],_answer[1],_answer[2]);
-//    Output_f->addChild(Set_CAnsCreater(bc,aa,""));
-//    Output_f->removeChildByName("ntor");
+    //    Output_f->addChild(Set_CAnsCreater(bc,aa,""));
+    //    Output_f->removeChildByName("ntor");
     
 }
 
@@ -87,8 +87,8 @@ CAnsCreater::CAnsCreater(int number,int q){
             _answer[0] = 0;
             _answer[1] =number;
             _answer[2] = i+1;
-//            fraction = Set_CAnsCreater(n,d,f);
-//            fraction->setPosition(Vec2(xPos+move*(i+1),yPos + 100*up));
+            //            fraction = Set_CAnsCreater(n,d,f);
+            //            fraction->setPosition(Vec2(xPos+move*(i+1),yPos + 100*up));
         }
         
         up*=-1;
@@ -109,7 +109,7 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) {
 
 void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) {
     char name[14];
-    sprintf(name, "que/q%d_%d.csb", uni, queNo);
+    sprintf(name, "Que/q%d_%d.csb", uni, queNo);
     auto Q = CSLoader::createNode(name);
     int inputData = Q->getChildByName("bg")->getTag();
     char Input[5];
@@ -141,18 +141,19 @@ void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) {
     inputData = inputData % 10;
     
     data = inputData;
+    int b_status = b;
     for (int i = 0; i < data; i++) {
         sprintf(Input, "F_%d", i + 1);
         Node *Output_f = (Node *)Q->getChildByName(Input);
         Text *ntor = (Text *)Output_f->getChildByName("ntor");
-        if(b == -1){
+        if(b_status == -1){
             sprintf(Input, "%d", number);
             b = std::atoi(Numerator(ntor->getString().c_str(), Input));
         }
         char bb[5],aa[5];
         sprintf(bb,"%d",b);
         sprintf(aa,"%d",number);
-
+        
         Output_f->addChild(Set_CAnsCreater(bb,aa,""));
         Output_f->removeChildByName("ntor");
     }
@@ -165,7 +166,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
     char fn[3];
     int inputData,data;
     auto bg = (Node *)Q.getChildByName("bg");
-
+    
     inputData = bg->getTag();
     data = inputData / 100;
     for (int i = 0; i < data; i++) {

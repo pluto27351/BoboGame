@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -22,6 +22,7 @@ private:
 	Node *rootNode;
 	CButton _homeBtn;
 	void doStep(float);
+    bool _bchangeScene = false;
 public:
 	~BoardScene();
 	bool init();

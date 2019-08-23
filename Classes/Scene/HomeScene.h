@@ -22,7 +22,8 @@ private:
 	CButton _bTitle;
 	Node *_grass;
 	ActionTimeline *_grassAction;
-
+    bool _bchangeScene = false;
+    void doStep(float);
 public:
 	~HomeScene();
 	static cocos2d::Scene* createScene();

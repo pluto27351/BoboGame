@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -21,7 +21,8 @@ private:
 	CButton _chapBtn[5],_gameBtn,_boardBtn;
 	Text *_scoreText;
 	int _iscale;
-
+    bool _bchangeScene = false;
+    int _sceneNum,_uni;
 	void doStep(float);
 public:
 	~MenuScene();

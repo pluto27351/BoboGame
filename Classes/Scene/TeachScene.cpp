@@ -50,7 +50,6 @@ bool TeachScene::init()
 	rootNode = CSLoader::createNode("TeachScene.csb");
 
 	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_teach.plist");
 	char name[20] = "";
 
@@ -110,17 +109,19 @@ bool TeachScene::init()
 
 void TeachScene::doStep(float dt)
 {
-
+        if(_bchangeScene)ChangeScene();
 }
 
 void TeachScene::ChangeScene()
 {
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_start.plist");
+    this->unscheduleAllCallbacks();
+    this->removeAllChildren();
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_teach.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
-	auto scene = MenuScene::createScene();
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
+    Director::getInstance()->replaceScene(MenuScene::createScene());
+//    auto scene = MenuScene::createScene();
+//    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
 }
 
 void TeachScene::NextQuestion(float a) {
@@ -179,7 +180,8 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 	}
 
 	if (_homeBtn.touchesEnded(touchLoc)) {
-		ChangeScene();return; 
+        _bchangeScene = true;
+        return;
 	}
 
 	_handDrawing->touchesEnded(touchLoc);

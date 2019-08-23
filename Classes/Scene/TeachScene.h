@@ -30,6 +30,7 @@ private:
 	CAnsCreater *_question;
     const int *switchdata;
 	void doStep(float);
+    bool _bchangeScene=false;
 public:
 	~TeachScene();
 	bool init();

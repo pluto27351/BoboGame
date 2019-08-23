@@ -66,11 +66,13 @@ bool BoardScene::init()
 
 void BoardScene::doStep(float dt)
 {
-	
+    if(_bchangeScene)ChangeScene();
 }
 
 void BoardScene::ChangeScene()
 {
+    this->unscheduleAllCallbacks();
+    this->removeAllChildren();
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_menu.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
@@ -102,7 +104,8 @@ void  BoardScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 	Point touchLoc = pTouch->getLocation();
 
 	if (_homeBtn.touchesEnded(touchLoc)) {
-		ChangeScene();
+        _bchangeScene = true;
+        //ChangeScene();
 	}
 }
 

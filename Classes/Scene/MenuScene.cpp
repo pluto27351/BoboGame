@@ -44,7 +44,6 @@ bool MenuScene::init()
 	rootNode = CSLoader::createNode("MenuScene.csb");
 	addChild(rootNode);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_menu.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_start.plist");
 
 	char name[20] = "";
 
@@ -90,13 +89,14 @@ bool MenuScene::init()
 
 void MenuScene::doStep(float dt)
 {
-	
+    if(_bchangeScene)ChangeScene(_sceneNum,_uni);
 }
 
 void MenuScene::ChangeScene(int changescene,int chap)
 {
+    this->unscheduleAllCallbacks();
+    this->removeAllChildren();
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_menu.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_start.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
 	Scene *scene;
@@ -146,17 +146,26 @@ void  MenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 
 	for (int i = 0; i < 5; i++) {
 		if (_chapBtn[i].touchesEnded(touchLoc)) {
-			ChangeScene(TeachScene,i+1);
+            _bchangeScene = true;
+            _sceneNum = TeachScene;
+            _uni = i+1;
+			//ChangeScene(TeachScene,i+1);
 			return;
 		}
 	}
 
 	if(_gameBtn.touchesEnded(touchLoc)) {
-		ChangeScene(GameScene);
+        _bchangeScene = true;
+        _sceneNum = GameScene;
+        _uni = 0;
+		//ChangeScene(GameScene);
 		return;
 	}
 	if(_boardBtn.touchesEnded(touchLoc)) {
-		ChangeScene(BoardScene);
+        _bchangeScene = true;
+        _sceneNum = BoardScene;
+        _uni = 0;
+		//ChangeScene(BoardScene);
 		return;
 	}
 

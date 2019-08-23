@@ -73,13 +73,20 @@ bool HomeScene::init()
 
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//加入剛創建的事件聆聽器
 
-
+    // 將 doStep 函式掛入 schedule list 中，每一個 frame 就都會被呼叫到
+    this->schedule(CC_SCHEDULE_SELECTOR(HomeScene::doStep));
 	return true;
 }
 
+void HomeScene::doStep(float dt)
+{
+    if(_bchangeScene)ChangeScene();
+}
 
 void HomeScene::ChangeScene() 
 {
+    this->unscheduleAllCallbacks();
+    this->removeAllChildren();
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/game_start.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures(); 
 
@@ -110,7 +117,8 @@ void  HomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 			_grassAction->gotoFrameAndPlay(0, 30, false);
 			_grassAction->setLastFrameCallFunc([=]()
 			{
-				ChangeScene();
+                _bchangeScene = true;
+                //ChangeScene();
 			});
 		}
 		else {
