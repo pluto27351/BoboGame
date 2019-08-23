@@ -7,20 +7,20 @@
             <key>ans_area.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{769,122},{95,159}}</string>
+                <string>{{434,122},{95,147}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{95,159}}</string>
+                <string>{{0,0},{95,147}}</string>
                 <key>sourceSize</key>
-                <string>{95,159}</string>
+                <string>{95,147}</string>
             </dict>
             <key>ans_word.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{607,122},{162,158}}</string>
+                <string>{{702,122},{162,158}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +241,7 @@
             <key>teach_btn_giveup.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{434,122},{173,157}}</string>
+                <string>{{529,122},{173,157}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +319,7 @@
             <key>teach_number_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2163,0},{67,85}}</string>
+                <string>{{2364,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>teach_number_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2364,0},{67,85}}</string>
+                <string>{{2163,0},{67,85}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -486,7 +486,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5808b8dae386159e685bac4dd519ccf7:af294a4213c8da8f72ec5c7c6589ac75:d6752752da0893da8d789f35f2add9a5$</string>
+            <string>$TexturePacker:SmartUpdate:deac1fe07967c14ade2916ac0370664b:dfa53a880b8c4c873c9319a5269583a4:d6752752da0893da8d789f35f2add9a5$</string>
             <key>textureFileName</key>
             <string>game_teach.png</string>
         </dict>

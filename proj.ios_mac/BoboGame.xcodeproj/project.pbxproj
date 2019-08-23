@@ -157,7 +157,7 @@
 		F15F3EDF228FAE710036D916 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
 		F15F3EE0228FAE710036D916 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		F15F3EE1228FAE710036D916 /* BoardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardScene.h; sourceTree = "<group>"; };
-		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
+		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
 		F15F3EF2228FAF370036D916 /* CNumberPannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNumberPannel.h; sourceTree = "<group>"; };
 		F1CFD06422C8A4680054151F /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		F1CFD06522C8A4680054151F /* GB2ShapeCache-x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GB2ShapeCache-x.h"; sourceTree = "<group>"; };

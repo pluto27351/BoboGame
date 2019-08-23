@@ -141,6 +141,7 @@ bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//è
 	if (_answerBtn.touchesBegin(touchLoc))return true;
 	if (_giveupBtn.touchesBegin(touchLoc))return true;
 	if (_numberArea->touchesBegin(touchLoc))return true;
+    else _numberArea->setNumberVisual(false);
 	_handDrawing->touchesBegin(touchLoc);
 	return true;
 }

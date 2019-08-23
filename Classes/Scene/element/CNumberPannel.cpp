@@ -40,12 +40,12 @@ void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
     _bMoveNumber = false;
     for(int i=0;i<5;i++)_answerNumber[i] = -1;
     
-    setNumberVisual(_bShowNumber);
+    setNumberVisual(false);
 }
 
 void CNumberPannel::clear(){
-    _bShowNumber = false;
-    setNumberVisual(_bShowNumber);
+  //  _bShowNumber = false;
+    setNumberVisual(false);
     _triggerBtn.setEnabled(true);
     
     for(int i=0; i<5; i++){
@@ -106,6 +106,7 @@ void CNumberPannel::setAnswerInfo(Node *root){
 }
 
 void CNumberPannel::setNumberVisual(bool s){
+    _bShowNumber = s;
     for(int i = 0; i < 10; i++) _number[i].setVisible(s);
     _numberbg->setVisible(s);
 }
@@ -138,11 +139,11 @@ bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
     for(int i=0;i<3;i++){
         if(_answerAreaRect[i].containsPoint(inPos) && !_bMoveNumber){
             int target = i;
-            if(i != 0){
+            if(i != 0){  //除帶分數以外
                 int k = i*2;
-                if(_answerNumber[k-1] == -1) target = k;
+                if(_answerNumber[k-1] == -1) target = k;  //十位無數值 t=個位
                 else {
-                    if(inPos.x < _ansX[2])target = k-1;
+                    if(inPos.x < _ansX[2])target = k-1;   //十位有數值 判斷觸碰位置十or個
                     else target = k;
                 }
             }
@@ -194,8 +195,8 @@ bool CNumberPannel::touchesEnded(cocos2d::Point inPos){
     }
     
     if(_triggerBtn.touchesEnded(inPos)){
-        _bShowNumber = !_bShowNumber;
-        setNumberVisual(_bShowNumber);
+       // _bShowNumber = !_bShowNumber;
+        setNumberVisual(!_bShowNumber);
         return true;
     }
     
@@ -266,6 +267,7 @@ void CNumberPannel::resortAns(){
             _answerNumber[k-1] = -1;
             _answerArea[k-1]->setDisplayFrame(_answerBg);
             _answerArea[k-1]->setScale(1);
+            _answerArea[k-1]->setOpacity(0);
         }
         
         if(_answerNumber[k-1] == -1){
