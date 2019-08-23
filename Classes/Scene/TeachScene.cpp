@@ -62,14 +62,14 @@ bool TeachScene::init()
 
 	//回答按鈕
 	target = rootNode->getChildByName("answer");
-	_answerBtn.setButtonInfo("teach_btn_answer.png", "teach_btn_answer.png", *this, target->getPosition(), INTERFACE_LEVEL);
+	_answerBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png", *this, target->getPosition(), INTERFACE_LEVEL);
 	_answerBtn.setScale(target->getScaleX(), target->getScaleY());
 	_answerBtn.setRotate(target->getRotation());
 	rootNode->removeChild(target);
 
 	//放棄按鈕
-	target = rootNode->getChildByName("giveup");
-	_giveupBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png", *this, target->getPosition(), INTERFACE_LEVEL);
+	target = rootNode->getChildByName("nextque");
+	_giveupBtn.setButtonInfo("teach_btn_answer.png", "teach_btn_answer.png", *this, target->getPosition(), INTERFACE_LEVEL);
 	_giveupBtn.setScale(target->getScaleX(), target->getScaleY());
 	_giveupBtn.setRotate(target->getRotation());
 	rootNode->removeChild(target);
@@ -88,9 +88,17 @@ bool TeachScene::init()
 	_handDrawing->retain();
 
 	_right = rootNode->getChildByName("right");
-	_wrong = rootNode->getChildByName("wrong");
-	_right->setVisible(false);
-	_wrong->setVisible(false);
+    _right->setVisible(false);
+    
+    _wrongAct = (Node *)rootNode->getChildByName("wrong");
+    _wrongAct->setVisible(false);
+    this->addChild(_wrongAct,2);
+    _wrongActTime = (ActionTimeline *)CSLoader::createTimeline("Ani/wrong.csb");
+    _wrongAct->runAction(_wrongActTime);
+    _checkAns = -1;
+    
+//	_wrong = rootNode->getChildByName("wrong");
+//	_wrong->setVisible(false);
 
 	//觸控
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
@@ -125,8 +133,9 @@ void TeachScene::ChangeScene()
 }
 
 void TeachScene::NextQuestion(float a) {
+    _checkAns = -1;
 	_right->setVisible(false);
-	_wrong->setVisible(false);
+	_wrongAct->setVisible(false);
     
     _curQue++;
 	resetQue();
@@ -137,9 +146,12 @@ void TeachScene::NextQuestion(float a) {
 bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
 	Point touchLoc = pTouch->getLocation();
+    if (_giveupBtn.touchesBegin(touchLoc) && _checkAns != 0)return true;  //答對時需按下題鍵
+    
+    if(_checkAns != -1)return false;  //確認答案後 功能暫時關閉
+    
 	if (_homeBtn.touchesBegin(touchLoc))return true;
 	if (_answerBtn.touchesBegin(touchLoc))return true;
-	if (_giveupBtn.touchesBegin(touchLoc))return true;
 	if (_numberArea->touchesBegin(touchLoc))return true;
     else _numberArea->setNumberVisual(false);
 	_handDrawing->touchesBegin(touchLoc);
@@ -165,13 +177,23 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 	if (_numberArea->touchesEnded(touchLoc)) return;
 
 	if (_answerBtn.touchesEnded(touchLoc)) {
+        _numberArea->setNumberVisual(false);
 		if (_question->CheckAnswer(_numberArea->getBoxAns())) {
 			_right->setVisible(true);
-			scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion),1.5f); //等待1.5秒再執行
+            _checkAns = 1;
+			//scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion),1.5f); //等待1.5秒再執行
 		}
 		else {
-			_wrong->setVisible(true);
-			scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion), 1.5f);
+            _wrongAct->setVisible(true);
+            _wrongActTime->gotoFrameAndPlay(0, 80, false);
+            _checkAns =0;
+            _wrongActTime->setLastFrameCallFunc([=]()
+            {
+                _checkAns = -1;
+                _wrongAct->setVisible(false);
+            });
+			//_wrong->setVisible(true);
+			//scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion), 1.5f);
 		}
 		return;
 	}

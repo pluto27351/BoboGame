@@ -28,33 +28,33 @@
             <FileData Type="PlistSubImage" Path="teach_btn_home.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="answer" ActionTag="-669237343" Tag="153" IconVisible="False" LeftMargin="1778.8636" RightMargin="143.1364" TopMargin="1305.0908" BottomMargin="139.9092" ctype="SpriteObjectData">
-            <Size X="126.0000" Y="91.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1841.8636" Y="185.4092" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8993" Y="0.1207" />
-            <PreSize X="0.0615" Y="0.0592" />
-            <FileData Type="PlistSubImage" Path="teach_btn_answer.png" Plist="Img/game_teach.plist" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="giveup" ActionTag="1058158609" Tag="154" IconVisible="False" LeftMargin="1574.8160" RightMargin="300.1840" TopMargin="1267.8114" BottomMargin="111.1886" ctype="SpriteObjectData">
+          <AbstractNodeData Name="answer" ActionTag="-669237343" Tag="153" IconVisible="False" LeftMargin="1595.2214" RightMargin="326.7786" TopMargin="1299.9541" BottomMargin="145.0459" ctype="SpriteObjectData">
             <Size X="173.0000" Y="157.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1661.3160" Y="189.6886" />
+            <Position X="1658.2214" Y="190.5459" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8112" Y="0.1235" />
-            <PreSize X="0.0845" Y="0.1022" />
+            <PrePosition X="0.8097" Y="0.1241" />
+            <PreSize X="0.0615" Y="0.0592" />
             <FileData Type="PlistSubImage" Path="teach_btn_giveup.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="answer_area" ActionTag="-557005479" Tag="82" IconVisible="True" LeftMargin="1455.9434" RightMargin="592.0566" TopMargin="1333.4232" BottomMargin="202.5767" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="nextque" ActionTag="1058158609" Tag="154" IconVisible="False" LeftMargin="1763.5952" RightMargin="111.4048" TopMargin="1274.2947" BottomMargin="104.7053" ctype="SpriteObjectData">
+            <Size X="126.0000" Y="91.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1850.0952" Y="183.2053" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9034" Y="0.1193" />
+            <PreSize X="0.0845" Y="0.1022" />
+            <FileData Type="PlistSubImage" Path="teach_btn_answer.png" Plist="Img/game_teach.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="answer_area" ActionTag="-557005479" Tag="82" IconVisible="True" LeftMargin="1455.9434" RightMargin="592.0566" TopMargin="1333.4233" BottomMargin="202.5767" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="F_01" ActionTag="-1677401206" Alpha="153" Tag="173" IconVisible="False" LeftMargin="-153.3491" RightMargin="58.3491" TopMargin="-78.5300" BottomMargin="-80.4700" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="F_01" ActionTag="-1677401206" Alpha="153" Tag="173" IconVisible="False" LeftMargin="-153.3491" RightMargin="58.3491" TopMargin="-72.5300" BottomMargin="-74.4700" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-105.8491" Y="-0.9700" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -64,8 +64,8 @@
                 <FileData Type="PlistSubImage" Path="ans_area.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="F_11" ActionTag="-1699642295" Alpha="153" Tag="227" IconVisible="False" LeftMargin="-75.2053" RightMargin="-19.7947" TopMargin="5.4841" BottomMargin="-164.4841" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="F_11" ActionTag="-1699642295" Alpha="153" Tag="227" IconVisible="False" LeftMargin="-75.2020" RightMargin="-19.7980" TopMargin="9.9744" BottomMargin="-156.9744" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.4976" ScaleY="0.6263" />
                 <Position X="-27.9300" Y="-64.9083" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -75,8 +75,8 @@
                 <FileData Type="PlistSubImage" Path="ans_area.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="F_12" ActionTag="840995688" Alpha="153" Tag="182" IconVisible="False" LeftMargin="-0.4795" RightMargin="-94.5205" TopMargin="5.4841" BottomMargin="-164.4841" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="F_12" ActionTag="840995688" Alpha="153" Tag="182" IconVisible="False" LeftMargin="-0.4762" RightMargin="-94.5238" TopMargin="9.9744" BottomMargin="-156.9744" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.4976" ScaleY="0.6263" />
                 <Position X="46.7958" Y="-64.9083" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -86,8 +86,8 @@
                 <FileData Type="PlistSubImage" Path="ans_area.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="F_22" ActionTag="115629761" Alpha="153" Tag="229" IconVisible="False" LeftMargin="-0.4153" RightMargin="-94.5847" TopMargin="-164.9332" BottomMargin="5.9332" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="F_22" ActionTag="115629761" Alpha="153" Tag="229" IconVisible="False" LeftMargin="-0.4121" RightMargin="-94.5879" TopMargin="-157.1713" BottomMargin="10.1713" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.5035" ScaleY="0.3530" />
                 <Position X="47.4204" Y="62.0623" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -97,8 +97,8 @@
                 <FileData Type="PlistSubImage" Path="ans_area.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="F_21" ActionTag="-1061704925" Alpha="153" Tag="231" IconVisible="False" LeftMargin="-78.0227" RightMargin="-16.9773" TopMargin="-164.9332" BottomMargin="5.9332" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="F_21" ActionTag="-1061704925" Alpha="153" Tag="231" IconVisible="False" LeftMargin="-78.0195" RightMargin="-16.9805" TopMargin="-157.1713" BottomMargin="10.1713" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.5035" ScaleY="0.3530" />
                 <Position X="-30.1870" Y="62.0623" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -119,8 +119,8 @@
                 <FileData Type="PlistSubImage" Path="ansbar.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="area_0" ActionTag="-931090732" Alpha="126" Tag="63" IconVisible="False" LeftMargin="-150.6362" RightMargin="55.6362" TopMargin="-76.5827" BottomMargin="-82.4173" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="area_0" ActionTag="-931090732" Alpha="126" Tag="63" IconVisible="False" LeftMargin="-150.6341" RightMargin="55.6341" TopMargin="-70.7509" BottomMargin="-76.2491" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.5349" ScaleY="0.5145" />
                 <Position X="-99.8186" Y="-0.6176" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -130,8 +130,8 @@
                 <FileData Type="PlistSubImage" Path="ans_area.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="area_1" ActionTag="-1910937848" Alpha="126" Tag="66" IconVisible="False" LeftMargin="-37.6063" RightMargin="-57.3937" TopMargin="-5.6854" BottomMargin="-153.3146" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="area_1" ActionTag="-1910937848" Alpha="126" Tag="66" IconVisible="False" LeftMargin="-37.6063" RightMargin="-57.3937" TopMargin="0.3146" BottomMargin="-147.3146" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="9.8937" Y="-73.8146" />
                 <Scale ScaleX="1.8509" ScaleY="0.8661" />
@@ -141,8 +141,8 @@
                 <FileData Type="PlistSubImage" Path="ans_area.png" Plist="Img/game_teach.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="area_2" CanEdit="False" ActionTag="10982026" Alpha="126" Tag="183" IconVisible="False" LeftMargin="-36.5487" RightMargin="-58.4513" TopMargin="-154.1548" BottomMargin="-4.8452" ctype="SpriteObjectData">
-                <Size X="95.0000" Y="159.0000" />
+              <AbstractNodeData Name="area_2" CanEdit="False" ActionTag="10982026" Alpha="126" Tag="183" IconVisible="False" LeftMargin="-36.5487" RightMargin="-58.4513" TopMargin="-148.1548" BottomMargin="1.1548" ctype="SpriteObjectData">
+                <Size X="95.0000" Y="147.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="10.9513" Y="74.6548" />
                 <Scale ScaleX="1.8509" ScaleY="0.8661" />
@@ -226,16 +226,15 @@
             <FileData Type="PlistSubImage" Path="teacc_effect_right.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="wrong" ActionTag="-1903572039" Tag="234" IconVisible="False" LeftMargin="538.5000" RightMargin="538.5000" TopMargin="343.5000" BottomMargin="343.5000" ctype="SpriteObjectData">
-            <Size X="971.0000" Y="849.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+          <AbstractNodeData Name="wrong" ActionTag="1270415030" Tag="128" IconVisible="True" LeftMargin="1024.0000" RightMargin="1024.0000" TopMargin="768.0000" BottomMargin="768.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
             <Position X="1024.0000" Y="768.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.4741" Y="0.5527" />
-            <FileData Type="PlistSubImage" Path="teacc_effect_wrong.png" Plist="Img/game_teach.plist" />
-            <BlendFunc Src="1" Dst="771" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="Ani/wrong.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

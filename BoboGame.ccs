@@ -10,6 +10,7 @@
           <Project Name="StartAni.csd" Type="Node" />
           <Project Name="t_number.csd" Type="Node" />
           <Project Name="TeachAni.csd" Type="Node" />
+          <Project Name="wrong.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />

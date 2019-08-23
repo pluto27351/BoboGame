@@ -4,20 +4,20 @@ USING_NS_CC;
 
 Vec3 CNumberPannel::getBoxAns(){
     int f,d,n; //帶．母．子
-    if(_answerNumber[0] == -1) _answerNumber[0] = 0;
-    if(_answerNumber[1] == -1) _answerNumber[1] = 0;
-    if(_answerNumber[3] == -1) _answerNumber[3] = 0;
+   // if(_answerNumber[0] == -1) _answerNumber[0] = 0;
+   // if(_answerNumber[1] == -1) _answerNumber[1] = 0;
+   // if(_answerNumber[3] == -1) _answerNumber[3] = 0;
     
     if(_answerNumber[0] != -1 )f = _answerNumber[0];
     else f = 0;
-    if(_answerNumber[2] != -1 )d = _answerNumber[1]*10 + _answerNumber[2];
-    else d = _answerNumber[1];
-    if(_answerNumber[4] != -1 )n = _answerNumber[3]*10 + _answerNumber[4];
-    else n = _answerNumber[3];
+    if(_answerNumber[1] != -1 )d = _answerNumber[1]*10 + _answerNumber[2];
+    else d = _answerNumber[2];
+    if(_answerNumber[3] != -1 )n = _answerNumber[3]*10 + _answerNumber[4];
+    else n = _answerNumber[4];
     
 //    for(int i=0;i<5;i++)CCLOG("%d = %d",i,_answerNumber[i]);
 //
-//    CCLOG("%d,%d,%d",f,d,n);
+    CCLOG("%d,%d,%d",f,d,n);
     return(Vec3(f,d,n));
 }
 

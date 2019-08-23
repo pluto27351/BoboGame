@@ -29,8 +29,12 @@ private:
 	CNumberPannel *_numberArea;
 	CAnsCreater *_question;
     const int *switchdata;
+    Node *_wrongAct;
+    ActionTimeline *_wrongActTime;
+    bool _bchangeScene;
+    int _checkAns;
+    
 	void doStep(float);
-    bool _bchangeScene=false;
 public:
 	~TeachScene();
 	bool init();
