@@ -41,9 +41,7 @@ class GameScene : public cocos2d::Layer
 private:
 	Node *rootNode;
     Sprite *midground[2];
-	Node *StartTime;
     Node *_Teach;
-	ActionTimeline* StartAni;
     ActionTimeline* TeachAni;
 	CPlayer *_Player;
     CLevelCreate *_Level;

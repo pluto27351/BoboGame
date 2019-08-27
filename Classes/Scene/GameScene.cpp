@@ -61,13 +61,6 @@ bool GameScene::init()
     midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
     midground[0]->setGlobalZOrder(-2);
     midground[1]->setGlobalZOrder(-2);
-	//倒數時間
-    StartTime = CSLoader::createNode("Ani/StartAni.csb");
-    StartTime->setPosition(1024,800);
-    this->addChild(StartTime, 2);
-    StartAni = (ActionTimeline *)CSLoader::createTimeline("Ani/StartAni.csb");
-    StartTime->runAction(StartAni);
-	StartTime->getChildByName("time")->setGlobalZOrder(6);
     //教學提示
     _Teach = CSLoader::createNode("Ani/TeachAni.csb");
     this->addChild(_Teach, 2);
@@ -117,13 +110,7 @@ void GameScene::doStep(float dt)
     if(PlayFlag == false){
         if (_fGmaeTime >= 4.5){
             PlayFlag = true;
-            StartTime->removeFromParent();
-            this->removeChild(StartTime);
         }
-        else if (_fGmaeTime >= 4)StartAni->gotoFrameAndPlay(4);
-        else if (_fGmaeTime >= 3)StartAni->gotoFrameAndPlay(3);
-        else if (_fGmaeTime >= 2)StartAni->gotoFrameAndPlay(2);
-        else if (_fGmaeTime >= 1)StartAni->gotoFrameAndPlay(1);
     }
 	Play(dt);
 }

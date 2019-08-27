@@ -15,6 +15,7 @@ CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 }
 void CObstacle::ChangeObstacle(Node* _ob){
     //初始
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/Img/game_element.plist");
 	for (int i = 0; i < num; i++) {
         _b2World->DestroyBody(ObstacleBody[i]);
     }
@@ -50,13 +51,11 @@ void CObstacle::CreateObstacle(){
 
 	//裝飾
     if(rand()%5 == 0){
-        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/img/game_element.plist");
         Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
         this->_Obstacle->addChild(img,2);
 		img->setGlobalZOrder(2);
     }
     if(rand()%8 == 0){
-        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/img/game_element.plist");
         Sprite *img;
         int n = rand()%2;
         switch(n){
