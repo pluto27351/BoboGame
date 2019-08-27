@@ -38,7 +38,9 @@ bool HomeScene::init()
 	{
 		return false;
 	}
-
+    UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
+    UserDefault::getInstance()->flush();
+    
 	auto rootNode = CSLoader::createNode("MainScene.csb");
 	
 	addChild(rootNode);

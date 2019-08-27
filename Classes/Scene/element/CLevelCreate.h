@@ -8,8 +8,6 @@
 #include "CObstacle.h"
 
 #define OB_NUM 7
-#define TEACH_NUM 14
-#define START_NUM 7
 
 USING_NS_CC;
 
@@ -23,7 +21,7 @@ private:
 	CObstacle *_DownGroundCollision[OB_NUM];
 	b2World* _b2World;
     Sprite* board;
-    int num = -(TEACH_NUM); //教學用
+    int num = 0; //教學用
 	int _iLevel = 0;
 	int _iLevelFrequency = 5;
     int Distance = 0;

@@ -135,15 +135,8 @@ void GameScene::Play(float dt) {
         int velocityIterations = 8; // 速度迭代次數
         int positionIterations = 1; // 位置迭代次數，迭代次數一般設定為8~10 越高越真實但效率越差
         _b2World->Step(dt, velocityIterations, positionIterations);
-        //        for (b2Body* body = _b2World->GetBodyList(); body != NULL; body = body->GetNext()) {
-        //            if (body->GetUserData() != NULL && body->GetType() == b2_dynamicBody) {
-        //                Sprite *bodyData = (Sprite*)body->GetUserData();
-        //                bodyData->setPosition(body->GetPosition().x*PTM_RATIO, body->GetPosition().y*PTM_RATIO);
-        //                bodyData->setRotation(-1 * CC_RADIANS_TO_DEGREES(body->GetAngle()));
-        //            }
-        //        }
         if (_contactListener.gameover == true) {
-            //ChangeScene();
+            ChangeScene();
         }
         //草叢移動
         if (midground[0]->getPosition().x < (-1575.52f))
@@ -264,6 +257,10 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
                         _Player->AttackAct();
                         _Level->TeachFlag = 2;
                         AttackFlag = true;
+                        
+                        //教學結束
+                        UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 1);
+                        UserDefault::getInstance()->flush();
                     }
                 }
                 break;
