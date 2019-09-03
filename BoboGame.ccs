@@ -170,6 +170,8 @@
             <PlistImageFile Name="menu_number_7.png" Key="menu_number_7.png" />
             <PlistImageFile Name="menu_number_8.png" Key="menu_number_8.png" />
             <PlistImageFile Name="menu_number_9.png" Key="menu_number_9.png" />
+            <PlistImageFile Name="menu_game_lock.png" Key="menu_game_lock.png" />
+            <PlistImageFile Name="menu_game_on.png" Key="menu_game_on.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
             <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
@@ -295,13 +297,16 @@
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
         <Project Name="BoardScene.csd" Type="Scene" />
-        <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="Obstacle.csd" Type="Node" />
         <Project Name="PlayScene.csd" Type="Scene" />
         <Project Name="TeachScene.csd" Type="Scene" />
+        <Folder Name="font">
+          <TTF Name="Hiragino_Sans_CNS.ttc" />
+          <TTF Name="PingFang.ttc" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

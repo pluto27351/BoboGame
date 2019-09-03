@@ -48,7 +48,7 @@ void  CDrawPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	// �
 	s = pBtn->getScale();
 	_toolBtn[eraser].setButtonInfo("teach_btn_eraser.png", "teach_btn_eraser.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[eraser].setScale(s);
-	rootNode.removeChildByName("E=eraser");
+	rootNode.removeChildByName("eraser");
 
 	// 設定清楚螢幕所有手繪圖型的按鈕
 	pBtn = (Sprite *)rootNode.getChildByName("clear");

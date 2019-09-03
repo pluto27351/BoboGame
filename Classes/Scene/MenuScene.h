@@ -20,6 +20,8 @@ private:
 	Node *rootNode;
 	CButton _chapBtn[5],_gameBtn,_boardBtn;
 	Text *_scoreText;
+    LoadingBar* _chapLoad[5];
+    Sprite * _chapPic[5];
 	int _iscale;
     bool _bchangeScene = false;
     int _sceneNum,_uni;

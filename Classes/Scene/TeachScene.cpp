@@ -12,27 +12,34 @@ using namespace ui;
 using namespace CocosDenshion;
 
 TeachScene::~TeachScene() {
-	this->removeAllChildren();
-	//AnimationCache::destroyInstance();
+    this->removeAllChildren();
+    //AnimationCache::destroyInstance();
 }
 
 Scene* TeachScene::createScene(int unit)
 {
-	auto scene = Scene::create();
-
-	auto layer = TeachScene::create();
-	layer->initQue(unit);
-
-	scene->addChild(layer);
-
-	return scene;
+    auto scene = Scene::create();
+    
+    auto layer = TeachScene::create();
+    layer->initQue(unit);
+    
+    scene->addChild(layer);
+    
+    return scene;
 }
 
 void TeachScene::initQue(int chap) {
-	rootNode = CSLoader::createNode("TeachScene.csb");
-
-	_curUnit = chap;
-    _curQue = 1;
+    rootNode = CSLoader::createNode("TeachScene.csb");
+    
+    _curUnit = chap;
+    //    srand(time(NULL));
+    //    char name[20] = "";
+    //    do{
+    //        _curQue = rand()%13;
+    //        sprintf(name, "U%d_Q%d_FINISH",_curUnit,_curQue);
+    //    }while (CCUserDefault::sharedUserDefault()->getIntegerForKey(name) == UNIT[_curUnit][_curQue][0]);
+    //
+    _curQue = -1;
     _curNum = -1;
     _question = NULL;
     
@@ -41,214 +48,259 @@ void TeachScene::initQue(int chap) {
 
 bool TeachScene::init()
 {
-	// 1. super init first
-	if (!Layer::init())
-	{
-		return false;
-	}
-
-	rootNode = CSLoader::createNode("TeachScene.csb");
-
-	addChild(rootNode);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_teach.plist");
-	char name[20] = "";
-
-	//返回按鈕
-	auto target = rootNode->getChildByName("home");
-	_homeBtn.setButtonInfo("teach_btn_home.png", "teach_btn_home.png", *this, target->getPosition(), INTERFACE_LEVEL);
-	_homeBtn.setScale(target->getScaleX(), target->getScaleY());
-	_homeBtn.setRotate(target->getRotation());
-	rootNode->removeChild(target);
-
-	//回答按鈕
-	target = rootNode->getChildByName("answer");
-	_answerBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png", *this, target->getPosition(), INTERFACE_LEVEL);
-	_answerBtn.setScale(target->getScaleX(), target->getScaleY());
-	_answerBtn.setRotate(target->getRotation());
-	rootNode->removeChild(target);
-
-	//放棄按鈕
-	target = rootNode->getChildByName("nextque");
-	_giveupBtn.setButtonInfo("teach_btn_answer.png", "teach_btn_answer.png", *this, target->getPosition(), INTERFACE_LEVEL);
-	_giveupBtn.setScale(target->getScaleX(), target->getScaleY());
-	_giveupBtn.setRotate(target->getRotation());
-	rootNode->removeChild(target);
-
-	//數字區
-	_numberArea = new CNumberPannel;
-	target = rootNode->getChildByName("number");
-	_numberArea->setNumberInfo(target->getPosition(), INTERFACE_LEVEL);
-	target = rootNode->getChildByName("answer_area");
-	_numberArea->setAnswerInfo(target);
-	this->addChild(_numberArea, INTERFACE_LEVEL);
-
-	//手繪版
-	_handDrawing = CDrawPanel::create();
-	_handDrawing->initDrawingPanel(*rootNode, *this);
-	_handDrawing->retain();
-
-	_right = rootNode->getChildByName("right");
+    // 1. super init first
+    if (!Layer::init())
+    {
+        return false;
+    }
+    
+    rootNode = CSLoader::createNode("TeachScene.csb");
+    
+    addChild(rootNode);
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_teach.plist");
+    char name[20] = "";
+    
+    //返回按鈕
+    auto target = rootNode->getChildByName("home");
+    _homeBtn.setButtonInfo("teach_btn_home.png", "teach_btn_home.png", *this, target->getPosition(), INTERFACE_LEVEL);
+    _homeBtn.setScale(target->getScaleX(), target->getScaleY());
+    _homeBtn.setRotate(target->getRotation());
+    rootNode->removeChild(target);
+    
+    //回答按鈕
+    target = rootNode->getChildByName("answer");
+    _answerBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png", *this, target->getPosition(), INTERFACE_LEVEL);
+    _answerBtn.setScale(target->getScaleX(), target->getScaleY());
+    _answerBtn.setRotate(target->getRotation());
+    rootNode->removeChild(target);
+    
+    //放棄按鈕
+    target = rootNode->getChildByName("nextque");
+    _giveupBtn.setButtonInfo("teach_btn_answer.png", "teach_btn_answer.png", *this, target->getPosition(), INTERFACE_LEVEL);
+    _giveupBtn.setScale(target->getScaleX(), target->getScaleY());
+    _giveupBtn.setRotate(target->getRotation());
+    rootNode->removeChild(target);
+    
+    //數字區
+    _numberArea = new CNumberPannel;
+    target = rootNode->getChildByName("number");
+    _numberArea->setNumberInfo(target->getPosition(), INTERFACE_LEVEL);
+    target = rootNode->getChildByName("answer_area");
+    _numberArea->setAnswerInfo(target);
+    this->addChild(_numberArea, INTERFACE_LEVEL);
+    
+    
+    //手繪版
+    _handDrawing = CDrawPanel::create();
+    _handDrawing->initDrawingPanel(*rootNode, *this);
+    _handDrawing->retain();
+    
+    target = rootNode->getChildByName("right");
+    _right = (Sprite *)Sprite::createWithSpriteFrameName("teacc_effect_right.png");
+    _right->setPosition(target->getPosition());
     _right->setVisible(false);
+    this->addChild(_right,10);
+    rootNode->removeChild(target);
     
     _wrongAct = (Node *)rootNode->getChildByName("wrong");
     _wrongAct->setVisible(false);
-    this->addChild(_wrongAct,2);
+    this->addChild(_wrongAct,10);
     _wrongActTime = (ActionTimeline *)CSLoader::createTimeline("Ani/wrong.csb");
     _wrongAct->runAction(_wrongActTime);
     _checkAns = -1;
     
-//	_wrong = rootNode->getChildByName("wrong");
-//	_wrong->setVisible(false);
-
-	//觸控
-	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
-	_listener1->onTouchBegan = CC_CALLBACK_2(TeachScene::onTouchBegan, this);		//加入觸碰開始事件
-	_listener1->onTouchMoved = CC_CALLBACK_2(TeachScene::onTouchMoved, this);		//加入觸碰移動事件
-	_listener1->onTouchEnded = CC_CALLBACK_2(TeachScene::onTouchEnded, this);		//加入觸碰離開事件
-	_listener1->onTouchCancelled = CC_CALLBACK_2(TeachScene::onTouchEnded, this);
-	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//加入剛創建的事件聆聽器
-
-	// 將 doStep 函式掛入 schedule list 中，每一個 frame 就都會被呼叫到
-	this->schedule(CC_SCHEDULE_SELECTOR(TeachScene::doStep));
-	return true;
-
+    //    _wrong = rootNode->getChildByName("wrong");
+    //    _wrong->setVisible(false);
+    
+    //觸控
+    _listener1 = EventListenerTouchOneByOne::create();    //創建一個一對一的事件聆聽器
+    _listener1->onTouchBegan = CC_CALLBACK_2(TeachScene::onTouchBegan, this);        //加入觸碰開始事件
+    _listener1->onTouchMoved = CC_CALLBACK_2(TeachScene::onTouchMoved, this);        //加入觸碰移動事件
+    _listener1->onTouchEnded = CC_CALLBACK_2(TeachScene::onTouchEnded, this);        //加入觸碰離開事件
+    _listener1->onTouchCancelled = CC_CALLBACK_2(TeachScene::onTouchEnded, this);
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);    //加入剛創建的事件聆聽器
+    
+    // 將 doStep 函式掛入 schedule list 中，每一個 frame 就都會被呼叫到
+    this->schedule(CC_SCHEDULE_SELECTOR(TeachScene::doStep));
+    return true;
+    
 }
 
 
 void TeachScene::doStep(float dt)
 {
-        if(_bchangeScene)ChangeScene();
+    if(_bchangeScene)ChangeScene();
 }
 
 void TeachScene::ChangeScene()
 {
     this->unscheduleAllCallbacks();
     this->removeAllChildren();
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_teach.plist");
-	Director::getInstance()->getTextureCache()->removeUnusedTextures();
-
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_teach.plist");
+    Director::getInstance()->getTextureCache()->removeUnusedTextures();
+    
     Director::getInstance()->replaceScene(MenuScene::createScene());
-//    auto scene = MenuScene::createScene();
-//    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
+    //    auto scene = MenuScene::createScene();
+    //    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
 }
 
 void TeachScene::NextQuestion(float a) {
     _checkAns = -1;
-	_right->setVisible(false);
-	_wrongAct->setVisible(false);
+    _right->setVisible(false);
+    _wrongAct->setVisible(false);
     
     _curQue++;
-	resetQue();
-	_handDrawing->clearWhiteBoard();
+    resetQue();
+    _handDrawing->clearWhiteBoard();
     _numberArea->clear();
 }
 
 bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
-	Point touchLoc = pTouch->getLocation();
+    Point touchLoc = pTouch->getLocation();
     if (_giveupBtn.touchesBegin(touchLoc) && _checkAns != 0)return true;  //答對時需按下題鍵
     
     if(_checkAns != -1)return false;  //確認答案後 功能暫時關閉
     
-	if (_homeBtn.touchesBegin(touchLoc))return true;
-	if (_answerBtn.touchesBegin(touchLoc))return true;
-	if (_numberArea->touchesBegin(touchLoc))return true;
+    if (_homeBtn.touchesBegin(touchLoc))return true;
+    if (_answerBtn.touchesBegin(touchLoc))return true;
+    if (_numberArea->touchesBegin(touchLoc))return true;
     else _numberArea->setNumberVisual(false);
-	_handDrawing->touchesBegin(touchLoc);
-	return true;
+    _handDrawing->touchesBegin(touchLoc);
+    
+    
+    return true;
 }
 
 void  TeachScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰移動事件
 {
-	Point touchLoc = pTouch->getLocation();
-	Point preTouchLoc = pTouch->getPreviousLocation();
-
-	if (_homeBtn.touchesMoved(touchLoc))return;
-	if (_answerBtn.touchesMoved(touchLoc))return;
-	if (_giveupBtn.touchesMoved(touchLoc))return;
-	if (_numberArea->touchesMoved(touchLoc))return;
-
-	_handDrawing->touchesMoved(touchLoc, preTouchLoc);
+    Point touchLoc = pTouch->getLocation();
+    Point preTouchLoc = pTouch->getPreviousLocation();
+    
+    if (_homeBtn.touchesMoved(touchLoc))return;
+    if (_answerBtn.touchesMoved(touchLoc))return;
+    if (_giveupBtn.touchesMoved(touchLoc))return;
+    if (_numberArea->touchesMoved(touchLoc))return;
+    
+    _handDrawing->touchesMoved(touchLoc, preTouchLoc);
+    
 }
 
-void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
+void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件
 {
-	Point touchLoc = pTouch->getLocation();
-	if (_numberArea->touchesEnded(touchLoc)) return;
-
-	if (_answerBtn.touchesEnded(touchLoc)) {
+    Point touchLoc = pTouch->getLocation();
+    
+    if (_numberArea->touchesEnded(touchLoc)) return;
+    
+    if (_answerBtn.touchesEnded(touchLoc)) {
         _numberArea->setNumberVisual(false);
-		if (_question->CheckAnswer(_numberArea->getBoxAns())) {
-			_right->setVisible(true);
+        if (_question->CheckAnswer(_numberArea->getBoxAns())) {
+            _right->setVisible(true);
             _checkAns = 1;
-			//scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion),1.5f); //等待1.5秒再執行
-		}
-		else {
+            char name[20] = "";
+            sprintf(name, "U%d_Q%d_N%d",_curUnit,_curQue,_curNum);
+            CCUserDefault::sharedUserDefault()->setBoolForKey(name, true);
+            sprintf(name, "U%d_Q%d_FINISH",_curUnit,_curQue);
+            int k = CCUserDefault::sharedUserDefault()->getIntegerForKey(name)+1;
+            CCUserDefault::sharedUserDefault()->setIntegerForKey(name, k);
+            if(k >= UNIT[_curUnit-1][_curQue-1][0]){
+                sprintf(name, "U%d_FINISH",_curUnit);
+                int k = CCUserDefault::sharedUserDefault()->getIntegerForKey(name)+1;
+                CCUserDefault::sharedUserDefault()->setIntegerForKey(name, k);
+            }
+            k = CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR")+1;
+            CCUserDefault::sharedUserDefault()->setIntegerForKey("STAR", k);
+            CCUserDefault::sharedUserDefault()->flush();
+        }
+        else {
             _wrongAct->setVisible(true);
             _wrongActTime->gotoFrameAndPlay(0, 80, false);
             _checkAns =0;
             _wrongActTime->setLastFrameCallFunc([=]()
-            {
-                _checkAns = -1;
-                _wrongAct->setVisible(false);
-            });
-			//_wrong->setVisible(true);
-			//scheduleOnce(CC_SCHEDULE_SELECTOR(TeachScene::NextQuestion), 1.5f);
-		}
-		return;
-	}
-	if (_giveupBtn.touchesEnded(touchLoc)) {
-		NextQuestion(0);
-		return;
-	}
-
-	if (_homeBtn.touchesEnded(touchLoc)) {
+                                                {
+                                                    _checkAns = -1;
+                                                    _wrongAct->setVisible(false);
+                                                });
+            
+        }
+        return;
+    }
+    if (_giveupBtn.touchesEnded(touchLoc)) {
+        NextQuestion(0);
+        return;
+    }
+    
+    if (_homeBtn.touchesEnded(touchLoc)) {
         _bchangeScene = true;
         return;
-	}
-
-	_handDrawing->touchesEnded(touchLoc);
+    }
+    
+    _handDrawing->touchesEnded(touchLoc);
 }
 
 void TeachScene::resetQue()
 {
-    if(_curQue >= 13) return;
+    //   if(_curQue >= 13) return;
     
     //重設題目
     if(_question != NULL) {this->removeChild(_question);  delete _question;}
     
-    _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
+    srand(time(NULL));
+    char name[20] = "";
+    sprintf(name, "U%d_FINISH",_curUnit);
+    
+    if(CCUserDefault::sharedUserDefault()->getIntegerForKey(name) >= 12){
+        _curQue = rand()%12+1;
+        switchdata = UNIT[_curUnit - 1][_curQue - 1];
+        int cNum;
+        do{
+            int num = (rand() % switchdata[0]) + 1;
+            cNum = switchdata[num];
+        }while(cNum == _curNum);
+        _curNum =  cNum;
+        
+    }
+    else{
+        int d =0;
+        do{
+            _curQue = rand()%12+1;
+            sprintf(name, "U%d_Q%d_FINISH",_curUnit,_curQue);
+            d = CCUserDefault::sharedUserDefault()->getIntegerForKey(name) - UNIT[_curUnit-1][_curQue-1][0];
+            CCLOG("剩餘 %d 題",-d);
+        }while (d >= 0);
+        switchdata = UNIT[_curUnit - 1][_curQue - 1];
+        int cNum;
+        do{
+            int num = (rand() % switchdata[0]) + 1;
+            cNum = switchdata[num];
+            sprintf(name, "U%d_Q%d_N%d",_curUnit,_curQue,cNum);
+        }while(CCUserDefault::sharedUserDefault()->getBoolForKey(name) ||( d != -1 && cNum == _curNum));
+        _curNum =  cNum;
+    }
     
     int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
     int cate = queCate%100;
     int cate_data = queCate/100-1;
     switch (cate) {
         case 1:                                 //一般題
-            switchdata = PIECE[_objNum];
             setQue(cate);
             break;
         case 2:                                 //變量題 chap4-7~12
-            switchdata = PIECE_U4[_curQue-7];
             setQue_quantity();
             break;
         case 3:                                 //比例題 chap5-3.4.6
-            switchdata = PIECE_U5[_curQue-1];
             setQue_picline();
             break;
         case 4:                                 //倍數題 chap5-其他題
-            switchdata = PIECE_U5[_curQue-1];
             setQue_multiple();
             break;
         case 5:                                 //線段題 chap3-6
-            switchdata = PIECE[0];
             setQue_line();
             break;
         case 11:                                //分子題1 chap2-3.5.8.11
-            switchdata = PIECE_U2[cate_data];
             setQue(cate);
             break;
         case 12:                                //分子題2 chap3-7~12
-            switchdata = PIECE_U3[cate_data];
             setQue(cate);
             break;
     }
@@ -258,15 +310,15 @@ void TeachScene::resetQue()
 
 void TeachScene::setQue(int k) {
     // 獲取題目分母資訊  隨幾取分母
-   // if(_curNum == -1){
-        srand(time(NULL));
-        int num = (rand() % switchdata[0]) + 1;
-        _curNum = switchdata[num];
+    // if(_curNum == -1){
+    //     srand(time(NULL));
+    //        int num = (rand() % switchdata[0]) + 1;
+    //        _curNum = switchdata[num];
     //}
     
     //設定題目
     _question = new CAnsCreater(_curUnit, _curQue, _curNum);
-
+    
     _question->queCreater(_curUnit, _curQue, _curNum);
     _question->setPosition(QUE_POS);
     this->addChild(_question);
@@ -275,20 +327,16 @@ void TeachScene::setQue(int k) {
 
 
 void TeachScene::setQue_picline() {  //chap5-3.4.6
-   // if(_curNum == -1){
-        srand(time(NULL));
-        int num = (rand() % switchdata[0]) + 1;
-        _curNum = switchdata[num];
-   // }
+    // srand(time(NULL));
+    //    int num = (rand() % switchdata[0]) + 1;
+    //    _curNum = switchdata[num];
     
     int k = 0;
-    int _c = 0,_b = 0;
+    int _c = 0,_b = 0;  // _c = 2~6  , _b = 1~5
+    _c = rand() % 5+2;
     do {
-        _c = rand() % 6;
-        _b = rand() % 5;
-        k = UNIT5[_curNum - 2][_c][_b];  //_curNum = 2~6 , _c = 0~5  , _b = 0~4
-        _c += 2; _b += 1;
-    } while (k == 0);
+        _b = rand() % 5 + 1;
+    } while (_b >= _curNum);
     
     //設定題目
     _question = new CAnsCreater(_curUnit, _curQue, _curNum, _c, _b);
@@ -296,16 +344,13 @@ void TeachScene::setQue_picline() {  //chap5-3.4.6
     _question->setPosition(QUE_POS);
     this->addChild(_question);
     
-    
-    
 }
 
 void TeachScene::setQue_multiple() {  //chap5其餘題
-  //  if(_curNum == -1){
-        srand(time(NULL));
-        int num = (rand() % switchdata[0]) + 1;
-        _curNum = switchdata[num];
-   // }
+    //    srand(time(NULL));
+    //    int num = (rand() % switchdata[0]) + 1;
+    //    _curNum = switchdata[num];
+    
     int que_b = switchdata[11];
     int c = 0,ans_b = 0;
     int k = (2 * _curNum) / que_b;  //取上限 ２倍分母/分子 ＝ 倍數上限
@@ -318,7 +363,6 @@ void TeachScene::setQue_multiple() {  //chap5其餘題
     _c =c;
     ans_b = _c * que_b;
     
-    
     //設定題目
     _question = new CAnsCreater(_curUnit, _curQue, _curNum, _c, que_b);
     _question->queCreater(_curUnit, _curQue, _curNum, _c, que_b);
@@ -330,40 +374,9 @@ void TeachScene::setQue_multiple() {  //chap5其餘題
 
 void TeachScene::setQue_line(){
     // 獲取題目分母資訊  隨幾取分母
-   // if(_curNum == -1){
-        srand(time(NULL));
-        int num = (rand() % switchdata[0]) + 1;
-        _curNum = switchdata[num];
-   // }
-    
-//    int q[3]={-1};
-//    do{
-//        int qq[3];
-//        qq[0] = rand() %  (2*_curNum);
-//        qq[1] = rand() %  (2*_curNum);
-//        qq[2] = rand() %  (2*_curNum);
-//        q[0] = qq[0];
-//        if(qq[1] < q[0]){
-//            q[1]=q[0];q[0]=qq[1];
-//        }
-//        else {
-//            q[1] = qq[1];
-//        }
-//
-//        if(qq[2] < q[1]){
-//            q[2]=q[1];
-//            if(qq[2] < q[0]){
-//                q[1]=q[0]; q[0]=qq[2];
-//            }
-//            else{
-//                q[1]=qq[2];
-//            }
-//        }else{
-//            q[2] = qq[2];
-//        }
-//    }while(q[0] == q[1] || q[0] == q[2] ||q[1] == q[2]);
-//
-//    CCLOG("a=%d , b=%d , c=%d",q[0],q[1],q[2]);
+    //    srand(time(NULL));
+    //    int num = (rand() % switchdata[0]) + 1;
+    //    _curNum = switchdata[num];
     
     int q = rand() %  (2*_curNum);
     //設定題目
@@ -373,24 +386,19 @@ void TeachScene::setQue_line(){
     _question->setPosition(QUE_POS);
     this->addChild(_question);
     
-    
-    
 }
 
 void TeachScene::setQue_quantity() {  //chap4-7~12
-   // if(_curNum == -1){
-        srand(time(NULL));
-        int num = (rand() % switchdata[0]) + 1;
-        _curNum = switchdata[num];
-   // }
-    
-    int c,r =UNIT4[_curQue-7][0];
+    //    srand(time(NULL));
+    //    int num = (rand() % switchdata[0]) + 1;
+    //    _curNum = switchdata[num];
+    int limit[9] = {2,3,4,5,6,8,9,10,12};
+    int c;
     do{
-        int k = (rand() % r) +1;
-        c = UNIT4[_curQue-7][k];
-    }while( c % _curNum != 0 || (_curNum <5  && c == _c) || (_curNum == 6 && (_curQue ==9 ||_curQue ==10|| _curQue == 12) && c == _c)) ;
+        int k = rand() % 9;
+        c = limit[k];
+    }while(c%_curNum != 0 ||  c == _c) ;
     _c = c;
-    
     
     //設定題目
     _question = new CAnsCreater(_curUnit, _curQue, _curNum);

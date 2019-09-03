@@ -28,25 +28,25 @@
             <FileData Type="PlistSubImage" Path="teach_btn_home.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="answer" ActionTag="-669237343" Tag="153" IconVisible="False" LeftMargin="1595.2214" RightMargin="326.7786" TopMargin="1299.9541" BottomMargin="145.0459" ctype="SpriteObjectData">
+          <AbstractNodeData Name="answer" ActionTag="-669237343" Tag="153" IconVisible="False" LeftMargin="1588.3065" RightMargin="286.6935" TopMargin="1266.9542" BottomMargin="112.0458" ctype="SpriteObjectData">
             <Size X="173.0000" Y="157.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1658.2214" Y="190.5459" />
+            <Position X="1674.8065" Y="190.5458" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8097" Y="0.1241" />
-            <PreSize X="0.0615" Y="0.0592" />
+            <PrePosition X="0.8178" Y="0.1241" />
+            <PreSize X="0.0845" Y="0.1022" />
             <FileData Type="PlistSubImage" Path="teach_btn_giveup.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nextque" ActionTag="1058158609" Tag="154" IconVisible="False" LeftMargin="1763.5952" RightMargin="111.4048" TopMargin="1274.2947" BottomMargin="104.7053" ctype="SpriteObjectData">
+          <AbstractNodeData Name="nextque" ActionTag="1058158609" Tag="154" IconVisible="False" LeftMargin="1787.0952" RightMargin="134.9048" TopMargin="1307.2947" BottomMargin="137.7053" ctype="SpriteObjectData">
             <Size X="126.0000" Y="91.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1850.0952" Y="183.2053" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9034" Y="0.1193" />
-            <PreSize X="0.0845" Y="0.1022" />
+            <PreSize X="0.0615" Y="0.0592" />
             <FileData Type="PlistSubImage" Path="teach_btn_answer.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

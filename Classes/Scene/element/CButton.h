@@ -1,4 +1,4 @@
-﻿#ifndef __CBUTTON_H__
+#ifndef __CBUTTON_H__
 #define __CBUTTON_H__
 
 #include "cocos2d.h"
@@ -10,7 +10,8 @@ class CButton
 private:
 	cocos2d::Sprite *_normalPic;
 	cocos2d::Sprite *_touchedPic;
-
+    cocos2d::Sprite *_enabledPic =NULL;
+    
 	cocos2d::Size  _BtnSize;
 	cocos2d::Point _BtnLoc;
 	cocos2d::Rect  _BtnRect;
@@ -22,6 +23,7 @@ private:
 
 public:
 	void setButtonInfo(const char *normalImg, const char *touchedImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
+    void setButtonInfo(const char *normalImg, const char *touchedImg, const char *enabledImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
 	bool touchesBegin(cocos2d::Point inPos);
 	bool touchesMoved(cocos2d::Point inPos);
 	bool touchesEnded(cocos2d::Point inPos);

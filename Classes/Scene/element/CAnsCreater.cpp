@@ -262,6 +262,9 @@ void CAnsCreater::queLineCreater(int number,int q){
 
 
 bool CAnsCreater::CheckAnswer(Vec3 a) {
+    a.x = a.x == -1 ? 0 : a.x;
+    a.y = a.y == -1 ? 0 : a.y;
+    a.z = a.z == -1 ? 0 : a.z;
     if (a.x != _answer[0] || a.y != _answer[1] || a.z != _answer[2])return false;
     return true;
 }
