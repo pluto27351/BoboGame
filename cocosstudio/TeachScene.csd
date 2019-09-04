@@ -215,13 +215,13 @@
             <FileData Type="PlistSubImage" Path="teach_btn_number.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="right" ActionTag="314227642" Tag="60" IconVisible="False" LeftMargin="538.5000" RightMargin="538.5000" TopMargin="343.5000" BottomMargin="343.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="right" ActionTag="314227642" Tag="60" IconVisible="False" LeftMargin="546.7733" RightMargin="530.2267" TopMargin="304.2117" BottomMargin="382.7883" ctype="SpriteObjectData">
             <Size X="971.0000" Y="849.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="768.0000" />
+            <Position X="1032.2733" Y="807.2883" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
+            <PrePosition X="0.5040" Y="0.5256" />
             <PreSize X="0.4741" Y="0.5527" />
             <FileData Type="PlistSubImage" Path="teacc_effect_right.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />

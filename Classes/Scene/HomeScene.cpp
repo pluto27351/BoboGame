@@ -48,18 +48,23 @@ bool HomeScene::init()
 
 	//標題按鈕
 	auto title = rootNode->getChildByName("title");
-	_bTitle.setButtonInfo( "s_title.png", "s_title.png",*this,title->getPosition() ,1);
+	_bTitle.setButtonInfo( "s_title.png", "s_title.png",*this,title->getPosition() ,0);
 	_bTitle.setScale(title->getScaleX(), title->getScaleY());
 	_bTitle.setRotate(title->getRotation());
 	rootNode->removeChild(title);
 
 	char name[20] = "";
-
 	//擺動的草
-    sprintf(name, "grass");
-    _grass = rootNode->getChildByName(name);
+    auto gg = rootNode->getChildByName("grass");
+    _grass = CSLoader::createNode("Ani/s_grass.csb");
+    _grass->setPosition(gg->getPosition());
+    this->addChild(_grass,5);
     _grassAction = (ActionTimeline *)CSLoader::createTimeline("Ani/s_grass.csb");
     _grass->runAction(_grassAction);
+    _grassAction->gotoFrameAndPlay(0,0, false);
+    rootNode->removeChildByName("grass");
+    
+    rootNode->getChildByName("bg_2")->setLocalZOrder(10);//要改層級！！！！
 
 	////音效.音樂
 	//SimpleAudioEngine::getInstance()->preloadEffect("./Audio/button.WAV");

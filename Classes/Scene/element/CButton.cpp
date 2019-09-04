@@ -14,9 +14,8 @@ void CButton::setButtonInfo(const char *normalImg, const char *touchedImg, Layer
     parent.addChild(_normalPic, level);
     parent.addChild(_touchedPic, level);
     
-    // 取得大小
+
     _BtnSize = _normalPic->getContentSize();
-    // 設定判斷區域
     _BtnRect.size = _BtnSize;
     _BtnRect.origin.x = _BtnLoc.x - _BtnSize.width*0.5f;
     _BtnRect.origin.y = _BtnLoc.y - _BtnSize.height*0.5f;

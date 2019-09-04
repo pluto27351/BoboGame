@@ -73,6 +73,9 @@
           <Project Name="u5_8.csd" Type="Node" />
           <Project Name="u5_9.csd" Type="Node" />
         </Folder>
+        <Folder Name="font">
+          <TTF Name="PingFang.ttc" />
+        </Folder>
         <Folder Name="Img">
           <PlistImageFolder Image="bo_ani.png" PListFile="bo_ani.plist" Name=".bo_ani_PList.Dir">
             <PlistImageFile Name="attack_01.png" Key="attack_01.png" />
@@ -158,20 +161,10 @@
             <PlistImageFile Name="menu_ch5_1.png" Key="menu_ch5_1.png" />
             <PlistImageFile Name="menu_game_0.png" Key="menu_game_0.png" />
             <PlistImageFile Name="menu_game_1.png" Key="menu_game_1.png" />
-            <PlistImageFile Name="menu_line_bg.png" Key="menu_line_bg.png" />
-            <PlistImageFile Name="menu_line_inner.png" Key="menu_line_inner.png" />
-            <PlistImageFile Name="menu_number_0.png" Key="menu_number_0.png" />
-            <PlistImageFile Name="menu_number_1.png" Key="menu_number_1.png" />
-            <PlistImageFile Name="menu_number_2.png" Key="menu_number_2.png" />
-            <PlistImageFile Name="menu_number_3.png" Key="menu_number_3.png" />
-            <PlistImageFile Name="menu_number_4.png" Key="menu_number_4.png" />
-            <PlistImageFile Name="menu_number_5.png" Key="menu_number_5.png" />
-            <PlistImageFile Name="menu_number_6.png" Key="menu_number_6.png" />
-            <PlistImageFile Name="menu_number_7.png" Key="menu_number_7.png" />
-            <PlistImageFile Name="menu_number_8.png" Key="menu_number_8.png" />
-            <PlistImageFile Name="menu_number_9.png" Key="menu_number_9.png" />
             <PlistImageFile Name="menu_game_lock.png" Key="menu_game_lock.png" />
             <PlistImageFile Name="menu_game_on.png" Key="menu_game_on.png" />
+            <PlistImageFile Name="menu_line_bg.png" Key="menu_line_bg.png" />
+            <PlistImageFile Name="menu_line_inner.png" Key="menu_line_inner.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
             <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
@@ -220,6 +213,7 @@
             <PlistImageFile Name="teach_number_9.png" Key="teach_number_9.png" />
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
+            <PlistImageFile Name="tb_giveup_no.png" Key="tb_giveup_no.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
@@ -297,16 +291,12 @@
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
         <Project Name="BoardScene.csd" Type="Scene" />
-        <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="Obstacle.csd" Type="Node" />
         <Project Name="PlayScene.csd" Type="Scene" />
         <Project Name="TeachScene.csd" Type="Scene" />
-        <Folder Name="font">
-          <TTF Name="PingFang.ttc" />
-        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
