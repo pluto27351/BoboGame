@@ -110,24 +110,24 @@ void CLevelCreate::SetObstacle(int i) {
 			_iLevelFrequency == 5;
         }
 		int n;
-		if (DieFlag) //有會死掉的物件
-			sprintf(level, "Level_%d", 0);
-		else {
-			n = rand() % _iLevelFrequency; //如果n=1
-			if (num % 5 == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
-			if (n == 1)n = (rand() % _iLevel) + 1;
-			else n = 0;
-			sprintf(level, "Level_%d", n);
-		}
-		if (UpFlag) { //可以接上面地形
-			n = rand() % 3;
-			if (n)
-				sprintf(kind, "up");
-			else {
-				sprintf(kind, "down");
-				sprintf(level, "Level_%d", 0);
-			}
-		}
+        if (DieFlag) //有會死掉的物件
+            sprintf(level, "Level_%d", 0);
+        else {
+            n = rand() % _iLevelFrequency; //如果n=1
+            if (num % 5 == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
+            if (n == 1)n = (rand() % _iLevel) + 1;
+            else n = 0;
+            sprintf(level, "Level_%d", n);
+        }
+        if (UpFlag) { //可以接上面地形
+            n = rand() % 3;
+            if (n)
+                sprintf(kind, "up");
+            else {
+                sprintf(kind, "down");
+                sprintf(level, "Level_%d", 0);
+            }
+        }
         if(_DownGroundCollision[i]->_fWidth / DG_WIDTH == 2){
             if (Distance % (DISTANCE+1) == 0) {
                 sprintf(level, "Level_%d", 0);
@@ -140,8 +140,8 @@ void CLevelCreate::SetObstacle(int i) {
                 BoardFlag = true;
             }
         }
-		n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
-		sprintf(name, "%d", n);
+        n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
+        sprintf(name, "%d", n);
         Distance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
 	}
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));

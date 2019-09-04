@@ -297,6 +297,7 @@
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
         <Project Name="BoardScene.csd" Type="Scene" />
+        <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
@@ -304,7 +305,6 @@
         <Project Name="PlayScene.csd" Type="Scene" />
         <Project Name="TeachScene.csd" Type="Scene" />
         <Folder Name="font">
-          <TTF Name="Hiragino_Sans_CNS.ttc" />
           <TTF Name="PingFang.ttc" />
         </Folder>
       </RootFolder>

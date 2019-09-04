@@ -6,6 +6,7 @@
 //#include "SimpleAudioEngine.h"
 //#include "cocostudio/CocoStudio.h"
 #include "Box2D/Box2D.h"
+#define BO_SPEED 9.0f;
 
 USING_NS_CC;
 
@@ -18,7 +19,8 @@ class CObstacle : public cocos2d::Node
 private:
     Sprite * _body;
     int num = 0;
-	bool BoSpeed = true;
+	int BoSpeed = 0;
+    float f_BoSpeed = BO_SPEED;
     //b2world
     b2World* _b2World;
     std::vector<b2Body*> ObstacleBody;

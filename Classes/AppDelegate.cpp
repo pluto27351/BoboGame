@@ -43,8 +43,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
-    auto scene = HomeScene::createScene();
-    //auto scene = GameScene::createScene();
+    //auto scene = HomeScene::createScene();
+    auto scene = GameScene::createScene();
 
     // run
     director->runWithScene(scene);

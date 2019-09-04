@@ -2,7 +2,6 @@
 #define PTM_RATIO 32.0f
 #define DG_WIDTH 426.0f
 #define INSECT_SPEED 5.0f;
-#define BO_SPEED 2.0f;
 
 USING_NS_CC;
 
@@ -155,17 +154,26 @@ void CObstacle::Move(float x, float y) {
         ObstacleBody[i]->SetTransform(b2Vec2(fx / PTM_RATIO, fy / PTM_RATIO), 0);
 		if (Data->getTag() == 6) {
 			fy = Data->getPosition().y;
-			if (BoSpeed) {
+			if (BoSpeed <= 10 ) {
 				if (Data->getPosition().y <= 310) {
-					fy += BO_SPEED;
+					fy += f_BoSpeed;
+                    f_BoSpeed-=0.1f;
 				}
-				else { BoSpeed = !BoSpeed; }
+				else {
+                    BoSpeed ++;
+                    f_BoSpeed = 0;
+                }
 			}
 			else {
 				if (Data->getPosition().y >= 0) {
-					fy -= BO_SPEED;
+					fy -= f_BoSpeed;
+                    f_BoSpeed+=0.1f;
 				}
-				else { BoSpeed = !BoSpeed; }
+				else {
+                    BoSpeed ++;
+                    if(BoSpeed==20)BoSpeed=0;
+                    f_BoSpeed = BO_SPEED;
+                }
 			}
 			Data->setPosition(Data->getPosition().x, fy);
 			ObstacleBody[i]->SetTransform(b2Vec2(fx / PTM_RATIO, ObstacleBody[i]->GetPosition().y + fy / PTM_RATIO), 0);
