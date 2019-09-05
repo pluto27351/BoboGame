@@ -17,106 +17,106 @@
             <FileData Type="PlistSubImage" Path="bg_menu.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_b" ActionTag="-916860470" Tag="181" IconVisible="False" LeftMargin="1714.8503" RightMargin="72.1497" TopMargin="235.3469" BottomMargin="1146.6531" ctype="SpriteObjectData">
-            <Size X="261.0000" Y="154.0000" />
+          <AbstractNodeData Name="title_b" ActionTag="-916860470" Tag="181" IconVisible="False" LeftMargin="1699.8502" RightMargin="63.1498" TopMargin="234.3470" BottomMargin="1151.6530" ctype="SpriteObjectData">
+            <Size X="285.0000" Y="150.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1845.3503" Y="1223.6531" />
+            <Position X="1842.3502" Y="1226.6530" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9010" Y="0.7966" />
-            <PreSize X="0.1274" Y="0.1003" />
+            <PrePosition X="0.8996" Y="0.7986" />
+            <PreSize X="0.1392" Y="0.0977" />
             <FileData Type="PlistSubImage" Path="menu_btn_b.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_1" ActionTag="1018900088" Tag="182" IconVisible="False" LeftMargin="257.1664" RightMargin="1375.8336" TopMargin="263.8655" BottomMargin="1020.1345" ctype="SpriteObjectData">
-            <Size X="415.0000" Y="252.0000" />
+          <AbstractNodeData Name="title_1" ActionTag="1018900088" Tag="182" IconVisible="False" LeftMargin="245.2748" RightMargin="1355.7251" TopMargin="256.4257" BottomMargin="1011.5743" ctype="SpriteObjectData">
+            <Size X="447.0000" Y="268.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="464.6664" Y="1146.1345" />
+            <Position X="468.7748" Y="1145.5743" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2269" Y="0.7462" />
-            <PreSize X="0.2026" Y="0.1641" />
+            <PrePosition X="0.2289" Y="0.7458" />
+            <PreSize X="0.2183" Y="0.1745" />
             <FileData Type="PlistSubImage" Path="menu_btn_ch1.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_2" ActionTag="-537727906" Tag="183" IconVisible="False" LeftMargin="885.0933" RightMargin="707.9067" TopMargin="359.8175" BottomMargin="888.1825" ctype="SpriteObjectData">
-            <Size X="455.0000" Y="288.0000" />
+          <AbstractNodeData Name="title_2" ActionTag="-537727906" Tag="183" IconVisible="False" LeftMargin="891.6222" RightMargin="703.3778" TopMargin="360.8179" BottomMargin="889.1821" ctype="SpriteObjectData">
+            <Size X="453.0000" Y="286.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1112.5933" Y="1032.1825" />
+            <Position X="1118.1222" Y="1032.1821" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5433" Y="0.6720" />
-            <PreSize X="0.2222" Y="0.1875" />
+            <PrePosition X="0.5460" Y="0.6720" />
+            <PreSize X="0.2212" Y="0.1862" />
             <FileData Type="PlistSubImage" Path="menu_btn_ch2.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_3" ActionTag="1368690721" Tag="184" IconVisible="False" LeftMargin="112.9274" RightMargin="1520.0726" TopMargin="794.8831" BottomMargin="415.1169" ctype="SpriteObjectData">
-            <Size X="415.0000" Y="326.0000" />
+          <AbstractNodeData Name="title_3" ActionTag="1368690721" Tag="184" IconVisible="False" LeftMargin="78.6131" RightMargin="1478.3868" TopMargin="781.8832" BottomMargin="402.1168" ctype="SpriteObjectData">
+            <Size X="491.0000" Y="352.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="320.4274" Y="578.1169" />
+            <Position X="324.1131" Y="578.1168" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1565" Y="0.3764" />
-            <PreSize X="0.2026" Y="0.2122" />
+            <PrePosition X="0.1583" Y="0.3764" />
+            <PreSize X="0.2397" Y="0.2292" />
             <FileData Type="PlistSubImage" Path="menu_btn_ch3.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_4" ActionTag="-2105947579" Tag="185" IconVisible="False" LeftMargin="771.4631" RightMargin="861.5369" TopMargin="998.2968" BottomMargin="211.7032" ctype="SpriteObjectData">
-            <Size X="415.0000" Y="326.0000" />
+          <AbstractNodeData Name="title_4" ActionTag="-2105947579" Tag="185" IconVisible="False" LeftMargin="744.9918" RightMargin="824.0082" TopMargin="994.1397" BottomMargin="203.8603" ctype="SpriteObjectData">
+            <Size X="479.0000" Y="338.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="978.9631" Y="374.7032" />
+            <Position X="984.4918" Y="372.8603" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4780" Y="0.2439" />
-            <PreSize X="0.2026" Y="0.2122" />
+            <PrePosition X="0.4807" Y="0.2427" />
+            <PreSize X="0.2339" Y="0.2201" />
             <FileData Type="PlistSubImage" Path="menu_btn_ch4.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_5" ActionTag="-554170104" Tag="186" IconVisible="False" LeftMargin="1447.9482" RightMargin="185.0518" TopMargin="1117.0505" BottomMargin="92.9495" ctype="SpriteObjectData">
-            <Size X="415.0000" Y="326.0000" />
+          <AbstractNodeData Name="title_5" ActionTag="-554170104" Tag="186" IconVisible="False" LeftMargin="1405.7333" RightMargin="161.2667" TopMargin="1101.8363" BottomMargin="96.1637" ctype="SpriteObjectData">
+            <Size X="481.0000" Y="338.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1655.4482" Y="255.9495" />
+            <Position X="1646.2333" Y="265.1637" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8083" Y="0.1666" />
-            <PreSize X="0.2026" Y="0.2122" />
+            <PrePosition X="0.8038" Y="0.1726" />
+            <PreSize X="0.2349" Y="0.2201" />
             <FileData Type="PlistSubImage" Path="menu_btn_ch5.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_g" ActionTag="1352578271" Tag="187" IconVisible="False" LeftMargin="1471.2803" RightMargin="161.7197" TopMargin="551.9664" BottomMargin="658.0336" ctype="SpriteObjectData">
+          <AbstractNodeData Name="title_g" ActionTag="1352578271" Tag="187" IconVisible="False" LeftMargin="1460.9639" RightMargin="144.0361" TopMargin="537.5951" BottomMargin="658.4049" ctype="SpriteObjectData">
             <Size X="443.0000" Y="340.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1678.7803" Y="821.0336" />
+            <Position X="1682.4639" Y="828.4049" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8197" Y="0.5345" />
-            <PreSize X="0.2026" Y="0.2122" />
+            <PrePosition X="0.8215" Y="0.5393" />
+            <PreSize X="0.2163" Y="0.2214" />
             <FileData Type="PlistSubImage" Path="menu_game_lock.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pic_1" ActionTag="-2118461413" Tag="188" IconVisible="False" LeftMargin="221.9230" RightMargin="1331.0770" TopMargin="264.3646" BottomMargin="1001.6354" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pic_1" CanEdit="False" ActionTag="-2118461413" Tag="188" IconVisible="False" LeftMargin="223.7658" RightMargin="1329.2341" TopMargin="264.3650" BottomMargin="1001.6350" ctype="SpriteObjectData">
             <Size X="495.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="469.4230" Y="1136.6354" />
+            <Position X="471.2658" Y="1136.6350" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2292" Y="0.7400" />
+            <PrePosition X="0.2301" Y="0.7400" />
             <PreSize X="0.2417" Y="0.1758" />
             <FileData Type="PlistSubImage" Path="menu_ch1_0.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pic_2" ActionTag="1327450676" Tag="189" IconVisible="False" LeftMargin="868.5613" RightMargin="706.4387" TopMargin="369.8135" BottomMargin="871.1866" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pic_2" CanEdit="False" ActionTag="1327450676" Tag="189" IconVisible="False" LeftMargin="868.5613" RightMargin="706.4387" TopMargin="371.6569" BottomMargin="869.3431" ctype="SpriteObjectData">
             <Size X="473.0000" Y="295.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1105.0613" Y="1018.6866" />
+            <Position X="1105.0613" Y="1016.8431" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5396" Y="0.6632" />
+            <PrePosition X="0.5396" Y="0.6620" />
             <PreSize X="0.2310" Y="0.1921" />
             <FileData Type="PlistSubImage" Path="menu_ch2_0.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pic_3" ActionTag="-317306032" Tag="190" IconVisible="False" LeftMargin="94.2601" RightMargin="1483.7399" TopMargin="796.1415" BottomMargin="388.8585" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pic_3" CanEdit="False" ActionTag="-317306032" Tag="190" IconVisible="False" LeftMargin="94.2601" RightMargin="1483.7399" TopMargin="796.1415" BottomMargin="388.8585" ctype="SpriteObjectData">
             <Size X="470.0000" Y="351.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="329.2601" Y="564.3585" />
@@ -127,7 +127,7 @@
             <FileData Type="PlistSubImage" Path="menu_ch3_0.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pic_4" ActionTag="833391948" Tag="191" IconVisible="False" LeftMargin="717.8971" RightMargin="842.1029" TopMargin="1009.6589" BottomMargin="164.3411" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pic_4" CanEdit="False" ActionTag="833391948" Tag="191" IconVisible="False" LeftMargin="717.8971" RightMargin="842.1029" TopMargin="1009.6589" BottomMargin="164.3411" ctype="SpriteObjectData">
             <Size X="488.0000" Y="362.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="961.8971" Y="345.3411" />
@@ -138,7 +138,7 @@
             <FileData Type="PlistSubImage" Path="menu_ch4_0.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pic_5" ActionTag="-2013794773" Tag="192" IconVisible="False" LeftMargin="1395.3792" RightMargin="172.6208" TopMargin="1104.0166" BottomMargin="57.9834" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pic_5" CanEdit="False" ActionTag="-2013794773" Tag="192" IconVisible="False" LeftMargin="1395.3792" RightMargin="172.6208" TopMargin="1104.0166" BottomMargin="57.9834" ctype="SpriteObjectData">
             <Size X="480.0000" Y="374.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1635.3792" Y="244.9834" />

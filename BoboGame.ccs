@@ -10,6 +10,8 @@
           <Project Name="t_number.csd" Type="Node" />
           <Project Name="TeachAni.csd" Type="Node" />
           <Project Name="wrong.csd" Type="Node" />
+          <Project Name="tree.csd" Type="Node" />
+          <Project Name="starfall.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -148,7 +150,6 @@
             <PlistImageFile Name="menu_btn_ch3.png" Key="menu_btn_ch3.png" />
             <PlistImageFile Name="menu_btn_ch4.png" Key="menu_btn_ch4.png" />
             <PlistImageFile Name="menu_btn_ch5.png" Key="menu_btn_ch5.png" />
-            <PlistImageFile Name="menu_btn_g.png" Key="menu_btn_g.png" />
             <PlistImageFile Name="menu_ch1_0.png" Key="menu_ch1_0.png" />
             <PlistImageFile Name="menu_ch1_1.png" Key="menu_ch1_1.png" />
             <PlistImageFile Name="menu_ch2_0.png" Key="menu_ch2_0.png" />
@@ -175,6 +176,7 @@
             <PlistImageFile Name="startpage_grass03.png" Key="startpage_grass03.png" />
             <PlistImageFile Name="startpage_star.png" Key="startpage_star.png" />
             <PlistImageFile Name="startpage_tree.png" Key="startpage_tree.png" />
+            <PlistImageFile Name="touchArea.png" Key="touchArea.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_teach.png" PListFile="game_teach.plist" Name=".game_teach_PList.Dir">
             <PlistImageFile Name="ans_area.png" Key="ans_area.png" />
@@ -188,6 +190,7 @@
             <PlistImageFile Name="length_b1.png" Key="length_b1.png" />
             <PlistImageFile Name="length_b2.png" Key="length_b2.png" />
             <PlistImageFile Name="line_box.png" Key="line_box.png" />
+            <PlistImageFile Name="tb_giveup_no.png" Key="tb_giveup_no.png" />
             <PlistImageFile Name="teacc_effect_right.png" Key="teacc_effect_right.png" />
             <PlistImageFile Name="teacc_effect_wrong.png" Key="teacc_effect_wrong.png" />
             <PlistImageFile Name="teach_bg.png" Key="teach_bg.png" />
@@ -213,7 +216,6 @@
             <PlistImageFile Name="teach_number_9.png" Key="teach_number_9.png" />
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
-            <PlistImageFile Name="tb_giveup_no.png" Key="tb_giveup_no.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />

@@ -19,10 +19,12 @@ class HomeScene : public cocos2d::Layer
 {
 private:
 	int _iTitleTouchTime = 0;
-	CButton _bTitle;
-	Node *_grass;
-	ActionTimeline *_grassAction;
-    bool _bchangeScene = false;
+    Sprite *_forntBg;
+	CButton _bTitle,_bTree,_bStar;
+	Node *_grass,*_star,*_tree;
+	ActionTimeline *_grassAction,*_starAction,*_treeAction;
+    
+    bool _bchangeScene = false,_bstarTouched,_btreeTouched;
     void doStep(float);
 public:
 	~HomeScene();

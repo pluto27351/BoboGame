@@ -55,16 +55,59 @@ bool HomeScene::init()
 
 	char name[20] = "";
 	//擺動的草
-    auto gg = rootNode->getChildByName("grass");
+    auto target = rootNode->getChildByName("grass");
     _grass = CSLoader::createNode("Ani/s_grass.csb");
-    _grass->setPosition(gg->getPosition());
-    this->addChild(_grass,5);
+    _grass->setPosition(target->getPosition());
+    this->addChild(_grass,3);
     _grassAction = (ActionTimeline *)CSLoader::createTimeline("Ani/s_grass.csb");
     _grass->runAction(_grassAction);
-    _grassAction->gotoFrameAndPlay(0,0, false);
-    rootNode->removeChildByName("grass");
+     _grassAction->gotoFrameAndPlay(0, 0, false);
+    rootNode->removeChild(target);
     
-    rootNode->getChildByName("bg_2")->setLocalZOrder(10);//要改層級！！！！
+    target = rootNode->getChildByName("bg_f");
+    _forntBg = (Sprite *)Sprite::createWithSpriteFrameName("startpage_front.png");
+    _forntBg->setPosition(target->getPosition());
+    this->addChild(_forntBg,5);
+    rootNode->removeChild(target);
+    
+    
+    //星星區
+    _bstarTouched=false;
+    target = rootNode->getChildByName("t_star");
+    _bStar.setButtonInfo( "touchArea.png", "touchArea.png",*this,target->getPosition() ,0);
+    _bStar.setScale(target->getScaleX(), title->getScaleY());
+    _bStar.setRotate(target->getRotation());
+    rootNode->removeChild(target);
+    //掉落星星
+    target = rootNode->getChildByName("star");
+    _star = CSLoader::createNode("Ani/starfall.csb");
+    _star->setPosition(target->getPosition());
+    this->addChild(_star,10);
+    _starAction = (ActionTimeline *)CSLoader::createTimeline("Ani/starfall.csb");
+    _star->runAction(_starAction);
+    _starAction->gotoFrameAndPlay(0, 0, false);
+    rootNode->removeChild(target);
+    
+
+    //樹區
+    _btreeTouched=false;
+    target = rootNode->getChildByName("t_tree");
+    _bTree.setButtonInfo( "touchArea.png", "touchArea.png",*this,target->getPosition() ,0);
+    _bTree.setScale(target->getScaleX(), title->getScaleY());
+    _bTree.setRotate(target->getRotation());
+    rootNode->removeChild(target);
+    //抖動的樹
+    target = rootNode->getChildByName("tree");
+    _tree = CSLoader::createNode("Ani/tree.csb");
+    _tree->setPosition(target->getPosition());
+    this->addChild(_tree,10);
+    _treeAction = (ActionTimeline *)CSLoader::createTimeline("Ani/tree.csb");
+    _tree->runAction(_treeAction);
+    _treeAction->gotoFrameAndPlay(0, 0, false);
+    rootNode->removeChild(target);
+    
+    
+
 
 	////音效.音樂
 	//SimpleAudioEngine::getInstance()->preloadEffect("./Audio/button.WAV");
@@ -106,6 +149,8 @@ bool  HomeScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
 {
 	Point touchLoc = pTouch->getLocation();
 	_bTitle.touchesBegin(touchLoc);
+    _bStar.touchesBegin(touchLoc);
+    _bTree.touchesBegin(touchLoc);
 	return true;
 }
 
@@ -113,6 +158,8 @@ void  HomeScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 {
 	Point touchLoc = pTouch->getLocation();
 	_bTitle.touchesMoved(touchLoc);
+    _bStar.touchesMoved(touchLoc);
+    _bTree.touchesMoved(touchLoc);
 }
 
 void  HomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
@@ -121,22 +168,32 @@ void  HomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 	if (_bTitle.touchesEnded(touchLoc)) {
 		_iTitleTouchTime++;
 		if (_iTitleTouchTime == 1) {
-			_grassAction->gotoFrameAndPlay(0, 30, false);
+			_grassAction->gotoFrameAndPlay(0, 50, false);
 			_grassAction->setLastFrameCallFunc([=]()
 			{
                 _bchangeScene = true;
-                //ChangeScene();
 			});
 		}
-		else {
-			/*node321ani->gotoFrameAndPlay(0, 225, false);
-			node321ani->setLastFrameCallFunc([=]()
-			{
-				ChangeScene();
-				this->removeChild(node321);
-			});*/
-		}
-
 	}
+    
+    if(_bStar.touchesMoved(touchLoc) && !_bstarTouched){
+        _bstarTouched = true;
+        _starAction->gotoFrameAndPlay(0, 70, false);
+        _starAction->setLastFrameCallFunc([=]()
+        {
+            _bstarTouched = false;
+            _starAction->gotoFrameAndPlay(0, 0, false);
+        });
+    }
+    
+    if(_bTree.touchesMoved(touchLoc) && !_btreeTouched){
+        _btreeTouched = true;
+        _treeAction->gotoFrameAndPlay(0, 32, false);
+        _treeAction->setLastFrameCallFunc([=]()
+        {
+            _btreeTouched = false;
+            _treeAction->gotoFrameAndPlay(0, 0, false);
+        });
+    }
 	
 }

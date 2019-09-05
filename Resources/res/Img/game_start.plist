@@ -7,7 +7,7 @@
             <key>bg_start.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,2441},{2731,1536}}</string>
+                <string>{{0,917},{2731,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,20 +20,20 @@
             <key>s_title.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{539,0},{547,357}}</string>
+                <string>{{1612,0},{703,376}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{547,357}}</string>
+                <string>{{0,0},{703,376}}</string>
                 <key>sourceSize</key>
-                <string>{547,357}</string>
+                <string>{703,376}</string>
             </dict>
             <key>startpage_front.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,905},{2731,1536}}</string>
+                <string>{{0,2453},{2731,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,41 +46,41 @@
             <key>startpage_grass01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1659,0},{702,760}}</string>
+                <string>{{1069,0},{543,888}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{702,760}}</string>
+                <string>{{0,0},{543,888}}</string>
                 <key>sourceSize</key>
-                <string>{702,760}</string>
+                <string>{543,888}</string>
             </dict>
             <key>startpage_grass02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1086,0},{573,747}}</string>
+                <string>{{681,0},{388,896}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{573,747}}</string>
+                <string>{{0,0},{388,896}}</string>
                 <key>sourceSize</key>
-                <string>{573,747}</string>
+                <string>{388,896}</string>
             </dict>
             <key>startpage_grass03.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{83,0},{456,905}}</string>
+                <string>{{374,0},{307,917}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{456,905}}</string>
+                <string>{{0,0},{307,917}}</string>
                 <key>sourceSize</key>
-                <string>{456,905}</string>
+                <string>{307,917}</string>
             </dict>
             <key>startpage_star.png</key>
             <dict>
@@ -98,7 +98,7 @@
             <key>startpage_tree.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2361,0},{896,588}}</string>
+                <string>{{2315,0},{896,588}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -107,6 +107,19 @@
                 <string>{{0,0},{896,588}}</string>
                 <key>sourceSize</key>
                 <string>{896,588}</string>
+            </dict>
+            <key>touchArea.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{83,0},{291,514}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{291,514}}</string>
+                <key>sourceSize</key>
+                <string>{291,514}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -122,7 +135,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c3f1d7653620ef4c3f473965c15c93ed:1eebaf922c39130f3d009047ab8047f6:3832278e6670d3d6a343cc72bf9c200b$</string>
+            <string>$TexturePacker:SmartUpdate:f2cd56c7bd11cb00097c438868968069:4e71042558b3a2edfb30a1938b392186:3832278e6670d3d6a343cc72bf9c200b$</string>
             <key>textureFileName</key>
             <string>game_start.png</string>
         </dict>
