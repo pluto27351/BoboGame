@@ -31,6 +31,7 @@ public:
     void resortAns();
     Vec3 getBoxAns();
     void clear();
+    bool hasAnyAns();
     void setTouchedPic(int,Point);
     bool touchesBegin(cocos2d::Point);
     bool touchesMoved(cocos2d::Point);

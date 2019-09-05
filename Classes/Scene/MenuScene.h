@@ -20,17 +20,18 @@ private:
 	Node *rootNode;
 	CButton _chapBtn[5],_gameBtn,_boardBtn;
 	Text *_scoreText;
-    LoadingBar* _chapLoad[5];
+    LoadingBar *_chapLoad[5],*_lightbar[5];
     Sprite * _chapPic[5];
 	int _iscale;
     bool _bchangeScene = false;
     int _sceneNum,_uni;
+    float _totalTime;
 	void doStep(float);
 public:
 	~MenuScene();
 	bool init();
 	void ChangeScene(int,int chap = 0);
-
+    void ShineLightBar();
 	static cocos2d::Scene* createScene();
 
 	cocos2d::EventListenerTouchOneByOne *_listener1;

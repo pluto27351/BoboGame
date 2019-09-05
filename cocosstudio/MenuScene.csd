@@ -149,7 +149,7 @@
             <FileData Type="PlistSubImage" Path="menu_ch5_0.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="line_1" ActionTag="290792384" Tag="200" IconVisible="False" LeftMargin="251.1384" RightMargin="1334.8616" TopMargin="170.2385" BottomMargin="1292.7615" ctype="SpriteObjectData">
+          <AbstractNodeData Name="line_1" ActionTag="290792384" Tag="200" IconVisible="False" LeftMargin="251.1384" RightMargin="1334.8616" TopMargin="170.2400" BottomMargin="1292.7600" ctype="SpriteObjectData">
             <Size X="462.0000" Y="73.0000" />
             <Children>
               <AbstractNodeData Name="inner" ActionTag="-1242934516" Tag="71" IconVisible="False" LeftMargin="-3.9006" RightMargin="3.9006" TopMargin="0.8741" BottomMargin="-0.8741" ProgressInfo="100" ctype="LoadingBarObjectData">
@@ -162,9 +162,19 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <ImageFileData Type="PlistSubImage" Path="menu_line_inner.png" Plist="Img/game_menu.plist" />
               </AbstractNodeData>
+              <AbstractNodeData Name="light" ActionTag="-2023652628" Tag="406" IconVisible="False" LeftMargin="-3.9000" RightMargin="3.9000" TopMargin="0.8700" BottomMargin="-0.8700" ProgressInfo="100" ctype="LoadingBarObjectData">
+                <Size X="462.0000" Y="73.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="227.1000" Y="35.6300" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4916" Y="0.4881" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <ImageFileData Type="PlistSubImage" Path="menu_line_inner2.png" Plist="Img/game_menu.plist" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="482.1384" Y="1329.2615" />
+            <Position X="482.1384" Y="1329.2600" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2354" Y="0.8654" />
@@ -175,15 +185,25 @@
           <AbstractNodeData Name="line_2" ActionTag="1018724781" Tag="72" IconVisible="False" LeftMargin="880.2485" RightMargin="705.7515" TopMargin="282.4690" BottomMargin="1180.5310" ctype="SpriteObjectData">
             <Size X="462.0000" Y="73.0000" />
             <Children>
-              <AbstractNodeData Name="inner" ActionTag="1310231203" Tag="73" IconVisible="False" LeftMargin="-3.9006" RightMargin="3.9006" TopMargin="0.8741" BottomMargin="-0.8741" ProgressInfo="100" ctype="LoadingBarObjectData">
+              <AbstractNodeData Name="inner" ActionTag="1310231203" Tag="73" IconVisible="False" LeftMargin="-3.9006" RightMargin="3.9006" TopMargin="0.8700" BottomMargin="-0.8700" ProgressInfo="100" ctype="LoadingBarObjectData">
                 <Size X="462.0000" Y="73.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="227.0994" Y="35.6259" />
+                <Position X="227.0994" Y="35.6300" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4916" Y="0.4880" />
+                <PrePosition X="0.4916" Y="0.4881" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <ImageFileData Type="PlistSubImage" Path="menu_line_inner.png" Plist="Img/game_menu.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="light" ActionTag="263626523" Tag="408" IconVisible="False" LeftMargin="-3.9000" RightMargin="3.9000" TopMargin="0.8700" BottomMargin="-0.8700" ProgressInfo="100" ctype="LoadingBarObjectData">
+                <Size X="462.0000" Y="73.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="227.1000" Y="35.6300" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4916" Y="0.4881" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <ImageFileData Type="PlistSubImage" Path="menu_line_inner2.png" Plist="Img/game_menu.plist" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -208,6 +228,16 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <ImageFileData Type="PlistSubImage" Path="menu_line_inner.png" Plist="Img/game_menu.plist" />
               </AbstractNodeData>
+              <AbstractNodeData Name="light" ActionTag="-362687413" Tag="409" IconVisible="False" LeftMargin="-3.9000" RightMargin="3.9000" TopMargin="0.8700" BottomMargin="-0.8700" ProgressInfo="100" ctype="LoadingBarObjectData">
+                <Size X="462.0000" Y="73.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="227.1000" Y="35.6300" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4916" Y="0.4881" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <ImageFileData Type="PlistSubImage" Path="menu_line_inner2.png" Plist="Img/game_menu.plist" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="307.7596" Y="837.7609" />
@@ -231,6 +261,16 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <ImageFileData Type="PlistSubImage" Path="menu_line_inner.png" Plist="Img/game_menu.plist" />
               </AbstractNodeData>
+              <AbstractNodeData Name="light" ActionTag="562187048" Tag="410" IconVisible="False" LeftMargin="-3.9000" RightMargin="3.9000" TopMargin="0.8700" BottomMargin="-0.8700" ProgressInfo="100" ctype="LoadingBarObjectData">
+                <Size X="462.0000" Y="73.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="227.1000" Y="35.6300" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4916" Y="0.4881" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <ImageFileData Type="PlistSubImage" Path="menu_line_inner2.png" Plist="Img/game_menu.plist" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="982.3313" Y="604.9867" />
@@ -253,6 +293,16 @@
                 <PrePosition X="0.4916" Y="0.4880" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <ImageFileData Type="PlistSubImage" Path="menu_line_inner.png" Plist="Img/game_menu.plist" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="light" ActionTag="1890906443" Tag="411" IconVisible="False" LeftMargin="-3.9000" RightMargin="3.9000" TopMargin="0.8700" BottomMargin="-0.8700" ProgressInfo="100" ctype="LoadingBarObjectData">
+                <Size X="462.0000" Y="73.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="227.1000" Y="35.6300" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4916" Y="0.4881" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <ImageFileData Type="PlistSubImage" Path="menu_line_inner2.png" Plist="Img/game_menu.plist" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

@@ -69,9 +69,10 @@ bool TeachScene::init()
     
     //回答按鈕
     target = rootNode->getChildByName("answer");
-    _answerBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png", *this, target->getPosition(), INTERFACE_LEVEL);
+    _answerBtn.setButtonInfo("teach_btn_giveup.png", "teach_btn_giveup.png","tb_giveup_no.png", *this, target->getPosition(), INTERFACE_LEVEL);
     _answerBtn.setScale(target->getScaleX(), target->getScaleY());
     _answerBtn.setRotate(target->getRotation());
+    _answerBtn.setEnabled(false);
     rootNode->removeChild(target);
     
     //放棄按鈕
@@ -153,6 +154,7 @@ void TeachScene::NextQuestion(float a) {
     resetQue();
     _handDrawing->clearWhiteBoard();
     _numberArea->clear();
+    _answerBtn.setEnabled(false);
 }
 
 bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
@@ -190,7 +192,11 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 {
     Point touchLoc = pTouch->getLocation();
     
-    if (_numberArea->touchesEnded(touchLoc)) return;
+    if (_numberArea->touchesEnded(touchLoc)){
+        if(_numberArea->hasAnyAns())_answerBtn.setEnabled(true);
+        else _answerBtn.setEnabled(false);
+        return;
+    }
     
     if (_answerBtn.touchesEnded(touchLoc)) {
         _numberArea->setNumberVisual(false);
@@ -217,14 +223,15 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
             _wrongActTime->gotoFrameAndPlay(0, 80, false);
             _checkAns =0;
             _wrongActTime->setLastFrameCallFunc([=]()
-                                                {
-                                                    _checkAns = -1;
-                                                    _wrongAct->setVisible(false);
-                                                });
+            {
+                _checkAns = -1;
+                _wrongAct->setVisible(false);
+            });
             
         }
         return;
     }
+    
     if (_giveupBtn.touchesEnded(touchLoc)) {
         NextQuestion(0);
         return;

@@ -21,6 +21,11 @@ Vec3 CNumberPannel::getBoxAns(){
     return(Vec3(f,d,n));
 }
 
+bool CNumberPannel::hasAnyAns(){
+    if(_answerNumber[0] != -1 ||_answerNumber[2] != -1 ||_answerNumber[4] != -1)return true;
+    return false;
+}
+
 void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
     char name[20] = "";
     char nn[5] = "";
@@ -192,10 +197,10 @@ bool CNumberPannel::touchesEnded(cocos2d::Point inPos){
     
         _bMoveNumber =false;
         removeChild(_touchedPic);
+        return true;
     }
     
     if(_triggerBtn.touchesEnded(inPos)){
-       // _bShowNumber = !_bShowNumber;
         setNumberVisual(!_bShowNumber);
         return true;
     }

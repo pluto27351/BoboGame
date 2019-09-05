@@ -69,10 +69,10 @@
       <ObjectData Name="Node" Tag="168" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="startpage_star_2" ActionTag="-1844042239" Alpha="0" Tag="170" RotationSkewX="293.4498" RotationSkewY="293.4498" IconVisible="False" LeftMargin="447.2311" RightMargin="-530.2311" TopMargin="584.6522" BottomMargin="-663.6522" ctype="SpriteObjectData">
+          <AbstractNodeData Name="startpage_star_2" ActionTag="-1844042239" Tag="170" IconVisible="False" LeftMargin="-41.5000" RightMargin="-41.5000" TopMargin="-39.5000" BottomMargin="-39.5000" ctype="SpriteObjectData">
             <Size X="83.0000" Y="79.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="488.7311" Y="-624.1522" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

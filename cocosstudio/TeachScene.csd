@@ -36,7 +36,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8178" Y="0.1241" />
             <PreSize X="0.0845" Y="0.1022" />
-            <FileData Type="PlistSubImage" Path="teach_btn_giveup.png" Plist="Img/game_teach.plist" />
+            <FileData Type="PlistSubImage" Path="tb_giveup_no.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="nextque" ActionTag="1058158609" Tag="154" IconVisible="False" LeftMargin="1787.0952" RightMargin="134.9048" TopMargin="1307.2947" BottomMargin="137.7053" ctype="SpriteObjectData">

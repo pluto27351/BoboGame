@@ -166,6 +166,7 @@
             <PlistImageFile Name="menu_game_on.png" Key="menu_game_on.png" />
             <PlistImageFile Name="menu_line_bg.png" Key="menu_line_bg.png" />
             <PlistImageFile Name="menu_line_inner.png" Key="menu_line_inner.png" />
+            <PlistImageFile Name="menu_line_inner2.png" Key="menu_line_inner2.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
             <PlistImageFile Name="bg_start.png" Key="bg_start.png" />

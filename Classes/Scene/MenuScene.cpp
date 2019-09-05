@@ -47,11 +47,8 @@ bool MenuScene::init()
     
     char name[20] = "";
     
-    //記錄數據開始
-    // CCUserDefault::sharedUserDefault()->setBoolForKey("HAS_UNITDATA",0);
-    //
+    //記錄初始化!
     if(!CCUserDefault::sharedUserDefault()->getBoolForKey("HAS_UNITDATA")){
-        //CCLOG("%s",CCUserDefault::sharedUserDefault()->getXMLFilePath().c_str());
         CCUserDefault::sharedUserDefault()->setBoolForKey("HAS_UNITDATA",1);
         for(int i=0;i<5;i++){
             sprintf(name, "U%d_FINISH",i+1);
@@ -72,9 +69,8 @@ bool MenuScene::init()
         CCUserDefault::sharedUserDefault()->flush();
     }
     
-    
-    //章節按鈕
     for (int i = 0; i < 5; i++) {
+        //章節按鈕
         sprintf(name, "title_%d", i + 1);
         auto btn = rootNode->getChildByName(name);
         sprintf(name, "menu_btn_ch%d.png", i + 1);
@@ -83,8 +79,10 @@ bool MenuScene::init()
         _chapBtn[i].setRotate(btn->getRotation());
         rootNode->removeChild(btn);
         
+        //進度條
         sprintf(name, "line_%d", i + 1);
         _chapLoad[i] = (LoadingBar *)rootNode->getChildByName(name)->getChildByName("inner");
+        _lightbar[i] = (LoadingBar *)rootNode->getChildByName(name)->getChildByName("light");
         int max = 0,now = 0;
         for(int j=0 ;j<12 ;j++){
             sprintf(name, "U%d_Q%d_FINISH",i+1,j+1);
@@ -94,8 +92,9 @@ bool MenuScene::init()
         }
         float percent =(float)now/max *100;
         _chapLoad[i]->setPercent(percent);
-        CCLOG("u%d:%f percent",i+1,percent);
+        _lightbar[i]->setPercent(percent);
         
+        //章節圖片設定
         sprintf(name, "pic_%d", i + 1);
         btn = rootNode->getChildByName(name);
         if(percent >= 100) sprintf(name, "menu_ch%d_1.png", i + 1);
@@ -108,18 +107,23 @@ bool MenuScene::init()
         
     }
     
+    //星星數
     _scoreText = (Text *)rootNode->getChildByName("n_star");
     char ss[20] = "";
     sprintf(ss, "%d", CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR"));
-    CCLOG("game = %d", CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR"));
     _scoreText->setString(ss);
     
     //遊戲按鈕
+    bool finish = true;
+    for(int i=0;i<5;i++){
+        sprintf(name, "U%d_FINISH",i+1);
+        if(CCUserDefault::sharedUserDefault()->getIntegerForKey(name) <12 )finish = false;
+    }
     auto btn = rootNode->getChildByName("title_g");
     _gameBtn.setButtonInfo("menu_game_on.png","menu_game_on.png","menu_game_lock.png", *this, btn->getPosition(), 1);
     _gameBtn.setScale(btn->getScaleX(), btn->getScaleY());
     _gameBtn.setRotate(btn->getRotation());
-    //if(CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR") <= 5) _gameBtn.setEnabled(false);
+    if(CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR") < 5 || finish) _gameBtn.setEnabled(false);
     rootNode->removeChild(btn);
     
     //排行按鈕
@@ -128,6 +132,8 @@ bool MenuScene::init()
     _boardBtn.setScale(btn->getScaleX(), btn->getScaleY());
     _boardBtn.setRotate(btn->getRotation());
     rootNode->removeChild(btn);
+    
+    _totalTime = 0;
     
     //觸控
     _listener1 = EventListenerTouchOneByOne::create();    //創建一個一對一的事件聆聽器
@@ -146,7 +152,20 @@ bool MenuScene::init()
 
 void MenuScene::doStep(float dt)
 {
+    _totalTime +=dt;
+    
     if(_bchangeScene)ChangeScene(_sceneNum,_uni);
+    else {
+        ShineLightBar();
+    }
+
+}
+
+void MenuScene::ShineLightBar(){
+    float light = (sin(_totalTime*3)+1) * 75 + 105;
+    for(int i=0;i<5;i++){
+        _lightbar[i]->setOpacity(light);
+    }
 }
 
 void MenuScene::ChangeScene(int changescene,int chap)
@@ -211,7 +230,6 @@ void  MenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
             _bchangeScene = true;
             _sceneNum = TeachScene;
             _uni = i+1;
-            //ChangeScene(TeachScene,i+1);
             return;
         }
     }
@@ -220,7 +238,6 @@ void  MenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
         _bchangeScene = true;
         _sceneNum = GameScene;
         _uni = 0;
-        //ChangeScene(GameScene);
         
         return;
     }
@@ -228,7 +245,6 @@ void  MenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
         _bchangeScene = true;
         _sceneNum = BoardScene;
         _uni = 0;
-        //ChangeScene(BoardScene);
         return;
     }
     
