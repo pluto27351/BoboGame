@@ -12,8 +12,9 @@ using namespace ui;
 using namespace CocosDenshion;
 
 TeachScene::~TeachScene() {
-    this->removeAllChildren();
-    //AnimationCache::destroyInstance();
+//    _handDrawing->release();
+//    delete _numberArea;
+//    delete _question;
 }
 
 Scene* TeachScene::createScene(int unit)
@@ -32,13 +33,6 @@ void TeachScene::initQue(int chap) {
     rootNode = CSLoader::createNode("TeachScene.csb");
     
     _curUnit = chap;
-    //    srand(time(NULL));
-    //    char name[20] = "";
-    //    do{
-    //        _curQue = rand()%13;
-    //        sprintf(name, "U%d_Q%d_FINISH",_curUnit,_curQue);
-    //    }while (CCUserDefault::sharedUserDefault()->getIntegerForKey(name) == UNIT[_curUnit][_curQue][0]);
-    //
     _curQue = -1;
     _curNum = -1;
     _question = NULL;
@@ -110,9 +104,6 @@ bool TeachScene::init()
     _wrongAct->runAction(_wrongActTime);
     _checkAns = -1;
     
-    //    _wrong = rootNode->getChildByName("wrong");
-    //    _wrong->setVisible(false);
-    
     //觸控
     _listener1 = EventListenerTouchOneByOne::create();    //創建一個一對一的事件聆聽器
     _listener1->onTouchBegan = CC_CALLBACK_2(TeachScene::onTouchBegan, this);        //加入觸碰開始事件
@@ -137,12 +128,15 @@ void TeachScene::ChangeScene()
 {
     this->unscheduleAllCallbacks();
     this->removeAllChildren();
+    
+    _handDrawing->release();
+    delete _numberArea;
+    delete _question;
+    
     SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_teach.plist");
     Director::getInstance()->getTextureCache()->removeUnusedTextures();
-    
     Director::getInstance()->replaceScene(MenuScene::createScene());
-    //    auto scene = MenuScene::createScene();
-    //    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
+
 }
 
 void TeachScene::NextQuestion(float a) {
@@ -205,18 +199,18 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
             _checkAns = 1;
             char name[20] = "";
             sprintf(name, "U%d_Q%d_N%d",_curUnit,_curQue,_curNum);
-            CCUserDefault::sharedUserDefault()->setBoolForKey(name, true);
+            UserDefault::getInstance()->setBoolForKey(name, true);
             sprintf(name, "U%d_Q%d_FINISH",_curUnit,_curQue);
-            int k = CCUserDefault::sharedUserDefault()->getIntegerForKey(name)+1;
-            CCUserDefault::sharedUserDefault()->setIntegerForKey(name, k);
+            int k = UserDefault::getInstance()->getIntegerForKey(name)+1;
+            UserDefault::getInstance()->setIntegerForKey(name, k);
             if(k >= UNIT[_curUnit-1][_curQue-1][0]){
                 sprintf(name, "U%d_FINISH",_curUnit);
-                int k = CCUserDefault::sharedUserDefault()->getIntegerForKey(name)+1;
-                CCUserDefault::sharedUserDefault()->setIntegerForKey(name, k);
+                int k = UserDefault::getInstance()->getIntegerForKey(name)+1;
+                UserDefault::getInstance()->setIntegerForKey(name, k);
             }
-            k = CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR")+1;
-            CCUserDefault::sharedUserDefault()->setIntegerForKey("STAR", k);
-            CCUserDefault::sharedUserDefault()->flush();
+            k = UserDefault::getInstance()->getIntegerForKey("STAR")+1;
+            UserDefault::getInstance()->setIntegerForKey("STAR", k);
+            UserDefault::getInstance()->flush();
         }
         else {
             _wrongAct->setVisible(true);
@@ -247,8 +241,6 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 
 void TeachScene::resetQue()
 {
-    //   if(_curQue >= 13) return;
-    
     //重設題目
     if(_question != NULL) {this->removeChild(_question);  delete _question;}
     
@@ -256,7 +248,7 @@ void TeachScene::resetQue()
     char name[20] = "";
     sprintf(name, "U%d_FINISH",_curUnit);
     
-    if(CCUserDefault::sharedUserDefault()->getIntegerForKey(name) >= 12){
+    if(UserDefault::getInstance()->getIntegerForKey(name) >= 12){
         _curQue = rand()%12+1;
         switchdata = UNIT[_curUnit - 1][_curQue - 1];
         int cNum;
@@ -272,7 +264,7 @@ void TeachScene::resetQue()
         do{
             _curQue = rand()%12+1;
             sprintf(name, "U%d_Q%d_FINISH",_curUnit,_curQue);
-            d = CCUserDefault::sharedUserDefault()->getIntegerForKey(name) - UNIT[_curUnit-1][_curQue-1][0];
+            d = UserDefault::getInstance()->getIntegerForKey(name) - UNIT[_curUnit-1][_curQue-1][0];
             CCLOG("剩餘 %d 題",-d);
         }while (d >= 0);
         switchdata = UNIT[_curUnit - 1][_curQue - 1];
@@ -281,7 +273,7 @@ void TeachScene::resetQue()
             int num = (rand() % switchdata[0]) + 1;
             cNum = switchdata[num];
             sprintf(name, "U%d_Q%d_N%d",_curUnit,_curQue,cNum);
-        }while(CCUserDefault::sharedUserDefault()->getBoolForKey(name) ||( d != -1 && cNum == _curNum));
+        }while(UserDefault::getInstance()->getBoolForKey(name) ||( d != -1 && cNum == _curNum));
         _curNum =  cNum;
     }
     
@@ -316,13 +308,6 @@ void TeachScene::resetQue()
 }
 
 void TeachScene::setQue(int k) {
-    // 獲取題目分母資訊  隨幾取分母
-    // if(_curNum == -1){
-    //     srand(time(NULL));
-    //        int num = (rand() % switchdata[0]) + 1;
-    //        _curNum = switchdata[num];
-    //}
-    
     //設定題目
     _question = new CAnsCreater(_curUnit, _curQue, _curNum);
     
@@ -334,10 +319,6 @@ void TeachScene::setQue(int k) {
 
 
 void TeachScene::setQue_picline() {  //chap5-3.4.6
-    // srand(time(NULL));
-    //    int num = (rand() % switchdata[0]) + 1;
-    //    _curNum = switchdata[num];
-    
     int k = 0;
     int _c = 0,_b = 0;  // _c = 2~6  , _b = 1~5
     _c = rand() % 5+2;
@@ -354,10 +335,6 @@ void TeachScene::setQue_picline() {  //chap5-3.4.6
 }
 
 void TeachScene::setQue_multiple() {  //chap5其餘題
-    //    srand(time(NULL));
-    //    int num = (rand() % switchdata[0]) + 1;
-    //    _curNum = switchdata[num];
-    
     int que_b = switchdata[11];
     int c = 0,ans_b = 0;
     int k = (2 * _curNum) / que_b;  //取上限 ２倍分母/分子 ＝ 倍數上限
@@ -380,11 +357,6 @@ void TeachScene::setQue_multiple() {  //chap5其餘題
 
 
 void TeachScene::setQue_line(){
-    // 獲取題目分母資訊  隨幾取分母
-    //    srand(time(NULL));
-    //    int num = (rand() % switchdata[0]) + 1;
-    //    _curNum = switchdata[num];
-    
     int q = rand() %  (2*_curNum);
     //設定題目
     _question = new CAnsCreater(_curNum,q);
@@ -396,9 +368,6 @@ void TeachScene::setQue_line(){
 }
 
 void TeachScene::setQue_quantity() {  //chap4-7~12
-    //    srand(time(NULL));
-    //    int num = (rand() % switchdata[0]) + 1;
-    //    _curNum = switchdata[num];
     int limit[9] = {2,3,4,5,6,8,9,10,12};
     int c;
     do{

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <Vector>
 #include "cocos2d.h"
@@ -48,5 +48,5 @@ public:
 	bool touchesEnded(Point inPt);
 	void doStep(float dt);
 	CDrawPanel();
-
+    ~CDrawPanel();
 };

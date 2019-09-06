@@ -6,7 +6,13 @@
 USING_NS_CC;
 
 // on "init" you need to initialize your instance
-CObstacle::~CObstacle(){}
+CObstacle::~CObstacle(){
+    for (int i = 0; i < num; i++) {
+        _b2World->DestroyBody(ObstacleBody[i]);
+    }
+    ObstacleBody.clear();
+}
+
 CObstacle::CObstacle(b2World* _b2W, Node* _ob) {
 	_b2World = _b2W;
     _Obstacle = _ob;

@@ -8,7 +8,14 @@
 
 USING_NS_CC;
 
-CLevelCreate::~CLevelCreate() {}
+CLevelCreate::~CLevelCreate() {
+    removeAllChildren();
+    
+    for (int i = 0; i<OB_NUM; i++,num++) {
+        delete _DownGroundCollision[i];
+    }
+}
+
 CLevelCreate::CLevelCreate(b2World* _b2W) {
 	srand(time(NULL));
 	sprintf(level, "Level_%d", 0);

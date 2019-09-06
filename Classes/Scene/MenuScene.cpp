@@ -16,11 +16,7 @@ using namespace CocosDenshion;
 enum SCENE{TeachScene,GameScene,BoardScene};
 
 MenuScene::~MenuScene() {
-    //for (int i = 0; i < 5; i++)delete _chapBtn[i];
-    //delete _gameBtn;
-    //delete _boardBtn;
-    this->removeAllChildren();
-    //AnimationCache::destroyInstance();
+    
 }
 
 Scene* MenuScene::createScene()
@@ -47,28 +43,6 @@ bool MenuScene::init()
     
     char name[20] = "";
     
-    //記錄初始化!
-    if(!CCUserDefault::sharedUserDefault()->getBoolForKey("HAS_UNITDATA")){
-        CCUserDefault::sharedUserDefault()->setBoolForKey("HAS_UNITDATA",1);
-        for(int i=0;i<5;i++){
-            sprintf(name, "U%d_FINISH",i+1);
-            CCUserDefault::sharedUserDefault()->setIntegerForKey(name, 0);  //0
-            for(int j=0;j<12;j++){
-                int maxNO = UNIT[i][j][0];
-                sprintf(name, "U%d_Q%d_FINISH",i+1,j+1);
-                CCUserDefault::sharedUserDefault()->setIntegerForKey(name, 0);  //0
-                for(int k=0 ;k < maxNO ;k++){
-                    int n = UNIT[i][j][k+1];
-                    sprintf(name, "U%d_Q%d_N%d",i+1,j+1,n);
-                    CCUserDefault::sharedUserDefault()->setBoolForKey(name,false);  //false
-                }
-            }
-        }
-        
-        CCUserDefault::sharedUserDefault()->setIntegerForKey("STAR", 0);  //0
-        CCUserDefault::sharedUserDefault()->flush();
-    }
-    
     for (int i = 0; i < 5; i++) {
         //章節按鈕
         sprintf(name, "title_%d", i + 1);
@@ -86,7 +60,7 @@ bool MenuScene::init()
         int max = 0,now = 0;
         for(int j=0 ;j<12 ;j++){
             sprintf(name, "U%d_Q%d_FINISH",i+1,j+1);
-            int n = CCUserDefault::sharedUserDefault()->getIntegerForKey(name);
+            int n = UserDefault::getInstance()->getIntegerForKey(name);
             max += UNIT[i][j][0];
             now += (n > UNIT[i][j][0] ? UNIT[i][j][0]:n);
         }
@@ -110,20 +84,20 @@ bool MenuScene::init()
     //星星數
     _scoreText = (Text *)rootNode->getChildByName("n_star");
     char ss[20] = "";
-    sprintf(ss, "%d", CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR"));
+    sprintf(ss, "%d", UserDefault::getInstance()->getIntegerForKey("STAR"));
     _scoreText->setString(ss);
     
     //遊戲按鈕
     bool finish = true;
     for(int i=0;i<5;i++){
         sprintf(name, "U%d_FINISH",i+1);
-        if(CCUserDefault::sharedUserDefault()->getIntegerForKey(name) <12 )finish = false;
+        if(UserDefault::getInstance()->getIntegerForKey(name) <12 )finish = false;
     }
     auto btn = rootNode->getChildByName("title_g");
     _gameBtn.setButtonInfo("menu_game_on.png","menu_game_on.png","menu_game_lock.png", *this, btn->getPosition(), 1);
     _gameBtn.setScale(btn->getScaleX(), btn->getScaleY());
     _gameBtn.setRotate(btn->getRotation());
-    if(CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR") < 5 || finish) _gameBtn.setEnabled(false);
+//    if(UserDefault::getInstance()->getIntegerForKey("STAR") < 5 || finish) _gameBtn.setEnabled(false);
     rootNode->removeChild(btn);
     
     //排行按鈕
@@ -183,17 +157,17 @@ void MenuScene::ChangeScene(int changescene,int chap)
             scene = TeachScene::createScene(chap);
             break;
         case GameScene:
-            k = CCUserDefault::sharedUserDefault()->getIntegerForKey("STAR")-5;
-            CCUserDefault::sharedUserDefault()->setIntegerForKey("STAR", k);
-            CCLOG("game = %d",k);
-            CCUserDefault::sharedUserDefault()->flush();
+            k = UserDefault::getInstance()->getIntegerForKey("STAR")-5;
+            UserDefault::getInstance()->setIntegerForKey("STAR", k);
+            UserDefault::getInstance()->flush();
+            
             scene = GameScene::createScene();
             break;
         case BoardScene:
             scene = BoardScene::createScene();
             break;
     }
-    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
+    CCDirector::sharedDirector()->replaceScene(scene);
 }
 
 

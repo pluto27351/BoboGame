@@ -3,6 +3,8 @@
 #include "ui/CocosGUI.h"
 #include "MenuScene.h"
 #include "SimpleAudioEngine.h"
+#include "element/Data.h"
+
 
 USING_NS_CC;
 
@@ -38,7 +40,30 @@ bool HomeScene::init()
 	{
 		return false;
 	}
+    char name[20] = "";
+    //記錄初始化!
     UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
+    if(!UserDefault::getInstance()->getBoolForKey("HAS_UNITDATA")){
+        UserDefault::getInstance()->setBoolForKey("HAS_UNITDATA",1);
+        for(int i=0;i<5;i++){
+            sprintf(name, "U%d_FINISH",i+1);
+            UserDefault::getInstance()->setIntegerForKey(name, 0);  //0
+            for(int j=0;j<12;j++){
+                int maxNO = UNIT[i][j][0];
+                sprintf(name, "U%d_Q%d_FINISH",i+1,j+1);
+                UserDefault::getInstance()->setIntegerForKey(name, 0);  //0
+                for(int k=0 ;k < maxNO ;k++){
+                    int n = UNIT[i][j][k+1];
+                    sprintf(name, "U%d_Q%d_N%d",i+1,j+1,n);
+                    UserDefault::getInstance()->setBoolForKey(name,false);  //false
+                }
+            }
+        }
+        
+        UserDefault::getInstance()->setIntegerForKey("STAR", 0);  //0
+        UserDefault::getInstance()->flush();
+    }
+    
     UserDefault::getInstance()->flush();
     
 	auto rootNode = CSLoader::createNode("MainScene.csb");
@@ -53,7 +78,6 @@ bool HomeScene::init()
 	_bTitle.setRotate(title->getRotation());
 	rootNode->removeChild(title);
 
-	char name[20] = "";
 	//擺動的草
     auto target = rootNode->getChildByName("grass");
     _grass = CSLoader::createNode("Ani/s_grass.csb");
@@ -140,8 +164,8 @@ void HomeScene::ChangeScene()
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/game_start.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures(); 
 
-	auto scene = MenuScene::createScene();
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
+	auto scene = TransitionMoveInR::create(0.5f, MenuScene::createScene());
+	CCDirector::sharedDirector()->replaceScene(scene);
 }
 
 

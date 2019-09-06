@@ -14,14 +14,21 @@ using namespace ui;
 using namespace CocosDenshion;
 
 GameScene::~GameScene() {
-	/*while (hasEnemy) {
-		CEnemy *e = _HeadEnemy;
-		e->GoDie = true;		killEnemy();
-	}*/
 
-	
-	// 釋放音效檔
-	//SimpleAudioEngine::getInstance()->unloadEffect("./Audio/jump.WAV");
+    
+}
+
+void GameScene::ChangeScene()
+{
+    this->unscheduleAllCallbacks();
+    this->removeAllChildren();
+    
+    if(_Player != NULL)delete _Player;
+    if(_Level != NULL)delete _Level;
+    if(_b2World != NULL)delete _b2World;
+    
+    Director::getInstance()->getTextureCache()->removeUnusedTextures();
+    CCDirector::sharedDirector()->replaceScene(MenuScene::createScene());
 }
 
 Scene* GameScene::createScene()
@@ -37,7 +44,6 @@ Scene* GameScene::createScene()
 
 bool GameScene::init()
 {
-	// 1. super init first
 	if (!Layer::init())
 	{
 		return false;
@@ -135,9 +141,6 @@ void GameScene::Play(float dt) {
         int velocityIterations = 8; // 速度迭代次數
         int positionIterations = 1; // 位置迭代次數，迭代次數一般設定為8~10 越高越真實但效率越差
         _b2World->Step(dt, velocityIterations, positionIterations);
-        if (_contactListener.gameover == true) {
-            ChangeScene();
-        }
         //草叢移動
         if (midground[0]->getPosition().x < (-1575.52f))
             midground[0]->setPosition(midground[1]->getPosition().x + 2599.52f, 768);
@@ -162,6 +165,10 @@ void GameScene::Play(float dt) {
         }
         //關卡
         _Level->dostep(dt);
+        
+        if (_contactListener.gameover == true) {
+            ChangeScene();
+        }
     }
 }
 void GameScene::CreatePlayer() {
@@ -220,15 +227,7 @@ void GameScene::CreateLevel(){
     _Level = new CLevelCreate(_b2World);
     this->addChild(_Level,2);
 }
-void GameScene::ChangeScene()
-{
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/scene101bg.plist");
-	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
-	auto scene = MenuScene::createScene();
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
-}
 bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
 	Point touchLoc = pTouch->getLocation();

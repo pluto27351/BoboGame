@@ -29,7 +29,6 @@ Scene* BoardScene::createScene()
 
 bool BoardScene::init()
 {
-	// 1. super init first
 	if (!Layer::init())
 	{
 		return false;
@@ -76,8 +75,7 @@ void BoardScene::ChangeScene()
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Img/game_menu.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 
-	auto scene = MenuScene::createScene();
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.5f, scene));
+	CCDirector::sharedDirector()->replaceScene(MenuScene::createScene());
 }
 
 

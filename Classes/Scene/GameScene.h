@@ -29,9 +29,8 @@ public:
     cocos2d::Sprite * Breaksprite;
     b2Body *BreakBody;
     CContactListener();
-    //¸I¼²¶}©l
+
     virtual void BeginContact(b2Contact* contact);
-    //¸I¼²µ²§ô
     virtual void EndContact(b2Contact* contact);
     void setCollisionTargetPlayer(cocos2d::Sprite &targetSprite);
 };

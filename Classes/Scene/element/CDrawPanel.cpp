@@ -5,6 +5,13 @@
 
 CDrawPanel* CDrawPanel::_pHandDrawing = nullptr;
 
+CDrawPanel::~CDrawPanel(){
+    _penBrushList.clear();
+    _eraserBrushList.clear();
+    _pHandDrawing = nullptr;
+}
+
+
 CDrawPanel *CDrawPanel::create()
 { // 建立物件的實體
 	if (_pHandDrawing == nullptr) {
@@ -109,7 +116,7 @@ void CDrawPanel::setLineColor(Color3B color)
 
 bool CDrawPanel::touchesBegin(cocos2d::Point inPt)
 {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 2; i++) {
 		if (_toolBtn[i].touchesBegin(inPt)) return(true);
 	}
 

@@ -377,8 +377,8 @@
 		F15F3ED1228FAE710036D916 /* element */ = {
 			isa = PBXGroup;
 			children = (
-				F12767112301516700ABFCB1 /* CAnsCreater.h */,
 				F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */,
+				F12767112301516700ABFCB1 /* CAnsCreater.h */,
 				F15F3ED6228FAE710036D916 /* CButton.cpp */,
 				F15F3ED3228FAE710036D916 /* CButton.h */,
 				F15F3EDB228FAE710036D916 /* CDrawPanel.cpp */,
