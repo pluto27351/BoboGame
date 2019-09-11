@@ -7,11 +7,11 @@
           <Project Name="line.csd" Type="Node" />
           <Project Name="Player.csd" Type="Node" />
           <Project Name="s_grass.csd" Type="Node" />
+          <Project Name="starfall.csd" Type="Node" />
           <Project Name="t_number.csd" Type="Node" />
           <Project Name="TeachAni.csd" Type="Node" />
-          <Project Name="wrong.csd" Type="Node" />
           <Project Name="tree.csd" Type="Node" />
-          <Project Name="starfall.csd" Type="Node" />
+          <Project Name="wrong.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />

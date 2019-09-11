@@ -1,10 +1,11 @@
 #include "CLevelCreate.h"
 #include<stdlib.h>
 #define DG_WIDTH 426.0f
-#define LEVELTIME 30 //跑過幾個地升一次level
-#define DISTANCE 10 //跑過幾個地升一次level
-#define START_NUM 3
-#define TEACH_NUM (16+START_NUM)
+#define LEVELTIME 30 //level distance
+#define DISTANCE 10 //board distance
+#define OBSTACLE_SPEED 12
+#define START_NUM OB_NUM //7
+#define TEACH_NUM 12 //teach Obstacle number
 
 USING_NS_CC;
 
@@ -21,10 +22,11 @@ CLevelCreate::CLevelCreate(b2World* _b2W) {
 	sprintf(level, "Level_%d", 0);
 	sprintf(name, "%d", 0);
     if(UserDefault::getInstance()->getBoolForKey("TEACH_FLAG") == 0){ // 0:no
-        num = -TEACH_NUM;
+        num = -(START_NUM + TEACH_NUM);
     }
     else{
-        num = -START_NUM-6;TeachFlag = 2;
+        num = -START_NUM;
+        TeachFlag = 2;
     }
 	for (int i = 0; i<OB_NUM; i++,num++) {
 		_DownGroundCollision[i] = new CObstacle(_b2W, CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
@@ -39,27 +41,27 @@ void CLevelCreate::dostep(float dt) {
 	for (int i = 0; i < OB_NUM; i++) {
         if(_DownGroundCollision[i]->teach == true){
             if(TeachCreateFlag[0] == true){
-				if (_DownGroundCollision[i]->Getpos().x <= 700) {
+				if (_DownGroundCollision[i]->Getpos().x <= 750) {
 					TeachFlag = 1;
 					_DownGroundCollision[i]->teach = false;
 					TeachCreateFlag[0] = false;
 				}
             }
             else if(TeachCreateFlag[1] == true){
-                if(_DownGroundCollision[i]->Getpos().x <= 1000){
+                if(_DownGroundCollision[i]->Getpos().x <= 1050){
                     TeachFlag = 0;
                     _DownGroundCollision[i]->teach = false;
                     TeachCreateFlag[1] = false;
                 }
             }
             else if(TeachCreateFlag[2] == true){
-                if(_DownGroundCollision[i]->Getpos().x <= 1100){
+                if(_DownGroundCollision[i]->Getpos().x <= 1150){
                     TeachFlag = 0;
                     TeachCreateFlag[2] = false;
                 }
             }
             else{
-                if(_DownGroundCollision[i]->Getpos().x <= 920){
+                if(_DownGroundCollision[i]->Getpos().x <= 1000){
                     TeachFlag = 1;
                     _DownGroundCollision[i]->teach = false;
                 }
@@ -68,33 +70,38 @@ void CLevelCreate::dostep(float dt) {
 		if (_DownGroundCollision[i]->Getpos().x < -(_DownGroundCollision[i]->_fWidth / 2)) {
 			SetObstacle(i);
 		}
-		_DownGroundCollision[i]->Move(-10, 0);
+        if (_DownGroundCollision[i]->Getpos().x < 450) {
+            if(_DownGroundCollision[i]->start == true){
+                _DownGroundCollision[i]->start = false;
+                f_tDistance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
+            }
+        }
+		_DownGroundCollision[i]->Move(-OBSTACLE_SPEED, 0);
 	}
 }
 void CLevelCreate::SetObstacle(int i) {
     //教學
-    if(num < -START_NUM){
-        CCLOG("%d",num);
-        if(num == -TEACH_NUM+7){
+    if(num < 0){
+        if(num == -TEACH_NUM){
             sprintf(level, "Level_%d", 1);
             sprintf(name, "%d", 13);
-            TeachCreateFlag[0] = true;
             _DownGroundCollision[i]->teach = true;
+            TeachCreateFlag[0] = true;
         }
-        else if(num == -TEACH_NUM+11){
+        else if(num == -TEACH_NUM+4){
             sprintf(level, "Level_%d", 2);
             sprintf(name, "%d", 0);
-            TeachCreateFlag[1] = true;
             _DownGroundCollision[i]->teach = true;
+            TeachCreateFlag[1] = true;
         }
-        else if(num == -TEACH_NUM+15){
+        else if(num == -TEACH_NUM+8){
             sprintf(kind, "up");
             sprintf(level, "Level_%d", 3);
             sprintf(name, "%d", 0);
-            TeachCreateFlag[2] = true;
             _DownGroundCollision[i]->teach = true;
+            TeachCreateFlag[2] = true;
         }
-        else if(num > -TEACH_NUM+11 && num < -TEACH_NUM+15){
+        else if(num > -TEACH_NUM+4 && num < -TEACH_NUM+8){
             sprintf(kind, "up");
             sprintf(level, "Level_%d", 0);
             sprintf(name, "%d", 0);
@@ -105,12 +112,8 @@ void CLevelCreate::SetObstacle(int i) {
             sprintf(name, "%d", 0);
         }
     }
-    else if(num < 0){
-        sprintf(kind, "down");
-        sprintf(level, "Level_%d", 0);
-        sprintf(name, "%d", 0);
-    }
 	else { //非教學
+        _DownGroundCollision[i]->start = true;
         if(num == 0)BoardFlag = true;
 		if (num % LEVELTIME == 0 && _iLevel < 3) { //提升level
 			_iLevel++;
@@ -126,7 +129,7 @@ void CLevelCreate::SetObstacle(int i) {
             else n = 0;
             sprintf(level, "Level_%d", n);
         }
-        if (UpFlag) { //可以接上面地形
+        if (UpFlag) {
             n = rand() % 3;
             if (n)
                 sprintf(kind, "up");
@@ -151,6 +154,7 @@ void CLevelCreate::SetObstacle(int i) {
         sprintf(name, "%d", n);
         Distance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
 	}
+    //change
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
     if(BoardFlag == true){
         BoardFlag = false;
@@ -160,11 +164,12 @@ void CLevelCreate::SetObstacle(int i) {
         //board->getChildByName("Sprite")->setGlobalZOrder(2);
         t->setGlobalZOrder(1);
         char d[6];
-        sprintf(d, "%d", Distance/10);
+        sprintf(d, "%d", Distance/DISTANCE);
         t->setString(d);
     }
     UpFlag = _DownGroundCollision[i]->UpFlag;
     DieFlag = _DownGroundCollision[i]->DieFlag;
+    
     if (i == 0)
         _DownGroundCollision[i]->SetPos(_DownGroundCollision[OB_NUM - 1]->Getpos().x + _DownGroundCollision[OB_NUM - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
     else

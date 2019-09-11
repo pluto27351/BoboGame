@@ -40,6 +40,7 @@ class GameScene : public cocos2d::Layer
 private:
 	Node *rootNode;
     Sprite *midground[2];
+    Text *distance;
     Node *_Teach;
     ActionTimeline* TeachAni;
 	CPlayer *_Player;

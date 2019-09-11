@@ -62,6 +62,7 @@ bool GameScene::init()
     Sprite *bg = (cocos2d::Sprite *)rootNode->getChildByName("bg");
     bg->setGlobalZOrder(-2);
     
+    distance = (cocos2d::ui::Text *)rootNode->getChildByName("distance");
 	//中景
     midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
     midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
@@ -165,9 +166,12 @@ void GameScene::Play(float dt) {
         }
         //關卡
         _Level->dostep(dt);
-        
+        char d[30];
+        float _fd = _Level->f_tDistance/10;
+        sprintf(d, "%6.1f m", _fd);
+        distance->setString(d);
         if (_contactListener.gameover == true) {
-            ChangeScene();
+            //ChangeScene();
         }
     }
 }

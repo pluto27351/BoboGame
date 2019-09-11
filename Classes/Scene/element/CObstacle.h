@@ -32,6 +32,7 @@ public:
     Node* _Obstacle;
     float _fWidth = 0;
 	bool teach = false;
+    bool start = false;
     bool UpFlag = false;
     bool DieFlag = false;
     

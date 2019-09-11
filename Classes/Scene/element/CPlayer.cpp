@@ -24,6 +24,7 @@ CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
     PlayerBody = _b2World->CreateBody(&bodyDef);
     CreateCollision();
     _PlayerAni->gotoFrameAndPlay(0, 30, true);
+    _PlayerAni->setTimeSpeed(1.2f);
 }
 void CPlayer::dostep(){
     CreateCollision();
@@ -76,24 +77,29 @@ void CPlayer::CreateCollision(){
 void CPlayer::RunAct() {
     if(_PlayerAni->getCurrentFrame()>30){
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
+        _PlayerAni->setTimeSpeed(1.2f);
         PlayerBody->SetLinearVelocity(b2Vec2(0,0));
     }
 }
 void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<=30){
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
+        _PlayerAni->setTimeSpeed(1.0f);
         PlayerBody->SetLinearVelocity(b2Vec2(0,58));
     }
 }
 void CPlayer::SlipAct(){
     _PlayerAni->gotoFrameAndPlay(56, 64, true);
+    _PlayerAni->setTimeSpeed(1.0f);
 }
 void CPlayer::AttackAct(){
     _PlayerAni->gotoFrameAndPlay(65, 75, true);
+    _PlayerAni->setTimeSpeed(1.0f);
     PlayerBody->SetLinearVelocity(b2Vec2(0,-35));
 }
 void CPlayer::TensionAct(){
     _PlayerAni->gotoFrameAndPlay(76, 100, true);
+    _PlayerAni->setTimeSpeed(1.0f);
 }
 void CPlayer::AniPause(){
     _PlayerAni->pause();
