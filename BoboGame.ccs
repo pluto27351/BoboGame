@@ -220,6 +220,7 @@
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
+          <Image Name="gameover.png" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
           <Image Name="prompt1_l.png" />

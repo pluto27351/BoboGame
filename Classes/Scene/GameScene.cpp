@@ -62,6 +62,11 @@ bool GameScene::init()
     Sprite *bg = (cocos2d::Sprite *)rootNode->getChildByName("bg");
     bg->setGlobalZOrder(-2);
     
+    //playername
+    PlayerName = (cocos2d::ui::TextField*)rootNode->getChildByName("PlayerName");
+    PlayerName->setMaxLengthEnabled(true);
+    PlayerName->addEventListener(CC_CALLBACK_2(GameScene::textFieldEvent, this));
+    //score
     distance = (cocos2d::ui::Text *)rootNode->getChildByName("distance");
 	//中景
     midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
@@ -296,6 +301,32 @@ void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 	Point touchLoc = pTouch->getLocation();
 }
 
+void GameScene::textFieldEvent(Ref*pSender, cocos2d::ui::TextField::EventType type){
+    switch(type){
+        case cocos2d::ui::TextField::EventType::ATTACH_WITH_IME: //輸入
+            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            break;
+        case cocos2d::ui::TextField::EventType::DETACH_WITH_IME: //結束
+            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            PlayerName->setColor(Color3B(70,70,87));
+            break;
+        case cocos2d::ui::TextField::EventType::INSERT_TEXT: //增加
+            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            break;
+        case cocos2d::ui::TextField::EventType::DELETE_BACKWARD: //減少
+            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            break;
+    }
+}
+void GameScene::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
+{
+    Director* director = Director::getInstance();
+    GL::enableVertexAttribs(cocos2d::GL::VERTEX_ATTRIB_FLAG_POSITION);
+    director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+    _b2World->DrawDebugData();
+    director->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+}
+
 CContactListener::CContactListener(){}
 void CContactListener::setCollisionTargetPlayer(cocos2d::Sprite &targetSprite){
     _Playersprite = &targetSprite;
@@ -322,12 +353,4 @@ void CContactListener::BeginContact(b2Contact* contact){
 void CContactListener::EndContact(b2Contact* contact){
     b2Body* BodyA = contact->GetFixtureA()->GetBody();
     b2Body* BodyB = contact->GetFixtureB()->GetBody();
-}
-void GameScene::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
-{
-	Director* director = Director::getInstance();
-	GL::enableVertexAttribs(cocos2d::GL::VERTEX_ATTRIB_FLAG_POSITION);
-	director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
-	_b2World->DrawDebugData();
-	director->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
 }

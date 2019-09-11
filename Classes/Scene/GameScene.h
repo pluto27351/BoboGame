@@ -44,6 +44,7 @@ private:
     Node *_Teach;
     ActionTimeline* TeachAni;
 	CPlayer *_Player;
+    ui::TextField* PlayerName;
     CLevelCreate *_Level;
     float _fSlipTime = 1;
 	float _fGmaeTime = 0;
@@ -65,6 +66,7 @@ public:
 	void CreatePlayer();
 	void CreateGround();
     void CreateLevel();
+    void Gameover();
 
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();
@@ -73,7 +75,10 @@ public:
 	cocos2d::EventListenerTouchOneByOne *_listener1;
 	bool onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent); //觸碰開始事件
 	void onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent); //觸碰移動事件
-	void onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent); //觸碰結束事件 
+	void onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent); //觸碰結束事件
+    
+    //textfield
+    void textFieldEvent(Ref*pSender, cocos2d::ui::TextField::EventType type);
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
