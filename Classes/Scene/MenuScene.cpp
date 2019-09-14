@@ -109,14 +109,6 @@ bool MenuScene::init()
     
     _totalTime = 0;
     
-    app = firebase::App::Create(::firebase::AppOptions());
-    database = firebase::database::Database::GetInstance(app);
-    dbref = database->GetReference();
-    data = dbref.GetReference().GetValue();
-  //  dbref.Child("aaa").SetValue(12);
-
-    
-    
     //觸控
     _listener1 = EventListenerTouchOneByOne::create();    //創建一個一對一的事件聆聽器
     _listener1->onTouchBegan = CC_CALLBACK_2(MenuScene::onTouchBegan, this);        //加入觸碰開始事件
@@ -140,59 +132,6 @@ void MenuScene::doStep(float dt)
     else {
         ShineLightBar();
     }
-    
-    if((int)_totalTime % 5 == 1){
-        change = false;
-    }
-    if((int)_totalTime % 5 != 0 || change) return;
-    
-    if(data.status() != firebase::kFutureStatusPending){
-        change = true;
-        if(data.status() != firebase::kFutureStatusComplete){
-            CCLOG("ERROR : GetValue() return an invalid result");
-        }else if(data.error() != firebase::database::kErrorNone){
-            CCLOG("ERRPR : GetValue return error %d : %s",data.error(),data.error_message());
-        }else {
-            const firebase::database::DataSnapshot *snapshot =  data.result();
-            auto children = snapshot->children();
-            auto n = children.size();
-            CCLOG("data size = %d",n);
-            
-            for(int i=0;i<n;i++){
-                auto child_data = children[i].children();
-                auto c_name  = child_data[0].key_string().c_str();
-                auto c_score = child_data[0].value().int64_value();
-                int k = (int)_totalTime*10;
-                if(k >= c_score){
-                    for(int j=4;j >i;j--){
-                        children[j].GetReference().RemoveValue();
-                        child_data = children[j-1].children();
-                        c_name  = child_data[0].key_string().c_str();
-                        c_score = child_data[0].value().int64_value();
-                        children[j].GetReference().Child(c_name).SetValue(c_score);
-                    }
-                    children[i].GetReference().RemoveValue();
-                    children[i].GetReference().Child("new").SetValue(k);
-                    i=100;
-                    data = dbref.GetReference().GetValue();
-                }
-            }
-            
-            
-//            for(int i=0;i<n;i++){
-//                auto child_data = children[i].children();
-//                auto c_name  = child_data[0].key_string().c_str();
-//                auto c_score = child_data[0].value().int64_value();
-//                CCLOG("%s : %d",c_name,c_score);
-//
-//                children[i].GetReference().RemoveValue();
-//                children[i].GetReference().Child("asd").SetValue(6);
-//
-//                data = dbref.GetReference().GetValue();
-//            }
-        }
-    }
-
 }
 
 void MenuScene::ShineLightBar(){

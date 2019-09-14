@@ -66,6 +66,7 @@
 		F1204914232C9C8E001CBFEE /* firebase_database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204912232C9C8E001CBFEE /* firebase_database.framework */; };
 		F1204916232C9C9B001CBFEE /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204915232C9C9B001CBFEE /* GameController.framework */; };
 		F1204918232C9CB3001CBFEE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204917232C9CB3001CBFEE /* MediaPlayer.framework */; };
+		F120491A232CBA45001CBFEE /* Tzuhua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1204919232CBA45001CBFEE /* Tzuhua.cpp */; };
 		F14ED66222D5E1CE00A15B39 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14ED66122D5E1CE00A15B39 /* GameScene.cpp */; };
 		F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */; };
 		F15F3EE3228FAE710036D916 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECC228FAE710036D916 /* HomeScene.cpp */; };
@@ -151,6 +152,7 @@
 		F1204912232C9C8E001CBFEE /* firebase_database.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase_database.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase_database.framework; sourceTree = "<group>"; };
 		F1204915232C9C9B001CBFEE /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		F1204917232C9CB3001CBFEE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		F1204919232CBA45001CBFEE /* Tzuhua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tzuhua.cpp; sourceTree = "<group>"; };
 		F12767112301516700ABFCB1 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F14ED66122D5E1CE00A15B39 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		F14F5D0722C9ED6000D8CEC1 /* CObstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CObstacle.h; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				F15F3EE0228FAE710036D916 /* MenuScene.h */,
 				F15F3ECE228FAE710036D916 /* TeachScene.cpp */,
 				F15F3ECD228FAE710036D916 /* TeachScene.h */,
+				F1204919232CBA45001CBFEE /* Tzuhua.cpp */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				F15F3EEA228FAE710036D916 /* CDrawPanel.cpp in Sources */,
 				F14ED66222D5E1CE00A15B39 /* GameScene.cpp in Sources */,
 				F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */,
+				F120491A232CBA45001CBFEE /* Tzuhua.cpp in Sources */,
 				F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */,
 				F15F3EE5228FAE710036D916 /* BoardScene.cpp in Sources */,
 				F15F3EE8228FAE710036D916 /* CPlayer.cpp in Sources */,

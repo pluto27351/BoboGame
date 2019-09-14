@@ -39,13 +39,24 @@ bool BoardScene::init()
 	addChild(rootNode);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_menu.plist");
 
-	char name[20] = "";
+	char target[20] = "";
 
 	//排行按鈕
 	auto btn = rootNode->getChildByName("HomeBtn");
 	_homeBtn.setButtonInfo("board_backbtn.png","board_backbtn.png",*this, btn->getPosition(), 1);
 	_homeBtn.setScale(btn->getScaleX(), btn->getScaleY());
 	rootNode->removeChild(btn);
+    
+    app = firebase::App::Create(::firebase::AppOptions());
+    database = firebase::database::Database::GetInstance(app);
+    dbref = database->GetReference();
+    data = dbref.GetReference().GetValue();
+
+    for(int i=0;i<5;i++){
+        sprintf(target, "line_%d",i);
+        _name[i] = (Text *)rootNode->getChildByName(target)->getChildByName("name");
+        _score[i] =(Text *)rootNode->getChildByName(target)->getChildByName("score");
+    }
 
 	
 	//觸控
@@ -66,6 +77,31 @@ bool BoardScene::init()
 void BoardScene::doStep(float dt)
 {
     if(_bchangeScene)ChangeScene();
+    
+    if(_bgetData == false){
+        if(data.status() != firebase::kFutureStatusPending){
+            if(data.status() != firebase::kFutureStatusComplete){
+                CCLOG("ERROR : GetValue() return an invalid result");
+            }else if(data.error() != firebase::database::kErrorNone){
+                CCLOG("ERRPR : GetValue return error %d : %s",data.error(),data.error_message());
+            }else {
+                const firebase::database::DataSnapshot *snapshot =  data.result();
+                auto children = snapshot->children();
+                _bgetData = true;
+                for(int i=0;i<5;i++){
+                    auto child_data = children[i].children();
+                    auto c_name  = child_data[0].key_string().c_str();
+                    auto c_score = child_data[0].value().int64_value();
+                    char s[10];
+                    sprintf(s, "%.1f",c_score/10.0f);
+                    
+                    _name[i]->setString(c_name);
+                    _score[i]->setString(s);
+                    
+                }
+            }
+        }
+    }
 }
 
 void BoardScene::ChangeScene()

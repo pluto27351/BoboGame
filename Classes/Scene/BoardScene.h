@@ -7,7 +7,8 @@
 #include "cocostudio/CocoStudio.h"
 #include "element/CButton.h"
 
-
+#include "firebase/app.h"
+#include "firebase/database.h"
 
 USING_NS_CC;
 
@@ -21,6 +22,14 @@ class BoardScene : public cocos2d::Layer
 private:
 	Node *rootNode;
 	CButton _homeBtn;
+    Text *_name[5],*_score[5];
+    
+    firebase::App* app;
+    firebase::database::Database *database;
+    firebase::database::DatabaseReference dbref;
+    firebase::Future<firebase::database::DataSnapshot> data;
+    bool _bgetData = false;
+    
 	void doStep(float);
     bool _bchangeScene = false;
 public:
