@@ -136,7 +136,8 @@ void MenuScene::doStep(float dt)
 }
 
 void MenuScene::ShineLightBar(){
-    float light = (sin(_totalTime*3)+1) * 75 + 105;
+    //float light = (sin(_totalTime*3)+1) * 75 + 105;
+    float light = sin(_totalTime)*sin(_totalTime)*255;
     for(int i=0;i<5;i++){
         _lightbar[i]->setOpacity(light);
     }

@@ -170,11 +170,12 @@ bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
 }
 
 bool CNumberPannel::touchesMoved(cocos2d::Point inPos){
+    bool bmove = false;
     if(_bMoveNumber){
         _touchedPic->setPosition(inPos);
         int k = ansAreaHover(inPos);
          if(k != -1)_answerArea[k]->setOpacity(100);
-        return true;
+        bmove = true;
     }
     
     if(_triggerBtn.touchesMoved(inPos))return true;
@@ -182,7 +183,7 @@ bool CNumberPannel::touchesMoved(cocos2d::Point inPos){
         if(_number[i].touchesMoved(inPos))return true;
     }
     
-    return false;
+    return bmove;
 }
 
 bool CNumberPannel::touchesEnded(cocos2d::Point inPos){

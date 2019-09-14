@@ -155,10 +155,9 @@ bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
 {
     Point touchLoc = pTouch->getLocation();
     if (_giveupBtn.touchesBegin(touchLoc) && _checkAns != 0)return true;  //答對時需按下題鍵
+    if (_homeBtn.touchesBegin(touchLoc) && _checkAns != 0)return true;
     
     if(_checkAns != -1)return false;  //確認答案後 功能暫時關閉
-    
-    if (_homeBtn.touchesBegin(touchLoc))return true;
     if (_answerBtn.touchesBegin(touchLoc))return true;
     if (_numberArea->touchesBegin(touchLoc))return true;
     else _numberArea->setNumberVisual(false);
@@ -178,7 +177,7 @@ void  TeachScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
     if (_giveupBtn.touchesMoved(touchLoc))return;
     if (_numberArea->touchesMoved(touchLoc))return;
     
-    _handDrawing->touchesMoved(touchLoc, preTouchLoc);
+    if(_checkAns == -1)_handDrawing->touchesMoved(touchLoc, preTouchLoc);
     
 }
 
@@ -236,7 +235,7 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
         return;
     }
     
-    _handDrawing->touchesEnded(touchLoc);
+    if(_checkAns == -1)_handDrawing->touchesEnded(touchLoc);
 }
 
 void TeachScene::resetQue()
