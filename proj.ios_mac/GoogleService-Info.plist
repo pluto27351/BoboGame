@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>925941026356-8u9p5qc8p7rna3a54s7njtdlttugq1lt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.925941026356-8u9p5qc8p7rna3a54s7njtdlttugq1lt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB_zHjiEWaK7r6o6DY3eLCx1AixH-ryPFk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>925941026356</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.cocos2dx.BoboGame2</string>
+	<key>PROJECT_ID</key>
+	<string>bobog-4192c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bobog-4192c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:925941026356:ios:3a07c026e7532ecd430461</string>
+	<key>DATABASE_URL</key>
+	<string>https://bobog-4192c.firebaseio.com</string>
+</dict>
+</plist>

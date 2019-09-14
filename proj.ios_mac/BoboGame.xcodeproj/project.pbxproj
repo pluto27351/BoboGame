@@ -10,6 +10,7 @@
 		1BA14E61BFBE7D2B1AD88962 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 01F741B993AED8B544209AD5 /* res */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2757C6B2586B46C0A41908F0 /* Pods_BoboGame_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0896FD1EEB32D2F83EB6542D /* Pods_BoboGame_mobile.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51554DA9A2FA70F46AF9E679 /* libcocos2d Mac.a */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
@@ -47,6 +48,7 @@
 		521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6219F0C34300D177D7 /* Default-667h@2x.png */; };
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		6436D627911D7F43700183C4 /* Pods_BoboGame_desktop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DBA06430BE434F8E45603D /* Pods_BoboGame_desktop.framework */; };
 		67264650BD08F5A9E8B7ED1D /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */; };
 		6CC743B7AEC6C4A1F5FEC304 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 01F741B993AED8B544209AD5 /* res */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
@@ -60,6 +62,10 @@
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */; };
+		F1204913232C9C8E001CBFEE /* firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204911232C9C8E001CBFEE /* firebase.framework */; };
+		F1204914232C9C8E001CBFEE /* firebase_database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204912232C9C8E001CBFEE /* firebase_database.framework */; };
+		F1204916232C9C9B001CBFEE /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204915232C9C9B001CBFEE /* GameController.framework */; };
+		F1204918232C9CB3001CBFEE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204917232C9CB3001CBFEE /* MediaPlayer.framework */; };
 		F14ED66222D5E1CE00A15B39 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14ED66122D5E1CE00A15B39 /* GameScene.cpp */; };
 		F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */; };
 		F15F3EE3228FAE710036D916 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3ECC228FAE710036D916 /* HomeScene.cpp */; };
@@ -72,17 +78,21 @@
 		F15F3EEB228FAE710036D916 /* CAnsCreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDC228FAE710036D916 /* CAnsCreater.cpp */; };
 		F15F3EEC228FAE710036D916 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDF228FAE710036D916 /* MenuScene.cpp */; };
 		F15F3EF1228FAF200036D916 /* CNumberPannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */; };
+		F174EC9C232C9B4300D39EF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F174EC9B232C9B4300D39EF1 /* GoogleService-Info.plist */; };
 		F1CFD06822C8A4690054151F /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD06422C8A4680054151F /* GLES-Render.cpp */; };
 		F1CFD06922C8A4690054151F /* GB2ShapeCache-x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01F741B993AED8B544209AD5 /* res */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = res; path = ../Resources/res; sourceTree = "<group>"; };
+		0896FD1EEB32D2F83EB6542D /* Pods_BoboGame_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoboGame_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17140DC0D60352878E57E8A7 /* Pods-BoboGame-desktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoboGame-desktop.release.xcconfig"; path = "Target Support Files/Pods-BoboGame-desktop/Pods-BoboGame-desktop.release.xcconfig"; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* BoboGame-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BoboGame-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		39C1460FC8F2EC308F194386 /* Pods-BoboGame-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoboGame-mobile.release.xcconfig"; path = "Target Support Files/Pods-BoboGame-mobile/Pods-BoboGame-mobile.release.xcconfig"; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -123,6 +133,8 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B2DBA06430BE434F8E45603D /* Pods_BoboGame_desktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoboGame_desktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF077E3B6ED1E54002D78B56 /* Pods-BoboGame-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoboGame-mobile.debug.xcconfig"; path = "Target Support Files/Pods-BoboGame-mobile/Pods-BoboGame-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -130,10 +142,15 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		E6C9B3B1C9EA45D18245F9F4 /* Pods-BoboGame-desktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoboGame-desktop.debug.xcconfig"; path = "Target Support Files/Pods-BoboGame-desktop/Pods-BoboGame-desktop.debug.xcconfig"; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CLevelCreate.cpp; sourceTree = "<group>"; };
 		F11FD32122CB7E9000E33BAC /* CLevelCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLevelCreate.h; sourceTree = "<group>"; };
+		F1204911232C9C8E001CBFEE /* firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase.framework; sourceTree = "<group>"; };
+		F1204912232C9C8E001CBFEE /* firebase_database.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = firebase_database.framework; path = ../firebase_cpp_sdk/frameworks/ios/universal/firebase_database.framework; sourceTree = "<group>"; };
+		F1204915232C9C9B001CBFEE /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		F1204917232C9CB3001CBFEE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		F12767112301516700ABFCB1 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F14ED66122D5E1CE00A15B39 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		F14F5D0722C9ED6000D8CEC1 /* CObstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CObstacle.h; sourceTree = "<group>"; };
@@ -159,6 +176,7 @@
 		F15F3EE1228FAE710036D916 /* BoardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardScene.h; sourceTree = "<group>"; };
 		F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CNumberPannel.cpp; sourceTree = "<group>"; };
 		F15F3EF2228FAF370036D916 /* CNumberPannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNumberPannel.h; sourceTree = "<group>"; };
+		F174EC9B232C9B4300D39EF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1CFD06422C8A4680054151F /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		F1CFD06522C8A4680054151F /* GB2ShapeCache-x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GB2ShapeCache-x.h"; sourceTree = "<group>"; };
 		F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GB2ShapeCache-x.cpp"; sourceTree = "<group>"; };
@@ -170,6 +188,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1204918232C9CB3001CBFEE /* MediaPlayer.framework in Frameworks */,
+				F1204916232C9C9B001CBFEE /* GameController.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -180,9 +200,12 @@
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
+				F1204913232C9C8E001CBFEE /* firebase.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
+				F1204914232C9C8E001CBFEE /* firebase_database.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 				67264650BD08F5A9E8B7ED1D /* libcocos2d iOS.a in Frameworks */,
+				2757C6B2586B46C0A41908F0 /* Pods_BoboGame_mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +225,7 @@
 				5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */,
 				5087E76B17EB910900C73F5D /* AudioToolbox.framework in Frameworks */,
 				2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */,
+				6436D627911D7F43700183C4 /* Pods_BoboGame_desktop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +247,17 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		18E6D13E065C6EC73A75A5C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6C9B3B1C9EA45D18245F9F4 /* Pods-BoboGame-desktop.debug.xcconfig */,
+				17140DC0D60352878E57E8A7 /* Pods-BoboGame-desktop.release.xcconfig */,
+				BF077E3B6ED1E54002D78B56 /* Pods-BoboGame-mobile.debug.xcconfig */,
+				39C1460FC8F2EC308F194386 /* Pods-BoboGame-mobile.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +270,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				F1204912232C9C8E001CBFEE /* firebase_database.framework */,
+				F1204911232C9C8E001CBFEE /* firebase.framework */,
+				F174EC9B232C9B4300D39EF1 /* GoogleService-Info.plist */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -243,6 +281,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B80C4D17930725E9FD8729D1 /* ios-libs */,
 				9FB840E18B0F8082A4A0AB3A /* mac-libs */,
+				18E6D13E065C6EC73A75A5C0 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -250,6 +289,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1204917232C9CB3001CBFEE /* MediaPlayer.framework */,
+				F1204915232C9C9B001CBFEE /* GameController.framework */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
@@ -269,6 +310,8 @@
 				BF170DB012928DE900B8313A /* OpenGLES.framework */,
 				BF1C47EA1293683800B63C5D /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				B2DBA06430BE434F8E45603D /* Pods_BoboGame_desktop.framework */,
+				0896FD1EEB32D2F83EB6542D /* Pods_BoboGame_mobile.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -409,9 +452,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BoboGame-mobile" */;
 			buildPhases = (
+				10B047EB09E4AB9D9D0640AD /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				23E2BB8AACF16C72BE8382E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -426,9 +471,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "BoboGame-desktop" */;
 			buildPhases = (
+				AA29E8DD3D05FB0A9C97A7E1 /* [CP] Check Pods Manifest.lock */,
 				5087E74817EB910900C73F5D /* Resources */,
 				5087E75617EB910900C73F5D /* Sources */,
 				5087E75C17EB910900C73F5D /* Frameworks */,
+				410913650A00F5627D445C8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -463,6 +510,7 @@
 				German,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -494,6 +542,7 @@
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
+				F174EC9C232C9B4300D39EF1 /* GoogleService-Info.plist in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 				1BA14E61BFBE7D2B1AD88962 /* res in Resources */,
 			);
@@ -509,6 +558,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10B047EB09E4AB9D9D0640AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoboGame-mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23E2BB8AACF16C72BE8382E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoboGame-mobile/Pods-BoboGame-mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoboGame-mobile/Pods-BoboGame-mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		410913650A00F5627D445C8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoboGame-desktop/Pods-BoboGame-desktop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoboGame-desktop/Pods-BoboGame-desktop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA29E8DD3D05FB0A9C97A7E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoboGame-desktop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -551,12 +691,24 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF077E3B6ED1E54002D78B56 /* Pods-BoboGame-mobile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = 7553JMUBAP;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/frameworks/ios/universal",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -566,19 +718,25 @@
 					CC_TARGET_OS_IPHONE,
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/ios",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/ios/Simulation",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/include",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.BoboGame2;
 				SDKROOT = iphoneos;
@@ -590,12 +748,24 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39C1460FC8F2EC308F194386 /* Pods-BoboGame-mobile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = 7553JMUBAP;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/frameworks/ios/universal",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -603,19 +773,25 @@
 					USE_FILE32API,
 					CC_TARGET_OS_IPHONE,
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/ios",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/ios/Simulation",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/include",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.BoboGame2;
 				SDKROOT = iphoneos;
@@ -627,6 +803,7 @@
 		};
 		5087E76D17EB910900C73F5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C9B3B1C9EA45D18245F9F4 /* Pods-BoboGame-desktop.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -660,6 +837,7 @@
 		};
 		5087E76E17EB910900C73F5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17140DC0D60352878E57E8A7 /* Pods-BoboGame-desktop.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";

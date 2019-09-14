@@ -7,6 +7,9 @@
 #include "cocostudio/CocoStudio.h"
 #include "element/CButton.h"
 
+#include "firebase/app.h"
+#include "firebase/database.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -22,6 +25,13 @@ private:
 	Text *_scoreText;
     LoadingBar *_chapLoad[5],*_lightbar[5];
     Sprite * _chapPic[5];
+    
+    firebase::App* app;
+    firebase::database::Database *database;
+    firebase::database::DatabaseReference dbref;
+    firebase::Future<firebase::database::DataSnapshot> data;
+    bool change = false;
+    
 	int _iscale;
     bool _bchangeScene = false;
     int _sceneNum,_uni;

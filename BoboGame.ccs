@@ -138,6 +138,8 @@
             <PlistImageFile Name="up_rightlight.png" Key="up_rightlight.png" />
             <PlistImageFile Name="up_rockground.png" Key="up_rockground.png" />
             <PlistImageFile Name="up_rocklight.png" Key="up_rocklight.png" />
+            <PlistImageFile Name="name.png" Key="name.png" />
+            <PlistImageFile Name="name_light.png" Key="name_light.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_menu.png" PListFile="game_menu.plist" Name=".game_menu_PList.Dir">
             <PlistImageFile Name="bg_menu.png" Key="bg_menu.png" />
