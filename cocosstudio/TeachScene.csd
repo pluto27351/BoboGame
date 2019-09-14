@@ -215,24 +215,24 @@
             <FileData Type="PlistSubImage" Path="teach_btn_number.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="right" ActionTag="314227642" Tag="60" IconVisible="False" LeftMargin="546.7733" RightMargin="530.2267" TopMargin="304.2117" BottomMargin="382.7883" ctype="SpriteObjectData">
+          <AbstractNodeData Name="right" ActionTag="314227642" Tag="60" IconVisible="False" LeftMargin="559.2220" RightMargin="517.7780" TopMargin="357.1202" BottomMargin="329.8798" ctype="SpriteObjectData">
             <Size X="971.0000" Y="849.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1032.2733" Y="807.2883" />
+            <Position X="1044.7220" Y="754.3798" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5040" Y="0.5256" />
+            <PrePosition X="0.5101" Y="0.4911" />
             <PreSize X="0.4741" Y="0.5527" />
             <FileData Type="PlistSubImage" Path="teacc_effect_right.png" Plist="Img/game_teach.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="wrong" ActionTag="1270415030" Tag="128" IconVisible="True" LeftMargin="1024.0000" RightMargin="1024.0000" TopMargin="768.0000" BottomMargin="768.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="wrong" ActionTag="1270415030" Tag="128" IconVisible="True" LeftMargin="1036.4487" RightMargin="1011.5513" TopMargin="820.9106" BottomMargin="715.0894" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="1024.0000" Y="768.0000" />
+            <Position X="1036.4487" Y="715.0894" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
+            <PrePosition X="0.5061" Y="0.4656" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="Ani/wrong.csd" Plist="" />
           </AbstractNodeData>
