@@ -74,7 +74,7 @@ bool HomeScene::init()
 
 	//標題按鈕
 	auto title = rootNode->getChildByName("title");
-	_bTitle.setButtonInfo( "s_title.png", "s_title.png",*this,title->getPosition() ,0);
+	_bTitle.setButtonInfo( "s_title.png", "s_title_w.png","s_title_w.png",*this,title->getPosition() ,0);
 	_bTitle.setScale(title->getScaleX(), title->getScaleY());
 	_bTitle.setRotate(title->getRotation());
 	rootNode->removeChild(title);
@@ -192,6 +192,7 @@ void  HomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 	Point touchLoc = pTouch->getLocation();
 	if (_bTitle.touchesEnded(touchLoc)) {
 		_iTitleTouchTime++;
+        _bTitle.setEnabled(false);
 		if (_iTitleTouchTime == 1) {
 			_grassAction->gotoFrameAndPlay(0, 50, false);
 			_grassAction->setLastFrameCallFunc([=]()

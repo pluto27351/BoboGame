@@ -25,6 +25,7 @@ private:
 	Text *_scoreText;
     LoadingBar *_chapLoad[5],*_lightbar[5];
     Sprite * _chapPic[5];
+    bool _finish;
     
 	int _iscale;
     bool _bchangeScene = false;

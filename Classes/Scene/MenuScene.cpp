@@ -88,16 +88,16 @@ bool MenuScene::init()
     _scoreText->setString(ss);
     
     //遊戲按鈕
-    bool finish = true;
+    _finish = true;
     for(int i=0;i<5;i++){
         sprintf(name, "U%d_FINISH",i+1);
-        if(UserDefault::getInstance()->getIntegerForKey(name) <12 )finish = false;
+        if(UserDefault::getInstance()->getIntegerForKey(name) <12 )_finish = false;
     }
     auto btn = rootNode->getChildByName("title_g");
     _gameBtn.setButtonInfo("menu_game_on.png","menu_game_on.png","menu_game_lock.png", *this, btn->getPosition(), 1);
     _gameBtn.setScale(btn->getScaleX(), btn->getScaleY());
     _gameBtn.setRotate(btn->getRotation());
-//    if(UserDefault::getInstance()->getIntegerForKey("STAR") < 5 || finish) _gameBtn.setEnabled(false);
+    if(UserDefault::getInstance()->getIntegerForKey("STAR") < 5 && !_finish) _gameBtn.setEnabled(false);
     rootNode->removeChild(btn);
     
     //排行按鈕
@@ -157,10 +157,11 @@ void MenuScene::ChangeScene(int changescene,int chap)
             scene = TeachScene::createScene(chap);
             break;
         case GameScene:
-            k = UserDefault::getInstance()->getIntegerForKey("STAR")-5;
-            UserDefault::getInstance()->setIntegerForKey("STAR", k);
-            UserDefault::getInstance()->flush();
-            
+            if(!_finish){
+                k = UserDefault::getInstance()->getIntegerForKey("STAR")-5;
+                UserDefault::getInstance()->setIntegerForKey("STAR", k);
+                UserDefault::getInstance()->flush();
+            }
             scene = GameScene::createScene();
             break;
         case BoardScene:

@@ -115,6 +115,8 @@
             <PlistImageFile Name="decoration_grass.png" Key="decoration_grass.png" />
             <PlistImageFile Name="decoration_leaf.png" Key="decoration_leaf.png" />
             <PlistImageFile Name="GO.png" Key="GO.png" />
+            <PlistImageFile Name="name.png" Key="name.png" />
+            <PlistImageFile Name="name_light.png" Key="name_light.png" />
             <PlistImageFile Name="obstacle_bo.png" Key="obstacle_bo.png" />
             <PlistImageFile Name="obstacle_button_01.png" Key="obstacle_button_01.png" />
             <PlistImageFile Name="obstacle_button_02.png" Key="obstacle_button_02.png" />
@@ -138,8 +140,6 @@
             <PlistImageFile Name="up_rightlight.png" Key="up_rightlight.png" />
             <PlistImageFile Name="up_rockground.png" Key="up_rockground.png" />
             <PlistImageFile Name="up_rocklight.png" Key="up_rocklight.png" />
-            <PlistImageFile Name="name.png" Key="name.png" />
-            <PlistImageFile Name="name_light.png" Key="name_light.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_menu.png" PListFile="game_menu.plist" Name=".game_menu_PList.Dir">
             <PlistImageFile Name="bg_menu.png" Key="bg_menu.png" />
@@ -180,6 +180,7 @@
             <PlistImageFile Name="startpage_star.png" Key="startpage_star.png" />
             <PlistImageFile Name="startpage_tree.png" Key="startpage_tree.png" />
             <PlistImageFile Name="touchArea.png" Key="touchArea.png" />
+            <PlistImageFile Name="s_title_w.png" Key="s_title_w.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_teach.png" PListFile="game_teach.plist" Name=".game_teach_PList.Dir">
             <PlistImageFile Name="ans_area.png" Key="ans_area.png" />

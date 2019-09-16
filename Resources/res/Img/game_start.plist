@@ -7,7 +7,7 @@
             <key>bg_start.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,917},{2731,1536}}</string>
+                <string>{{0,2453},{2731,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -18,6 +18,19 @@
                 <string>{2731,1536}</string>
             </dict>
             <key>s_title.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2315,0},{703,376}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{703,376}}</string>
+                <key>sourceSize</key>
+                <string>{703,376}</string>
+            </dict>
+            <key>s_title_w.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1612,0},{703,376}}</string>
@@ -33,7 +46,7 @@
             <key>startpage_front.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,2453},{2731,1536}}</string>
+                <string>{{0,917},{2731,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +111,7 @@
             <key>startpage_tree.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2315,0},{896,588}}</string>
+                <string>{{3018,0},{896,588}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -135,7 +148,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f2cd56c7bd11cb00097c438868968069:4e71042558b3a2edfb30a1938b392186:3832278e6670d3d6a343cc72bf9c200b$</string>
+            <string>$TexturePacker:SmartUpdate:727026267b8d04386b2e5a118a92f624:062eb1d665aec8f99ecd6fccd2e0ea6e:3832278e6670d3d6a343cc72bf9c200b$</string>
             <key>textureFileName</key>
             <string>game_start.png</string>
         </dict>

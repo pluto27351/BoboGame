@@ -369,7 +369,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:3b554b8a332486578a3f5a9746f01e64:10a23f84bc31dd13c09ca350d3eec9a1:9e25372324c16072bfec9d2a4c0e90d0$</string>
+            <string>$TexturePacker:SmartUpdate:6e688a355f8c0b3ec797169812ce9d65:5c930fd0ae4d81fbed20b483fbdd4cd6:9e25372324c16072bfec9d2a4c0e90d0$</string>
             <key>textureFileName</key>
             <string>game_menu.png</string>
         </dict>

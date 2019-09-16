@@ -499,7 +499,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7ed36cb8acae6016d913ee9ccac00d8c:2cff2a24d8936cee47354aca0ad31d10:d6752752da0893da8d789f35f2add9a5$</string>
+            <string>$TexturePacker:SmartUpdate:11a19d33043ac6e1fc6ef72bd8783833:e666ad52a1186840f1023203bf26438b:d6752752da0893da8d789f35f2add9a5$</string>
             <key>textureFileName</key>
             <string>game_teach.png</string>
         </dict>

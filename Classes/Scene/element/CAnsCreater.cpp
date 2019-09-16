@@ -223,7 +223,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 void CAnsCreater::queLineCreater(int number,int q){
     auto line = CSLoader::createNode("Ani/line.csb");
     float xPos = line->getChildByName("2")->getPositionX();
-    float yPos = -150;
+    float yPos = -75;
     line -> setPosition(Vec2(0,yPos));
     addChild(line);
     
