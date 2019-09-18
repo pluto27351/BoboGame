@@ -43,7 +43,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1114637929" Tag="71" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2258" BottomMargin="58.7742" IsCustomSize="True" FontSize="72" LabelText="None" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-1114637929" Tag="71" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2258" BottomMargin="58.7742" IsCustomSize="True" FontSize="72" LabelText="  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="600.0000" Y="101.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="642.5441" Y="109.2742" />
@@ -55,10 +55,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="score" ActionTag="-235997110" Tag="72" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0000000.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="score" ActionTag="-235997110" Tag="72" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4226" BottomMargin="37.5774" IsCustomSize="True" FontSize="72" LabelText="0.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="385.0000" Y="140.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1194.9413" Y="107.5772" />
+                <Position X="1194.9413" Y="107.5774" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.7313" Y="0.5027" />
@@ -104,7 +104,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1855398690" Tag="76" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2316" BottomMargin="58.7684" IsCustomSize="True" FontSize="72" LabelText="None" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-1855398690" Tag="76" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2316" BottomMargin="58.7684" IsCustomSize="True" FontSize="72" LabelText="  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="600.0000" Y="101.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="642.5441" Y="109.2684" />
@@ -116,13 +116,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="score" ActionTag="-1428482456" Tag="77" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0000000.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="score" ActionTag="-1428482456" Tag="77" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4231" BottomMargin="37.5769" IsCustomSize="True" FontSize="72" LabelText="0.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="385.0000" Y="140.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1194.9413" Y="107.5772" />
+                <AnchorPoint ScaleX="0.4814" ScaleY="0.4779" />
+                <Position X="1187.7701" Y="104.4843" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
-                <PrePosition X="0.7313" Y="0.5027" />
+                <PrePosition X="0.7269" Y="0.4882" />
                 <PreSize X="0.2356" Y="0.6542" />
                 <FontResource Type="Normal" Path="font/PingFang.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -165,7 +165,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="505076052" Tag="81" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2316" BottomMargin="58.7684" IsCustomSize="True" FontSize="72" LabelText="None" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="505076052" Tag="81" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2316" BottomMargin="58.7684" IsCustomSize="True" FontSize="72" LabelText="  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="600.0000" Y="101.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="642.5441" Y="109.2684" />
@@ -177,7 +177,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="score" ActionTag="79788141" Tag="82" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0000000.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="score" ActionTag="79788141" Tag="82" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="385.0000" Y="140.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1194.9413" Y="107.5772" />
@@ -211,7 +211,7 @@
             <FileData Type="PlistSubImage" Path="board_line.png" Plist="Img/game_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="line_3" ActionTag="-552242454" Tag="84" IconVisible="False" LeftMargin="207.0000" RightMargin="207.0000" TopMargin="996.7251" BottomMargin="325.2749" ctype="SpriteObjectData">
+          <AbstractNodeData Name="line_3" ActionTag="-552242454" Tag="84" IconVisible="False" LeftMargin="207.0000" RightMargin="207.0000" TopMargin="996.7249" BottomMargin="325.2751" ctype="SpriteObjectData">
             <Size X="1634.0000" Y="214.0000" />
             <Children>
               <AbstractNodeData Name="t" ActionTag="1545322553" Tag="85" IconVisible="False" LeftMargin="137.3469" RightMargin="1338.6531" TopMargin="54.2316" BottomMargin="58.7684" FontSize="72" LabelText="No.4" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -226,7 +226,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="579035659" Tag="86" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2314" BottomMargin="58.7686" IsCustomSize="True" FontSize="72" LabelText="None" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="579035659" Tag="86" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2314" BottomMargin="58.7686" IsCustomSize="True" FontSize="72" LabelText="  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="600.0000" Y="101.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="642.5441" Y="109.2686" />
@@ -238,7 +238,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="score" ActionTag="-1629887072" Tag="87" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0000000.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="score" ActionTag="-1629887072" Tag="87" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="385.0000" Y="140.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1194.9413" Y="107.5772" />
@@ -264,7 +264,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="432.2749" />
+            <Position X="1024.0000" Y="432.2751" />
             <Scale ScaleX="1.0000" ScaleY="0.8397" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.2814" />
@@ -287,10 +287,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="2068759274" Tag="91" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2314" BottomMargin="58.7686" IsCustomSize="True" FontSize="72" LabelText="None" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="2068759274" Tag="91" IconVisible="False" LeftMargin="342.5441" RightMargin="691.4559" TopMargin="54.2318" BottomMargin="58.7682" IsCustomSize="True" FontSize="72" LabelText="  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="600.0000" Y="101.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="642.5441" Y="109.2686" />
+                <Position X="642.5441" Y="109.2682" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.3932" Y="0.5106" />
@@ -299,7 +299,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="score" ActionTag="290772218" Tag="92" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0000000.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="score" ActionTag="290772218" Tag="92" IconVisible="False" LeftMargin="1002.4413" RightMargin="246.5587" TopMargin="36.4228" BottomMargin="37.5772" IsCustomSize="True" FontSize="72" LabelText="0.0" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="385.0000" Y="140.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1194.9413" Y="107.5772" />
