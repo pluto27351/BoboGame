@@ -18,7 +18,6 @@
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
-		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
 		503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503AE11A17EB9C5A00D1A890 /* IOKit.framework */; };
 		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -64,8 +63,6 @@
 		F11FD32022CB7E7E00E33BAC /* CLevelCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F11FD31F22CB7E7E00E33BAC /* CLevelCreate.cpp */; };
 		F1204913232C9C8E001CBFEE /* firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204911232C9C8E001CBFEE /* firebase.framework */; };
 		F1204914232C9C8E001CBFEE /* firebase_database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204912232C9C8E001CBFEE /* firebase_database.framework */; };
-		F1204916232C9C9B001CBFEE /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204915232C9C9B001CBFEE /* GameController.framework */; };
-		F1204918232C9CB3001CBFEE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204917232C9CB3001CBFEE /* MediaPlayer.framework */; };
 		F120491A232CBA45001CBFEE /* Tzuhua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1204919232CBA45001CBFEE /* Tzuhua.cpp */; };
 		F14ED66222D5E1CE00A15B39 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14ED66122D5E1CE00A15B39 /* GameScene.cpp */; };
 		F14F5D0922C9ED8D00D8CEC1 /* CObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14F5D0822C9ED8D00D8CEC1 /* CObstacle.cpp */; };
@@ -80,6 +77,9 @@
 		F15F3EEC228FAE710036D916 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EDF228FAE710036D916 /* MenuScene.cpp */; };
 		F15F3EF1228FAF200036D916 /* CNumberPannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F15F3EEF228FAF200036D916 /* CNumberPannel.cpp */; };
 		F174EC9C232C9B4300D39EF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F174EC9B232C9B4300D39EF1 /* GoogleService-Info.plist */; };
+		F1B6D09C2330912900F7B8DF /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204915232C9C9B001CBFEE /* GameController.framework */; };
+		F1B6D09D2330913000F7B8DF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1204917232C9CB3001CBFEE /* MediaPlayer.framework */; };
+		F1B6D09E2330918F00F7B8DF /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		F1CFD06822C8A4690054151F /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD06422C8A4680054151F /* GLES-Render.cpp */; };
 		F1CFD06922C8A4690054151F /* GB2ShapeCache-x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1CFD06622C8A4680054151F /* GB2ShapeCache-x.cpp */; };
 /* End PBXBuildFile section */
@@ -190,8 +190,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1204918232C9CB3001CBFEE /* MediaPlayer.framework in Frameworks */,
-				F1204916232C9C9B001CBFEE /* GameController.framework in Frameworks */,
+				F1B6D09D2330913000F7B8DF /* MediaPlayer.framework in Frameworks */,
+				F1B6D09C2330912900F7B8DF /* GameController.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -674,8 +674,8 @@
 				F1CFD06822C8A4690054151F /* GLES-Render.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				F15F3EE4228FAE710036D916 /* TeachScene.cpp in Sources */,
+				F1B6D09E2330918F00F7B8DF /* RootViewController.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				F15F3EEC228FAE710036D916 /* MenuScene.cpp in Sources */,
 			);
@@ -737,6 +737,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
 					"$(inherited)",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -813,11 +814,23 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/frameworks/ios/universal",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
 					USE_FILE32API,
 					CC_TARGET_OS_MAC,
 					"COCOS2D_DEBUG=1",
@@ -828,12 +841,17 @@
 					"$(inherited)",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/mac",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/include",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
+					"$(inherited)",
 				);
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
@@ -847,12 +865,24 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/frameworks/ios/universal",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
 					USE_FILE32API,
-					CC_TARGET_OS_MAC,
+					"CC_TARGET_OS_MAC\n",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -860,12 +890,17 @@
 					"$(inherited)",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/mac",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
+					"$(PROJECT_DIR)/../firebase_cpp_sdk/include",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
+				LIBRARY_SEARCH_PATHS = (
+					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
+					"$(inherited)",
 				);
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};

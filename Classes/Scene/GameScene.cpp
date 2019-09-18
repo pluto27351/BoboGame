@@ -51,8 +51,14 @@ bool GameScene::init()
 
 	rootNode = CSLoader::createNode("PlayScene.csb");
 	addChild(rootNode);
+    
+    //firebase
+    app = firebase::App::Create(::firebase::AppOptions());
+    database = firebase::database::Database::GetInstance(app);
+    dbref = database->GetReference();
+    data = dbref.GetReference().GetValue();
 	
-	//B2World
+    //B2World
 	_b2World = nullptr;
 	b2Vec2 Gravity = b2Vec2(0.0f, -98);	//重力方向
 	bool AllowSleep = true;					//允許睡著
@@ -60,19 +66,27 @@ bool GameScene::init()
 	_b2World->SetAllowSleeping(AllowSleep);	//設定物件允許睡著
 
     Sprite *bg = (cocos2d::Sprite *)rootNode->getChildByName("bg");
-    bg->setGlobalZOrder(-2);
-    
+    //GameOver Scene
     //playername
-    PlayerName = (cocos2d::ui::TextField*)rootNode->getChildByName("PlayerName");
-    PlayerName->setMaxLengthEnabled(true);
-    PlayerName->addEventListener(CC_CALLBACK_2(GameScene::textFieldEvent, this));
+    InputName  = (cocos2d::ui::TextField*)rootNode->getChildByName("Gameover")->getChildByName("PlayerName")->getChildByName("Input");
+    InputName ->setMaxLengthEnabled(true);
+    InputName ->addEventListener(CC_CALLBACK_2(GameScene::textFieldEvent, this));
+    Namelight = (cocos2d::Sprite*)rootNode->getChildByName("Gameover")->getChildByName("PlayerName")->getChildByName("name_light");
+    NameAni = (ActionTimeline *)CSLoader::createTimeline("PlayScene.csb");
+    NameAni->gotoFrameAndPlay(0, 30, true);
+    NameAni->setTimeSpeed(0.8f);
+    Namelight->runAction(NameAni);
+    
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_teach.plist");
+    auto btn = rootNode->getChildByName("Gameover")->getChildByName("PlayerName");
+    NameBtn.setButtonInfo("teach_btn_giveup.png","teach_btn_giveup.png",*this, btn->getPosition()+Point(449,-1),1);
+    NameBtn.setVisible(false);
+    
     //score
-    distance = (cocos2d::ui::Text *)rootNode->getChildByName("distance");
+    distance = (cocos2d::ui::Text *)rootNode->getChildByName("Game")->getChildByName("distance");
 	//中景
     midground[0] = (cocos2d::Sprite *)rootNode->getChildByName("mg_0");
     midground[1] = (cocos2d::Sprite *)rootNode->getChildByName("mg_1");
-    midground[0]->setGlobalZOrder(-2);
-    midground[1]->setGlobalZOrder(-2);
     //教學提示
     _Teach = CSLoader::createNode("Ani/TeachAni.csb");
     this->addChild(_Teach, 2);
@@ -80,7 +94,7 @@ bool GameScene::init()
     _Teach->runAction(TeachAni);
     TeachAni->setTimeSpeed(0.1f);
     _Teach->setVisible(false);
-	_Teach->getChildByName("prompt")->setGlobalZOrder(6);
+    _Teach->getChildByName("prompt")->setGlobalZOrder(2);
     
 	CreatePlayer();// 放入玩家
 	CreateGround();// 地板碰撞
@@ -119,12 +133,13 @@ bool GameScene::init()
 void GameScene::doStep(float dt)
 {
 	_fGmaeTime += dt;
-    if(PlayFlag == false){
-        if (_fGmaeTime >= 4.5){
-            PlayFlag = true;
-        }
+    if(PlayFlag == true) Play(dt);
+    else {
+        _Level->TeachFlag = 3;
+        rootNode->getChildByName("Gameover")->setVisible(true);
+        Text* Score = (cocos2d::ui::Text*)rootNode->getChildByName("Gameover")->getChildByName("Score");
+        Score->setString(distance->getString());
     }
-	Play(dt);
 }
 void GameScene::Play(float dt) {
     //教學
@@ -175,20 +190,20 @@ void GameScene::Play(float dt) {
         float _fd = _Level->f_tDistance/10;
         sprintf(d, "%6.1f m", _fd);
         distance->setString(d);
-        if (_contactListener.gameover == true) {
-            //ChangeScene();
-        }
+        if (_contactListener.gameover == true)
+            PlayFlag = false;
     }
 }
 void GameScene::CreatePlayer() {
 	// 放入玩家
 	_Player = new CPlayer(_b2World, Vec2(450,600));
-	this->addChild(_Player, 2);
+    Node * _body = (cocos2d::Node *)rootNode->getChildByName("Game");
+	_body->addChild(_Player, 2);
     _contactListener.setCollisionTargetPlayer(*(_Player->_body));
     _Player->RunAct();
 }
 void GameScene::CreateGround() {
-	Sprite * _body = (cocos2d::Sprite *)rootNode->getChildByName("ground");
+	Sprite * _body = (cocos2d::Sprite *)rootNode->getChildByName("Game")->getChildByName("ground");
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_staticBody;
 	bodyDef.userData = _body;
@@ -234,7 +249,8 @@ void GameScene::CreateGround() {
 }
 void GameScene::CreateLevel(){
     _Level = new CLevelCreate(_b2World);
-    this->addChild(_Level,2);
+    Node * _body = (cocos2d::Node *)rootNode->getChildByName("Game");
+    _body->addChild(_Level,0);
 }
 
 bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
@@ -289,32 +305,80 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
                 }
                 break;
         }
-	}
+    }
+    NameBtn.touchesBegin(touchLoc);
 	return true;
 }
 void  GameScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰移動事件
 {
-	Point touchLoc = pTouch->getLocation();
+    Point touchLoc = pTouch->getLocation();
+    NameBtn.touchesMoved(touchLoc);
 }
 void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
 {
-	Point touchLoc = pTouch->getLocation();
+    Point touchLoc = pTouch->getLocation();
+    if(NameBtn.touchesEnded(touchLoc)) {
+        
+        sprintf(PlayerName, "%s", InputName->getString().c_str());
+        if(data.status() != firebase::kFutureStatusPending){
+            if(data.status() != firebase::kFutureStatusComplete){
+                CCLOG("ERROR : GetValue() return an invalid result");
+            }
+            else if(data.error() != firebase::database::kErrorNone){
+                CCLOG("ERRPR : GetValue return error %d : %s",data.error(),data.error_message());
+            }
+            else {
+                // 主要區！！！
+                const firebase::database::DataSnapshot *snapshot =  data.result();
+                auto children = snapshot->children();
+                for(int i=0;i<5;i++){
+                    auto child_data = children[i].children();
+                    auto c_name  = child_data[0].key_string().c_str();
+                    auto c_score = child_data[0].value().int64_value();
+                    int sc = (int)_Level->f_tDistance;  //_dis是距離  用int存->3.5用35存入!!!!!
+                    if(sc >= c_score){   //比大小 存資料
+                        for(int j=4;j >i;j--){                 //資料往下移
+                            children[j].GetReference().RemoveValue();
+                            child_data = children[j-1].children();
+                            c_name  = child_data[0].key_string().c_str();
+                            c_score = child_data[0].value().int64_value();
+                            children[j].GetReference().Child(c_name).SetValue(c_score);
+                        }
+                        children[i].GetReference().RemoveValue();
+                        children[i].GetReference().Child(PlayerName).SetValue(sc);  //new是使用者名字 sc是距離
+                        i=100;                                  //跳離迴圈
+                        data = dbref.GetReference().GetValue(); //獲取新連結(好像也可以不用)
+                    }
+                }
+            }
+        }
+        
+        ChangeScene();
+        return;
+    }
 }
 
 void GameScene::textFieldEvent(Ref*pSender, cocos2d::ui::TextField::EventType type){
+    Node* PlayerName = (cocos2d::Node*)rootNode->getChildByName("Gameover")->getChildByName("PlayerName");
     switch(type){
         case cocos2d::ui::TextField::EventType::ATTACH_WITH_IME: //輸入
-            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            NameBtn.setVisible(true);
+            InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            InputName->setColor(Color3B(70,70,87));
+            PlayerName->setPosition(PlayerName->getPosition().x,1000);
+            NameAni->gotoFrameAndPause(0);
+            NameBtn.setPosition(PlayerName->getPosition() + Point(449,-1));
             break;
         case cocos2d::ui::TextField::EventType::DETACH_WITH_IME: //結束
-            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
-            PlayerName->setColor(Color3B(70,70,87));
+            InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            PlayerName->setPosition(PlayerName->getPosition().x,568);
+            NameBtn.setPosition(PlayerName->getPosition() + Point(449,-1));
             break;
         case cocos2d::ui::TextField::EventType::INSERT_TEXT: //增加
-            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
             break;
         case cocos2d::ui::TextField::EventType::DELETE_BACKWARD: //減少
-            PlayerName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
+            InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
             break;
     }
 }

@@ -37,18 +37,18 @@ void CObstacle::CreateObstacle(){
     _Obstacle->setPosition(0,0);
     _Obstacle->setVisible(true);
     this->addChild(_Obstacle, 1);
-
     _body = (cocos2d::Sprite *)_Obstacle->getChildByName("Sprite_0");
     _fWidth = DG_WIDTH * _Obstacle->getTag();
     for (int i = 1; _body != NULL; i++) {
-        _body->setGlobalZOrder(1);
         if (_body->getTag() != 0) {
             num++;
             CreateCollision();
         }
         if(i == 2){
-            if(_body->getChildByTag(1)!=NULL)
-                _body->getChildByTag(1)->setGlobalZOrder(-1);
+            if(_body->getChildByTag(1)!=NULL){
+                light = (cocos2d::Sprite*)_body->getChildByTag(1);
+                light ->setVisible(true);
+            }
         }
         sprintf(sprite, "Sprite_%d", i);
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
@@ -58,7 +58,6 @@ void CObstacle::CreateObstacle(){
     if(rand()%5 == 0){
         Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
         this->_Obstacle->addChild(img,2);
-		img->setGlobalZOrder(2);
     }
     if(rand()%8 == 0){
         Sprite *img;
@@ -83,7 +82,6 @@ void CObstacle::CreateObstacle(){
         }
         else  img->setPosition((rand() % 375) - 187,220);
         this->_Obstacle->addChild(img,2);
-		img->setGlobalZOrder(2);
     }
 }
 void CObstacle::CreateCollision(){
@@ -133,17 +131,14 @@ void CObstacle::CreateCollision(){
         fixtureDef.density = 10000.0f;
 	else if (_body->getTag() == 4 || _body->getTag() == 7) { //die
         fixtureDef.density = 5000.0f;
-		_body->setGlobalZOrder(3);
 		fixtureDef.isSensor = true;
 		DieFlag = true;
 	}
 	else if (_body->getTag() == 5) { //rock
-		_body->setGlobalZOrder(0);
 		fixtureDef.isSensor = true;
 		fixtureDef.density = 10000.0f;
 	}
 	else if (_body->getTag() == 6) { //bo
-		_body->setGlobalZOrder(0);
         fixtureDef.density = 5000.0f;
 		fixtureDef.isSensor = true;
 		DieFlag = true;

@@ -173,6 +173,7 @@
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
             <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
             <PlistImageFile Name="s_title.png" Key="s_title.png" />
+            <PlistImageFile Name="s_title_w.png" Key="s_title_w.png" />
             <PlistImageFile Name="startpage_front.png" Key="startpage_front.png" />
             <PlistImageFile Name="startpage_grass01.png" Key="startpage_grass01.png" />
             <PlistImageFile Name="startpage_grass02.png" Key="startpage_grass02.png" />
@@ -180,7 +181,6 @@
             <PlistImageFile Name="startpage_star.png" Key="startpage_star.png" />
             <PlistImageFile Name="startpage_tree.png" Key="startpage_tree.png" />
             <PlistImageFile Name="touchArea.png" Key="touchArea.png" />
-            <PlistImageFile Name="s_title_w.png" Key="s_title_w.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_teach.png" PListFile="game_teach.plist" Name=".game_teach_PList.Dir">
             <PlistImageFile Name="ans_area.png" Key="ans_area.png" />
@@ -223,17 +223,24 @@
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
-          <Image Name="gameover.png" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
-          <Image Name="prompt1_l.png" />
-          <Image Name="prompt1_r.png" />
-          <Image Name="prompt2_l.png" />
-          <Image Name="prompt2_r.png" />
-          <Image Name="prompt3_l.png" />
-          <Image Name="prompt3_r.png" />
-          <Image Name="prompt4_l.png" />
-          <Image Name="prompt4_r.png" />
+          <Folder Name="prompt">
+            <Image Name="prompt1_l.png" />
+            <Image Name="prompt1_r.png" />
+            <Image Name="prompt2_l.png" />
+            <Image Name="prompt2_r.png" />
+            <Image Name="prompt3_l.png" />
+            <Image Name="prompt3_r.png" />
+            <Image Name="prompt4_l.png" />
+            <Image Name="prompt4_r.png" />
+          </Folder>
+          <Folder Name="gameover">
+            <Image Name="gameover.png" />
+            <Image Name="gameover_bg.png" />
+            <Image Name="gameover_text.png" />
+            <Image Name="namelight.png" />
+          </Folder>
         </Folder>
         <Folder Name="Que">
           <Project Name="q1_1.csd" Type="Node" />

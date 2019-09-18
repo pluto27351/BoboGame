@@ -5,28 +5,28 @@
       <Animation Duration="7" Speed="1.0000">
         <Timeline ActionTag="1815170441" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt1_r.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt1_r.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="1" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt2_r.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt2_r.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="2" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt3_r.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt3_r.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="3" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt4_r.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt4_r.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="4" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt1_l.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt1_l.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="5" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt2_l.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt2_l.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="6" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt3_l.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt3_l.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="7" Tween="False">
-            <TextureFile Type="Normal" Path="Img/prompt4_l.png" Plist="" />
+            <TextureFile Type="Normal" Path="Img/prompt/prompt4_l.png" Plist="" />
           </TextureFrame>
         </Timeline>
         <Timeline ActionTag="1815170441" Property="BlendFunc">
@@ -55,7 +55,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="Img/prompt4_l.png" Plist="" />
+            <FileData Type="Normal" Path="Img/prompt/prompt4_l.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

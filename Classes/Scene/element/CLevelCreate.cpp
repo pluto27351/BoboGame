@@ -34,7 +34,7 @@ CLevelCreate::CLevelCreate(b2World* _b2W) {
             _DownGroundCollision[i]->SetPos(0, 200);
         else
             _DownGroundCollision[i]->SetPos(_DownGroundCollision[i-1]->Getpos().x + _DownGroundCollision[i-1]->_fWidth/2 + _DownGroundCollision[i]->_fWidth/2, 200);
-		this->addChild(_DownGroundCollision[i], 0);
+		this->addChild(_DownGroundCollision[i], num);
 	}
 }
 void CLevelCreate::dostep(float dt) {
@@ -156,13 +156,12 @@ void CLevelCreate::SetObstacle(int i) {
 	}
     //change
     _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
+    if(UpFlag == true && strcmp(kind, "up")==0)_DownGroundCollision[i]->light->setVisible(false);
     if(BoardFlag == true){
         BoardFlag = false;
         Node *board = (cocos2d::Node*)CSLoader::createNode("Obstacle.csb")->getChildByName("board");
         this->_DownGroundCollision[i]->_Obstacle->addChild(board);
         Text * t = (cocos2d::ui::Text *)board->getChildByName("text");
-        //board->getChildByName("Sprite")->setGlobalZOrder(2);
-        t->setGlobalZOrder(1);
         char d[6];
         sprintf(d, "%d", Distance/DISTANCE);
         t->setString(d);
@@ -174,5 +173,6 @@ void CLevelCreate::SetObstacle(int i) {
         _DownGroundCollision[i]->SetPos(_DownGroundCollision[OB_NUM - 1]->Getpos().x + _DownGroundCollision[OB_NUM - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
     else
         _DownGroundCollision[i]->SetPos(_DownGroundCollision[i - 1]->Getpos().x + _DownGroundCollision[i - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
+    _DownGroundCollision[i]->setLocalZOrder(num);
     num++;
 }

@@ -12,6 +12,9 @@
 #include "Box2D/Box2D.h"
 #include "element/GLES-Render.h"
 
+#include "firebase/app.h"
+#include "firebase/database.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -44,12 +47,21 @@ private:
     Node *_Teach;
     ActionTimeline* TeachAni;
 	CPlayer *_Player;
-    ui::TextField* PlayerName;
+    ui::TextField* InputName;
+    char PlayerName[30] = "Name";
+    ActionTimeline* NameAni;
+    Sprite* Namelight;
+    CButton NameBtn;
     CLevelCreate *_Level;
     float _fSlipTime = 1;
 	float _fGmaeTime = 0;
     bool AttackFlag = false;
-    bool PlayFlag = false;
+    bool PlayFlag = true;
+    
+    firebase::App* app;
+    firebase::database::Database *database;
+    firebase::database::DatabaseReference dbref;
+    firebase::Future<firebase::database::DataSnapshot> data;
     
     CContactListener _contactListener;
 	// b2World
@@ -59,14 +71,12 @@ private:
 
 	void doStep(float);
 	void Play(float); //遊戲開始
+    void CreatePlayer();
+    void CreateGround();
+    void CreateLevel();
 public:
 	~GameScene();
 	bool init();
-
-	void CreatePlayer();
-	void CreateGround();
-    void CreateLevel();
-    void Gameover();
 
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();

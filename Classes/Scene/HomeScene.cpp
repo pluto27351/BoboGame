@@ -42,7 +42,7 @@ bool HomeScene::init()
 	}
     char name[20] = "";
     //記錄初始化!
-    UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
+    //UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
     UserDefault::getInstance()->setBoolForKey("HAS_UNITDATA",0);
     if(!UserDefault::getInstance()->getBoolForKey("HAS_UNITDATA")){
         UserDefault::getInstance()->setBoolForKey("HAS_UNITDATA",1);

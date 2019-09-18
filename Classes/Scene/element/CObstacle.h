@@ -29,6 +29,7 @@ public:
 	CObstacle(b2World* _b2W, Node* _ob);
     ~CObstacle();
     
+    Sprite* light;
     Node* _Obstacle;
     float _fWidth = 0;
 	bool teach = false;
