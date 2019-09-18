@@ -84,7 +84,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Gameover" ActionTag="-759685544" VisibleForFrame="False" Tag="1407" IconVisible="True" RightMargin="2048.0000" TopMargin="1536.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Gameover" ActionTag="-759685544" Tag="1407" IconVisible="True" RightMargin="2048.0000" TopMargin="1536.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Gameover" ActionTag="-391689581" Tag="12" IconVisible="False" LeftMargin="-341.5000" RightMargin="-2389.5000" TopMargin="-1536.0000" ctype="SpriteObjectData">
@@ -150,7 +150,7 @@
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="-466.3357" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
+                    <CColor A="255" R="229" G="229" B="229" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>

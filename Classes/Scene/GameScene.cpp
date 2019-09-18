@@ -318,8 +318,8 @@ void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 {
     Point touchLoc = pTouch->getLocation();
     if(NameBtn.touchesEnded(touchLoc)) {
-        
         sprintf(PlayerName, "%s", InputName->getString().c_str());
+        if(PlayerName != NULL) sprintf(PlayerName, "Name");
         if(data.status() != firebase::kFutureStatusPending){
             if(data.status() != firebase::kFutureStatusComplete){
                 CCLOG("ERROR : GetValue() return an invalid result");
@@ -359,20 +359,20 @@ void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 }
 
 void GameScene::textFieldEvent(Ref*pSender, cocos2d::ui::TextField::EventType type){
-    Node* PlayerName = (cocos2d::Node*)rootNode->getChildByName("Gameover")->getChildByName("PlayerName");
+    Node* PlayerNameImg = (cocos2d::Node*)rootNode->getChildByName("Gameover")->getChildByName("PlayerName");
     switch(type){
         case cocos2d::ui::TextField::EventType::ATTACH_WITH_IME: //輸入
             NameBtn.setVisible(true);
             InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
             InputName->setColor(Color3B(70,70,87));
-            PlayerName->setPosition(PlayerName->getPosition().x,1000);
+            PlayerNameImg->setPosition(PlayerNameImg->getPosition().x,1000);
             NameAni->gotoFrameAndPause(0);
-            NameBtn.setPosition(PlayerName->getPosition() + Point(449,-1));
+            NameBtn.setPosition(PlayerNameImg->getPosition() + Point(449,-1));
             break;
         case cocos2d::ui::TextField::EventType::DETACH_WITH_IME: //結束
             InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);
-            PlayerName->setPosition(PlayerName->getPosition().x,568);
-            NameBtn.setPosition(PlayerName->getPosition() + Point(449,-1));
+            PlayerNameImg->setPosition(PlayerNameImg->getPosition().x,568);
+            NameBtn.setPosition(PlayerNameImg->getPosition() + Point(449,-1));
             break;
         case cocos2d::ui::TextField::EventType::INSERT_TEXT: //增加
             InputName = dynamic_cast<cocos2d::ui::TextField*>(pSender);

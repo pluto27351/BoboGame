@@ -48,7 +48,7 @@ private:
     ActionTimeline* TeachAni;
 	CPlayer *_Player;
     ui::TextField* InputName;
-    char PlayerName[30] = "Name";
+    char PlayerName[30];
     ActionTimeline* NameAni;
     Sprite* Namelight;
     CButton NameBtn;
