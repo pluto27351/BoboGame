@@ -169,6 +169,7 @@
             <PlistImageFile Name="menu_line_bg.png" Key="menu_line_bg.png" />
             <PlistImageFile Name="menu_line_inner.png" Key="menu_line_inner.png" />
             <PlistImageFile Name="menu_line_inner2.png" Key="menu_line_inner2.png" />
+            <PlistImageFile Name="b_star.png" Key="b_star.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
             <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
@@ -221,10 +222,12 @@
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
           </PlistImageFolder>
-          <Image Name="bar.png" />
-          <Image Name="bg.png" />
-          <Image Name="mg_1.png" />
-          <Image Name="mg_2.png" />
+          <Folder Name="gameover">
+            <Image Name="gameover.png" />
+            <Image Name="gameover_bg.png" />
+            <Image Name="gameover_text.png" />
+            <Image Name="namelight.png" />
+          </Folder>
           <Folder Name="prompt">
             <Image Name="prompt1_l.png" />
             <Image Name="prompt1_r.png" />
@@ -235,12 +238,10 @@
             <Image Name="prompt4_l.png" />
             <Image Name="prompt4_r.png" />
           </Folder>
-          <Folder Name="gameover">
-            <Image Name="gameover.png" />
-            <Image Name="gameover_bg.png" />
-            <Image Name="gameover_text.png" />
-            <Image Name="namelight.png" />
-          </Folder>
+          <Image Name="bar.png" />
+          <Image Name="bg.png" />
+          <Image Name="mg_1.png" />
+          <Image Name="mg_2.png" />
         </Folder>
         <Folder Name="Que">
           <Project Name="q1_1.csd" Type="Node" />
