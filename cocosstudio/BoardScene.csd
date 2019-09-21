@@ -214,14 +214,14 @@
           <AbstractNodeData Name="line_3" ActionTag="702192358" Tag="114" IconVisible="False" LeftMargin="461.8661" RightMargin="462.1339" TopMargin="974.3220" BottomMargin="354.6780" ctype="SpriteObjectData">
             <Size X="1124.0000" Y="207.0000" />
             <Children>
-              <AbstractNodeData Name="no" ActionTag="1325172655" Tag="115" IconVisible="False" LeftMargin="106.8481" RightMargin="912.1519" TopMargin="65.2346" BottomMargin="71.7654" FontSize="50" LabelText="NO.1" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="105.0000" Y="70.0000" />
+              <AbstractNodeData Name="no" ActionTag="1325172655" Tag="115" IconVisible="False" LeftMargin="99.8481" RightMargin="905.1519" TopMargin="65.2346" BottomMargin="71.7654" FontSize="50" LabelText="NO.4" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="119.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="159.3481" Y="106.7654" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.1418" Y="0.5158" />
-                <PreSize X="0.0934" Y="0.3382" />
+                <PreSize X="0.1059" Y="0.3382" />
                 <FontResource Type="Normal" Path="font/PingFang.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
