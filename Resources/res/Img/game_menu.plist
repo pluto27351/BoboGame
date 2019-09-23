@@ -46,7 +46,7 @@
             <key>board_bg.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1124,1029},{1365,768}}</string>
+                <string>{{2248,1029},{1365,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -57,6 +57,19 @@
                 <string>{1365,768}</string>
             </dict>
             <key>board_line.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1124,1029},{1124,207}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1124,207}}</string>
+                <key>sourceSize</key>
+                <string>{1124,207}</string>
+            </dict>
+            <key>board_line2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1029},{1124,207}}</string>
@@ -176,7 +189,7 @@
             <key>menu_ch2_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,286},{473,295}}</string>
+                <string>{{473,286},{473,295}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +202,7 @@
             <key>menu_ch2_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{473,286},{473,295}}</string>
+                <string>{{0,286},{473,295}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +215,7 @@
             <key>menu_ch3_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{470,626},{470,351}}</string>
+                <string>{{0,626},{470,351}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +228,7 @@
             <key>menu_ch3_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,626},{470,351}}</string>
+                <string>{{470,626},{470,351}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +267,7 @@
             <key>menu_ch5_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3332,626},{480,374}}</string>
+                <string>{{2852,626},{480,374}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -267,7 +280,7 @@
             <key>menu_ch5_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2852,626},{480,374}}</string>
+                <string>{{3332,626},{480,374}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +358,7 @@
             <key>menu_line_inner.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1072,0},{462,73}}</string>
+                <string>{{610,0},{462,73}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +371,7 @@
             <key>menu_line_inner2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{610,0},{462,73}}</string>
+                <string>{{1072,0},{462,73}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -382,7 +395,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:620420e5518ed3c1770ab8ad0a73e0d6:69d37b40d926d893d917136ac6a9d625:9e25372324c16072bfec9d2a4c0e90d0$</string>
+            <string>$TexturePacker:SmartUpdate:e6e1b417cff2257392fc52cb77ea4cbb:41ec34b544b6c28e60f05662e7bcfdeb:9e25372324c16072bfec9d2a4c0e90d0$</string>
             <key>textureFileName</key>
             <string>game_menu.png</string>
         </dict>

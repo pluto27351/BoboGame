@@ -142,6 +142,7 @@
             <PlistImageFile Name="up_rocklight.png" Key="up_rocklight.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_menu.png" PListFile="game_menu.plist" Name=".game_menu_PList.Dir">
+            <PlistImageFile Name="b_star.png" Key="b_star.png" />
             <PlistImageFile Name="bg_menu.png" Key="bg_menu.png" />
             <PlistImageFile Name="board_backbtn.png" Key="board_backbtn.png" />
             <PlistImageFile Name="board_bg.png" Key="board_bg.png" />
@@ -169,7 +170,7 @@
             <PlistImageFile Name="menu_line_bg.png" Key="menu_line_bg.png" />
             <PlistImageFile Name="menu_line_inner.png" Key="menu_line_inner.png" />
             <PlistImageFile Name="menu_line_inner2.png" Key="menu_line_inner2.png" />
-            <PlistImageFile Name="b_star.png" Key="b_star.png" />
+            <PlistImageFile Name="board_line2.png" Key="board_line2.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="game_start.png" PListFile="game_start.plist" Name=".game_start_PList.Dir">
             <PlistImageFile Name="bg_start.png" Key="bg_start.png" />
