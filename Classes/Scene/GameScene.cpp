@@ -319,7 +319,7 @@ void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
     Point touchLoc = pTouch->getLocation();
     if(NameBtn.touchesEnded(touchLoc)) {
         sprintf(PlayerName, "%s", InputName->getString().c_str());
-        if(PlayerName != NULL) sprintf(PlayerName, "Name");
+        if(strcmp(PlayerName,"") == 0) sprintf(PlayerName, "Name");
         if(data.status() != firebase::kFutureStatusPending){
             if(data.status() != firebase::kFutureStatusComplete){
                 CCLOG("ERROR : GetValue() return an invalid result");
