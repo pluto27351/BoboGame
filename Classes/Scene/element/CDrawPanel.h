@@ -29,6 +29,7 @@ protected:
 	CButton _clearAllBtn;
 	CSwitch _toolBtn[2];
 	int _toolMode;
+    
 	void SetPen(Color3B color = Color3B(0, 0, 0));
 	void SwitchButton(int btn);
 public:
@@ -40,7 +41,6 @@ public:
 	void drawing(Point &pt);
 
 	void clearWhiteBoard();	// 清除所有繪製在畫面上的線條
-	//int  getMode();	// 取得目前的狀態
 	void changeToBlackPen();
 
 	bool touchesBegin(Point inPt);

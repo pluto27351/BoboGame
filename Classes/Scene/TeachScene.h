@@ -24,7 +24,7 @@ private:
     int _c,_b;
     Node *rootNode;
     Node *_right, *_wrong;
-    CButton _homeBtn,_answerBtn,_giveupBtn;
+    CButton _homeBtn,_answerBtn,_giveupBtn,_triggerBtn;
     CDrawPanel *_handDrawing;
     CNumberPannel *_numberArea;
     CAnsCreater *_question;
@@ -33,7 +33,7 @@ private:
     ActionTimeline *_wrongActTime;
     bool _bchangeScene;
     int _checkAns;
-    
+    bool _bNumberOpened = false;
     void doStep(float);
 public:
     ~TeachScene();

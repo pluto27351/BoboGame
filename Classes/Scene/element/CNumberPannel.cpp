@@ -4,10 +4,7 @@ USING_NS_CC;
 
 Vec3 CNumberPannel::getBoxAns(){
     int f,d,n; //帶．母．子
-   // if(_answerNumber[0] == -1) _answerNumber[0] = 0;
-   // if(_answerNumber[1] == -1) _answerNumber[1] = 0;
-   // if(_answerNumber[3] == -1) _answerNumber[3] = 0;
-    
+
     if(_answerNumber[0] != -1 )f = _answerNumber[0];
     else f = 0;
     if(_answerNumber[1] != -1 )d = _answerNumber[1]*10 + _answerNumber[2];
@@ -15,8 +12,6 @@ Vec3 CNumberPannel::getBoxAns(){
     if(_answerNumber[3] != -1 )n = _answerNumber[3]*10 + _answerNumber[4];
     else n = _answerNumber[4];
     
-//    for(int i=0;i<5;i++)CCLOG("%d = %d",i,_answerNumber[i]);
-//
     CCLOG("%d,%d,%d",f,d,n);
     return(Vec3(f,d,n));
 }
@@ -29,12 +24,15 @@ bool CNumberPannel::hasAnyAns(){
 void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
     char name[20] = "";
     char nn[5] = "";
-    _triggerBtn.setButtonInfo("teach_btn_number.png", "teach_btn_number.png", *this, locPt, level);
+    //_triggerBtn.setButtonInfo("teach_btn_number.png", "teach_btn_number.png", *this, locPt, level);
     Node *numbox = CSLoader::createNode("Ani/t_number.csb");
+    auto pos = numbox->getChildByName("bg")->getPosition()+ Vec2(220,50);
+    _numberBgRect.size = numbox->getChildByName("bg")->getContentSize();
+    _numberBgRect.origin = locPt + pos - _numberBgRect.size*0.5;
     for(int i = 0; i < 10; i++){
         sprintf(name, "teach_number_%d.png", i);
         sprintf(nn, "%d", i);
-        auto pos = numbox->getChildByName(nn)->getPosition();
+        pos = numbox->getChildByName(nn)->getPosition();
         _number[i].setButtonInfo(name, name, *this, locPt + pos+ Vec2(220,50), level);
     }
     _numberbg = (Sprite *)Sprite::createWithSpriteFrameName("teach_number_bg.png");
@@ -49,9 +47,8 @@ void CNumberPannel::setNumberInfo(const cocos2d::Point locPt, int level){
 }
 
 void CNumberPannel::clear(){
-  //  _bShowNumber = false;
     setNumberVisual(false);
-    _triggerBtn.setEnabled(true);
+    //_triggerBtn.setEnabled(true);
     
     for(int i=0; i<5; i++){
         _answerArea[i]->setDisplayFrame(_answerBg);
@@ -59,7 +56,6 @@ void CNumberPannel::clear(){
         _answerArea[i]->setScaleY(_ansAreaSize.y);
         _answerNumber[i] = -1;
         _answerArea[i]->setOpacity(0);
-      //  CCLOG("init %d = %d", i,_answerNumber[i] );
     }
     
     _bShowNumber = false;
@@ -129,7 +125,7 @@ void CNumberPannel::setTouchedPic(int nowNumber,Point pos){
 }
 
 bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
-    if(_triggerBtn.touchesBegin(inPos))return true;
+   // if(_triggerBtn.touchesBegin(inPos))return true;
     
     if(_bShowNumber){
         for(int i=0;i<10;i++){
@@ -137,6 +133,9 @@ bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
                 if(!_bMoveNumber) setTouchedPic(i,inPos);
                 return true;
             }
+        }
+        if(_numberBgRect.containsPoint(inPos)){
+            return true;
         }
     }
     
@@ -165,7 +164,7 @@ bool CNumberPannel::touchesBegin(cocos2d::Point inPos){
         }
     }
     
-    
+
     return false;
 }
 
@@ -178,11 +177,16 @@ bool CNumberPannel::touchesMoved(cocos2d::Point inPos){
         bmove = true;
     }
     
-    if(_triggerBtn.touchesMoved(inPos))return true;
-    for(int i=0;i<10;i++){
-        if(_number[i].touchesMoved(inPos))return true;
+   // if(_triggerBtn.touchesMoved(inPos))return true;
+    if(_bShowNumber){
+        for(int i=0;i<10;i++){
+            if(_number[i].touchesMoved(inPos))return true;
+        }
+        if(_numberBgRect.containsPoint(inPos)){
+            return true;
+        }
     }
-    
+
     return bmove;
 }
 
@@ -201,14 +205,20 @@ bool CNumberPannel::touchesEnded(cocos2d::Point inPos){
         return true;
     }
     
-    if(_triggerBtn.touchesEnded(inPos)){
-        setNumberVisual(!_bShowNumber);
-        return true;
-    }
+//    if(_triggerBtn.touchesEnded(inPos)){
+//        setNumberVisual(!_bShowNumber);
+//        return true;
+//    }
     
-    for(int i=0;i<10;i++){
-        if(_number[i].touchesEnded(inPos))return true;
+    if(_bShowNumber){
+        for(int i=0;i<10;i++){
+            if(_number[i].touchesEnded(inPos))return true;
+        }
+        if(_numberBgRect.containsPoint(inPos)){
+            return true;
+        }
     }
+
     
     return false;
 }

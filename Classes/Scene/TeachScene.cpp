@@ -6,7 +6,8 @@
 #include "element/Data.h"
 
 USING_NS_CC;
-#define QUE_POS Vec2(1050,1180)
+#define SCREEN_POS Vec2(1365.5,768)
+#define QUE_POS Vec2(SCREEN_POS.x + 26,1180)
 using namespace cocostudio::timeline;
 using namespace ui;
 using namespace CocosDenshion;
@@ -79,7 +80,9 @@ bool TeachScene::init()
     //數字區
     _numberArea = new CNumberPannel;
     target = rootNode->getChildByName("number");
+    _triggerBtn.setButtonInfo("teach_btn_number.png", "teach_btn_number.png", *this, target->getPosition(), INTERFACE_LEVEL);
     _numberArea->setNumberInfo(target->getPosition(), INTERFACE_LEVEL);
+    
     target = rootNode->getChildByName("answer_area");
     _numberArea->setAnswerInfo(target);
     this->addChild(_numberArea, INTERFACE_LEVEL);
@@ -149,6 +152,7 @@ void TeachScene::NextQuestion(float a) {
     _handDrawing->clearWhiteBoard();
     _numberArea->clear();
     _answerBtn.setEnabled(false);
+    _bNumberOpened =false;
 }
 
 bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
@@ -158,9 +162,16 @@ bool TeachScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
     if (_homeBtn.touchesBegin(touchLoc) && _checkAns != 0)return true;
     
     if(_checkAns != -1)return false;  //確認答案後 功能暫時關閉
+    
+    if(_triggerBtn.touchesBegin(touchLoc))return true;
     if (_answerBtn.touchesBegin(touchLoc))return true;
     if (_numberArea->touchesBegin(touchLoc))return true;
-    else _numberArea->setNumberVisual(false);
+    else if(_bNumberOpened){
+        _numberArea->setNumberVisual(false);
+        _bNumberOpened = false;
+        _handDrawing->changeToBlackPen();
+    }
+    
     _handDrawing->touchesBegin(touchLoc);
     
     
@@ -172,6 +183,7 @@ void  TeachScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
     Point touchLoc = pTouch->getLocation();
     Point preTouchLoc = pTouch->getPreviousLocation();
     
+    if(_triggerBtn.touchesMoved(touchLoc))return;
     if (_homeBtn.touchesMoved(touchLoc))return;
     if (_answerBtn.touchesMoved(touchLoc))return;
     if (_giveupBtn.touchesMoved(touchLoc))return;
@@ -193,6 +205,7 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
     
     if (_answerBtn.touchesEnded(touchLoc)) {
         _numberArea->setNumberVisual(false);
+        _bNumberOpened = false;
         if (_question->CheckAnswer(_numberArea->getBoxAns())) {
             _right->setVisible(true);
             _checkAns = 1;
@@ -232,6 +245,12 @@ void  TeachScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
     
     if (_homeBtn.touchesEnded(touchLoc)) {
         _bchangeScene = true;
+        return;
+    }
+    
+    if(_triggerBtn.touchesEnded(touchLoc)){
+        _bNumberOpened = !_bNumberOpened;
+        _numberArea->setNumberVisual(_bNumberOpened);
         return;
     }
     

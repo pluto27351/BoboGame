@@ -38,12 +38,6 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     sprintf(f, "%d", _answer[0]);
     CCLOG("ans = %d,%d,%d",_answer[0],_answer[1],_answer[2]);
     
-    //    auto ans =Set_CAnsCreater(n,d,f);
-    //    ans->setPosition(Vec2(40,0));
-    //    Output_f->addChild(ans);
-    //
-    //    Output_f->removeChildByName("ntor");
-    
 }
 
 CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) {
@@ -62,8 +56,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) {
     _answer[1] = number;
     _answer[2] = b*c;
     CCLOG("ans = %d,%d,%d",_answer[0],_answer[1],_answer[2]);
-    //    Output_f->addChild(Set_CAnsCreater(bc,aa,""));
-    //    Output_f->removeChildByName("ntor");
+
     
 }
 
@@ -87,8 +80,7 @@ CAnsCreater::CAnsCreater(int number,int q){
             _answer[0] = 0;
             _answer[1] =number;
             _answer[2] = i+1;
-            //            fraction = Set_CAnsCreater(n,d,f);
-            //            fraction->setPosition(Vec2(xPos+move*(i+1),yPos + 100*up));
+            
         }
         
         up*=-1;
@@ -271,21 +263,21 @@ bool CAnsCreater::CheckAnswer(Vec3 a) {
 
 char * CAnsCreater::Numerator(const char *c, const char *number) {
     char *ntor = (char*)c;
-    bool count = false; //判斷是否要運算(+,-,*,/)
+    bool count = false;
     bool z = false;
-    if (number[1] != NULL)z = true;        //判斷幾位數 2位以上
-    if (c[0] == 'd') {  //如果是改變分子 把d移掉全完前
+    if (number[1] != NULL)z = true;
+    if (c[0] == 'd') {
         for (int i = 0; c[i] != NULL; i++)
             ntor[i] = c[i + 1];
     }
     
-    //型成字串的過程
+
     for (int i = 0; c[i] != NULL; i++) {
-        if (c[i] == 'F') {               //F分母的數
+        if (c[i] == 'F') {
             if (z == true) {
                 ntor = new char[strlen(c) + 1];
                 ntor = (char*)c;
-                for (int i = strlen(ntor) - 1; i >= 0; i--) //將字串往後推
+                for (int i = strlen(ntor) - 1; i >= 0; i--)
                     ntor[i + 1] = c[i];
                 ntor[i] = number[0]; ntor[i + 1] = number[1];
             }
@@ -293,18 +285,18 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
                 ntor[i] = number[0];
             }
         }
-        else if (c[i] == '=') { //出現'＝'進運算
+        else if (c[i] == '=') { 
             count = true;
         }
     }
     
-    //加減乘除運算
+
     if (count == true) {
         int a = 0, b = 0;
         for (int i = 0; ntor[i] != NULL; i++)
             switch (c[i]) {
                 case '+':
-                    for (int x = i - 1, y = 0; x > 0; x--, y++)//x數字 y個位數或十位數
+                    for (int x = i - 1, y = 0; x > 0; x--, y++)
                         a += (ntor[x] - '0')*pow(10, y);
                     for (int x = strlen(c) - 1, y = 0; x > i; x--, y++)
                         b += (ntor[x] - '0')*pow(10, y);
@@ -339,10 +331,10 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominator, const char *front) {
     float scale = 0.5f;
     for (int i = 0; numerator[i] != NULL; scale += 0.5f, i++);
-    auto fn = (Node *)Node::create(); //最後的回傳-分數的形狀
+    auto fn = (Node *)Node::create();
     Sprite *bar;
-    auto Ntor = cocos2d::ui::Text::create(); //分子
-    auto Dtor = cocos2d::ui::Text::create(); //分母
+    auto Ntor = cocos2d::ui::Text::create();
+    auto Dtor = cocos2d::ui::Text::create();
     
     bar = (Sprite *)Sprite::create("Img/bar.png");
     //bar->setScale(6 * scale, 5);
@@ -376,12 +368,11 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
     char c_n[5];
     sprintf(c_n, "%d", n);
-    auto plus = new cocos2d::ui::Text*[n - 1]; //加
-    auto equal = cocos2d::ui::Text::create(); //等於
+    auto plus = new cocos2d::ui::Text*[n - 1];
+    auto equal = cocos2d::ui::Text::create();
     
-    auto fn = (Node *)Node::create(); //最後的回傳-運算式的形狀
+    auto fn = (Node *)Node::create(); 
     
-    //分數生成
     Node ** all_f = new Node*[n + 1];
     for (int i = 0; i < n + 1; i++) {
         if (i < n)
@@ -390,7 +381,7 @@ cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
             all_f[i] = Set_CAnsCreater(c_n, c_n, "0");
     }
     
-    //排位子
+
     for (int i = 0; i < 2 * n + 1; i++) {
         if (i % 2) {
             if (i == 2 * n - 1) {

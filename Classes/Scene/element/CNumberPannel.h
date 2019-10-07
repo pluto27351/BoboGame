@@ -12,10 +12,11 @@ using namespace ui;
 class CNumberPannel:public Layer
 {
 private:
-    CButton _triggerBtn,_number[12];
+   // CButton _triggerBtn,_number[12];
+    CButton _number[12];
     Sprite *_touchedPic,*_answerArea[5],*_numberbg;
     SpriteFrame *_answerBg;
-    Rect _answerAreaRect[3];
+    Rect _answerAreaRect[3],_numberBgRect;
     Vec2 _ansAreaSize;
     float _ansX[3];
     bool _bShowNumber;
