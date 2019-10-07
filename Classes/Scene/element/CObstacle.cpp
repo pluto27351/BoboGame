@@ -24,6 +24,7 @@ void CObstacle::ChangeObstacle(Node* _ob){
 	for (int i = 0; i < num; i++) {
         _b2World->DestroyBody(ObstacleBody[i]);
     }
+    light = NULL;
 	removeChild(_Obstacle);
 	std::vector <b2Body*>().swap(ObstacleBody);
     num = 0;

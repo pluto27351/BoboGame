@@ -33,6 +33,7 @@ public:
     Node* _Player;
     
     void CreateCollision();
+    Point GetPos();
     void dostep();
     void RunAct();
     void JumpAct();

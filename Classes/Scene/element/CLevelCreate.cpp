@@ -17,7 +17,8 @@ CLevelCreate::~CLevelCreate() {
     }
 }
 
-CLevelCreate::CLevelCreate(b2World* _b2W) {
+CLevelCreate::CLevelCreate(b2World* _b2W, float PlayerPosX) {
+    _fPlayerPosX = PlayerPosX;
 	srand(time(NULL));
 	sprintf(level, "Level_%d", 0);
 	sprintf(name, "%d", 0);
@@ -41,27 +42,27 @@ void CLevelCreate::dostep(float dt) {
 	for (int i = 0; i < OB_NUM; i++) {
         if(_DownGroundCollision[i]->teach == true){
             if(TeachCreateFlag[0] == true){
-				if (_DownGroundCollision[i]->Getpos().x <= 750) {
+				if (_DownGroundCollision[i]->Getpos().x <= _fPlayerPosX+300) {
 					TeachFlag = 1;
 					_DownGroundCollision[i]->teach = false;
 					TeachCreateFlag[0] = false;
 				}
             }
             else if(TeachCreateFlag[1] == true){
-                if(_DownGroundCollision[i]->Getpos().x <= 1050){
+                if(_DownGroundCollision[i]->Getpos().x <= _fPlayerPosX+600){
                     TeachFlag = 0;
                     _DownGroundCollision[i]->teach = false;
                     TeachCreateFlag[1] = false;
                 }
             }
             else if(TeachCreateFlag[2] == true){
-                if(_DownGroundCollision[i]->Getpos().x <= 1150){
+                if(_DownGroundCollision[i]->Getpos().x <= _fPlayerPosX+700){
                     TeachFlag = 0;
                     TeachCreateFlag[2] = false;
                 }
             }
             else{
-                if(_DownGroundCollision[i]->Getpos().x <= 1000){
+                if(_DownGroundCollision[i]->Getpos().x <= _fPlayerPosX+550){
                     TeachFlag = 1;
                     _DownGroundCollision[i]->teach = false;
                 }
@@ -70,11 +71,9 @@ void CLevelCreate::dostep(float dt) {
 		if (_DownGroundCollision[i]->Getpos().x < -(_DownGroundCollision[i]->_fWidth / 2)) {
 			SetObstacle(i);
 		}
-        if (_DownGroundCollision[i]->Getpos().x < 450) {
-            if(_DownGroundCollision[i]->start == true){
-                _DownGroundCollision[i]->start = false;
-                f_tDistance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
-            }
+        if (_DownGroundCollision[i]->Getpos().x < _fPlayerPosX && _DownGroundCollision[i]->start) {
+            _DownGroundCollision[i]->start = false;
+            f_tDistance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
         }
 		_DownGroundCollision[i]->Move(-OBSTACLE_SPEED, 0);
 	}
@@ -111,9 +110,9 @@ void CLevelCreate::SetObstacle(int i) {
             sprintf(level, "Level_%d", 0);
             sprintf(name, "%d", 0);
         }
+        _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
     }
 	else { //非教學
-        _DownGroundCollision[i]->start = true;
         if(num == 0)BoardFlag = true;
 		if (num % LEVELTIME == 0 && _iLevel < 3) { //提升level
 			_iLevel++;
@@ -138,25 +137,39 @@ void CLevelCreate::SetObstacle(int i) {
                 sprintf(level, "Level_%d", 0);
             }
         }
-        if(_DownGroundCollision[i]->_fWidth / DG_WIDTH == 2){
-            if (Distance % (DISTANCE+1) == 0) {
-                sprintf(level, "Level_%d", 0);
-                BoardFlag = true;
-            }
-        }
-        else{
-            if (Distance % DISTANCE == 0) {
-                sprintf(level, "Level_%d", 0);
-                BoardFlag = true;
-            }
+        if ((Distance+1) % DISTANCE == 0 || !Distance) {
+            sprintf(level, "Level_%d", 0);
+            BoardFlag = true;
         }
         n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
         sprintf(name, "%d", n);
+        _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
+        _DownGroundCollision[i]->start = true;
+        if((Distance+2) % DISTANCE == 0){
+            while((_DownGroundCollision[i]->_fWidth/DG_WIDTH)==2){
+                CCLOG("change");
+                n = rand() % _iLevelFrequency; //如果n=1
+                if (num % 5 == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
+                if (n == 1)n = (rand() % _iLevel) + 1;
+                else n = 0;
+                sprintf(level, "Level_%d", n);
+                if (UpFlag) {
+                    n = rand() % 3;
+                    if (n)
+                        sprintf(kind, "up");
+                    else {
+                        sprintf(kind, "down");
+                        sprintf(level, "Level_%d", 0);
+                    }
+                }
+                n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
+                sprintf(name, "%d", n);
+                _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
+            }
+        }
         Distance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
 	}
-    //change
-    _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
-    if(UpFlag == true && strcmp(kind, "up")==0)_DownGroundCollision[i]->light->setVisible(false);
+    if(UpFlag == true && strcmp(kind, "up")==0 && _DownGroundCollision[i]->light!=NULL)_DownGroundCollision[i]->light->setVisible(false);
     if(BoardFlag == true){
         BoardFlag = false;
         Node *board = (cocos2d::Node*)CSLoader::createNode("Obstacle.csb")->getChildByName("board");
@@ -168,7 +181,6 @@ void CLevelCreate::SetObstacle(int i) {
     }
     UpFlag = _DownGroundCollision[i]->UpFlag;
     DieFlag = _DownGroundCollision[i]->DieFlag;
-    
     if (i == 0)
         _DownGroundCollision[i]->SetPos(_DownGroundCollision[OB_NUM - 1]->Getpos().x + _DownGroundCollision[OB_NUM - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
     else

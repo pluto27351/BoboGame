@@ -28,14 +28,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("BoboGame", Rect(0, 0, 2048,1536), 1.0f);
+        glview = GLViewImpl::createWithRect("BoboGame", Rect(0, 0, 2731,1536), 1.0f);
         director->setOpenGLView(glview);
     }
-
-    director->getOpenGLView()->setDesignResolutionSize(2048, 1536, ResolutionPolicy::SHOW_ALL);
+    //director->getOpenGLView()->setDesignResolutionSize(2048, 1536, ResolutionPolicy::SHOW_ALL);
+    director->getOpenGLView()->setDesignResolutionSize(2731, 1536, ResolutionPolicy::NO_BORDER);
 
     // turn on display FPS
-    director->setDisplayStats(true);
+    director->setDisplayStats(false);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
@@ -43,6 +43,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
+    // UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
     auto scene = HomeScene::createScene();
     //auto scene = GameScene::createScene();
 

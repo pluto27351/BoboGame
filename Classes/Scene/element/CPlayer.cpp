@@ -106,3 +106,6 @@ void CPlayer::AniPause(){
 void CPlayer::AniResume(){
     _PlayerAni->resume();
 }
+Point CPlayer::GetPos(){
+    return(_Player->getPosition());
+}

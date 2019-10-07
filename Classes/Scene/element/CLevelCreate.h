@@ -7,7 +7,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "CObstacle.h"
 
-#define OB_NUM 7
+#define OB_NUM 8
 
 USING_NS_CC;
 
@@ -29,13 +29,14 @@ private:
     bool DieFlag = false;
 	bool TeachCreateFlag[3] = { false }; //0:slip 1:jump 2:attack
     bool BoardFlag = false;
+    float _fPlayerPosX = 0.0f;
 
     char kind[5] = "down"; //down or up
 	char level[9];
 	char name[4];
 public:
 	CLevelCreate();
-	CLevelCreate(b2World* _b2W);
+	CLevelCreate(b2World* _b2W, float PlayerPosX);
 	~CLevelCreate();
 
     float f_tDistance = 0.0f;
