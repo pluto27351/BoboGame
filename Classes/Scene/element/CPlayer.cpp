@@ -27,6 +27,7 @@ CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
 }
 void CPlayer::dostep(){
     CreateCollision();
+//    _Player->setPosition(pt.x + PlayerBody->GetPosition().x*PTM_RATIO, pt.y + PlayerBody->GetPosition().y*PTM_RATIO);
     _Player->setPosition(pt.x + PlayerBody->GetPosition().x*PTM_RATIO, pt.y + PlayerBody->GetPosition().y*PTM_RATIO);
 }
 void CPlayer::CreateCollision(){
@@ -67,17 +68,18 @@ void CPlayer::CreateCollision(){
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &rectShape;
     fixtureDef.restitution = 0.0f;
-    fixtureDef.density = 0.1f;
+    fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.0f;
     PlayerBody->CreateFixture(&fixtureDef);
     PlayerBody->SetFixedRotation(1);
+    PlayerBody->SetTransform(b2Vec2(0, PlayerBody->GetPosition().y), 0);
 }
 //動作
 void CPlayer::RunAct() {
     if(_PlayerAni->getCurrentFrame()>30){
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
         _PlayerAni->setTimeSpeed(1.2f);
-        PlayerBody->SetLinearVelocity(b2Vec2(0,0));
+        //PlayerBody->SetLinearVelocity(b2Vec2(0,0));
     }
 }
 void CPlayer::JumpAct(){
@@ -94,7 +96,7 @@ void CPlayer::SlipAct(){
 void CPlayer::AttackAct(){
     _PlayerAni->gotoFrameAndPlay(65, 75, true);
     _PlayerAni->setTimeSpeed(1.0f);
-    PlayerBody->SetLinearVelocity(b2Vec2(0,-35));
+    PlayerBody->SetLinearVelocity(b2Vec2(0,-50));
 }
 void CPlayer::TensionAct(){
     _PlayerAni->gotoFrameAndPlay(76, 100, true);

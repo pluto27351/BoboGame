@@ -27,10 +27,8 @@ class CContactListener : public b2ContactListener
 public:
 	bool gameover = false;
     bool RunFlag = true;
-    bool AttackFlag = true;
+    bool AttackFlag = false;
     cocos2d::Sprite * _Playersprite;
-    cocos2d::Sprite * Breaksprite;
-    b2Body *BreakBody;
     CContactListener();
 
     virtual void BeginContact(b2Contact* contact);
@@ -55,7 +53,6 @@ private:
     CLevelCreate *_Level;
     float _fSlipTime = 1;
 	float _fGmaeTime = 0;
-    bool AttackFlag = false;
     bool PlayFlag = true;
     
     firebase::App* app;

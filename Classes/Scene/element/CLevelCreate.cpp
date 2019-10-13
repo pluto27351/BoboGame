@@ -1,7 +1,8 @@
 #include "CLevelCreate.h"
 #include<stdlib.h>
 #define DG_WIDTH 426.0f
-#define LEVELTIME 30 //level distance
+#define LEVELTIME 70 //level distance
+#define LEVELFREQUENCY 20 //level distance
 #define DISTANCE 10 //board distance
 #define OBSTACLE_SPEED 12
 #define START_NUM OB_NUM //7
@@ -11,7 +12,6 @@ USING_NS_CC;
 
 CLevelCreate::~CLevelCreate() {
     removeAllChildren();
-    
     for (int i = 0; i<OB_NUM; i++,num++) {
         delete _DownGroundCollision[i];
     }
@@ -62,7 +62,7 @@ void CLevelCreate::dostep(float dt) {
                 }
             }
             else{
-                if(_DownGroundCollision[i]->Getpos().x <= _fPlayerPosX+550){
+                if(_DownGroundCollision[i]->Getpos().x <= _fPlayerPosX+500){
                     TeachFlag = 1;
                     _DownGroundCollision[i]->teach = false;
                 }
@@ -79,7 +79,7 @@ void CLevelCreate::dostep(float dt) {
 	}
 }
 void CLevelCreate::SetObstacle(int i) {
-    //教學
+    //teach
     if(num < 0){
         if(num == -TEACH_NUM){
             sprintf(level, "Level_%d", 1);
@@ -112,64 +112,59 @@ void CLevelCreate::SetObstacle(int i) {
         }
         _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
     }
-	else { //非教學
+	else { //Play
         if(num == 0)BoardFlag = true;
-		if (num % LEVELTIME == 0 && _iLevel < 3) { //提升level
+        //Level
+		if (num % LEVELTIME == 0 && _iLevel < 3) {
 			_iLevel++;
 			_iLevelFrequency == 5;
         }
-		int n;
-        if (DieFlag) //有會死掉的物件
-            sprintf(level, "Level_%d", 0);
-        else {
-            n = rand() % _iLevelFrequency; //如果n=1
-            if (num % 5 == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
-            if (n == 1)n = (rand() % _iLevel) + 1;
-            else n = 0;
-            sprintf(level, "Level_%d", n);
-        }
-        if (UpFlag) {
-            n = rand() % 3;
-            if (n)
-                sprintf(kind, "up");
-            else {
-                sprintf(kind, "down");
+        if (num % LEVELFREQUENCY == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
+        
+        int n;
+        //(((Distance+2) % DISTANCE == 0 && (_DownGroundCollision[i]->_fWidth/DG_WIDTH)==2)||
+        for(int j=0;j!=100 && (j<1 || _NoDieNum>=_iLevelFrequency);0){
+            j++;
+            if (DieFlag)
                 sprintf(level, "Level_%d", 0);
-            }
-        }
-        if ((Distance+1) % DISTANCE == 0 || !Distance) {
-            sprintf(level, "Level_%d", 0);
-            BoardFlag = true;
-        }
-        n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
-        sprintf(name, "%d", n);
-        _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
-        _DownGroundCollision[i]->start = true;
-        if((Distance+2) % DISTANCE == 0){
-            while((_DownGroundCollision[i]->_fWidth/DG_WIDTH)==2){
-                CCLOG("change");
-                n = rand() % _iLevelFrequency; //如果n=1
-                if (num % 5 == 0 && _iLevelFrequency > 3) _iLevelFrequency--;
-                if (n == 1)n = (rand() % _iLevel) + 1;
+            else {
+                n = rand() % _iLevelFrequency;
+                if (n == 1)
+                    n = (rand() % _iLevel) + 1;
                 else n = 0;
                 sprintf(level, "Level_%d", n);
-                if (UpFlag) {
-                    n = rand() % 3;
-                    if (n)
-                        sprintf(kind, "up");
-                    else {
-                        sprintf(kind, "down");
-                        sprintf(level, "Level_%d", 0);
-                    }
+            }
+            if (UpFlag) {
+                n = rand() % 3;
+                if (n)
+                    sprintf(kind, "up");
+                else {
+                    sprintf(kind, "down");
+                    sprintf(level, "Level_%d", 0);
                 }
-                n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
-                sprintf(name, "%d", n);
+            }
+            if(DieFlag && AttackFlag) sprintf(kind, "down");
+            if ((Distance+1) % DISTANCE == 0 || !Distance) {
+                sprintf(level, "Level_%d", 0);
+                BoardFlag = true;
+                j=100;
+            }
+            if(!(strcmp(level, "Level_0")==0))_NoDieNum = 0;
+            n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getTag();
+            sprintf(name, "%d", n);
+            if((Distance+2) % DISTANCE == 0){
                 _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
+                if((_DownGroundCollision[i]->_fWidth/DG_WIDTH)==2)
+                    j=0;
             }
         }
+        _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(kind)->getChildByName(level)->getChildByName(name));
+        if(!_DownGroundCollision[i]->DieFlag)_NoDieNum++;
+        _DownGroundCollision[i]->start = true;
         Distance += _DownGroundCollision[i]->_fWidth / DG_WIDTH;
 	}
-    if(UpFlag == true && strcmp(kind, "up")==0 && _DownGroundCollision[i]->light!=NULL)_DownGroundCollision[i]->light->setVisible(false);
+    if(UpFlag == true && strcmp(kind, "up")==0)_DownGroundCollision[i]->LightVisible(false);
+    //Board
     if(BoardFlag == true){
         BoardFlag = false;
         Node *board = (cocos2d::Node*)CSLoader::createNode("Obstacle.csb")->getChildByName("board");
@@ -181,6 +176,8 @@ void CLevelCreate::SetObstacle(int i) {
     }
     UpFlag = _DownGroundCollision[i]->UpFlag;
     DieFlag = _DownGroundCollision[i]->DieFlag;
+    AttackFlag = _DownGroundCollision[i]->AttackFlag;
+    //Position
     if (i == 0)
         _DownGroundCollision[i]->SetPos(_DownGroundCollision[OB_NUM - 1]->Getpos().x + _DownGroundCollision[OB_NUM - 1]->_fWidth / 2 + _DownGroundCollision[i]->_fWidth / 2, 200);
     else

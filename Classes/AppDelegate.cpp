@@ -43,7 +43,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
-    // UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
+    //UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 0);
     auto scene = HomeScene::createScene();
     //auto scene = GameScene::createScene();
 

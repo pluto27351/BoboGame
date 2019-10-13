@@ -51,7 +51,7 @@ bool GameScene::init()
 		return false;
 	}
 
-    //firebase
+//    //firebase
     app = firebase::App::Create(::firebase::AppOptions());
     database = firebase::database::Database::GetInstance(app);
     dbref = database->GetReference();
@@ -61,7 +61,7 @@ bool GameScene::init()
 	addChild(rootNode);
     //B2World
 	_b2World = nullptr;
-	b2Vec2 Gravity = b2Vec2(0.0f, -98);	//重力方向
+	b2Vec2 Gravity = b2Vec2(0.0f, -120);	//重力方向
 	bool AllowSleep = true;					//允許睡著
 	_b2World = new b2World(Gravity);		//創建世界
 	_b2World->SetAllowSleeping(AllowSleep);	//設定物件允許睡著
@@ -146,6 +146,10 @@ void GameScene::doStep(float dt)
         Score->setString(distance->getString());
         NameBtn.setVisible(true);
         NameBtn.setEnabled(true);
+        
+        //firebase
+        data = dbref.GetReference().GetValue();
+        CCLOG("1");
     }
 }
 void GameScene::Play(float dt) {
@@ -179,13 +183,8 @@ void GameScene::Play(float dt) {
         //角色
         _fSlipTime += dt;
         _Player->dostep();
-        if (_contactListener.AttackFlag == true && AttackFlag == true && _Player->_Player->getPosition().y >= 770){
-            _contactListener.Breaksprite->setVisible(false);
-            _contactListener.BreakBody->GetFixtureList()->SetSensor(true);
-        }
         if (_contactListener.RunFlag == true && _fSlipTime > SLIP_TIME){
             _Player->RunAct();
-            AttackFlag = false;
             _contactListener.AttackFlag = false;
         }
         if (_Player->PlayerBody->GetLinearVelocity().y < -8){
@@ -285,9 +284,9 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
                     }
                     else{
                         _Player->AttackAct();
+                        if(_Player->GetPos().y>=770)
+                            _contactListener.AttackFlag = true;
                         _Level->TeachFlag = 2;
-                        AttackFlag = true;
-                        
                         //教學結束
                         UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 1);
                         UserDefault::getInstance()->flush();
@@ -302,7 +301,8 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
                     }
                     else{                                                  
                         _Player->AttackAct();
-                        AttackFlag = true;
+                        if(_Player->GetPos().y>=770)
+                            _contactListener.AttackFlag = true;
                     }
                 }
                 else if (touchLoc.x > WIDTH/2 && _contactListener.RunFlag == true) {
@@ -324,7 +324,10 @@ void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
 {
     Point touchLoc = pTouch->getLocation();
     if(NameBtn.touchesEnded(touchLoc)) {
+        NameBtn.setEnabled(false);
+        CCLOG("2");
         if(data.status() != firebase::kFutureStatusPending){
+            CCLOG("3");
             if(data.status() != firebase::kFutureStatusComplete){
                 CCLOG("ERROR : GetValue() return an invalid result");
             }
@@ -356,7 +359,6 @@ void  GameScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //
                 }
             }
         }
-        
         ChangeScene();
         return;
     }
@@ -422,12 +424,18 @@ void CContactListener::BeginContact(b2Contact* contact){
         else if(BodyB->GetFixtureList()->GetDensity() == 0.0f){
             if(BodyA->GetLinearVelocity().y <= 0)
                 RunFlag = true;
+            else if(BodyA->GetLinearVelocity().y > 10 && BodyA->GetLinearVelocity().y < 40)
+                BodyA->SetLinearVelocity(b2Vec2(0,-1));
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
-            AttackFlag = true;
-            if(BodyB->GetFixtureList()->IsSensor() == true)
-                Breaksprite = (Sprite*)BodyB->GetUserData();
-            BreakBody = BodyB;
+            if(AttackFlag == true){
+                if(!BodyB->GetFixtureList()->IsSensor() || ((Sprite*)BodyB->GetUserData())->isVisible()){
+                    ((Sprite*)BodyB->GetUserData())->setVisible(false);
+                    BodyB->GetFixtureList()->SetSensor(true);
+                }
+            }
+            else if(BodyA->GetLinearVelocity().y <= 0)
+                RunFlag = true;
         }
     }
 }

@@ -30,6 +30,7 @@ void CObstacle::ChangeObstacle(Node* _ob){
     num = 0;
     UpFlag = false;
     DieFlag = false;
+    AttackFlag = false;
     _Obstacle = _ob;
     CreateObstacle();
 }
@@ -45,10 +46,10 @@ void CObstacle::CreateObstacle(){
             num++;
             CreateCollision();
         }
+        //else _body->setVisible(false);
         if(i == 2){
             if(_body->getChildByTag(1)!=NULL){
                 light = (cocos2d::Sprite*)_body->getChildByTag(1);
-                light ->setVisible(true);
             }
         }
         sprintf(sprite, "Sprite_%d", i);
@@ -128,14 +129,17 @@ void CObstacle::CreateCollision(){
     fixtureDef.friction = 0.0f;
     if(_body->getTag() == 1) //normal up
         UpFlag = true;
-    else if(_body->getTag() == 2) //attack
+    else if(_body->getTag() == 2){ //attack
         fixtureDef.density = 10000.0f;
+        UpFlag = true;
+    }
 	else if (_body->getTag() == 4 || _body->getTag() == 7) { //die
         fixtureDef.density = 5000.0f;
 		fixtureDef.isSensor = true;
 		DieFlag = true;
 	}
 	else if (_body->getTag() == 5) { //rock
+        AttackFlag = true;
 		fixtureDef.isSensor = true;
 		fixtureDef.density = 10000.0f;
 	}
@@ -186,6 +190,10 @@ void CObstacle::Move(float x, float y) {
 			ObstacleBody[i]->SetTransform(b2Vec2(ObstacleBody[i]->GetPosition().x + fx / PTM_RATIO, fy / PTM_RATIO), 0);
 		}
 	}
+}
+void CObstacle::LightVisible(bool v){
+    if(light!=NULL)
+        light->setVisible(v);
 }
 void CObstacle::SetPos(float x, float y) {
 	_Obstacle->setPosition(x, y);

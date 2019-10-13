@@ -24,9 +24,11 @@ private:
     int num = 0; //±Ð¾Ç¥Î
     int Distance = 0;
 	int _iLevel = 0;
-	int _iLevelFrequency = 5;
+	int _iLevelFrequency = 6;
+    int _NoDieNum = 0;
     bool UpFlag = false;
     bool DieFlag = false;
+    bool AttackFlag = false;
 	bool TeachCreateFlag[3] = { false }; //0:slip 1:jump 2:attack
     bool BoardFlag = false;
     float _fPlayerPosX = 0.0f;

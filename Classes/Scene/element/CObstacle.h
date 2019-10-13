@@ -18,6 +18,7 @@ class CObstacle : public cocos2d::Node
 {
 private:
     Sprite * _body;
+    Sprite* light;
     int num = 0;
 	int BoSpeed = 0;
     float f_BoSpeed = BO_SPEED;
@@ -29,17 +30,18 @@ public:
 	CObstacle(b2World* _b2W, Node* _ob);
     ~CObstacle();
     
-    Sprite* light;
     Node* _Obstacle;
     float _fWidth = 0;
 	bool teach = false;
     bool start = false;
     bool UpFlag = false;
     bool DieFlag = false;
+    bool AttackFlag = false;
     
     void ChangeObstacle(Node* _ob);
     void CreateObstacle();
     void CreateCollision();
+    void LightVisible(bool v);
     void SetPos(float x, float y);
     void Move(float x, float y);
 	Point Getpos();

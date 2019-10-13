@@ -43,7 +43,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1008177516" Tag="71" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-1008177516" Tag="71" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="請連網..." VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="450.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="486.5234" Y="106.7653" />
@@ -104,7 +104,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1085059939" Tag="106" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-1085059939" Tag="106" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="請連網..." VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="450.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="486.5234" Y="106.7653" />
@@ -165,7 +165,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="1362053070" Tag="111" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="1362053070" Tag="111" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="請連網..." VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="450.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="486.5234" Y="106.7653" />
@@ -226,7 +226,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="-1873933448" Tag="116" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="-1873933448" Tag="116" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="請連網..." VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="450.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="486.5234" Y="106.7653" />
@@ -287,7 +287,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="name" ActionTag="647630242" Tag="121" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="name" ActionTag="647630242" Tag="121" IconVisible="False" LeftMargin="261.5234" RightMargin="412.4766" TopMargin="65.2347" BottomMargin="71.7653" IsCustomSize="True" FontSize="60" LabelText="請連網..." VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="450.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="486.5234" Y="106.7653" />
