@@ -20,29 +20,30 @@ class CLevelCreate : public cocos2d::Node
 private:
 	CObstacle *_DownGroundCollision[OB_NUM];
 	b2World* _b2World;
-    Sprite* board;
-    int num = 0; //±Ð¾Ç¥Î
-    int Distance = 0;
+    bool _bUpFlag = false;
+    bool _bDieFlag = false;
+    bool _bAttackFlag = false;
+    bool _bBoardFlag = false;
+    bool _bTeachCreateFlag[3] = { false }; //0:slip 1:jump 2:attack
+    bool _bNextdown = false;
+    bool _bSafeFlag = false;
+    float _fPlayerPosX = 0.0f;
 	int _iLevel = 0;
 	int _iLevelFrequency = 6;
-    int _NoDieNum = 0;
-    bool UpFlag = false;
-    bool DieFlag = false;
-    bool AttackFlag = false;
-	bool TeachCreateFlag[3] = { false }; //0:slip 1:jump 2:attack
-    bool BoardFlag = false;
-    float _fPlayerPosX = 0.0f;
-
-    char kind[5] = "down"; //down or up
-	char level[9];
-	char name[4];
+    int _iNoDieNum = 0;
+    int _iNum = 0;
+    int _iDistance = 0;
+    char _cKind[5] = "down"; //down or up
+    char _cLevel[8] = "Level_0";
+	char _cName[3] = "0";
+    
 public:
 	CLevelCreate();
 	CLevelCreate(b2World* _b2W, float PlayerPosX);
 	~CLevelCreate();
 
-    float f_tDistance = 0.0f;
-    int TeachFlag = 3; //0:right 1:left 2:normal 3:no
+    int Teach = 3; //0:right 1:left 2:normal 3:no
+    float Score = 0.0f;
 
 	void SetObstacle(int i);
 	void dostep(float dt);

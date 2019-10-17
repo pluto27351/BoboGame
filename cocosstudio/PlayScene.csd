@@ -95,7 +95,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="Img/gameover/gameover_bg.png" Plist="" />
+                <FileData Type="Normal" Path="Img/gameover_bg.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Score" ActionTag="-1556310017" Tag="317" IconVisible="False" LeftMargin="1907.4458" RightMargin="-2152.4458" TopMargin="-796.7422" BottomMargin="706.7422" FontSize="80" LabelText="12.5 m" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -131,7 +131,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="Img/gameover/gameover_text.png" Plist="" />
+                    <FileData Type="PlistSubImage" Path="game over_text.png" Plist="Img/game_element.plist" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="name_light" ActionTag="1086914487" Alpha="0" Tag="315" IconVisible="False" LeftMargin="-590.0000" RightMargin="-590.0000" TopMargin="-87.0000" BottomMargin="-87.0000" ctype="SpriteObjectData">

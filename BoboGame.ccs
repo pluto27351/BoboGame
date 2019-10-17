@@ -80,8 +80,8 @@
         </Folder>
         <Folder Name="Img">
           <PlistImageFolder Image="bo_ani.png" PListFile="bo_ani.plist" Name=".bo_ani_PList.Dir">
-            <PlistImageFile Name="attack_01.png" Key="attack_01.png" />
-            <PlistImageFile Name="attack_02.png" Key="attack_02.png" />
+            <PlistImageFile Name="attack_1.png" Key="attack_1.png" />
+            <PlistImageFile Name="attack_2.png" Key="attack_2.png" />
             <PlistImageFile Name="jump_1.png" Key="jump_1.png" />
             <PlistImageFile Name="jump_2.png" Key="jump_2.png" />
             <PlistImageFile Name="jump_3.png" Key="jump_3.png" />
@@ -114,6 +114,7 @@
             <PlistImageFile Name="decoration_flower.png" Key="decoration_flower.png" />
             <PlistImageFile Name="decoration_grass.png" Key="decoration_grass.png" />
             <PlistImageFile Name="decoration_leaf.png" Key="decoration_leaf.png" />
+            <PlistImageFile Name="game over_text.png" Key="game over_text.png" />
             <PlistImageFile Name="GO.png" Key="GO.png" />
             <PlistImageFile Name="name.png" Key="name.png" />
             <PlistImageFile Name="name_light.png" Key="name_light.png" />
@@ -132,6 +133,10 @@
             <PlistImageFile Name="obstacle_nail.png" Key="obstacle_nail.png" />
             <PlistImageFile Name="obstacle_pinecone.png" Key="obstacle_pinecone.png" />
             <PlistImageFile Name="obstacle_rock.png" Key="obstacle_rock.png" />
+            <PlistImageFile Name="prompt_touch1.png" Key="prompt_touch1.png" />
+            <PlistImageFile Name="prompt_touch2.png" Key="prompt_touch2.png" />
+            <PlistImageFile Name="prompt_touch3.png" Key="prompt_touch3.png" />
+            <PlistImageFile Name="prompt_touch4.png" Key="prompt_touch4.png" />
             <PlistImageFile Name="up_leftground.png" Key="up_leftground.png" />
             <PlistImageFile Name="up_leftlight.png" Key="up_leftlight.png" />
             <PlistImageFile Name="up_midground.png" Key="up_midground.png" />
@@ -222,31 +227,12 @@
             <PlistImageFile Name="teach_number_bg.png" Key="teach_number_bg.png" />
             <PlistImageFile Name="teach_star.png" Key="teach_star.png" />
           </PlistImageFolder>
-          <Folder Name="gameover">
-            <Image Name="gameover.png" />
-            <Image Name="gameover_bg.png" />
-            <Image Name="gameover_text.png" />
-            <Image Name="namelight.png" />
-          </Folder>
-          <Folder Name="prompt">
-            <Image Name="prompt_bg.png" />
-            <Image Name="prompt_touch1.png" />
-            <Image Name="prompt_touch2.png" />
-            <Image Name="prompt_touch3.png" />
-            <Image Name="prompt_touch4.png" />
-            <Image Name="prompt1_l.png" />
-            <Image Name="prompt1_r.png" />
-            <Image Name="prompt2_l.png" />
-            <Image Name="prompt2_r.png" />
-            <Image Name="prompt3_l.png" />
-            <Image Name="prompt3_r.png" />
-            <Image Name="prompt4_l.png" />
-            <Image Name="prompt4_r.png" />
-          </Folder>
           <Image Name="bar.png" />
           <Image Name="bg.png" />
+          <Image Name="gameover_bg.png" />
           <Image Name="mg_1.png" />
           <Image Name="mg_2.png" />
+          <Image Name="prompt_bg.png" />
         </Folder>
         <Folder Name="Que">
           <Project Name="q1_1.csd" Type="Node" />

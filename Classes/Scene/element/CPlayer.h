@@ -5,7 +5,6 @@
 #include "ui/UIWidget.h"
 #include "SimpleAudioEngine.h"
 #include "cocostudio/CocoStudio.h"
-
 #include "Box2D/Box2D.h"
 
 USING_NS_CC;
@@ -17,23 +16,19 @@ using namespace CocosDenshion;
 class CPlayer : public cocos2d::Node
 {
 private:
-    Point pt;
+    Point _pt;
 	ActionTimeline* _PlayerAni;
-    float time = 0;
-    
+    Sprite * _PlayerSprite;
+    b2Body *_PlayerBody;
+    Node* _Player;
     //b2world
     b2World* _b2World;
 public:
     CPlayer();
 	CPlayer(b2World* _b2W, Vec2 pos);
 	~CPlayer();
-
-    Sprite * _body;
-    b2Body *PlayerBody;
-    Node* _Player;
     
     void CreateCollision();
-    Point GetPos();
     void dostep();
     void RunAct();
     void JumpAct();
@@ -42,6 +37,9 @@ public:
     void TensionAct();
     void AniPause();
     void AniResume();
+    Point GetPos();
+    Sprite *GetSprite();
+    b2Body *GetBody();
     
     //void ActionEnd();
 

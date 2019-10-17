@@ -39,28 +39,28 @@ public:
 class GameScene : public cocos2d::Layer
 {
 private:
-	Node *rootNode;
-    Sprite *midground[2];
-    Text *distance;
-    Node *_Teach;
-    ActionTimeline* TeachAni;
-	CPlayer *_Player;
-    ui::TextField* InputName;
-    char PlayerName[25];
-    ActionTimeline* NameAni;
-    Sprite* Namelight;
-    CButton NameBtn;
+    CContactListener _contactListener;
+    CPlayer *_Player;
     CLevelCreate *_Level;
+    CButton _NameBtn;
+	Node *_rootNode;
+    Sprite *_MidGround[2];
+    Sprite* _Namelight;
+    Text *_Score;
+    Node *_Teach;
+    ActionTimeline* _TeachAni;
+    ActionTimeline* _NameAni;
+    ui::TextField* _InputName;
     float _fSlipTime = 1;
 	float _fGmaeTime = 0;
-    bool PlayFlag = true;
+    bool _bPlayFlag = true;
+    char _cPlayerName[25];
     
     firebase::App* app;
     firebase::database::Database *database;
     firebase::database::DatabaseReference dbref;
     firebase::Future<firebase::database::DataSnapshot> data;
     
-    CContactListener _contactListener;
 	// b2World
 	b2World* _b2World;
 	GLESDebugDraw* _DebugDraw;

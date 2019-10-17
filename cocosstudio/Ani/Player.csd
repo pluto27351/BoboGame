@@ -10,34 +10,34 @@
           <PointFrame FrameIndex="4" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="5" X="-4.0000" Y="-4.0000">
+          <PointFrame FrameIndex="5" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="9" X="-4.0000" Y="-4.0000">
+          <PointFrame FrameIndex="9" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="10" X="9.0000" Y="-4.0000">
+          <PointFrame FrameIndex="10" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="14" X="9.0000" Y="-4.0000">
+          <PointFrame FrameIndex="14" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="15" X="-0.0004" Y="0.0000">
+          <PointFrame FrameIndex="15" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="19" X="-0.0004" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="20" X="-6.0004" Y="-4.0000">
+          <PointFrame FrameIndex="20" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="24" X="-6.0004" Y="-4.0000">
+          <PointFrame FrameIndex="24" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="25" X="0.9979" Y="-4.0000">
+          <PointFrame FrameIndex="25" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="29" X="0.9979" Y="-4.0000">
+          <PointFrame FrameIndex="29" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="30" X="0.0000" Y="0.0000">
@@ -49,34 +49,34 @@
           <PointFrame FrameIndex="35" X="-2.0003" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="36" X="2.9997" Y="-12.0000">
+          <PointFrame FrameIndex="36" X="6.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="40" X="2.9997" Y="-12.0000">
+          <PointFrame FrameIndex="40" X="6.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="41" X="10.9997" Y="-20.0000">
+          <PointFrame FrameIndex="41" X="14.0000" Y="-11.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="47" X="10.9997" Y="-20.0000">
+          <PointFrame FrameIndex="47" X="14.0000" Y="-11.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="48" X="0.9994" Y="-28.0000">
+          <PointFrame FrameIndex="48" X="9.0000" Y="-20.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="55" X="0.9994" Y="-28.0000">
+          <PointFrame FrameIndex="55" X="9.0000" Y="-20.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="56" X="-1.0000" Y="-67.0000">
+          <PointFrame FrameIndex="56" X="-1.0000" Y="-55.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="60" X="-1.0004" Y="-67.0000">
+          <PointFrame FrameIndex="60" X="-1.0004" Y="-55.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="64" X="-1.0005" Y="-67.0000">
+          <PointFrame FrameIndex="64" X="-1.0005" Y="-55.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="65" X="-6.0007" Y="50.9991">
+          <PointFrame FrameIndex="65" X="-6.0007" Y="51.0000">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="70" X="-6.0007" Y="51.0000">
@@ -275,13 +275,13 @@
             <TextureFile Type="PlistSubImage" Path="slip_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="65" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="attack_01.png" Plist="Img/bo_ani.plist" />
+            <TextureFile Type="PlistSubImage" Path="attack_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="70" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="attack_02.png" Plist="Img/bo_ani.plist" />
+            <TextureFile Type="PlistSubImage" Path="attack_2.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="75" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="attack_01.png" Plist="Img/bo_ani.plist" />
+            <TextureFile Type="PlistSubImage" Path="attack_1.png" Plist="Img/bo_ani.plist" />
           </TextureFrame>
           <TextureFrame FrameIndex="76" Tween="False">
             <TextureFile Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo_ani.plist" />
@@ -337,15 +337,15 @@
       <ObjectData Name="Node" Tag="50" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" RotationSkewX="-15.0000" RotationSkewY="-15.0000" IconVisible="False" LeftMargin="-97.5007" RightMargin="-85.4993" TopMargin="-264.4991" BottomMargin="-162.5009" ctype="SpriteObjectData">
-            <Size X="183.0000" Y="427.0000" />
+          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-120.0007" RightMargin="-107.9993" TopMargin="-95.4992" BottomMargin="-113.5008" ctype="SpriteObjectData">
+            <Size X="228.0000" Y="209.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-6.0007" Y="50.9991" />
+            <Position X="-6.0007" Y="-9.0008" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="attack_01.png" Plist="Img/bo_ani.plist" />
+            <FileData Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo_ani.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
