@@ -20,6 +20,7 @@ class CObstacle : public cocos2d::Node
 private:
     Sprite * _body;
     Node* _Obstacle;
+    bool _bPit = false;
     float _fWidth = 0;
     float _fBigboTime = 0;
     int _iNum = 0;

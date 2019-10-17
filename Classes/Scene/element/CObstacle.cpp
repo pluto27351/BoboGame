@@ -25,6 +25,7 @@ void CObstacle::ChangeObstacle(Node* _ob){
     _iNum = 0;
     _fWidth = 0;
     _fBigboTime = 0;
+    _bPit = false;
     UpFlag = false;
     DieFlag = false;
     AttackFlag = false;
@@ -48,27 +49,29 @@ void CObstacle::CreateObstacle(){
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
     }
 	//裝飾
-    if(!(rand()%5)){ //地板
-        Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
-        this->_Obstacle->addChild(img,2);
-    }
-    if(!(rand()%8)){ //花，葉子，草叢
-        Sprite *img;
-        switch(rand()%3){
-            case 0:
-                img = Sprite::createWithSpriteFrameName("decoration_flower.png");
-                break;
-            case 1:
-                img = Sprite::createWithSpriteFrameName("decoration_leaf.png");
-                break;
-            case 2:
-                img = Sprite::createWithSpriteFrameName("decoration_grass.png");
-                img->setScale(0.8f);
-                break;
+    if(!_bPit){
+        if(!(rand()%5)){ //地板
+            Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
+            this->_Obstacle->addChild(img,2);
         }
-        img->setPosition(rand()%(300 * _Obstacle->getTag())-150,220);
-        if(UpFlag && !(rand()%2))img->setPosition(rand()%(300 * _Obstacle->getTag())-150,610);
-        this->_Obstacle->addChild(img,2);
+        if(!(rand()%8)){ //花，葉子，草叢
+            Sprite *img;
+            switch(rand()%3){
+                case 0:
+                    img = Sprite::createWithSpriteFrameName("decoration_flower.png");
+                    break;
+                case 1:
+                    img = Sprite::createWithSpriteFrameName("decoration_leaf.png");
+                    break;
+                case 2:
+                    img = Sprite::createWithSpriteFrameName("decoration_grass.png");
+                    img->setScale(0.8f);
+                    break;
+            }
+            img->setPosition(rand()%(300 * _Obstacle->getTag())-150,220);
+            if(UpFlag && !(rand()%2))img->setPosition(rand()%(300 * _Obstacle->getTag())-150,610);
+            this->_Obstacle->addChild(img,0);
+        }
     }
 }
 void CObstacle::CreateCollision(){
@@ -111,30 +114,29 @@ void CObstacle::CreateCollision(){
     fixtureDef.density = 5.0f;
     fixtureDef.friction = 0.0f;
     //障礙物類型
-    if(_body->getTag() == 1){ //normal up
-        fixtureDef.density = 0.0f;
-        UpFlag = true;
+    switch(_body->getTag()){
+        case 1: //normal up
+            fixtureDef.density = 0.0f;
+            UpFlag = true;
+            break;
+        case 3: //attack sensor
+            fixtureDef.isSensor = true;
+            AttackFlag = true;
+        case 2: //attack
+            fixtureDef.density = 10000.0f;
+            UpFlag = true;
+            break;
+        case 5: //pit
+            _bPit = true;
+        case 4: //die
+        case 6: //insect
+        case 7: //bigbo
+            fixtureDef.density = 5000.0f;
+            fixtureDef.isSensor = true;
+            _body->setLocalZOrder(1);
+            DieFlag = true;
+            break;
     }
-    else if(_body->getTag() == 2){ //attack
-        fixtureDef.density = 10000.0f;
-        UpFlag = true;
-    }
-	else if (_body->getTag() == 4 || _body->getTag() == 7) { //die
-        fixtureDef.density = 5000.0f;
-		fixtureDef.isSensor = true;
-        _body->setLocalZOrder(1);
-		DieFlag = true;
-	}
-	else if (_body->getTag() == 5) { //rock sensor
-        fixtureDef.density = 10000.0f;
-		fixtureDef.isSensor = true;
-        AttackFlag = true;
-	}
-	else if (_body->getTag() == 6) { //BigBo
-        fixtureDef.density = 5000.0f;
-		fixtureDef.isSensor = true;
-		DieFlag = true;
-	}
 	_Cbody->CreateFixture(&fixtureDef);
 	ObstacleBody.push_back(_Cbody);
 }
