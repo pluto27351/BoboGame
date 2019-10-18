@@ -1,8 +1,8 @@
 #include "CLevelCreate.h"
 #include<stdlib.h>
-#define LEVELTIME 70 //level distance
-#define LEVELFREQUENCY 20 //level distance
-#define DISTANCE 10 //board distance
+#define LEVELTIME 120 //level distance
+#define LEVELFREQUENCY 40 //level distance
+#define DISTANCE 10.0f //board distance
 #define OBSTACLE_SPEED 12
 #define START_NUM OB_NUM
 #define TEACH_NUM 12 //teach Obstacle number
@@ -64,7 +64,7 @@ void CLevelCreate::dostep(float dt) {
 		}
         if (_DownGroundCollision[i]->Getpos().x < _fPlayerPosX && _DownGroundCollision[i]->start) {
             _DownGroundCollision[i]->start = false;
-            Score += _DownGroundCollision[i]->GetWidth() / DG_WIDTH;
+            Score += _DownGroundCollision[i]->GetWidth() / DG_WIDTH*0.5f;
         }
 		_DownGroundCollision[i]->MoveX(-OBSTACLE_SPEED, dt);
 	}
@@ -130,7 +130,7 @@ void CLevelCreate::SetObstacle(int i) {
             _bSafeFlag = true;
             if(_bAttackFlag){sprintf(_cKind, "down");_bNextdown = false;} //如果前一個有攻擊物件
         }
-        if (!_iNum || (_iDistance+1) % DISTANCE == 0){ //出路牌 － 剛開始，前一個距離差１就出牌子
+        if (!_iNum || ((_fDistance+0.5f) == DISTANCE*_iBoardNum)){//出路牌 － 剛開始，前一個距離差１就出牌子
             _bSafeFlag = true;
             _bBoardFlag = true;
         }
@@ -151,18 +151,23 @@ void CLevelCreate::SetObstacle(int i) {
         if(_bNextdown)n = 1;
         else n = rand() % CSLoader::createNode("Obstacle.csb")->getChildByName(_cKind)->getChildByName(_cLevel)->getTag();
         sprintf(_cName, "%d", n);
-        CCLOG("%s %s %s",_cKind,_cLevel,_cName);
+        //CCLOG("%s %s %s",_cKind,_cLevel,_cName);
         _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(_cKind)->getChildByName(_cLevel)->getChildByName(_cName));
-        _DownGroundCollision[i]->start = true;
-        _iDistance += (_DownGroundCollision[i]->GetWidth() / DG_WIDTH); //距離 = 兩個地板算1
+        if(((_fDistance+1.0f) == DISTANCE*_iBoardNum) && _DownGroundCollision[i]->GetWidth()/DG_WIDTH == 2)
+            _DownGroundCollision[i]->ChangeObstacle(CSLoader::createNode("Obstacle.csb")->getChildByName(_cKind)->getChildByName("Level_1")->getChildByName("5"));
+        if(_iNum){
+            _DownGroundCollision[i]->start = true;
+            _fDistance += (_DownGroundCollision[i]->GetWidth()/DG_WIDTH)*0.5f; //距離 = 兩個地板算1
+        }
         //出路牌
         if(_bBoardFlag == true){
             _bBoardFlag = false;
+            _iBoardNum++;
             Node *board = (cocos2d::Node*)CSLoader::createNode("Obstacle.csb")->getChildByName("board");
             this->_DownGroundCollision[i]->GetNode()->addChild(board);
             Text * t = (cocos2d::ui::Text *)board->getChildByName("text");
             char d[6];
-            sprintf(d, "%d", _iDistance/DISTANCE);
+            sprintf(d, "%0.0f", _fDistance/DISTANCE);
             t->setString(d);
         }
         _bUpFlag = _DownGroundCollision[i]->UpFlag;

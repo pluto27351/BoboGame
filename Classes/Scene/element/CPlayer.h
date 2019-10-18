@@ -21,6 +21,7 @@ private:
     Sprite * _PlayerSprite;
     b2Body *_PlayerBody;
     Node* _Player;
+    unsigned int _MusicRun;
     //b2world
     b2World* _b2World;
 public:

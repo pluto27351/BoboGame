@@ -69,7 +69,7 @@ void CObstacle::CreateObstacle(){
                     break;
             }
             img->setPosition(rand()%(300 * _Obstacle->getTag())-150,220);
-            if(UpFlag && !(rand()%2))img->setPosition(rand()%(300 * _Obstacle->getTag())-150,610);
+            if(UpFlag && !(rand()%2))img->setPosition(rand()%(200 * _Obstacle->getTag())-100,610);
             this->_Obstacle->addChild(img,0);
         }
     }
@@ -129,11 +129,11 @@ void CObstacle::CreateCollision(){
         case 5: //pit
             _bPit = true;
         case 4: //die
-        case 6: //insect
-        case 7: //bigbo
+        case 7: //insect
+            _body->setLocalZOrder(1);
+        case 6: //bigbo
             fixtureDef.density = 5000.0f;
             fixtureDef.isSensor = true;
-            _body->setLocalZOrder(1);
             DieFlag = true;
             break;
     }

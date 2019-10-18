@@ -1,19 +1,12 @@
 #pragma once
 
 #include "cocos2d.h"
-//#include "ui/CocosGUI.h"
-//#include "ui/UIWidget.h"
-//#include "SimpleAudioEngine.h"
-//#include "cocostudio/CocoStudio.h"
 #include "Box2D/Box2D.h"
 #define PTM_RATIO 32.0f
 #define PTM_RATIO_DIV(n) n/PTM_RATIO
 #define DG_WIDTH 426.0f
 USING_NS_CC;
-
-//using namespace cocostudio::timeline;
 using namespace ui;
-//using namespace CocosDenshion;
 
 class CObstacle : public cocos2d::Node
 {

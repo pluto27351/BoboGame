@@ -38,7 +38,7 @@ bool GameScene::init()
 	{
 		return false;
 	}
-//    //firebase
+    //firebase
     app = firebase::App::Create(::firebase::AppOptions());
     database = firebase::database::Database::GetInstance(app);
     dbref = database->GetReference();
@@ -64,13 +64,16 @@ bool GameScene::init()
     _NameAni->setTimeSpeed(0.8f);
     _Namelight->runAction(_NameAni);
     sprintf(_cPlayerName, "Name");
-    
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Img/game_teach.plist");
     auto btn = _rootNode->getChildByName("Gameover")->getChildByName("PlayerName");
     _NameBtn.setButtonInfo("teach_btn_giveup.png","teach_btn_giveup.png",*this, btn->getPosition()+Point(449,-1),1);
     _NameBtn.setVisible(false);
     _NameBtn.setEnabled(false);
-    
+    //GameScene
+    //Music
+    SimpleAudioEngine::getInstance()->preloadBackgroundMusic("game_bg.mp3"); // 預先載入音效檔
+    SimpleAudioEngine::getInstance()->playBackgroundMusic("game_bg.mp3",1);
+    SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.02f);//音量0.02倍
     //score
     _Score = (cocos2d::ui::Text *)_rootNode->getChildByName("Game")->getChildByName("distance");
 	//中景
@@ -135,9 +138,8 @@ void GameScene::doStep(float dt)
         Score->setString(_Score->getString());
         _NameBtn.setVisible(true);
         _NameBtn.setEnabled(true);
-        
         //firebase
-        data = dbref.GetReference().GetValue();
+        data = dbref.GetReference().GetValue(); //獲取資料
     }
 }
 void GameScene::Play(float dt) {
@@ -184,7 +186,7 @@ void GameScene::Play(float dt) {
         float _fd = _Level->Score/10;
         sprintf(d, "%6.1f m", _fd);
         _Score->setString(d);
-        if (_contactListener.gameover == true)_bPlayFlag = false;
+        //if (_contactListener.gameover == true)_bPlayFlag = false;
     }
 }
 void GameScene::CreatePlayer() {
@@ -415,6 +417,8 @@ void CContactListener::BeginContact(b2Contact* contact){
                 if(!BodyB->GetFixtureList()->IsSensor() || ((Sprite*)BodyB->GetUserData())->isVisible()){
                     ((Sprite*)BodyB->GetUserData())->setVisible(false);
                     BodyB->GetFixtureList()->SetSensor(true);
+                    SimpleAudioEngine::getInstance()->preloadEffect("game_broken.mp3");
+                    SimpleAudioEngine::getInstance()->playEffect("game_broken.mp3",0,1,0,0.1f);
                 }
             }
             else if(BodyA->GetLinearVelocity().y <= 0)

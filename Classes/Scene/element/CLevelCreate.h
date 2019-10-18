@@ -28,11 +28,12 @@ private:
     bool _bNextdown = false;
     bool _bSafeFlag = false;
     float _fPlayerPosX = 0.0f;
+    float _fDistance = 0.0f;
+    int _iBoardNum = 0;
 	int _iLevel = 0;
 	int _iLevelFrequency = 6;
     int _iNoDieNum = 0;
     int _iNum = 0;
-    int _iDistance = 0;
     char _cKind[5] = "down"; //down or up
     char _cLevel[8] = "Level_0";
 	char _cName[3] = "0";

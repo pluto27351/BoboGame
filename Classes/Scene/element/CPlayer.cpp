@@ -3,9 +3,18 @@
 USING_NS_CC;
 
 // on "init" you need to initialize your instance
-CPlayer::~CPlayer(){}
+CPlayer::~CPlayer(){
+    SimpleAudioEngine::getInstance()->unloadEffect("game_run.mp3");
+    SimpleAudioEngine::getInstance()->unloadEffect("game_jump.mp3");
+    SimpleAudioEngine::getInstance()->unloadEffect("game_slip.mp3");
+}
 CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
 {
+    // 預先載入音效檔
+    SimpleAudioEngine::getInstance()->preloadEffect("game_run.mp3");
+    SimpleAudioEngine::getInstance()->preloadEffect("game_jump.mp3");
+    SimpleAudioEngine::getInstance()->preloadEffect("game_slip.mp3");
+    _MusicRun = SimpleAudioEngine::getInstance()->playEffect("game_run.mp3",1);
     //圖片
     _pt = pos;
     _Player = CSLoader::createNode("Ani/Player.csb");
@@ -73,6 +82,7 @@ void CPlayer::CreateCollision(){
 //動作
 void CPlayer::RunAct() {
     if(_PlayerAni->getCurrentFrame()>30){
+        SimpleAudioEngine::getInstance()->resumeEffect(_MusicRun);
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
         _PlayerAni->setTimeSpeed(1.2f);
         CreateCollision();
@@ -80,16 +90,21 @@ void CPlayer::RunAct() {
 }
 void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<=30){
+        SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
+        SimpleAudioEngine::getInstance()->playEffect("game_jump.mp3",0,1,0,0.3f); //音量0.3倍
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
         _PlayerAni->setTimeSpeed(1.0f);
         _PlayerBody->SetLinearVelocity(b2Vec2(0,60));
     }
 }
 void CPlayer::SlipAct(){
+    SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
+    SimpleAudioEngine::getInstance()->playEffect("game_slip.mp3",0);
     _PlayerAni->gotoFrameAndPlay(56, 64, true);
     _PlayerAni->setTimeSpeed(1.0f);
 }
 void CPlayer::AttackAct(){
+    SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
     _PlayerAni->gotoFrameAndPlay(65, 75, true);
     _PlayerAni->setTimeSpeed(1.0f);
     _PlayerBody->SetLinearVelocity(b2Vec2(0,-50));
