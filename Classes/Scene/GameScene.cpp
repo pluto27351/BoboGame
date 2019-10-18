@@ -24,6 +24,8 @@ void GameScene::ChangeScene()
     if(_b2World != NULL)delete _b2World;
     Director::getInstance()->getTextureCache()->removeUnusedTextures();
     CCDirector::sharedDirector()->replaceScene(MenuScene::createScene());
+    SimpleAudioEngine::getInstance()->unloadEffect("game_broken.mp3");
+    SimpleAudioEngine::getInstance()->unloadEffect("game_bg");
 }
 Scene* GameScene::createScene()
 {
@@ -131,6 +133,7 @@ void GameScene::doStep(float dt)
 	_fGmaeTime += dt;
     if(_bPlayFlag == true) Play(dt);
     else if(_rootNode->getChildByName("Gameover")->isVisible() == false){
+        SimpleAudioEngine::getInstance()->stopBackgroundMusic();
         _Player->AniPause();
         _Level->Teach = 3;
         _rootNode->getChildByName("Gameover")->setVisible(true);
@@ -186,7 +189,7 @@ void GameScene::Play(float dt) {
         float _fd = _Level->Score/10;
         sprintf(d, "%6.1f m", _fd);
         _Score->setString(d);
-        //if (_contactListener.gameover == true)_bPlayFlag = false;
+        if (_contactListener.gameover == true)_bPlayFlag = false;
     }
 }
 void GameScene::CreatePlayer() {

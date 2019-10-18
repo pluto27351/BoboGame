@@ -114,9 +114,11 @@ void CPlayer::TensionAct(){
     _PlayerAni->setTimeSpeed(1.0f);
 }
 void CPlayer::AniPause(){
+    SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
     _PlayerAni->pause();
 }
 void CPlayer::AniResume(){
+    SimpleAudioEngine::getInstance()->resumeEffect(_MusicRun);
     _PlayerAni->resume();
 }
 Point CPlayer::GetPos(){
