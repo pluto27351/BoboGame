@@ -76,13 +76,13 @@
           <PointFrame FrameIndex="64" X="-1.0005" Y="-55.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="65" X="-6.0007" Y="51.0000">
+          <PointFrame FrameIndex="65" X="-5.9997" Y="-27.9999">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="70" X="-6.0007" Y="51.0000">
+          <PointFrame FrameIndex="70" X="-6.0007" Y="-28.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="75" X="-6.0007" Y="50.9991">
+          <PointFrame FrameIndex="75" X="-6.0007" Y="-28.0000">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="76" X="-6.0007" Y="-9.0008">
@@ -133,6 +133,15 @@
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="64" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="65" X="0.8000" Y="0.8000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="75" X="0.8000" Y="0.8000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="76" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="87" X="1.0000" Y="1.0000">
@@ -337,15 +346,15 @@
       <ObjectData Name="Node" Tag="50" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" IconVisible="False" LeftMargin="-120.0007" RightMargin="-107.9993" TopMargin="-95.4992" BottomMargin="-113.5008" ctype="SpriteObjectData">
-            <Size X="228.0000" Y="209.0000" />
+          <AbstractNodeData Name="bo" ActionTag="195884333" Tag="6" RotationSkewX="-15.0000" RotationSkewY="-15.0000" IconVisible="False" LeftMargin="-105.5007" RightMargin="-93.4993" TopMargin="-189.0000" BottomMargin="-245.0000" ctype="SpriteObjectData">
+            <Size X="199.0000" Y="434.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-6.0007" Y="-9.0008" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="-6.0007" Y="-28.0000" />
+            <Scale ScaleX="0.8000" ScaleY="0.8000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="tension_1.png" Plist="Img/bo_ani.plist" />
+            <FileData Type="PlistSubImage" Path="attack_1.png" Plist="Img/bo_ani.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

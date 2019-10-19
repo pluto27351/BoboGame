@@ -50,10 +50,17 @@ void CPlayer::CreateCollision(){
     float scaleX = _PlayerSprite->getScaleX();
     float scaleY = _PlayerSprite->getScaleY();
     Point lep[4], wep[4];
-    lep[0].x = (ts.width-80) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
-    lep[1].x = -(ts.width-80) / 2.0f; lep[1].y = (ts.height) / 2.0f;
-    lep[2].x = -(ts.width-80) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
-    lep[3].x = (ts.width-80) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
+    if(_bAttack){
+        lep[0].x = (ts.width) / 2.0f;  lep[0].y = (ts.height-50) / 2.0f;
+        lep[1].x = -(ts.width) / 2.0f; lep[1].y = (ts.height-50) / 2.0f;
+        lep[2].x = -(ts.width) / 2.0f; lep[2].y = -(ts.height-50) / 2.0f;
+        lep[3].x = (ts.width) / 2.0f;  lep[3].y = -(ts.height-50) / 2.0f;}
+    else{
+        lep[0].x = (ts.width-80) / 2.0f;  lep[0].y = (ts.height) / 2.0f;
+        lep[1].x = -(ts.width-80) / 2.0f; lep[1].y = (ts.height) / 2.0f;
+        lep[2].x = -(ts.width-80) / 2.0f; lep[2].y = -(ts.height) / 2.0f;
+        lep[3].x = (ts.width-80) / 2.0f;  lep[3].y = -(ts.height) / 2.0f;
+    }
     cocos2d::Mat4 modelMatrix, rotMatrix;
     modelMatrix.m[0] = scaleX;
     modelMatrix.m[5] = scaleY;
@@ -83,6 +90,7 @@ void CPlayer::CreateCollision(){
 //動作
 void CPlayer::RunAct() {
     if(_PlayerAni->getCurrentFrame()>30){
+        _bAttack = false;
         SimpleAudioEngine::getInstance()->resumeEffect(_MusicRun);
         _PlayerAni->gotoFrameAndPlay(0, 30, true);
         _PlayerAni->setTimeSpeed(1.2f);
@@ -91,6 +99,7 @@ void CPlayer::RunAct() {
 }
 void CPlayer::JumpAct(){
     if(_PlayerAni->getCurrentFrame()<=30){
+        _bAttack = false;
         SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
         SimpleAudioEngine::getInstance()->playEffect("game_jump.mp3",0,1,0,0.3f); //音量0.3倍
         _PlayerAni->gotoFrameAndPlay(31, 55, false);
@@ -99,18 +108,21 @@ void CPlayer::JumpAct(){
     }
 }
 void CPlayer::SlipAct(){
+    _bAttack = false;
     SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
     SimpleAudioEngine::getInstance()->playEffect("game_slip.mp3",0);
     _PlayerAni->gotoFrameAndPlay(56, 64, true);
     _PlayerAni->setTimeSpeed(1.0f);
 }
 void CPlayer::AttackAct(){
+    _bAttack = true;
     SimpleAudioEngine::getInstance()->pauseEffect(_MusicRun);
     _PlayerAni->gotoFrameAndPlay(65, 75, true);
     _PlayerAni->setTimeSpeed(1.0f);
     _PlayerBody->SetLinearVelocity(b2Vec2(0,-50));
 }
 void CPlayer::TensionAct(){
+    _bAttack = false;
     _PlayerAni->gotoFrameAndPlay(76, 100, true);
     _PlayerAni->setTimeSpeed(1.0f);
 }

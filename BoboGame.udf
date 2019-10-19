@@ -25,5 +25,14 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="Obstacle.csd" />
+          <FilePathData Path="Ani/Player.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="Ani/Player.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>
