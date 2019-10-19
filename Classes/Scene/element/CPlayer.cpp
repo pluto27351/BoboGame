@@ -36,7 +36,9 @@ CPlayer::CPlayer(b2World* _b2W, Vec2 pos)
 }
 void CPlayer::dostep(){
     if(_PlayerAni->getCurrentFrame()>30)CreateCollision(); //跑步時不換碰撞
-    _Player->setPosition(_pt.x + _PlayerBody->GetPosition().x*PTM_RATIO, _pt.y + _PlayerBody->GetPosition().y*PTM_RATIO);
+    _Player->setPosition(_pt.x, _pt.y + _PlayerBody->GetPosition().y*PTM_RATIO);
+    _PlayerBody->SetTransform(b2Vec2(0, _PlayerBody->GetPosition().y), 0); //固定player的x座標
+    //CCLOG("%f , %f",_PlayerBody->GetPosition().x, _Player->getPosition().x);
 }
 void CPlayer::CreateCollision(){
     if(_PlayerBody->GetFixtureList()!=NULL)
@@ -77,7 +79,6 @@ void CPlayer::CreateCollision(){
     fixtureDef.friction = 0.0f;
     _PlayerBody->CreateFixture(&fixtureDef);
     _PlayerBody->SetFixedRotation(1);
-    _PlayerBody->SetTransform(b2Vec2(0, _PlayerBody->GetPosition().y), 0);
 }
 //動作
 void CPlayer::RunAct() {

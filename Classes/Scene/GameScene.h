@@ -28,7 +28,9 @@ public:
 	bool gameover = false;
     bool RunFlag = true;
     bool AttackFlag = false;
+    bool BrokenFlag = false;
     cocos2d::Sprite * _Playersprite;
+    b2Body* _BrokenImg;
     CContactListener();
 
     virtual void BeginContact(b2Contact* contact);

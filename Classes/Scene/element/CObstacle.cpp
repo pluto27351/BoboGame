@@ -25,11 +25,10 @@ void CObstacle::ChangeObstacle(Node* _ob){
     _iNum = 0;
     _fWidth = 0;
     _fBigboTime = 0;
-    _bPit = false;
+    _bDecoration = true;
     UpFlag = false;
     DieFlag = false;
     AttackFlag = false;
-    
     _Obstacle = _ob;
     CreateObstacle();
 }
@@ -45,11 +44,14 @@ void CObstacle::CreateObstacle(){
             _iNum++;
             CreateCollision();
         }
+        else{
+            if(_body->getChildByTag(1)!=NULL)_bDecoration = false;
+        }
         sprintf(sprite, "Sprite_%d", i);
         _body = (cocos2d::Sprite *)_Obstacle->getChildByName(sprite);
     }
 	//裝飾
-    if(!_bPit){
+    if(_bDecoration){
         if(!(rand()%5)){ //地板
             Sprite *img = Sprite::createWithSpriteFrameName("d_img.png");
             this->_Obstacle->addChild(img,2);
@@ -69,7 +71,7 @@ void CObstacle::CreateObstacle(){
                     break;
             }
             img->setPosition(rand()%(300 * _Obstacle->getTag())-150,220);
-            if(UpFlag && !(rand()%2))img->setPosition(rand()%(200 * _Obstacle->getTag())-100,610);
+            if(UpFlag && !(rand()%2))img->setPosition(rand()%(300 * _Obstacle->getTag())-150,610);
             this->_Obstacle->addChild(img,0);
         }
     }
@@ -122,12 +124,13 @@ void CObstacle::CreateCollision(){
         case 3: //attack sensor
             fixtureDef.isSensor = true;
             AttackFlag = true;
+            _bDecoration = false;
         case 2: //attack
             fixtureDef.density = 10000.0f;
             UpFlag = true;
             break;
         case 5: //pit
-            _bPit = true;
+            _bDecoration = false;
         case 4: //die
         case 7: //insect
             _body->setLocalZOrder(1);
@@ -135,6 +138,7 @@ void CObstacle::CreateCollision(){
             fixtureDef.density = 5000.0f;
             fixtureDef.isSensor = true;
             DieFlag = true;
+            _fBigboTime = rand()%60;
             break;
     }
 	_Cbody->CreateFixture(&fixtureDef);

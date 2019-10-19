@@ -189,7 +189,7 @@ void GameScene::Play(float dt) {
         float _fd = _Level->Score/10;
         sprintf(d, "%6.1f m", _fd);
         _Score->setString(d);
-        if (_contactListener.gameover == true)_bPlayFlag = false;
+        //if(_contactListener.gameover == true)_bPlayFlag = false;
     }
 }
 void GameScene::CreatePlayer() {
@@ -275,8 +275,10 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
                     }
                     else{
                         _Player->AttackAct();
-                        if(_Player->GetPos().y>=770)
+                        if(_Player->GetPos().y>=770){
                             _contactListener.AttackFlag = true;
+                            _contactListener.BrokenFlag = false;
+                        }
                         _Level->Teach = 2;
                         //教學結束
                         UserDefault::getInstance()->setBoolForKey("TEACH_FLAG", 1);
@@ -292,8 +294,10 @@ bool GameScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//�
                     }
                     else{                                                  
                         _Player->AttackAct();
-                        if(_Player->GetPos().y>=770)
+                        if(_Player->GetPos().y>=770){
                             _contactListener.AttackFlag = true;
+                            _contactListener.BrokenFlag = false;
+                        }
                     }
                 }
                 else if (touchLoc.x > WIDTH/2 && _contactListener.RunFlag == true) {
@@ -417,8 +421,9 @@ void CContactListener::BeginContact(b2Contact* contact){
         }
         else if(BodyB->GetFixtureList()->GetDensity() == 10000.0f){
             if(AttackFlag == true){
-                if(!BodyB->GetFixtureList()->IsSensor() || ((Sprite*)BodyB->GetUserData())->isVisible()){
-                    ((Sprite*)BodyB->GetUserData())->setVisible(false);
+                if(BodyB->GetFixtureList()->IsSensor()){_BrokenImg = BodyB; BrokenFlag = true;}
+                else if(BrokenFlag){
+                    ((Sprite*)_BrokenImg->GetUserData())->setVisible(false);
                     BodyB->GetFixtureList()->SetSensor(true);
                     SimpleAudioEngine::getInstance()->preloadEffect("game_broken.mp3");
                     SimpleAudioEngine::getInstance()->playEffect("game_broken.mp3",0,1,0,0.1f);
