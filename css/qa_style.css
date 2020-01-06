@@ -1,0 +1,150 @@
+html{
+ width: 100%;
+ height: 100%;
+ background-color: #dae8d5;
+ font-family: "微軟正黑體","Microsoft JhengHei";
+ color: #000;
+
+ background-image: url(../img/bg2.png);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center;
+ background-size: cover;
+
+}
+
+body{
+ width: 100%;
+ height: 100%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 0;
+ /* background-image: url(../img/bg2.png);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center;
+ background-size: cover; */
+
+ position: relative;
+ align-items:center;
+ justify-content:center;
+ font-family: "微軟正黑體","Microsoft JhengHei";
+}
+
+h3{
+ font-family: "微軟正黑體","Microsoft JhengHei";
+}
+
+.clear:after{
+ display: block;
+ clear: both;
+ content: "";
+}
+
+.set_right{
+ display: block;
+ float: right;
+}
+.set_left{
+ display: block;
+ float: left;
+}
+
+
+.container{
+ width: 1240px;
+ padding:20px 20px;
+ margin: auto;
+ /* height: 100%; */
+}
+
+a{
+ text-decoration: none;
+ color: #fff;
+ letter-spacing: 50px;　
+}
+/* header{
+ position: fixed;
+ right: 0px;
+ width: 356px;
+ height:356px;
+} */
+
+.title{
+ padding-top: 10px;
+ height: 70px;
+}
+.title h3{
+ text-align: center;
+ margin: 0px;
+}
+.title hr{
+ border: 0;
+ height: 1.5px;
+ width: 200px;
+ background: #000;
+ margin: 5px auto 0px auto;
+}
+
+.cardBox{
+  width:1240px;
+  margin:0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box{
+  width: 30%;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 1s;
+}
+.card{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  display: flex;
+  position: absolute;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.front{
+  /* background-color:#f5c342; */
+  background-color:rgba(245,195,66,0.8);
+}
+.front:hover{
+  background-color:#f0deb1;
+}
+
+.back{
+	transform: rotateY(180deg);
+	background-color:#59a87d;
+  -webkit-transform: rotateY(180deg);
+}
+.flipped{
+	transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.card p{
+  font-size: 24px;
+  width:70%;
+  text-align: center;
+  line-height: 30px;
+  word-wrap:break-word;
+}
+.back p{
+  line-height: 55px;
+  color: #fff;
+}
